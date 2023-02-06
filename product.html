@@ -80,7 +80,7 @@
     <div class="center p-3">
         <h2>Our Products</h2>
     </div>
-    <div class="row row-cols-1 row-cols-md-4 g-3 p-3 container-fluid">
+    <div class="row row-cols-1 row-cols-md-4 g-3 p-3 container-fluid d-flex">
         <!-- Chyawanprash Regular(500 gm) Start-->
         <div class="col">
             <div class="card h-100">
@@ -88,17 +88,12 @@
                     width="300" height="400" class="card-img-top" alt="Chawanprash Regular" />
                 <div class="card-body">
                     <h5 class="card-title">Chyawanprash Regular(500 gm)</h5>
-                    <p class="card-text" id="test0">
-                        Chyawanprash is an excellent immunity booster, stimulates immunity, support the healthy function
-                        of the respiratory system and heart, purifies blood,improves body’s stamina and strength,
-                        improves digestion.
-                    </p>
+                    <p class="card-text" id="chawanprashCard"></p>
                     <button type="button" class="btn btn-info" data-toggle="modal"
                         data-target="#chawanprashRegularBuy">Buy Now</button>
                     <button type="button" class="btn btn-success" data-toggle="modal"
                         data-target="#chawanprashRegular">Know More</button>
-                        <button class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
-                        
+                        <!-- <button class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button> -->
                 </div>
             </div>
         </div>
@@ -108,7 +103,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Chawanprash Regular</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Chawanprash Regular(500 gm)</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -126,14 +121,7 @@
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <p> Chyawanprash is first made by a sage names Chyawan thousands of years ago. Chyawanprash is named after his creation.
-                                            It consists of two parts Chyawan and Prash. Chyawan is the name of sage and Prash means paste mix of herbs more than
-                                            47 with amla, cow’s ghee, sesame oil, giloy, and other immunity booster herbs. Chyawanprash is an excellent immunity
-                                            booster, stimulates immunity, support the healthy function of the respiratory system and heart, prevents change of
-                                            season infection, purifies blood, increase the body’s defence response system against infections, improves body’s
-                                            stamina and strength, improves digestion, delays ageing of skin cells, keeps you fit in all season it is a veg
-                                            product.
-                                        </p>
+                                        <p id="chawanprashDetail"></p>
                                     </div>
                                 </div>
                             </div>
@@ -147,20 +135,7 @@
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <p> Each 100 Gms of Chyawanprash is Prepared from : Water Ext of
-                                            Bala (Rt), Dashmool (Rt), Manukka (Fr), Jeevanti (Pl), Karkatshingi (Gl),
-                                            Tamalki (Pl), Pipalli (Fr), Pushkara (Rt),
-                                            Kalaagar (St), Giloy (St), Haritki (Fr), Riddhi-Vriddhi (O.S Varahi Kand
-                                            Rt), Jeevak-Rishbhak (O.S Vidari Kand Rt),
-                                            Kachur (Rz), Nagermotha (Rz), Punarnava (Rt), Meda-Mahameda (O.S Shatavari
-                                            Rt), Shuskmaila (Fr), Utpal (Fl), Shvet
-                                            Chandan (Wd), Vidari (Rt), Vasa (Lf), Kakoli-Kshirkakoli (O.S Asgandh Rt),
-                                            Kaknasa (Fr), Mugdhparni (Pl), Mashparni (Pl)
-                                            each 0.390g, Awala 88 gms, Cow's Ghee 1.40gm, Sesame Oil 1.40gm, Powders of
-                                            Vanshlochan 1.58gm, Pippali 0.79gms, Twak,
-                                            Nagkesar, Twakpatra each 15mg, Lavang 0.26g, Sucralose 20 mg, Stevia and
-                                            Sorbitol Q.S (Sweetners).
-                                        </p>
+                                        <p id="chawanprashIngredients"></p>
                                     </div>
                                 </div>
                             </div>
@@ -175,22 +150,15 @@
                                 <div id="collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample" >
                                     <div class="accordion-body">
-                                        <p> Carbohydrate 5.77%<br>
-                                            Vitamin C 2.33%<br>
-                                            Total Fat 2.14%<br>
-                                            Total dietary Fiber 1.32%<br>
-                                            Sodium 0.33%
-                                        </p>
+                                        <p id="chawanprashFacts"></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <!-- End Example Code -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                     </div>
                 </div>
             </div>
@@ -199,12 +167,7 @@
         <div class="modal" id="chawanprashRegularBuy" tabindex="-1">
             <div class="modal-dialog">
               <div class="modal-content">
-                <!-- <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div> -->
                 <div class="modal-body">
-                  <!-- <p>Modal body text goes here.</p> -->
                   <div class="list-group">
                     <a href="https://www.amazon.in/Generic-AYURVED-INDIA-CHYAWANPRASH/dp/B08RJZ4GWQ" target="_blank"
                         class="list-group-item list-group-item-action" aria-current="true">Amazon</a>
@@ -234,12 +197,8 @@
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg"
                     width="300" height="400" class="card-img-top" alt="Chawanprash Regular" />
                 <div class="card-body">
-                    <h5 class="card-title">Chyawanprash Gud Wala (1 Kg)</h5>
-                    <p class="card-text">
-                        Chyawanprash is an excellent immunity booster, stimulates immunity, support the healthy function
-                        of the respiratory system and heart, purifies blood,improves body’s stamina and strength,
-                        improves digestion.
-                    </p>
+                    <h5 class="card-title">Chyawanprash Regular (1 Kg)</h5>
+                    <p class="card-text" id="chawanprashCard1kg"></p>
                     <a href="#" class="btn btn-info align-content-center">Buy Now</a>
                     <button type="button" class="btn btn-success" data-toggle="modal"
                         data-target="#chawanprashGudWala">Know More</button>
@@ -252,7 +211,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Chawanprash Gud Wala</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Chawanprash Regular(1 Kg)</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -270,14 +229,7 @@
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <p> Chyawanprash is first made by a sage names Chyawan thousands of years ago. Chyawanprash is named after his creation.
-                                            It consists of two parts Chyawan and Prash. Chyawan is the name of sage and Prash means paste mix of herbs more than
-                                            47 with amla, cow’s ghee, sesame oil, giloy, and other immunity booster herbs. Chyawanprash is an excellent immunity
-                                            booster, stimulates immunity, support the healthy function of the respiratory system and heart, prevents change of
-                                            season infection, purifies blood, increase the body’s defence response system against infections, improves body’s
-                                            stamina and strength, improves digestion, delays ageing of skin cells, keeps you fit in all season it is a veg
-                                            product.
-                                        </p>
+                                        <p id="chawanprashDetail1kg"></p>
                                     </div>
                                 </div>
                             </div>
@@ -291,123 +243,7 @@
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <p> Each 100 Gms of Chyawanprash Gud Wala is Prepared from : Water Ext of
-                                            Bala (Rt), Dashmool (Rt), Manukka (Fr), Jeevanti (Pl), Karkatshingi (Gl),
-                                            Tamalki (Pl), Pipalli (Fr), Pushkara (Rt),
-                                            Kalaagar (St), Giloy (St), Haritki (Fr), Riddhi-Vriddhi (O.S Varahi Kand
-                                            Rt), Jeevak-Rishbhak (O.S Vidari Kand Rt),
-                                            Kachur (Rz), Nagermotha (Rz), Punarnava (Rt), Meda-Mahameda (O.S Shatavari
-                                            Rt), Shuskmaila (Fr), Utpal (Fl), Shvet
-                                            Chandan (Wd), Vidari (Rt), Vasa (Lf), Kakoli-Kshirkakoli (O.S Asgandh Rt),
-                                            Kaknasa (Fr), Mugdhparni (Pl), Mashparni (Pl)
-                                            each 0.390g, Awala 88 gms, Cow's Ghee 1.40gm, Sesame Oil 1.40gm, Powders of
-                                            Vanshlochan 1.58gm, Pippali 0.79gms, Twak,
-                                            Nagkesar, Twakpatra each 15mg, Lavang 0.26g, Sucralose 20 mg, Stevia and
-                                            Sorbitol Q.S (Sweetners).
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Nutritional Facts
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
-                                    <div class="accordion-body">
-                                        <p> Carbohydrate 5.77%<br>
-                                            Vitamin C 2.33%<br>
-                                            Total Fat 2.14%<br>
-                                            Total dietary Fiber 1.32%<br>
-                                            Sodium 0.33%
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- End Example Code -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
-        <!-- Chyawanprash Regular(1 Kg) End-->
-
-        
-
-        <!-- GULKAND Start-->
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://picsum.photos/450/300?random=9"
-                    width="300" height="400" class="card-img-top" alt="Chawanprash Regular" />
-                <div class="card-body">
-                    <h5 class="card-title">Gulkand</h5>
-                    <p class="card-text" id="gulkand">
-                        Chyawanprash is an excellent immunity booster, stimulates immunity, support the healthy function
-                        of the respiratory system and heart, purifies blood,improves body’s stamina and strength,
-                        improves digestion.
-                    </p>
-                    <a href="#" class="btn btn-info align-content-center">Buy Now</a>
-                    <button type="button" class="btn btn-success" data-toggle="modal"
-                        data-target="#gulkand">Know More</button>
-                </div>
-            </div>
-        </div>
-        <!-- Modal Start -->
-        <div class="modal fade" id="gulkand" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Chawanprash Regular</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Example Code -->
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p> Chyawanprash is first made by a sage names Chyawan thousands of years ago. Chyawanprash is named after his creation.
-                                            It consists of two parts Chyawan and Prash. Chyawan is the name of sage and Prash means paste mix of herbs more than
-                                            47 with amla, cow’s ghee, sesame oil, giloy, and other immunity booster herbs. Chyawanprash is an excellent immunity
-                                            booster, stimulates immunity, support the healthy function of the respiratory system and heart, prevents change of
-                                            season infection, purifies blood, increase the body’s defence response system against infections, improves body’s
-                                            stamina and strength, improves digestion, delays ageing of skin cells, keeps you fit in all season it is a veg
-                                            product.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="gulkandDetail"></p>
+                                        <p id="chawanprashIngredients1kg"></p>
                                     </div>
                                 </div>
                             </div>
@@ -422,12 +258,93 @@
                                 <div id="collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <p> Carbohydrate 5.77%<br>
-                                            Vitamin C 2.33%<br>
-                                            Total Fat 2.14%<br>
-                                            Total dietary Fiber 1.32%<br>
-                                            Sodium 0.33%
-                                        </p>
+                                        <p id="chawanprashFacts1kg"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- End Example Code -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal End -->
+        <!-- Chyawanprash Regular(1 Kg) End-->
+
+        
+
+        <!-- GULKAND Start-->
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://dummyimage.com/430x300/000/d11e68&text=Gulkand"
+                     class="card-img-top" alt="Chawanprash Regular" />
+                <div class="card-body">
+                    <h5 class="card-title">Gulkand</h5>
+                    <p class="card-text" id="gulkandCard"></p>
+                    <a href="#" class="btn btn-info align-content-center">Buy Now</a>
+                    <button type="button" class="btn btn-success" data-toggle="modal"
+                        data-target="#gulkand">Know More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Start -->
+        <div class="modal fade" id="gulkand" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Gulkand</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Example Code -->
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Details
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p id="gulkandDetail"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Ingredients
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p id="gulkandIngredients"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="true"
+                                        aria-controls="collapseThree">
+                                        Nutritional Facts
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p id="gulkandFacts"></p>
                                     </div>
                                 </div>
                             </div>
@@ -449,11 +366,10 @@
         <div class="col">
             <div class="card h-100">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Rose_Front_yicmbv.jpg"
-                    width="300" height="400" class="card-img-top" alt="Los Angeles Skyscrapers" />
+                    width="300" height=auto class="card-img-top" alt="Los Angeles Skyscrapers" />
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content.</p>
+                    <h5 class="card-title">ROSE SHARBAT</h5>
+                    <p class="card-text">details for rose sharbat.</p>
                 </div>
             </div>
         </div>
@@ -462,12 +378,12 @@
         <!-- SHARBAT-E-KHASS  - KHUS SHARBAT Start -->
         <div class="col">
             <div class="card h-100">
-                <img src="https://picsum.photos/450/300?random=4" class="card-img-top"
+                <img src="https://dummyimage.com/430x300/000/d11e68&text=Khass+Sharbat" class="card-img-top"
                     alt="Hollywood Sign on The Hill" />
                 <div class="card-body">
                     <h5 class="card-title">Khass Sharbat</h5>
                     <p class="card-text">
-                        Chyawanprash is an excellent immunity booster, stimulates immunity, support the healthy function
+                        Khass Sharbat is an excellent immunity booster, stimulates immunity, support the healthy function
                         of the respiratory system and heart, purifies blood,improves body’s stamina and strength,
                         improves digestion.
                     </p>
@@ -483,11 +399,11 @@
         <div class="col">
             <div class="card h-100">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370603/shrinathAyurved/Dishwash_Gel_gsgwmc.jpg"
-                    width="450" height="400" class="card-img-top" alt="Hollywood Sign on The Hill" />
+                    width="100%" height="auto" class="card-img-top" alt="Hollywood Sign on The Hill" />
                 <div class="card-body">
                     <h5 class="card-title">DISHWASH - LEMON & SALT</h5>
                     <p class="card-text">
-                        Chyawanprash is an excellent immunity booster, stimulates immunity, support the healthy function
+                        DISHWASH - LEMON & SALT is an excellent immunity booster, stimulates immunity, support the healthy function
                         of the respiratory system and heart, purifies blood,improves body’s stamina and strength,
                         improves digestion.
                     </p>
@@ -502,12 +418,12 @@
         <!-- DISHWASH - NEEM & ALOEVERA Start -->
         <div class="col">
             <div class="card h-100">
-                <img src="https://picsum.photos/450/300?random=4" class="card-img-top"
+                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675694120/shrinathAyurved/DISHWASH_GREEN_FRONT_dcfsct.jpg" width="100%" height="auto" class="card-img-top"
                     alt="Hollywood Sign on The Hill" />
                 <div class="card-body">
                     <h5 class="card-title">Neem and Aloevera Dishwash Liquid</h5>
                     <p class="card-text">
-                        Chyawanprash is an excellent immunity booster, stimulates immunity, support the healthy function
+                        Neem and Aloevera Dishwash Liquid is an excellent immunity booster, stimulates immunity, support the healthy function
                         of the respiratory system and heart, purifies blood,improves body’s stamina and strength,
                         improves digestion.
                     </p>
@@ -523,31 +439,121 @@
         <div class="col">
             <div class="card h-100">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
-                    width="300" height="400" class="card-img-top" alt="Hollywood Sign on The Hill" />
+                    width=100% height=auto class="card-img-top" alt="Hollywood Sign on The Hill" />
                 <div class="card-body">
                     <h5 class="card-title">Honey</h5>
-                    <p class="card-text">
-                        Chyawanprash is an excellent immunity booster, stimulates immunity, support the healthy function
-                        of the respiratory system and heart, purifies blood,improves body’s stamina and strength,
-                        improves digestion.
-                    </p>
-                    <a href="#" class="btn btn-info align-content-center">Buy Now</a>
-                    <button type="button" class="btn btn-success" data-toggle="modal"
-                        data-target="#chawanprashRegular">Know More</button>
+                    <p class="card-text" id="honeyCard"></p>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#honeyBuy">Buy Now</button>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#honeyModal">Know
+                        More</button>
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="honeyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Honey</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Example Code -->
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Details
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p id="honeyDetail"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Ingredients
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p id="honeyIngredients"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                        Nutritional Facts
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p id="honeyFacts"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Example Code -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal End -->
+        <!-- Buy Now -->
+        <div class="modal" id="honeyBuy" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> -->
+                    <div class="modal-body">
+                        <!-- <p>Modal body text goes here.</p> -->
+                        <div class="list-group">
+                            <a href="https://www.amazon.in/HONEY-SHRINATH-AYURVED-REAL-HONEY/dp/B0BQN4JN9R" target="_blank"
+                                class="list-group-item list-group-item-action" aria-current="true">Amazon</a>
+                            <a href="https://www.flipkart.com/shrinath-ayurved-honey-pure-sure/p/itm91e5eea9c21e7?pid=HNYGHGB2DHU3NVB5"
+                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
+                            <a href="https://www.jiomart.com/p/groceries/honey-pure-sure/596769953" target="_blank"
+                                class="list-group-item list-group-item-action">Jio Mart</a>
+                            <a href="https://youtu.be/8nGSf5yrn4Q" target="_blank"
+                                class="list-group-item list-group-item-action">Watch On Youtube</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Buy Now Ends -->
         <!-- HONEY End-->
 
         <!-- Rose Water -Mist Spray Start-->
         <div class="col">
             <div class="card h-100">
-                <img src="https://picsum.photos/450/300?random=4" class="card-img-top"
+                <img src="https://dummyimage.com/430x300/000/d11e68&text=Rose+Water" class="card-img-top"
                     alt="Hollywood Sign on The Hill" />
                 <div class="card-body">
                     <h5 class="card-title">Rose Water</h5>
                     <p class="card-text">
-                        Chyawanprash is an excellent immunity booster, stimulates immunity, support the healthy function
+                        Rose Water is an excellent immunity booster, stimulates immunity, support the healthy function
                         of the respiratory system and heart, purifies blood,improves body’s stamina and strength,
                         improves digestion.
                     </p>
@@ -563,10 +569,10 @@
          <!-- Test Start-->
          <div class="col">
             <div class="card h-100">
-                <img src="https://picsum.photos/450/300?random=4" class="card-img-top"
+                <img src="https://picsum.photos/450/300?random=42" class="card-img-top"
                     alt="Hollywood Sign on The Hill" />
                 <div class="card-body">
-                    <h5 class="card-title">Test</h5>
+                    <h5 class="card-title">Test Data</h5>
                     <p class="card-text" id="testText">
                         
                     </p>
@@ -596,9 +602,28 @@
 </body>
 <!-- To Load Text In Product Description -->
 <script>
-    $( "#testText" ).load( "./text/chawanprashIntro.txt" );
-    $( "#gulkand" ).load( "./text/gulkand.txt" );
-    $( "#gulkandDetail" ).load( "./text/gulkandDetail.txt" );
+    $("#testText").load("./text/chawanprashIntro.txt");
+    $("#gulkand").load("./text/gulkand.txt");
+    //Gulkand
+    $("#gulkandCard").load("./text/gulkandCard.txt");
+    $("#gulkandDetail").load("./text/gulkandDetail.txt");
+    $("#gulkandIngredients").load("./text/gulkandIngredients.txt");
+    $("#gulkandFacts").load("./text/gulkandFacts.txt");
 
-    </script>
+    //Chawanprash
+    $("#chawanprashCard").load("./text/chawanprashCard.txt");
+    $("#chawanprashCard1kg").load("./text/chawanprashCard.txt");
+    $("#chawanprashDetail").load("./text/chawanprashDetail.txt");
+    $("#chawanprashDetail1kg").load("./text/chawanprashDetail.txt");
+    $("#chawanprashIngredients").load("./text/chawanprashIngredients.txt");
+    $("#chawanprashIngredients1kg").load("./text/chawanprashIngredients.txt");
+    $("#chawanprashFacts").load("./text/chawanprashFacts.txt");
+    $("#chawanprashFacts1kg").load("./text/chawanprashFacts.txt");
+
+    // Honey
+    $("#honeyCard").load("./text/honeyCard.txt");
+    $("#honeyDetail").load("./text/honeyDetail.txt");
+    $("#honeyIngredients").load("./text/honeyIngredients.txt");
+    $("#honeyFacts").load("./text/honeyFacts.txt");
+</script>
 </html>

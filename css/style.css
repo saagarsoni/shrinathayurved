@@ -4,7 +4,6 @@ body {
 
  /* Style for an element with ID "header" */
 #mynavbar {
-   background-color: white;
+   background-color: black;
    padding: 20px;
-}
-
+} 
