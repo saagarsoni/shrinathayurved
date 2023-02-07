@@ -1,0 +1,48 @@
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+<input type="text" id="search-bar">
+<button id="search-button">Search</button>
+
+<ul id="item-list">
+   <li>India</li>
+   <li>America</li>
+   <li>United Kingdom</li>
+   <li>London</li>
+   <li>Africa</li>
+ </ul>
+
+
+ <input type="text" id="searchInput">
+
+ <ul id="list">
+   <li>Mango</li>
+   <li>Apple</li>
+   <li>Banana</li>
+   ...
+ </ul>
+ 
+
+ 
+ <script>
+   $(document).ready(function() {
+     $("#search-button").click(function() {
+       var searchValue = $("#search-bar").val().toLowerCase();
+       $("#item-list li").filter(function() {
+         $(this).toggle($(this).text().toLowerCase().indexOf(searchValue) > -1)
+       });
+     });
+   });
+
+   $(document).ready(function() {
+  $("#searchInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#list li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+ </script>
+ 
