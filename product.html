@@ -749,7 +749,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Neem and Aloevera Dishwash Liquid</h5>
                     <p class="card-text" id="dwNeemCard"></p>
-                    <a href="#" class="btn btn-info align-content-center">Buy Now</a>
+                    <button type="button" class="btn btn-info" data-toggle="modal"
+                        data-target="#dwNeemBuy">Buy Now</button>
                     <button type="button" class="btn btn-success" data-toggle="modal"
                         data-target="#dwNeem">Know More</button>
                 </div>
@@ -821,6 +822,27 @@
             </div>
         </div>
         <!-- Modal End -->
+                <!-- Buy Now Start -->
+                <div class="modal" id="dwNeemBuy" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <div class="list-group">
+                            <a href="https://www.amazon.in/Shrinath-Dishwash-Superior-Cleaning-AloeveraI/dp/B0BCZ6PMHP" target="_blank"
+                                class="list-group-item list-group-item-action" aria-current="true">Amazon</a>
+                            <a href="https://www.flipkart.com/shrinath-ayurved-neem-aloevera-based-dish-cleaning-gel/p/itm82521107a2fe7?pid=DCGGH47H4KVQVFKZ"
+                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
+                            <a href="https://www.jiomart.com/p/groceries/dishwash-liquid-antibacterial/596907289" target="_blank"
+                                class="list-group-item list-group-item-action">Jio Mart</a>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Buy Now End -->
         <!-- DISHWASH - NEEM & ALOEVERA End -->
 
         <!-- HONEY Start-->
@@ -934,6 +956,7 @@
         <!-- HONEY End-->
 
         <!-- Rose Water Start-->
+        <!-- Card Start -->
         <div class="col">
             <div class="card h-100">
                 <img src="https://dummyimage.com/430x300/000/d11e68&text=Rose+Water" class="card-img-top img-fluid4
@@ -941,22 +964,19 @@
                     alt="Hollywood Sign on The Hill" />
                 <div class="card-body">
                     <h5 class="card-title">Rose Water</h5>
-                    <p class="card-text">
-                        Rose Water is an excellent immunity booster, stimulates immunity, support the healthy function
-                        of the respiratory system and heart, purifies blood,improves body’s stamina and strength,
-                        improves digestion.
-                    </p>
+                    <p class="card-text" id="roseWaterCard"></p>
                     <a href="#" class="btn btn-info align-content-center">Buy Now</a>
                     <button type="button" class="btn btn-success" data-toggle="modal"
-                        data-target="#chawanprashRegular">Know More</button>
+                        data-target="#chawanprashccRegular">Know More</button>
                 </div>
             </div>
         </div>
+        <!-- Card End -->
         <!-- Rose Water End-->
 
 
          <!-- Test Start-->
-         <div class="col">
+         <!-- <div class="col">
             <div class="card h-100">
                 <img src="https://picsum.photos/450/300?random=42" class="card-img-top"
                     alt="Hollywood Sign on The Hill" />
@@ -970,12 +990,8 @@
                         data-target="#chawanprashRegular">Know More</button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Test End-->
-
-        <!-- Modal  Start-->
-        
-        <!-- Modal End-->
     </div>
     </div>
     <!-- Footer Start-->
@@ -1039,5 +1055,11 @@
     $("#honeyDetail").load("./text/honeyDetail.txt");
     $("#honeyIngredients").load("./text/honeyIngredients.txt");
     $("#honeyFacts").load("./text/honeyFacts.txt");
+
+    //Rose Water
+    $("#roseWaterCard").load("./text/roseWaterCard.txt");
+    $("#roseWaterDetail").load("./text/roseWaterDetail.txt");
+    $("#roseWaterIngredients").load("./text/roseWaterIngredients.txt");
+    $("#roseWaterFacts").load("./text/roseWaterFacts.txt");
 </script>
 </html>
