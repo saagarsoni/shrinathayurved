@@ -16,8 +16,6 @@
   }
 
   form {
-    /* max-width: 70%; */
-    /* margin: 40px auto; */
     text-align: center;
     border: 1px solid #ddd;
     padding: 10px;
@@ -42,11 +40,18 @@
     /* margin-top: 50px;
    */
   }
+
+
+.modal-dialog {
+  margin: 0;
+}
+
 </style>
+
 <div style="display: flex; align-items: center; height: 100vh;">
   <div class="container" style=" margin: auto;">
     <div class="row">
-      <div class="col-lg-6 col-sm-12 mx-auto">
+      <div class="col-lg-8 col-sm-12 mx-auto">
         <form>
           <h2>Login</h2>
           <div class="form-group">
@@ -75,9 +80,11 @@
 
 <!-- Choose Modal Start-->
 <div class="modal fade" id="optionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  aria-labelledby="staticBackdropLabel" aria-hidden="true" style="display: d-flex;
+  align-items: center;
+  justify-content: center;">
   <!-- <div class="modal fade" id="exampleModal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
-  <div class="modal-dialog">
+  <div class="modal-dialog" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%)">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Please Choose Registration Type</h1>
