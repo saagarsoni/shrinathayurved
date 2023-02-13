@@ -40,6 +40,7 @@
   <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/5ac440c930.js" crossorigin="anonymous"></script>
+  <script src="./js/script.js"></script>
 </head>
 
 <body>
@@ -177,7 +178,7 @@
           <input type="text" id="email" class="form-control" id="formGroupExampleInput2" placeholder="Email">
         </div>
         <div class="mb-3">
-          <input type="text" id="phone" class="form-control" id="numeric-input" placeholder="Phone Number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10" >
+          <input type="text" id="phone" class="form-control" id="numeric-input" placeholder="Phone Number" maxlength="10" onkeypress="validateInput(event)">
         </div>
         <div class="mb-3">
           <textarea name="" id="message" cols="30" class="form-control" rows="8"
@@ -259,10 +260,10 @@
     function sendEmail()
     {
               Email.send({
-            Host : "smtp.elasticemail.com",
-            Username : "saagarsoniwork@gmail.com",
+            Host : "smtp.gmail.com",
+            Username : "saagarsoni3@gmail.com",
             Password : "9C61949476862678D140B35C590B60B9E05F",
-            To : "saagarsoni3gmail.com",
+            To : "saagarsoniworkgmail.com",
             From : document.getElementById("email").value,
             Subject : "New Contact Form Enquiry",
             Body : document.getElementById("message").value,
