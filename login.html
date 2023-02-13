@@ -13,6 +13,7 @@
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
   <title>Shrinath Ayurved</title>
+  <script src="./js/script.js"></script>
 </head>
 <body>
   <div style="display: flex; align-items: center; height: 100vh;">
@@ -97,7 +98,7 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1">Mobile Number</label>
                           <input type="email" class="form-control" id="numeric-input" aria-describedby="emailHelp"
-                            maxlength="10" placeholder="Enter 10 Digit Mobile Number">
+                            maxlength="10" placeholder="Enter 10 Digit Mobile Number " oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  onkeypress="validateInput(event)">
                           <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
   
@@ -291,14 +292,14 @@
 
 
 <script>
-  //To Allow Numeric Input
-  var input = document.getElementById("numeric-input");
-  input.addEventListener("keypress", function (event) {
-    var key = event.charCode || event.keyCode;
-    if (key < 48 || key > 57) {
-      event.preventDefault();
-    }
-  });
+  // //To Allow Numeric Input
+  // var input = document.getElementById("numeric-input");
+  // input.addEventListener("keypress", function (event) {
+  //   var key = event.charCode || event.keyCode;
+  //   if (key < 48 || key > 57) {
+  //     event.preventDefault();
+  //   }
+  // });
   //States , District and their Values
   var subjectObject = {
     "Andra Pradesh": {
