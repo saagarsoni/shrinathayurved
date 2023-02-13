@@ -13,10 +13,13 @@ $message = "From: $name \r\n".
                    "Phone No : $phone \r\n".
                    "Message : $message \r\n";
 
-echo $_POST['name'];
-echo $_POST['email'];
-echo $_POST["phone"];
-echo $_POST["message"];
+// echo $_POST['name'];
+// echo $_POST['email'];
+// echo $_POST["phone"];
+// echo $_POST["message"];
 
  mail($to, $subject, $message);
+ header('Location: index.html');
+  exit;
+
 ?>
