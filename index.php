@@ -1,3 +1,8 @@
+<?php
+
+include("header.php");
+// session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -45,52 +50,15 @@
 </head>
 
 <body>
-  <header class="header bg-info py-1">
+  <!-- <header class="header bg-info py-1">
     <div class="container">
       <h4 class="text-center"></h4>
     </div>
   </header>
-  <!-- Nav Bar Start-->
-  <nav class="navbar navbar-expand-lg bg-light fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1671950229/shrinathAyurved/logo_lcqcwu.jpg" alt=""
-          width="90" height="33">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse " id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="product.html">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contactUsPage">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#aboutus1">About Us</a>
-          </li>
-          <li class="nav-item d-lg-none .d-xl-block" id="login1">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <ul class="nav navbar-nav navbar-right" >
-      <li class="nav-item d-sm-none d-md-block d-none d-sm-block d-md-none d-lg-block">
-        <a class="nav-link" href="login.html">Login</a>
-      </li>      
-  </ul>
-  </nav>
-  <!-- Nav Bar End -->
+   -->
 
   <!-- Header Start -->
-  <header class="header py-1">
+  <header class="header py-3">
     <div class="container">
       <h3 class="text-center">Header</h3>
     </div>
@@ -98,7 +66,7 @@
   <!-- Header End -->
 
   <!-- Image Carousel Start-->
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
+  <div id="carouselExampleIndicators" class="carousel slide py-2" data-bs-ride="carousel" >
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
@@ -109,7 +77,8 @@
     </div>
     <div class="carousel-inner" >
       <div class="carousel-item active">
-        <img src="https://picsum.photos/1950/500?random=1" class="d-block w-100 img-fluid img-small">
+        <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1676907824/shrinathAyurved/Web_mb05fz.jpg" 
+        class="d-block w-100 img-fluid img-small">
       </div>
       <div class="carousel-item">
         <img src="https://picsum.photos/1950/500?random=2" class="d-block w-100 img-fluid img-small" >

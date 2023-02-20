@@ -1,3 +1,8 @@
+<?php
+
+include("header.php");
+// session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,9 +52,9 @@
         crossorigin="anonymous">
 </head>
 
-<body style="padding-top: 15px;">
+<body >
     <!-- <nav class="navbar navbar-expand-lg sticky-top navbar-light"> -->
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <!-- <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1671950229/shrinathAyurved/logo_lcqcwu.jpg"
@@ -79,7 +84,7 @@
                     </li>
             </div>
         </div>
-    </nav>
+    <!-- </nav> -->
 
     <div class=" row center mt-5">
         <h2>Our Products</h2>
@@ -97,6 +102,7 @@
     <div class="row row-cols-1 row-cols-md-4 g-3 p-3 container-fluid d-flex">
         <!-- Chyawanprash Regular(500 gm) Start-->
         <!-- Card Start -->
+        <form action="manage_cart.php" method="post">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg"
@@ -108,10 +114,13 @@
                         data-target="#chawanprashRegularBuy">Buy Now</button>
                     <button type="button" class="btn btn-success" data-toggle="modal"
                         data-target="#chawanprashRegular">Know More</button>
-                    <!-- <button class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button> -->
+                    <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                    <input type="hidden" name="item_name" value="Chyawanprash Regular(500 gm)">
+                    <input type="hidden" name="price" value="150">
                 </div>
             </div>
         </div>
+    </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="chawanprashRegular" tabindex="-1" role="dialog"
@@ -207,10 +216,9 @@
         <!-- Buy Now End -->
         <!-- Chyawanprash Regular (500 gm ) End-->
 
-
-
         <!-- Chyawanprash Regular(1 Kg) Start-->
         <!-- Card Start -->
+        <form action="manage_cart.php" method="post">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg"
@@ -222,9 +230,13 @@
                         data-target="#chawanprashRegularBuy1Kg">Buy Now</button>
                     <button type="button" class="btn btn-success" data-toggle="modal"
                         data-target="#chawanprashGudWala">Know More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                    <input type="hidden" name="item_name" value="Chyawanprash Regular(1Kg)">
+                    <input type="hidden" name="price" value="300">
                 </div>
             </div>
         </div>
+    </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="chawanprashGudWala" tabindex="-1" role="dialog"
@@ -322,6 +334,7 @@
 
         <!-- GULKAND Start-->
         <!-- Card Start -->
+        <form action="manage_cart.php" method="post">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675841213/shrinathAyurved/Gulkand_1_300x500_apehke.jpg"
@@ -334,9 +347,13 @@
                         Now</button>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#gulkand">Know
                         More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                    <input type="hidden" name="item_name" value="Gulkand">
+                    <input type="hidden" name="price" value="200">
                 </div>
             </div>
         </div>
+    </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="gulkand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -431,20 +448,25 @@
 
         <!--ROSE SHARBAT Start -->
         <!-- Card Start-->
+        <form action="manage_cart.php" method="post">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Rose_Front_yicmbv.jpg"
                     width="300" height=auto class="card-img-top img-fluid" alt="Los Angeles Skyscrapers" />
                 <div class="card-body">
-                    <h5 class="card-title product-name">ROSE SHARBAT</h5>
+                    <h5 class="card-title product-name">Rose Sharbat</h5>
                     <p class="card-text" id="roseSharbatCard">details for rose sharbat.</p>
                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#roseSharbatBuy">Buy
                         Now</button>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#roseSharbat">Know
                         More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                    <input type="hidden" name="item_name" value="Rose Sharbat">
+                    <input type="hidden" name="price" value="100">
                 </div>
             </div>
         </div>
+    </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="roseSharbat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -552,6 +574,7 @@
 
         <!--KHUS SHARBAT Start -->
         <!-- Card Start -->
+        <form action="manage_cart.php" method="post">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://dummyimage.com/430x300/000/d11e68&text=Khus+Sharbat" class="card-img-top img-fluid"
@@ -563,9 +586,13 @@
                         Now</button>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#khasSharbat">Know
                         More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                    <input type="hidden" name="item_name" value="Khass Sharbat">
+                    <input type="hidden" name="price" value="100">
                 </div>
             </div>
         </div>
+    </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="khasSharbat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -662,6 +689,7 @@
 
         <!-- DISHWASH - LEMON & SALT Start -->
         <!-- Card Start -->
+        <form action="manage_cart.php" method="post">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370603/shrinathAyurved/Dishwash_Gel_gsgwmc.jpg"
@@ -673,9 +701,13 @@
                         Now</button>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dwLemon">Know
                         More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                    <input type="hidden" name="item_name" value="Dishwash - Lemon and Salt">
+                    <input type="hidden" name="price" value="80">
                 </div>
             </div>
         </div>
+    </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="dwLemon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -770,6 +802,7 @@
 
         <!-- DISHWASH - NEEM & ALOEVERA Start -->
         <!-- Card Start -->
+        <form action="manage_cart.php" method="post">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675694120/shrinathAyurved/DISHWASH_GREEN_FRONT_dcfsct.jpg"
@@ -781,9 +814,13 @@
                         Now</button>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dwNeem">Know
                         More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                    <input type="hidden" name="item_name" value="Neem and Aloevera Dishwash Liquid">
+                    <input type="hidden" name="price" value="90">
                 </div>
             </div>
         </div>
+    </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="dwNeem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -875,6 +912,7 @@
         <!-- DISHWASH - NEEM & ALOEVERA End -->
 
         <!-- HONEY Start-->
+        <form action="manage_cart.php" method="post">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
@@ -886,9 +924,13 @@
                         Now</button>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#honeyModal">Know
                         More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                    <input type="hidden" name="item_name" value="Honey">
+                    <input type="hidden" name="price" value="250">
                 </div>
             </div>
         </div>
+    </form>
         <div class="modal fade" id="honeyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -989,6 +1031,7 @@
 
         <!-- Rose Water Start-->
         <!-- Card Start -->
+        <form action="manage_cart.php" method="post">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://dummyimage.com/430x300/000/d11e68&text=Rose+Water" class="card-img-top img-fluid4
@@ -999,9 +1042,13 @@
                     <a href="#" class="btn btn-info align-content-center">Buy Now</a>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#roseWater">Know
                         More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                    <input type="hidden" name="item_name" value="Rose Water">
+                    <input type="hidden" name="price" value="60">
                 </div>
             </div>
         </div>
+    </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="roseWater" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
