@@ -76,16 +76,38 @@ session_start();
                <h4>Grand Total</h4>
                <h5 class="text-right" id="gtotal"> </h5>
                <br>
-               <form>
+               <?php 
+               if(isset($_SESSION['cart']) && count($_SESSION['cart'])>0)
+               {
+               ?>
+               <form action="purchase.php" method="post">
+                  <div class="mb-3">
+                     <label class="form-label">Full Name</label>
+                     <input type="text" class="form-control" name="fullname" placeholder="Please Enter Full Name" Required>
+                  </div>
+
+                  <div class="mb-3">
+                     <label class="form-label">Phone Number</label>
+                     <input type="text" class="form-control"name="phone_no" placeholder="Enter Phone Number" Required>
+                  </div>
+
+                  <div class="mb-3">
+                     <label class="form-label">Address</label>
+                     <textarea name="address" class="form-control" placeholder="Enter Full Address" cols="30" rows="10" Required></textarea>
+                  </div>
+
                   <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                  <label class="form-check-label" for="flexRadioDefault2">
-                     Cash On Delivery
-                  </label>
+                     <input class="form-check-input" name="pay_mode" value="COD" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                     <label class="form-check-label" for="flexRadioDefault2">
+                        Cash On Delivery
+                     </label>
                   </div>
                   <br>
-                  <button class="btn btn-primary btn-block">Make Payment</button>
+                  <button class="btn btn-primary btn-block" name="purchase">Make Purchase</button>
                </form>
+               <?php
+               }
+               ?>
             </div>
 
 
