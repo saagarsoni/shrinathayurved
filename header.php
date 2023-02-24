@@ -23,10 +23,10 @@ session_start();
             <a class="nav-link" href="product.php">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contactUsPage">Contact Us</a>
+            <a class="nav-link" href="./#contactUsPage">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#aboutus1">About Us</a>
+            <a class="nav-link" href="./#aboutus1">About Us</a>
           </li>
         
       </ul>
@@ -40,9 +40,9 @@ session_start();
         ?>
          <a href="myCart.php" class="btn btn-outline-success">My Cart (<?php echo $count;?>)</a>
       </div>
-      <div class="m-2">
+      <!-- <div class="m-2">
          <a href="login.php" class="btn btn-outline-success">Login</a>
-      </div>
+      </div> -->
     </div>
   </div>
 </nav>

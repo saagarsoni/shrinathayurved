@@ -23,14 +23,11 @@ include("header.php");
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Shrinath Ayurved</title>
-  <!-- MDB -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-  <!-- MDB -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+  
   <!-- contactUs CSS -->
   <link rel="stylesheet" type="text/css" media="screen" href="./css/contactUs.css" />
 
@@ -77,15 +74,16 @@ include("header.php");
     </div>
     <div class="carousel-inner" >
       <div class="carousel-item active">
-        <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1676974691/shrinathAyurved/Web_ug8ula.jpg" 
+        <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1677238765/shrinathAyurved/Web1_xghx3j.jpg" 
         class="d-block w-100 img-fluid">
       </div>
       <div class="carousel-item">
-        <img src="https://picsum.photos/1950/500?random=2" class="d-block w-100 img-fluid" >
+        <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1677238765/shrinathAyurved/Web2_t0zhbl.jpg"
+        class="d-block w-100 img-fluid" >
       </div>
-      <div class="carousel-item">
+      <!-- <div class="carousel-item">
         <img src="https://picsum.photos/1950/500?random=3" class="d-block w-100 img-fluid" >
-      </div>
+      </div> -->
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
       data-bs-slide="prev">
@@ -116,7 +114,7 @@ include("header.php");
 <hr>
   <!-- About Us Start -->
   <div class="container" id="aboutus1">
-    <div class="row h-100 align-items-center py-5">
+    <div class="row h-100 align-items-center">
       <div class="col-lg-12 col-sm-3">
         <h1 class="display-5 fs-1">About Us</h1>
         <p class="text-success mt-2 fw-light" id="aboutus"></p>
@@ -207,7 +205,7 @@ include("header.php");
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
       © 2023 Copyright:
-      <a class="text-reset fw-bold" href="index.html">Shrinath Ayurved</a>
+      <a class="text-reset fw-bold" href="index.php">Shrinath Ayurved</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -217,11 +215,6 @@ include("header.php");
 <script src="https://smtpjs.com/v3/smtp.js">
 </script>
   <script>
-    // $(function () {
-    //   $("#nav-placeholder").load("./nav1.html");
-    // });
-    // $("#aboutus").load(".nav.html");
-    // To Read Text File
     $("#aboutus").load("./text/aboutus");
 
     function sendEmail11()

@@ -52,48 +52,17 @@ include("header.php");
         crossorigin="anonymous">
 </head>
 
-<body >
-    <!-- <nav class="navbar navbar-expand-lg sticky-top navbar-light"> -->
-    <!-- <nav class="navbar navbar-expand-lg bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1671950229/shrinathAyurved/logo_lcqcwu.jpg"
-                    alt="" width="90" height="33">
-                <!-- </a> -->
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <!-- <a class="nav-link" href="#">Link</a> -->
-                        <a class="nav-link active" aria-current="page" href="product.html">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html#contactus1">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html#aboutus1">About Us</a>
-                    </li>
-            </div>
-        </div>
-    <!-- </nav> -->
-
-    <div class=" row center mt-5">
+<body>
+<header class="header py-3">
+    <div class="container">
+      <h3 class="text-center">Header</h3>
+    </div>
+  </header>
+    <div class="row center py-20">
         <h2>Our Products</h2>
     </div>
 
-    <!-- <input class="form-control bg-light pt-3 mt-2" type="text" placeholder="Search For Products"
-        aria-label="default input example"> -->
-
-        <div class="input-group mb-3">
+        <div class="input-group mb-5">
             <input type="text" class="form-control" placeholder="Type to Search Any Product" aria-label="Recipient's username" aria-describedby="button-addon2" id="searchTextbox">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2" 
             onclick="clearText()">Clear</button>
@@ -102,7 +71,7 @@ include("header.php");
     <div class="row row-cols-1 row-cols-md-4 g-3 p-3 container-fluid d-flex">
         <!-- Chyawanprash Regular(500 gm) Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post">
+        <form action="manage_cart.php" method="post" class="product">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg"
@@ -218,7 +187,7 @@ include("header.php");
 
         <!-- Chyawanprash Regular(1 Kg) Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post">
+        <form action="manage_cart.php" method="post" class="product">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg"
@@ -334,7 +303,7 @@ include("header.php");
 
         <!-- GULKAND Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post">
+        <form action="manage_cart.php" method="post" class="product">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675841213/shrinathAyurved/Gulkand_1_300x500_apehke.jpg"
@@ -448,7 +417,7 @@ include("header.php");
 
         <!--ROSE SHARBAT Start -->
         <!-- Card Start-->
-        <form action="manage_cart.php" method="post">
+        <form action="manage_cart.php" method="post" class="product">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Rose_Front_yicmbv.jpg"
@@ -574,7 +543,7 @@ include("header.php");
 
         <!--KHUS SHARBAT Start -->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post">
+        <form action="manage_cart.php" method="post" class="product">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://dummyimage.com/430x300/000/d11e68&text=Khus+Sharbat" class="card-img-top img-fluid"
@@ -689,7 +658,7 @@ include("header.php");
 
         <!-- DISHWASH - LEMON & SALT Start -->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post">
+        <form action="manage_cart.php" method="post" class="product">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370603/shrinathAyurved/Dishwash_Gel_gsgwmc.jpg"
@@ -802,7 +771,7 @@ include("header.php");
 
         <!-- DISHWASH - NEEM & ALOEVERA Start -->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post">
+        <form action="manage_cart.php" method="post" class="product">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675694120/shrinathAyurved/DISHWASH_GREEN_FRONT_dcfsct.jpg"
@@ -912,25 +881,25 @@ include("header.php");
         <!-- DISHWASH - NEEM & ALOEVERA End -->
 
         <!-- HONEY Start-->
-        <form action="manage_cart.php" method="post">
-        <div class="col product">
-            <div class="card h-100 product">
-                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
-                    width=100% height=auto class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
-                <div class="card-body">
-                    <h5 class="card-title product-name">Honey</h5>
-                    <p class="card-text" id="honeyCard"></p>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#honeyBuy">Buy
-                        Now</button>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#honeyModal">Know
-                        More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="Honey">
-                    <input type="hidden" name="price" value="250">
+        <form action="manage_cart.php" method="post" class="product">
+            <div class="col product">
+                <div class="card h-100 product">
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
+                        width=100% height=auto class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <div class="card-body">
+                        <h5 class="card-title product-name">Honey</h5>
+                        <p class="card-text" id="honeyCard"></p>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#honeyBuy">Buy
+                            Now</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#honeyModal">Know
+                            More</button>
+                            <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Honey">
+                        <input type="hidden" name="price" value="250">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
         <div class="modal fade" id="honeyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -1031,7 +1000,7 @@ include("header.php");
 
         <!-- Rose Water Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post">
+        <form action="manage_cart.php" method="post" class="product">
         <div class="col product">
             <div class="card h-100 product">
                 <img src="https://dummyimage.com/430x300/000/d11e68&text=Rose+Water" class="card-img-top img-fluid4
