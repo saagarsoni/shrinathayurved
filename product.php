@@ -7,17 +7,13 @@ include("header.php");
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
         </script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
         </script>
@@ -26,70 +22,63 @@ include("header.php");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Products</title>
+    <title>Shrinath Ayurved</title>
     <style>
         .center {
             text-align: center;
             border: 3px solid green;
         }
     </style>
-    <!-- MDB -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+
     <!-- To Read Text File -->
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous">
 </head>
 
 <body>
-<header class="header py-3">
-    <div class="container">
-      <h3 class="text-center">Header</h3>
-    </div>
-  </header>
+    <header class="header py-3">
+        <div class="container">
+            <h3 class="text-center">Header</h3>
+        </div>
+    </header>
     <div class="row center py-20">
         <h2>Our Products</h2>
     </div>
 
-        <div class="input-group mb-5">
-            <input type="text" class="form-control" placeholder="Type to Search Any Product" aria-label="Recipient's username" aria-describedby="button-addon2" id="searchTextbox">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" 
-            onclick="clearText()">Clear</button>
-          </div>
+    <div class="input-group mb-5">
+        <input type="text" class="form-control" placeholder="Type to Search Any Product"
+            aria-label="Recipient's username" aria-describedby="button-addon2" id="searchTextbox">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clearText()">Clear</button>
+    </div>
 
-    <div class="row row-cols-1 row-cols-md-4 g-3 p-3 container-fluid d-flex">
+    <div class="row row-cols-1 row-cols-md-4 g-3 p-3">
         <!-- Chyawanprash Regular(500 gm) Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
-        <div class="col product">
-            <div class="card h-100 product">
-                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg"
-                    width="300" height="400" class="card-img-top img-fluid" alt="Chawanprash Regular" />
-                <div class="card-body">
-                    <h5 class="card-title product-name">Chyawanprash Regular(500 gm)</h5>
-                    <p class="card-text" id="chawanprashCard"></p>
-                    <button type="button" class="btn btn-info" data-toggle="modal"
-                        data-target="#chawanprashRegularBuy">Buy Now</button>
-                    <button type="button" class="btn btn-success" data-toggle="modal"
-                        data-target="#chawanprashRegular">Know More</button>
-                    <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="Chyawanprash Regular(500 gm)">
-                    <input type="hidden" name="price" value="150">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg"
+                        width="300" height="400" class="card-img-top img-fluid" alt="Chawanprash Regular" />
+                    <div class="card-body">
+                        <h5 class="card-title product-name">Chyawanprash Regular(500 gm)</h5>
+                        <p class="card-text" id="chawanprashCard"></p>
+                        <p class="card-text"><span>&#8377;</span> 180 for 500 gm</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#chawanprashRegularBuy">Buy Now</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal"
+                            data-target="#chawanprashRegular">Know More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Chyawanprash Regular(500 gm)">
+                        <input type="hidden" name="price" value="150">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="chawanprashRegular" tabindex="-1" role="dialog"
@@ -103,7 +92,7 @@ include("header.php");
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="accordion" id="accordionExample">
+                        <div class="accordion accordion-flush" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -188,24 +177,26 @@ include("header.php");
         <!-- Chyawanprash Regular(1 Kg) Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
-        <div class="col product">
-            <div class="card h-100 product">
-                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg"
-                    width="300" height="400" class="card-img-top img-fluid" alt="Chawanprash Regular" />
-                <div class="card-body">
-                    <h5 class="card-title product-name">Chyawanprash Regular (1 Kg)</h5>
-                    <p class="card-text" id="chawanprashCard1kg"></p>
-                    <button type="button" class="btn btn-info" data-toggle="modal"
-                        data-target="#chawanprashRegularBuy1Kg">Buy Now</button>
-                    <button type="button" class="btn btn-success" data-toggle="modal"
-                        data-target="#chawanprashGudWala">Know More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="Chyawanprash Regular(1Kg)">
-                    <input type="hidden" name="price" value="300">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg"
+                        width="300" height="400" class="card-img-top img-fluid" alt="Chawanprash Regular" />
+                    <div class="card-body">
+                        <h5 class="card-title product-name">Chyawanprash Regular (1 Kg)</h5>
+                        <p class="card-text" id="chawanprashCard1kg"></p>
+                        <p class="card-text"><span>&#8377;</span> 340 for 1 kg</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#chawanprashRegularBuy1Kg">Buy Now</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal"
+                            data-target="#chawanprashGudWala">Know More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Chyawanprash Regular(1Kg)">
+                        <input type="hidden" name="price" value="340">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="chawanprashGudWala" tabindex="-1" role="dialog"
@@ -219,7 +210,7 @@ include("header.php");
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="accordion" id="accordionExample">
+                        <div class="accordion accordion-flush" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -304,25 +295,27 @@ include("header.php");
         <!-- GULKAND Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
-        <div class="col product">
-            <div class="card h-100 product">
-                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675841213/shrinathAyurved/Gulkand_1_300x500_apehke.jpg"
-                    class="card-img-top" alt="Gulkand" />
-                <div class="card-body">
-                    <h6 class="card-title product-name">Gulkand</h6>
-                    <p class="card-text" id="gulkandCard"></p>
-                    <!-- <a href="#" class="btn btn-info align-content-center">Buy Now</a> -->
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#gulkandBuy">Buy
-                        Now</button>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#gulkand">Know
-                        More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="Gulkand">
-                    <input type="hidden" name="price" value="200">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675841213/shrinathAyurved/Gulkand_1_300x500_apehke.jpg"
+                    width="300" height="400" class="card-img-top img-fluid" alt="Gulkand" />
+                    <div class="card-body">
+                        <h6 class="card-title product-name">Gulkand</h6>
+                        <p class="card-text" id="gulkandCard"></p>
+                        <p class="card-text"><span>&#8377;</span> 190 for 500 gm</p>
+                        <!-- <a href="#" class="btn btn-info align-content-center">Buy Now</a> -->
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#gulkandBuy">Buy
+                            Now</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#gulkand">Know
+                            More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Gulkand">
+                        <input type="hidden" name="price" value="190">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="gulkand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -418,24 +411,27 @@ include("header.php");
         <!--ROSE SHARBAT Start -->
         <!-- Card Start-->
         <form action="manage_cart.php" method="post" class="product">
-        <div class="col product">
-            <div class="card h-100 product">
-                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Rose_Front_yicmbv.jpg"
-                    width="300" height=auto class="card-img-top img-fluid" alt="Los Angeles Skyscrapers" />
-                <div class="card-body">
-                    <h5 class="card-title product-name">Rose Sharbat</h5>
-                    <p class="card-text" id="roseSharbatCard">details for rose sharbat.</p>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#roseSharbatBuy">Buy
-                        Now</button>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#roseSharbat">Know
-                        More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="Rose Sharbat">
-                    <input type="hidden" name="price" value="100">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Rose_Front_yicmbv.jpg"
+                        width="300" height=400 class="card-img-top img-fluid" alt="Los Angeles Skyscrapers" />
+                    <div class="card-body">
+                        <h5 class="card-title product-name">Rose Sharbat</h5>
+                        <p class="card-text" id="roseSharbatCard">details for rose sharbat.</p>
+                        <p class="card-text"><span>&#8377;</span> 205 for 900 ml</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#roseSharbatBuy">Buy
+                            Now</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal"
+                            data-target="#roseSharbat">Know
+                            More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Rose Sharbat">
+                        <input type="hidden" name="price" value="205">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="roseSharbat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -461,6 +457,7 @@ include("header.php");
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <p id="roseSharbatDetail"></p>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -528,8 +525,8 @@ include("header.php");
                             <a href="https://www.jiomart.com/p/groceries/rose-sharbat/596815235" target="_blank"
                                 class="list-group-item list-group-item-action">Jio Mart</a>
                             <a href="https://www.1mg.com/otc/shrinath-ayurved-sharbat-e-khass-otc824293" target="_blank"
-                                class="list-group-item list-group-item-action"><img
-                                src="./images/TATA_1mg.svg" width="60px" height="27px" alt="Tata 1 Mg"></a>
+                                class="list-group-item list-group-item-action"><img src="./images/TATA_1mg.svg"
+                                    width="60px" height="27px" alt="Tata 1 Mg"></a>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -544,24 +541,27 @@ include("header.php");
         <!--KHUS SHARBAT Start -->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
-        <div class="col product">
-            <div class="card h-100 product">
-                <img src="https://dummyimage.com/430x300/000/d11e68&text=Khus+Sharbat" class="card-img-top img-fluid"
-                    alt="Hollywood Sign on The Hill" />
-                <div class="card-body">
-                    <h5 class="card-title product-name">Khass Sharbat</h5>
-                    <p class="card-text" id="khasCard">Khus Card</p>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#khusBuy">Buy
-                        Now</button>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#khasSharbat">Know
-                        More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="Khass Sharbat">
-                    <input type="hidden" name="price" value="100">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <img src="https://dummyimage.com/430x300/000/d11e68&text=Khus+Sharbat"
+                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <div class="card-body">
+                        <h5 class="card-title product-name">Khass Sharbat</h5>
+                        <p class="card-text" id="khasCard">Khus Card</p>
+                        <p class="card-text"><span>&#8377;</span> 205 for 900 ml</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#khusBuy">Buy
+                            Now</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal"
+                            data-target="#khasSharbat">Know
+                            More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Khass Sharbat">
+                        <input type="hidden" name="price" value="205">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="khasSharbat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -659,24 +659,26 @@ include("header.php");
         <!-- DISHWASH - LEMON & SALT Start -->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
-        <div class="col product">
-            <div class="card h-100 product">
-                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370603/shrinathAyurved/Dishwash_Gel_gsgwmc.jpg"
-                    width="100%" height="auto" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
-                <div class="card-body">
-                    <h5 class="card-title product-name">DISHWASH - LEMON & SALT</h5>
-                    <p class="card-text" id="dwLemonCard"></p>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dwLemonBuy">Buy
-                        Now</button>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dwLemon">Know
-                        More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="Dishwash - Lemon and Salt">
-                    <input type="hidden" name="price" value="80">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370603/shrinathAyurved/Dishwash_Gel_gsgwmc.jpg"
+                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <div class="card-body">
+                        <h5 class="card-title product-name">DISHWASH - LEMON & SALT</h5>
+                        <p class="card-text" id="dwLemonCard"></p>
+                        <p class="card-text"><span>&#8377;</span> 240 (Pack Of 2)</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dwLemonBuy">Buy
+                            Now</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dwLemon">Know
+                            More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Dishwash - Lemon and Salt">
+                        <input type="hidden" name="price" value="240">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="dwLemon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -772,24 +774,26 @@ include("header.php");
         <!-- DISHWASH - NEEM & ALOEVERA Start -->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
-        <div class="col product">
-            <div class="card h-100 product">
-                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675694120/shrinathAyurved/DISHWASH_GREEN_FRONT_dcfsct.jpg"
-                    width="100%" height="auto" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
-                <div class="card-body">
-                    <h5 class="card-title product-name">Neem and Aloevera Dishwash Liquid</h5>
-                    <p class="card-text" id="dwNeemCard"></p>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dwNeemBuy">Buy
-                        Now</button>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dwNeem">Know
-                        More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="Neem and Aloevera Dishwash Liquid">
-                    <input type="hidden" name="price" value="90">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675694120/shrinathAyurved/DISHWASH_GREEN_FRONT_dcfsct.jpg"
+                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <div class="card-body">
+                        <h5 class="card-title product-name">Neem and Aloevera Dishwash Liquid</h5>
+                        <p class="card-text" id="dwNeemCard"></p>
+                        <p class="card-text"><span>&#8377;</span> 240 (Pack Of 2)</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dwNeemBuy">Buy
+                            Now</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dwNeem">Know
+                            More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Neem and Aloevera Dishwash Liquid">
+                        <input type="hidden" name="price" value="240">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="dwNeem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -882,20 +886,23 @@ include("header.php");
 
         <!-- HONEY Start-->
         <form action="manage_cart.php" method="post" class="product">
-            <div class="col product">
+            <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
-                        width=100% height=auto class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Honey</h5>
+                        
                         <p class="card-text" id="honeyCard"></p>
+                        <p class="card-text"><span>&#8377;</span> 225 For 500 gm</p>
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#honeyBuy">Buy
                             Now</button>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#honeyModal">Know
                             More</button>
-                            <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Honey">
-                        <input type="hidden" name="price" value="250">
+                        <input type="hidden" name="price" value="225">
                     </div>
                 </div>
             </div>
@@ -1001,23 +1008,24 @@ include("header.php");
         <!-- Rose Water Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
-        <div class="col product">
-            <div class="card h-100 product">
-                <img src="https://dummyimage.com/430x300/000/d11e68&text=Rose+Water" class="card-img-top img-fluid4
-                " alt="Hollywood Sign on The Hill" />
-                <div class="card-body">
-                    <h5 class="card-title product-name">Rose Water</h5>
-                    <p class="card-text" id="roseWaterCard"></p>
-                    <a href="#" class="btn btn-info align-content-center">Buy Now</a>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#roseWater">Know
-                        More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="Rose Water">
-                    <input type="hidden" name="price" value="60">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <img src="https://dummyimage.com/430x300/000/d11e68&text=Rose+Water" width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <div class="card-body">
+                        <h5 class="card-title product-name">Rose Water</h5>
+                        <p class="card-text" id="roseWaterCard"></p>
+                        <p class="card-text"><span>&#8377;</span> 150 for 100 ml</p>
+                        <a href="#" class="btn btn-info align-content-center">Buy Now</a>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#roseWater">Know
+                            More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Rose Water">
+                        <input type="hidden" name="price" value="150">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
         <!-- Card End -->
         <!-- Modal Start -->
         <div class="modal fade" id="roseWater" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -1031,51 +1039,61 @@ include("header.php");
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="accordion" id="accordionExample">
+
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
+                                <h2 class="accordion-header" id="flush-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
                                         Details
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         <p id="roseWaterDetail"></p>
+                                        
                                     </div>
+                                    
                                 </div>
                             </div>
+
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
+                                <h2 class="accordion-header" id="flush-headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo">
                                         Ingredients
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         <p id="roseWaterIngredients"></p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Usage
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree">
+                                        Price
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-                                        <p id="dwLemonFacts"></p>
+                                        <span>&#8377;</span>150 for 100 ml each
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
+
+
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -1115,6 +1133,123 @@ include("header.php");
         <!-- Buy Now Ends -->
         <!-- Rose Water End-->
 
+
+        <!-- Potli Start-->
+        <!-- Card Start -->
+        <form action="manage_cart.php" method="post" class="product">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <img src="https://dummyimage.com/450x300/000/d11e68&text=Painkiller Potli" width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <div class="card-body">
+                        <h5 class="card-title product-name">Painkiller Potli</h5>
+                        <p class="card-text" id="roseWaterCard"></p>
+                        <a href="#" class="btn btn-info align-content-center">Buy Now</a>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#potli">Know
+                            More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Rose Water">
+                        <input type="hidden" name="price" value="60">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Card End -->
+        <!-- Modal Start -->
+        <div class="modal fade" id="potli" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Painkiller Potli</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                        Details
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Details Of Painkiller Potli</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo">
+                                        Ingredients
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                    Ingredients of painkiller Potli
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree">
+                                        Price
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Price Of Painkiller </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal End -->
+        <!-- Buy Now -->
+        <div class="modal" id="honeyBuy" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> -->
+                    <div class="modal-body">
+                        <!-- <p>Modal body text goes here.</p> -->
+                        <div class="list-group">
+                            <a href="https://www.amazon.in/HONEY-SHRINATH-AYURVED-REAL-HONEY/dp/B0BQN4JN9R"
+                                target="_blank" class="list-group-item list-group-item-action"
+                                aria-current="true">Amazon</a>
+                            <a href="https://www.flipkart.com/shrinath-ayurved-honey-pure-sure/p/itm91e5eea9c21e7?pid=HNYGHGB2DHU3NVB5"
+                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
+                            <a href="https://www.jiomart.com/p/groceries/honey-pure-sure/596769953" target="_blank"
+                                class="list-group-item list-group-item-action">Jio Mart</a>
+                            <a href="https://youtu.be/8nGSf5yrn4Q" target="_blank"
+                                class="list-group-item list-group-item-action">Watch On Youtube</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Buy Now Ends -->
+        <!-- Potli End-->
 
         <!-- Test Start-->
         <!-- <div class="col">
@@ -1206,7 +1341,7 @@ include("header.php");
     $("#roseWaterIngredients").load("./text/roseWaterIngredients.txt");
     $("#roseWaterFacts").load("./text/roseWaterFacts.txt");
 
-//Search Function
+    //Search Function
     window.onload = function () {
         const searchTextbox = document.querySelector('input[type="text"]');
         const products = document.querySelectorAll('.product');
@@ -1220,7 +1355,7 @@ include("header.php");
                 if (productName.includes(searchTerm)) {
                     product.style.display = 'block';
                 }
-                 else {
+                else {
                     product.style.display = 'none';
                 }
             }
@@ -1229,11 +1364,11 @@ include("header.php");
 
     //Clear Search Textbox Value
     function clearText() {
-    document.getElementById("searchTextbox").value = "";
-    location.reload();
-    document.getElementById("searchTextbox").focus();
-    
-  }
+        document.getElementById("searchTextbox").value = "";
+        location.reload();
+        document.getElementById("searchTextbox").focus();
+
+    }
 </script>
 
 </html>
