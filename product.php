@@ -23,6 +23,8 @@ include("header.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Shrinath Ayurved</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
     <style>
         .center {
             text-align: center;
@@ -133,6 +135,21 @@ include("header.php");
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <p id="chawanprashFacts"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="true"
+                                        aria-controls="collapseFour">
+                                        Price
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p class="card-text"><span>&#8377;</span> 180 for 500 gm</p>
                                     </div>
                                 </div>
                             </div>
@@ -254,6 +271,21 @@ include("header.php");
                                     </div>
                                 </div>
                             </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="true"
+                                        aria-controls="collapseFour">
+                                        Price
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p class="card-text"><span>&#8377;</span> 340 for 1 kg</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -298,7 +330,7 @@ include("header.php");
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675841213/shrinathAyurved/Gulkand_1_300x500_apehke.jpg"
-                    width="300" height="400" class="card-img-top img-fluid" alt="Gulkand" />
+                        width="300" height="400" class="card-img-top img-fluid" alt="Gulkand" />
                     <div class="card-body">
                         <h6 class="card-title product-name">Gulkand</h6>
                         <p class="card-text" id="gulkandCard"></p>
@@ -371,6 +403,21 @@ include("header.php");
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <p id="gulkandFacts"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="true"
+                                        aria-controls="collapseFour">
+                                        Price
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <span>&#8377;</span> 190 for 500 gm
                                     </div>
                                 </div>
                             </div>
@@ -457,7 +504,7 @@ include("header.php");
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <p id="roseSharbatDetail"></p>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -487,6 +534,21 @@ include("header.php");
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <p id="roseSharbatFacts"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="true"
+                                        aria-controls="collapseFour">
+                                        Price
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <span>&#8377;</span> 205 For 900 ml
                                     </div>
                                 </div>
                             </div>
@@ -543,8 +605,8 @@ include("header.php");
         <form action="manage_cart.php" method="post" class="product">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://dummyimage.com/430x300/000/d11e68&text=Khus+Sharbat"
-                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <img src="https://dummyimage.com/430x300/000/d11e68&text=Khus+Sharbat" width="300" height="400"
+                        class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Khass Sharbat</h5>
                         <p class="card-text" id="khasCard">Khus Card</p>
@@ -619,6 +681,21 @@ include("header.php");
                                     </div>
                                 </div>
                             </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="true"
+                                        aria-controls="collapseFour">
+                                        Price
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <span>&#8377;</span> 205 For 900 ml
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -662,7 +739,7 @@ include("header.php");
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370603/shrinathAyurved/Dishwash_Gel_gsgwmc.jpg"
-                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                        width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
                     <div class="card-body">
                         <h5 class="card-title product-name">DISHWASH - LEMON & SALT</h5>
                         <p class="card-text" id="dwLemonCard"></p>
@@ -736,6 +813,22 @@ include("header.php");
                                     </div>
                                 </div>
                             </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="true"
+                                        aria-controls="collapseFour">
+                                        Price
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <span>&#8377;</span> 240 (Pack Of 2)
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -777,11 +870,13 @@ include("header.php");
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675694120/shrinathAyurved/DISHWASH_GREEN_FRONT_dcfsct.jpg"
-                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                        width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Neem and Aloevera Dishwash Liquid</h5>
                         <p class="card-text" id="dwNeemCard"></p>
-                        <p class="card-text"><span>&#8377;</span> 240 (Pack Of 2)</p>
+                        <p class="card-text">
+                            <span>&#8377;</span> 240 (Pack Of 2)
+                        </p>
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dwNeemBuy">Buy
                             Now</button>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dwNeem">Know
@@ -836,6 +931,23 @@ include("header.php");
                                     </div>
                                 </div>
                             </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="true"
+                                        aria-controls="collapseFour">
+                                        Price
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p class="card-text">
+                                            <span>&#8377;</span> 240 (Pack Of 2)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                             <!-- <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -885,14 +997,53 @@ include("header.php");
         <!-- DISHWASH - NEEM & ALOEVERA End -->
 
         <!-- HONEY Start-->
+        <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
-                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
+                                    class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Honey Regular</h5>
+                                    <!-- <p>Some representative placeholder content for the first slide.</p> -->
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675692677/shrinathAyurved/SQUEEZY_FRONT_hzqoku.jpg"
+                                    class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Honey Squeezy</h5>
+                                    <!-- <p>Some representative placeholder content for the second slide.</p> -->
+                                </div>
+                            </div>
+
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <!-- <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
+                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" /> -->
                     <div class="card-body">
                         <h5 class="card-title product-name">Honey</h5>
-                        
+
                         <p class="card-text" id="honeyCard"></p>
                         <p class="card-text"><span>&#8377;</span> 225 For 500 gm</p>
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#honeyBuy">Buy
@@ -907,6 +1058,8 @@ include("header.php");
                 </div>
             </div>
         </form>
+        <!-- Card End -->
+        <!-- Modal Start -->
         <div class="modal fade" id="honeyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -963,6 +1116,21 @@ include("header.php");
                                     </div>
                                 </div>
                             </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="true"
+                                        aria-controls="collapseFour">
+                                        Price
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <span>&#8377;</span> 225 For 500 gm
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- End Example Code -->
                     </div>
@@ -974,7 +1142,7 @@ include("header.php");
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now -->
+        <!-- Buy Now Start-->
         <div class="modal" id="honeyBuy" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -1010,7 +1178,8 @@ include("header.php");
         <form action="manage_cart.php" method="post" class="product">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://dummyimage.com/430x300/000/d11e68&text=Rose+Water" width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <img src="https://dummyimage.com/430x300/000/d11e68&text=Rose+Water" width="300" height="400"
+                        class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Rose Water</h5>
                         <p class="card-text" id="roseWaterCard"></p>
@@ -1053,9 +1222,9 @@ include("header.php");
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         <p id="roseWaterDetail"></p>
-                                        
+
                                     </div>
-                                    
+
                                 </div>
                             </div>
 
@@ -1086,7 +1255,7 @@ include("header.php");
                                 <div id="flush-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-                                        <span>&#8377;</span>150 for 100 ml each
+                                        <span>&#8377;</span>150 for 100 ml
                                     </div>
                                 </div>
                             </div>
@@ -1133,23 +1302,24 @@ include("header.php");
         <!-- Buy Now Ends -->
         <!-- Rose Water End-->
 
-
-        <!-- Potli Start-->
+        <!-- Pottali Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://dummyimage.com/450x300/000/d11e68&text=Painkiller Potli" width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <img src="https://dummyimage.com/450x300/000/d11e68&text=Painkiller Potli" width="300" height="400"
+                        class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Painkiller Potli</h5>
-                        <p class="card-text" id="roseWaterCard"></p>
+                        <p class="card-text" id="pottaliCard"></p>
+                        <p class="card-text"><span>&#8377;</span> 350 for 250 gm</p>
                         <a href="#" class="btn btn-info align-content-center">Buy Now</a>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#potli">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
-                        <input type="hidden" name="item_name" value="Rose Water">
-                        <input type="hidden" name="price" value="60">
+                        <input type="hidden" name="item_name" value="pottali">
+                        <input type="hidden" name="price" value="350">
                     </div>
                 </div>
             </div>
@@ -1178,7 +1348,9 @@ include("header.php");
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">Details Of Painkiller Potli</div>
+                                    <div class="accordion-body">
+                                        <p id="pottaliDetail">Details</p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -1187,13 +1359,13 @@ include("header.php");
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                         aria-controls="flush-collapseTwo">
-                                        Ingredients
+                                        Facts
                                     </button>
                                 </h2>
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-                                    Ingredients of painkiller Potli
+                                        <p id="pottaliFacts">Facts</p>
                                     </div>
                                 </div>
                             </div>
@@ -1208,7 +1380,9 @@ include("header.php");
                                 </h2>
                                 <div id="flush-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">Price Of Painkiller </div>
+                                    <div class="accordion-body">
+                                        <span>&#8377;</span>350 for 250 gm
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1249,7 +1423,7 @@ include("header.php");
             </div>
         </div>
         <!-- Buy Now Ends -->
-        <!-- Potli End-->
+        <!-- Pottali End-->
 
         <!-- Test Start-->
         <!-- <div class="col">
@@ -1283,7 +1457,7 @@ include("header.php");
 </body>
 <!-- To Load Text In Product Description -->
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
 <script>
 
     $("#testText").load("./text/chawanprashIntro.txt");
@@ -1340,6 +1514,11 @@ include("header.php");
     $("#roseWaterDetail").load("./text/roseWaterDetail.txt");
     $("#roseWaterIngredients").load("./text/roseWaterIngredients.txt");
     $("#roseWaterFacts").load("./text/roseWaterFacts.txt");
+
+    //Pottali
+    $("#pottaliCard").load("text/pottaliCard.txt");
+    $("#pottaliDetail").load("./text/pottaliDetail.txt");
+    $("#pottaliFacts").load("./text/pottaliFacts.txt");
 
     //Search Function
     window.onload = function () {
