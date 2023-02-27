@@ -81,9 +81,6 @@ include("header.php");
         <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1677238765/shrinathAyurved/Web2_t0zhbl.jpg"
         class="d-block w-100 img-fluid" >
       </div>
-      <!-- <div class="carousel-item">
-        <img src="https://picsum.photos/1950/500?random=3" class="d-block w-100 img-fluid" >
-      </div> -->
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
       data-bs-slide="prev">
@@ -111,13 +108,12 @@ include("header.php");
   </div>
   </div>
   </div>
-<hr>
   <!-- About Us Start -->
-  <div class="container" id="aboutus1">
-    <div class="row h-100 align-items-center">
+  <div class="container mt-5" id="aboutus1">
+    <div class="row h-20 align-items-center">
       <div class="col-lg-12 col-sm-3">
         <h1 class="display-5 fs-1">About Us</h1>
-        <p class="text-success mt-2 fw-light" id="aboutus"></p>
+        <p class="text-success fw-light mt-3" id="aboutus"></p>
       </div>
     </div>
     <hr>

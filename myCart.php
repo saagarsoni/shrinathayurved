@@ -96,12 +96,12 @@ session_start();
                      <textarea name="address" class="form-control" placeholder="Enter Full Address" cols="30" rows="10" Required></textarea>
                   </div>
 
-                  <div class="form-check">
+                  <!-- <div class="form-check">
                      <input class="form-check-input" name="pay_mode" value="COD" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                      <label class="form-check-label" for="flexRadioDefault2">
                         Cash On Delivery
                      </label>
-                  </div>
+                  </div> -->
                   <br>
                   <button class="btn btn-primary btn-block" name="purchase">Make Purchase</button>
                </form>

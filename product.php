@@ -57,18 +57,18 @@ include("header.php");
         <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clearText()">Clear</button>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-4 g-3 p-3">
+    <div class="row row-cols-md-5">
         <!-- Chyawanprash Regular(500 gm) Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg"
-                        width="300" height="400" class="card-img-top img-fluid" alt="Chawanprash Regular" />
+                    height="500" class="card-img-top img-responsive" alt="Chawanprash Regular" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash Regular(500 gm)</h5>
                         <p class="card-text" id="chawanprashCard"></p>
-                        <p class="card-text"><span>&#8377;</span> 180 for 500 gm</p>
+                        <p class="card-text"><b> <span>&#8377;</span> 180 for 500 gm</b> </p>
                         <button type="button" class="btn btn-info" data-toggle="modal"
                             data-target="#chawanprashRegularBuy">Buy Now</button>
                         <button type="button" class="btn btn-success" data-toggle="modal"
@@ -197,11 +197,11 @@ include("header.php");
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg"
-                        width="300" height="400" class="card-img-top img-fluid" alt="Chawanprash Regular" />
+                    height="500" class="card-img-top img-responsive" alt="Chawanprash Regular" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash Regular (1 Kg)</h5>
                         <p class="card-text" id="chawanprashCard1kg"></p>
-                        <p class="card-text"><span>&#8377;</span> 340 for 1 kg</p>
+                        <p class="card-text"><b> <span>&#8377;</span> 340 for 1 kg</b> </p>
                         <button type="button" class="btn btn-info" data-toggle="modal"
                             data-target="#chawanprashRegularBuy1Kg">Buy Now</button>
                         <button type="button" class="btn btn-success" data-toggle="modal"
@@ -330,11 +330,11 @@ include("header.php");
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675841213/shrinathAyurved/Gulkand_1_300x500_apehke.jpg"
-                        width="300" height="400" class="card-img-top img-fluid" alt="Gulkand" />
+                    height="500" class="card-img-top img-responsive" alt="Gulkand" />
                     <div class="card-body">
                         <h6 class="card-title product-name">Gulkand</h6>
                         <p class="card-text" id="gulkandCard"></p>
-                        <p class="card-text"><span>&#8377;</span> 190 for 500 gm</p>
+                        <p class="card-text"><b> <span>&#8377;</span> 190 for 500 gm</b> </p>
                         <!-- <a href="#" class="btn btn-info align-content-center">Buy Now</a> -->
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#gulkandBuy">Buy
                             Now</button>
@@ -461,11 +461,11 @@ include("header.php");
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Rose_Front_yicmbv.jpg"
-                        width="300" height=400 class="card-img-top img-fluid" alt="Los Angeles Skyscrapers" />
+                    height="500" class="card-img-top img-responsive"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Rose Sharbat</h5>
                         <p class="card-text" id="roseSharbatCard">details for rose sharbat.</p>
-                        <p class="card-text"><span>&#8377;</span> 205 for 900 ml</p>
+                        <p class="card-text"><b> <span>&#8377;</span> 205 for 900 ml</b> </p>
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#roseSharbatBuy">Buy
                             Now</button>
                         <button type="button" class="btn btn-success" data-toggle="modal"
@@ -610,7 +610,7 @@ include("header.php");
                     <div class="card-body">
                         <h5 class="card-title product-name">Khass Sharbat</h5>
                         <p class="card-text" id="khasCard">Khus Card</p>
-                        <p class="card-text"><span>&#8377;</span> 205 for 900 ml</p>
+                        <p class="card-text"><b> <span>&#8377;</span> 205 for 900 ml</b> </p>
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#khusBuy">Buy
                             Now</button>
                         <button type="button" class="btn btn-success" data-toggle="modal"
@@ -692,7 +692,7 @@ include("header.php");
                                 <div id="collapseFour" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <span>&#8377;</span> 205 For 900 ml
+                                    <b> <span>&#8377;</span>205 For 900 ml</b>
                                     </div>
                                 </div>
                             </div>
@@ -739,11 +739,11 @@ include("header.php");
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370603/shrinathAyurved/Dishwash_Gel_gsgwmc.jpg"
-                        width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                         height="500" class="card-img-top img-responsive" alt="Hollywood Sign on The Hill" />
                     <div class="card-body">
                         <h5 class="card-title product-name">DISHWASH - LEMON & SALT</h5>
                         <p class="card-text" id="dwLemonCard"></p>
-                        <p class="card-text"><span>&#8377;</span> 240 (Pack Of 2)</p>
+                        <p class="card-text"><b> <span>&#8377;</span> 240 (Pack Of 2)</b> </p>
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dwLemonBuy">Buy
                             Now</button>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dwLemon">Know
@@ -870,12 +870,12 @@ include("header.php");
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675694120/shrinathAyurved/DISHWASH_GREEN_FRONT_dcfsct.jpg"
-                        width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                         height="500" class="card-img-top img-responsive" alt="Hollywood Sign on The Hill" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Neem and Aloevera Dishwash Liquid</h5>
                         <p class="card-text" id="dwNeemCard"></p>
                         <p class="card-text">
-                            <span>&#8377;</span> 240 (Pack Of 2)
+                        <b> <span>&#8377;</span> 240 (Pack Of 2)</b> 
                         </p>
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dwNeemBuy">Buy
                             Now</button>
@@ -1012,19 +1012,16 @@ include("header.php");
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
-                                    class="d-block w-100" alt="...">
+                                height="500" class="card-img-top img-responsive">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Regular</h5>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675692677/shrinathAyurved/SQUEEZY_FRONT_hzqoku.jpg"
-                                    class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Honey Squeezy</h5>
-                                    <!-- <p>Some representative placeholder content for the second slide.</p> -->
-                                </div>
+                            <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
+                                <img src="https://dummyimage.com/600x400/000/e01979&text=Youtube" height="500" class="card-img-top img-responsive">
+                            </a>
                             </div>
 
                         </div>
@@ -1039,20 +1036,18 @@ include("header.php");
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <!-- <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
-                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" /> -->
+                    
                     <div class="card-body">
                         <h5 class="card-title product-name">Honey</h5>
-
                         <p class="card-text" id="honeyCard"></p>
-                        <p class="card-text"><span>&#8377;</span> 225 For 500 gm</p>
+                        <p class="card-text"><b> <span>&#8377;</span> 225 For 500 gm</b></p>
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#honeyBuy">Buy
                             Now</button>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#honeyModal">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
-                        <input type="hidden" name="item_name" value="Honey">
+                        <input type="hidden" name="item_name" value="Honey Regular">
                         <input type="hidden" name="price" value="225">
                     </div>
                 </div>
@@ -1173,17 +1168,216 @@ include("header.php");
         <!-- Buy Now Ends -->
         <!-- HONEY End-->
 
+
+        <!-- HONEY Squeezy Start-->
+        <!-- Card Start -->
+        <form action="manage_cart.php" method="post" class="product">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <div id="carouselExampleCaptions1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675692677/shrinathAyurved/SQUEEZY_FRONT_hzqoku.jpg"
+                                height="500" class="card-img-top img-responsive">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Honey Squeezy</h5>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                            <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
+                                <img src="https://dummyimage.com/600x400/000/e01979&text=Youtube" height="500" class="card-img-top img-responsive">
+                            </a>
+                            </div>
+
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions1"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions1"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <!-- <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
+                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" /> -->
+                    <div class="card-body">
+                        <h5 class="card-title product-name">Honey</h5>
+                        <p class="card-text" id="honeyCard1"></p>
+                        
+                        <p class="card-text"><b> <span>&#8377;</span> 240 (Pack Of 2 [125 gm each])</b> </p>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#honeyBuy">Buy
+                            Now</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#honeyModal1">Know
+                            More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Honey Squeezy">
+                        <input type="hidden" name="price" value="240">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Card End -->
+
+        <!-- Youtube Modal Start-->
+        <div class="modal fade" id="honeyYoutubeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Shrinath Ayurved Honey</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <iframe width="100%" height="500" src="https://www.youtube.com/embed/8nGSf5yrn4Q" title="SHRINATH AYURVED HONEY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Youtube Modal End-->
+
+
+
+        <!-- Modal Start -->
+        <div class="modal fade" id="honeyModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Honey</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Example Code -->
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Details
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p id="honeyDetail1"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Ingredients
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p id="honeyIngredients1"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="true"
+                                        aria-controls="collapseThree">
+                                        Nutritional Facts
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p id="honeyFacts1"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="true"
+                                        aria-controls="collapseFour">
+                                        Price
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    <span>&#8377;</span> 240 (Pack Of 2)[125 gm each]
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Example Code -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal End -->
+        <!-- Buy Now Start-->
+        <div class="modal" id="honeyBuy" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> -->
+                    <div class="modal-body">
+                        <!-- <p>Modal body text goes here.</p> -->
+                        <div class="list-group">
+                            <a href="https://www.amazon.in/HONEY-SHRINATH-AYURVED-REAL-HONEY/dp/B0BQN4JN9R"
+                                target="_blank" class="list-group-item list-group-item-action"
+                                aria-current="true">Amazon</a>
+                            <a href="https://www.flipkart.com/shrinath-ayurved-honey-pure-sure/p/itm91e5eea9c21e7?pid=HNYGHGB2DHU3NVB5"
+                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
+                            <a href="https://www.jiomart.com/p/groceries/honey-pure-sure/596769953" target="_blank"
+                                class="list-group-item list-group-item-action">Jio Mart</a>
+                            <a href="https://youtu.be/8nGSf5yrn4Q" target="_blank"
+                                class="list-group-item list-group-item-action">Watch On Youtube</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Buy Now Ends -->
+        <!-- HONEY Squeezy End-->
+
+
         <!-- Rose Water Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://dummyimage.com/430x300/000/d11e68&text=Rose+Water" width="300" height="400"
-                        class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <img src="https://dummyimage.com/300x500/000/d11e68&text=Rose+Water" 
+                    height="500" class="card-img-top img-responsive" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Rose Water</h5>
                         <p class="card-text" id="roseWaterCard"></p>
-                        <p class="card-text"><span>&#8377;</span> 150 for 100 ml</p>
+                        <p class="card-text"><b> <span>&#8377;</span> 150 for 100 ml</b></p>
                         <a href="#" class="btn btn-info align-content-center">Buy Now</a>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#roseWater">Know
                             More</button>
@@ -1255,7 +1449,7 @@ include("header.php");
                                 <div id="flush-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-                                        <span>&#8377;</span>150 for 100 ml
+                                         <span>&#8377;</span>150 for 100 ml
                                     </div>
                                 </div>
                             </div>
@@ -1307,12 +1501,12 @@ include("header.php");
         <form action="manage_cart.php" method="post" class="product">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://dummyimage.com/450x300/000/d11e68&text=Painkiller Potli" width="300" height="400"
-                        class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Potli_qevtok.jpg" width="300" height="400px"
+                    height="500" class="card-img-top img-responsive" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Painkiller Potli</h5>
                         <p class="card-text" id="pottaliCard"></p>
-                        <p class="card-text"><span>&#8377;</span> 350 for 250 gm</p>
+                        <p class="card-text"><b> <span>&#8377;</span> 350 for 250 gm</b> </p>
                         <a href="#" class="btn btn-info align-content-center">Buy Now</a>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#potli">Know
                             More</button>
@@ -1460,6 +1654,29 @@ include("header.php");
 <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
 <script>
 
+    // $(document).ready(function()
+    // {
+    //     $(".btn-close").click(function()
+    //     {
+    //         $("#honeyYoutubeModal").empty();
+    //     });
+    // });
+
+
+            $("#honeyYoutubeModal").on("hidden.bs.modal", function() {
+
+        var _this = this,
+            youtubeSrc = $(_this).find("iframe").attr("src");
+
+        if($(_this).find("iframe").length > 0){                     // checking if there is iframe only then it will go to next level
+            $(_this).find("iframe").attr("src", "");                // removing src on runtime to stop video
+            $(_this).find("iframe").attr("src", youtubeSrc);        // again passing youtube src value to iframe
+        }
+        });
+
+
+    // $(".xzoom, .xzoom-gallery").xzoom({tint: '#333', Xoffset: 5});
+
     $("#testText").load("./text/chawanprashIntro.txt");
     $("#gulkand").load("./text/gulkand.txt");
 
@@ -1509,6 +1726,11 @@ include("header.php");
     $("#honeyIngredients").load("./text/honeyIngredients.txt");
     $("#honeyFacts").load("./text/honeyFacts.txt");
 
+    $("#honeyCard1").load("./text/honeyCard.txt");
+    $("#honeyDetail1").load("./text/honeyDetail.txt");
+    $("#honeyIngredients1").load("./text/honeyIngredients.txt");
+    $("#honeyFacts1").load("./text/honeyFacts.txt");
+
     //Rose Water
     $("#roseWaterCard").load("./text/roseWaterCard.txt");
     $("#roseWaterDetail").load("./text/roseWaterDetail.txt");
@@ -1549,5 +1771,4 @@ include("header.php");
 
     }
 </script>
-
 </html>

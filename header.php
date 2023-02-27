@@ -20,14 +20,15 @@ session_start();
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="./#aboutus1">About Us</a>
+          </li>
+        <li class="nav-item">
             <a class="nav-link" href="product.php">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./#contactUsPage">Contact Us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./#aboutus1">About Us</a>
-          </li>
+          
         
       </ul>
       <div>
