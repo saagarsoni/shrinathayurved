@@ -7,7 +7,7 @@ include("header.php");
 <html lang="en">
 
 <head>
-<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   <script type="text/javascript" src="./js/index.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -27,7 +27,7 @@ include("header.php");
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-  
+
   <!-- contactUs CSS -->
   <link rel="stylesheet" type="text/css" media="screen" href="./css/contactUs.css" />
 
@@ -63,7 +63,7 @@ include("header.php");
   <!-- Header End -->
 
   <!-- Image Carousel Start-->
-  <div id="carouselExampleIndicators" class="carousel slide py-2" data-bs-ride="carousel" >
+  <div id="carouselExampleIndicators" class="carousel slide py-2" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
@@ -72,14 +72,14 @@ include("header.php");
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
         aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner" >
+    <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1677238765/shrinathAyurved/Web1_xghx3j.jpg" 
-        class="d-block w-100 img-fluid">
+        <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1677238765/shrinathAyurved/Web1_xghx3j.jpg"
+          class="d-block w-100 img-fluid">
       </div>
       <div class="carousel-item">
         <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1677238765/shrinathAyurved/Web2_t0zhbl.jpg"
-        class="d-block w-100 img-fluid" >
+          class="d-block w-100 img-fluid">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -103,7 +103,8 @@ include("header.php");
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active p-1">
-          <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675261473/shrinathAyurved/Final_eoulcc.jpg" class=" img-fluid" alt="...">
+          <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675261473/shrinathAyurved/Final_eoulcc.jpg"
+            class=" img-fluid" alt="...">
   </a>
   </div>
   </div>
@@ -118,7 +119,7 @@ include("header.php");
     </div>
     <hr>
   </div>
-<!-- About Us End -->
+  <!-- About Us End -->
 
   <!-- Contact Us Start-->
   <div class="container" id="contactUsPage">
@@ -129,25 +130,31 @@ include("header.php");
           width="100%" height="520" style="border:0;" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      
+
       <div class="col-sm-6">
         <form onsubmit="" action="./php/sendEmail.php" method="post">
-        <h1 class="font-weight-light mt-2">Quick Contact</h1>
-        <div class="mb-3">
-          <input type="text" name="name" id="name" class="form-control" id="formGroupExampleInput" placeholder="Name" required>
-        </div>
-        <div class="mb-3">
-          <input type="text" id="email" name="email" class="form-control" id="formGroupExampleInput2" placeholder="Email" required>
-        </div>
-        <div class="mb-3">
-          <input type="text" id="phone"  name="phone" class="form-control" id="numeric-input" placeholder="Phone Number" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  onkeypress="validateInput(event)" required>
-        </div>
-        <div class="mb-3">
-          <textarea name="message" cols="20" class="form-control" rows="9" placeholder="Enter Message" required ></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+          <h1 class="font-weight-light mt-2">Quick Contact</h1>
+          <div class="mb-3">
+            <input type="text" name="name" id="name" class="form-control" id="formGroupExampleInput" placeholder="Name"
+              required>
+          </div>
+          <div class="mb-3">
+            <input type="text" id="email" name="email" class="form-control" id="formGroupExampleInput2"
+              placeholder="Email" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" id="phone" name="phone" class="form-control" id="numeric-input"
+              placeholder="Phone Number" maxlength="10"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              onkeypress="validateInput(event)" required>
+          </div>
+          <div class="mb-3">
+            <textarea name="message" cols="20" class="form-control" rows="9" placeholder="Enter Message"
+              required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit</button>
       </div>
-    </form>
+      </form>
       <div class="col-sm-12">
         <div class="card mt-4 border-0 mb-4">
           <div class="row">
@@ -194,14 +201,14 @@ include("header.php");
       </div>
     </div>
   </div>
-<!-- Contact Us End-->
-<marquee width="100%" behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();">  
-Our Products are also available at 
-<a href="https://www.flipkart.com/" target="_blank">Flipkart</a>&nbsp;&nbsp;
-<a href="https://www.amazon.com/" target="_blank">Amazon</a>&nbsp;&nbsp;
-<a href="https://www.bigbasket.com/" target="_blank">Big Basket</a>&nbsp;&nbsp;
-<a href="https://www.1mg.com/search/all?name=shrinath%20ayurved" target="_blank">Tata 1 Mg</a>
-</marquee>  
+  <!-- Contact Us End-->
+  <marquee width="100%" behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();">
+    Our Products are also available at
+    <a href="https://www.flipkart.com/" target="_blank">Flipkart</a>&nbsp;&nbsp;
+    <a href="https://www.amazon.com/" target="_blank">Amazon</a>&nbsp;&nbsp;
+    <a href="https://www.bigbasket.com/" target="_blank">Big Basket</a>&nbsp;&nbsp;
+    <a href="https://www.1mg.com/search/all?name=shrinath%20ayurved" target="_blank">Tata 1 Mg</a>
+  </marquee>
   <!-- Footer -->
   <footer class="text-center text-lg-start bg-light text-muted">
     <!-- Copyright -->
@@ -213,27 +220,27 @@ Our Products are also available at
   </footer>
   <!-- Footer -->
 
-<!-- Script Start -->
-<script src="https://smtpjs.com/v3/smtp.js">
-</script>
+  <!-- Script Start -->
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
   <script>
     $("#aboutus").load("./text/aboutus");
 
-    function sendEmail11()
-    {
-            Email.send({
-            Host : "smtp.gmail.com",
-            Username : "saagarsoni3@gmail.com",
-            Password : "xkvlxpbprueqxmbt",
-            To : "saagarsoniworkgmail.com",
-            From : document.getElementById("email").value,
-            Subject : "New Contact Form Enquiry",
-            Body : document.getElementById("message").value,
-        }).then(
-          message => alert(message)
-        );
+    function sendEmail11() {
+      Email.send({
+        Host: "smtp.gmail.com",
+        Username: "saagarsoni3@gmail.com",
+        Password: "xkvlxpbprueqxmbt",
+        To: "saagarsoniworkgmail.com",
+        From: document.getElementById("email").value,
+        Subject: "New Contact Form Enquiry",
+        Body: document.getElementById("message").value,
+      }).then(
+        message => alert(message)
+      );
     }
   </script>
   <!-- Script End -->
 </body>
+
 </html>

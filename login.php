@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
 
   <title>Shrinath Ayurved</title>
   <script src="./js/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
+
 <body>
   <!-- Login Start -->
   <div style="display: flex; align-items: center; height: 100vh;">
@@ -52,7 +56,7 @@
   <!-- Choose Modal Start-->
   <div class="modal fade" id="optionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" >
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Please Choose Registration Type</h1>
@@ -68,126 +72,131 @@
     </div>
   </div>
   <!-- Choose Modal End-->
-  
+
   <!-- Customer Modal Start-->
   <!-- <div > -->
-    <div class="container" style=" margin: auto;">
-      <div class="row">
-        <div class="modal fade modal-xl" id="customerRegistration" data-bs-backdrop="static" data-bs-keyboard="false"
-          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Registration</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-6 col-sm-12 mx-auto">
-                      <form action="./php/register.php" method="post" autocomplete="off" name="custReg" >
-                        <h2>Customer Registration</h2>
-                        <div class="form-group">
-                          <label>User Name</label>
-                          <input type="text" class="form-control" name="userName" aria-describedby="emailHelp"
-                            placeholder="Enter User Name" required>
-                          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+  <div class="container" style=" margin: auto;">
+    <div class="row">
+      <div class="modal fade modal-xl" id="customerRegistration" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Registration</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 col-sm-12 mx-auto">
+                    <form action="./php/register.php" method="post" autocomplete="off" name="custReg">
+                      <h2>Customer Registration</h2>
+                      <div class="form-group">
+                        <label>User Name</label>
+                        <input type="text" class="form-control" name="userName" aria-describedby="emailHelp"
+                          placeholder="Enter User Name" required>
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                      </div>
+                      <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" class="form-control" name="emailId" aria-describedby="emailHelp" required
+                          title="Please Enter a Valid Email Idukki">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                      </div>
+                      <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" maxlength="10"
+                          placeholder="Enter 10 Digit Mobile Number " pattern="[6-9]\d{9}"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required
+                          title="Please Enter a Valid Phone Number">
+                        <div style="text-align: left;"><span id="myspan" style="text-align: left; color:red"></span>
                         </div>
-                        <div class="form-group">
-                          <label>Email address</label>
-                          <input type="email" class="form-control" name="emailId" aria-describedby="emailHelp" required title="Please Enter a Valid Email Idukki">
-                          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                        </div>
-                        <div class="form-group">
-                          <label>Mobile Number</label>
-                          <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" 
-                            maxlength="10" placeholder="Enter 10 Digit Mobile Number " pattern="[6-9]\d{9}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required title="Please Enter a Valid Phone Number">
-                            <div style="text-align: left;"><span id="myspan" style="text-align: left; color:red"></span></div>
-                        </div>
-  
-                        <div class="form-group">
-                          <label>Address</label>
-                          <textarea class="form-control" placeholder="Enter Address" name="addr"
-                            style="height: 100px" required title="Please Enter Address"></textarea>
-                        </div>
-  
-                        <div class="row g-2 mt-3">
-                          <div class="col-md">
-                            <div class="form-floating">
-                              <select class="form-select" name="state" id="state" required title="Please Select a State">
-                                <option value="">Select State</option>
-                                <option value="Andra Pradesh">Andra Pradesh</option>
-                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                <option value="Assam">Assam</option>
-                                <option value="Bihar">Bihar</option>
-                                <option value="Chhattisgarh">Chhattisgarh</option>
-                                <option value="Goa">Goa</option>
-                                <option value="Gujarat">Gujarat</option>
-                                <option value="Haryana">Haryana</option>
-                                <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                                <option value="Jharkhand">Jharkhand</option>
-                                <option value="Karnataka">Karnataka</option>
-                                <option value="Kerala">Kerala</option>
-                                <option value="Madya Pradesh">Madya Pradesh</option>
-                                <option value="Maharashtra">Maharashtra</option>
-                                <option value="Manipur">Manipur</option>
-                                <option value="Meghalaya">Meghalaya</option>
-                                <option value="Mizoram">Mizoram</option>
-                                <option value="Nagaland">Nagaland</option>
-                                <option value="Orissa">Orissa</option>
-                                <option value="Punjab">Punjab</option>
-                                <option value="Rajasthan">Rajasthan</option>
-                                <option value="Sikkim">Sikkim</option>
-                                <option value="Tamil Nadu">Tamil Nadu</option>
-                                <option value="Telangana">Telangana</option>
-                                <option value="Tripura">Tripura</option>
-                                <option value="Uttaranchal">Uttaranchal</option>
-                                <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                <option value="West Bengal">West Bengal</option>
-                                <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
-                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                                <option value="Chandigarh">Chandigarh</option>
-                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-                                <option value="Daman and Diu">Daman and Diu</option>
-                                <option value="Delhi">Delhi</option>
-                                <option value="Lakshadeep">Lakshadeep</option>
-                                <option value="Pondicherry">Pondicherry</option>
-                              </select>
-                            </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label>Address</label>
+                        <textarea class="form-control" placeholder="Enter Address" name="addr" style="height: 100px"
+                          required title="Please Enter Address"></textarea>
+                      </div>
+
+                      <div class="row g-2 mt-3">
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <select class="form-select" name="state" id="state" required title="Please Select a State">
+                              <option value="">Select State</option>
+                              <option value="Andra Pradesh">Andra Pradesh</option>
+                              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                              <option value="Assam">Assam</option>
+                              <option value="Bihar">Bihar</option>
+                              <option value="Chhattisgarh">Chhattisgarh</option>
+                              <option value="Goa">Goa</option>
+                              <option value="Gujarat">Gujarat</option>
+                              <option value="Haryana">Haryana</option>
+                              <option value="Himachal Pradesh">Himachal Pradesh</option>
+                              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                              <option value="Jharkhand">Jharkhand</option>
+                              <option value="Karnataka">Karnataka</option>
+                              <option value="Kerala">Kerala</option>
+                              <option value="Madya Pradesh">Madya Pradesh</option>
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Manipur">Manipur</option>
+                              <option value="Meghalaya">Meghalaya</option>
+                              <option value="Mizoram">Mizoram</option>
+                              <option value="Nagaland">Nagaland</option>
+                              <option value="Orissa">Orissa</option>
+                              <option value="Punjab">Punjab</option>
+                              <option value="Rajasthan">Rajasthan</option>
+                              <option value="Sikkim">Sikkim</option>
+                              <option value="Tamil Nadu">Tamil Nadu</option>
+                              <option value="Telangana">Telangana</option>
+                              <option value="Tripura">Tripura</option>
+                              <option value="Uttaranchal">Uttaranchal</option>
+                              <option value="Uttar Pradesh">Uttar Pradesh</option>
+                              <option value="West Bengal">West Bengal</option>
+                              <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                              <option value="Chandigarh">Chandigarh</option>
+                              <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                              <option value="Daman and Diu">Daman and Diu</option>
+                              <option value="Delhi">Delhi</option>
+                              <option value="Lakshadeep">Lakshadeep</option>
+                              <option value="Pondicherry">Pondicherry</option>
+                            </select>
                           </div>
-                          <div class="col-md">
-                            <div class="form-floating">
-                              <select class="form-select" name="district" id="district" required title="Please Select a District">
+                        </div>
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <select class="form-select" name="district" id="district" required
+                              title="Please Select a District">
                               <option value="">Select District</option>
-                              </select>
-                            </div>
+                            </select>
                           </div>
                         </div>
-  
-                        <div class="form-group">
-                          <label>Password</label>
-                          <input type="password" class="form-control" name="passwd" required>
-                        </div>
-                        <div class="mt-3">
-                          <button type="submit" class="btn btn-primary">Submit Details</button>
-                        </div>
-                      </form>
-                    </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="passwd" required>
+                      </div>
+                      <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">Submit Details</button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   <!-- </div> -->
   <!-- Customer Modal End -->
-  
+
   <!-- Business Modal Start-->
   <div style="display: flex; align-items: center; height: 100vh;">
     <div class="container" style=" margin: auto;">
@@ -238,8 +247,9 @@
     </div>
   </div>
   <!-- Business Modal End -->
-    
+
 </body>
+
 </html>
 
 
@@ -281,22 +291,20 @@
 
 
 <script>
-function Validation()
-{
-  var phone=document.getElementById("mobileNumber").value;
-  var getNum=String(phone).charAt(0);
-  var firstNum=Number(getNum);
+  function Validation() {
+    var phone = document.getElementById("mobileNumber").value;
+    var getNum = String(phone).charAt(0);
+    var firstNum = Number(getNum);
 
-  if(phone.length!=10 || firstNum<6 || isNaN(phone))
-  {
-    //alert('Invalid Phone Number');
-    $("#myspan").text("Invalid Mobile Number");
-    return false;
+    if (phone.length != 10 || firstNum < 6 || isNaN(phone)) {
+      //alert('Invalid Phone Number');
+      $("#myspan").text("Invalid Mobile Number");
+      return false;
+    }
+    else {
+      return true;
+    }
   }
-  else{
-    return true;
-  }
-}
 
   //States , District and their Values
   var subjectObject = {
@@ -338,7 +346,7 @@ function Validation()
     // var Tripura = ["Dhalai","Gomati","Khowai","North Tripura","Sepahijala","South Tripura","Unakoti","West Tripura"];
     // var UttarPradesh = ["Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi","Amroha","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur","Hardoi","Hathras","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kasganj","Kaushambi","Kheri","Kushinagar","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","Raebareli","Rampur","Saharanpur","Sambhal","Sant Kabir Nagar","Shahjahanpur","Shamli","Shravasti","Siddharthnagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"];
     // var Uttarakhand  = ["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pauri","Pithoragarh","Rudraprayag","Tehri","Udham Singh Nagar","Uttarkashi"];
-     "WestBengal":{"Alipurduar": [],"Bankura": [],"Birbhum": [],"Cooch Behar": [],"Dakshin Dinajpur": [],"Darjeeling": [],"Hooghly": [],"Howrah": [],"Jalpaiguri": [],"Jhargram": [],"Kalimpong": [],"Kolkata": [],"Malda": [],"Murshidabad": [],"Nadia": [],"North 24 Parganas": [],"Paschim Bardhaman": [],"Paschim Medinipur": [],"Purba Bardhaman": [],"Purba Medinipur": [],"Purulia": [],"South 24 Parganas": [],"Uttar Dinajpur": [] },
+    "WestBengal": { "Alipurduar": [], "Bankura": [], "Birbhum": [], "Cooch Behar": [], "Dakshin Dinajpur": [], "Darjeeling": [], "Hooghly": [], "Howrah": [], "Jalpaiguri": [], "Jhargram": [], "Kalimpong": [], "Kolkata": [], "Malda": [], "Murshidabad": [], "Nadia": [], "North 24 Parganas": [], "Paschim Bardhaman": [], "Paschim Medinipur": [], "Purba Bardhaman": [], "Purba Medinipur": [], "Purulia": [], "South 24 Parganas": [], "Uttar Dinajpur": [] },
     "AndamanNicobar": { "Nicobar": [], "North Middle Andaman": [], "South Andaman": [] },
     "Chandigarh": { "Chandigarh": [] },
     "DadraHaveli": { "Dadra Nagar Haveli": [] },
