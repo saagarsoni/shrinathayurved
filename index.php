@@ -195,7 +195,13 @@ include("header.php");
     </div>
   </div>
 <!-- Contact Us End-->
-
+<marquee width="100%" behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();">  
+Our Products are also available at 
+<a href="https://www.flipkart.com/" target="_blank">Flipkart</a>&nbsp;&nbsp;
+<a href="https://www.amazon.com/" target="_blank">Amazon</a>&nbsp;&nbsp;
+<a href="https://www.bigbasket.com/" target="_blank">Big Basket</a>&nbsp;&nbsp;
+<a href="https://www.1mg.com/search/all?name=shrinath%20ayurved" target="_blank">Tata 1 Mg</a>
+</marquee>  
   <!-- Footer -->
   <footer class="text-center text-lg-start bg-light text-muted">
     <!-- Copyright -->

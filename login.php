@@ -14,13 +14,15 @@
 
   <title>Shrinath Ayurved</title>
   <script src="./js/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
+  <!-- Login Start -->
   <div style="display: flex; align-items: center; height: 100vh;">
     <div class="container" style=" margin: auto;">
       <div class="row">
         <div class="col-lg-8 col-sm-12 col-md-12 mx-auto">
-          <form>
+          <form autocomplete="off">
             <h2>Login</h2>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
@@ -45,7 +47,8 @@
       </div>
     </div>
   </div>
-  
+  <!-- Login End -->
+
   <!-- Choose Modal Start-->
   <div class="modal fade" id="optionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -82,43 +85,37 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-6 col-sm-12 mx-auto">
-                      <form action="./php/register.php" method="post">
+                      <form action="./php/register.php" method="post" autocomplete="off" name="custReg" >
                         <h2>Customer Registration</h2>
                         <div class="form-group">
-                          <label for="exampleInputEmail1">User Name</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Enter User Name">
+                          <label>User Name</label>
+                          <input type="text" class="form-control" name="userName" aria-describedby="emailHelp"
+                            placeholder="Enter User Name" required>
                           <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <label>Email address</label>
+                          <input type="email" class="form-control" name="emailId" aria-describedby="emailHelp" required title="Please Enter a Valid Email Idukki">
                           <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Mobile Number</label>
-                          <input type="email" class="form-control" id="numeric-input" aria-describedby="emailHelp"
-                            maxlength="10" placeholder="Enter 10 Digit Mobile Number " oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  onkeypress="validateInput(event)">
-                          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                          <label>Mobile Number</label>
+                          <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" 
+                            maxlength="10" placeholder="Enter 10 Digit Mobile Number " pattern="[6-9]\d{9}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required title="Please Enter a Valid Phone Number">
+                            <div style="text-align: left;"><span id="myspan" style="text-align: left; color:red"></span></div>
                         </div>
   
                         <div class="form-group">
-                          <label for="floatingTextarea2">Address</label>
-                          <textarea class="form-control" placeholder="Enter Address " id="floatingTextarea2"
-                            style="height: 100px"></textarea>
+                          <label>Address</label>
+                          <textarea class="form-control" placeholder="Enter Address" name="addr"
+                            style="height: 100px" required title="Please Enter Address"></textarea>
                         </div>
   
                         <div class="row g-2 mt-3">
-                          <!-- <div class="col-md">
-              <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="mdo@example.com">
-                <label for="floatingInputGrid">Email address</label>
-              </div>
-            </div> -->
                           <div class="col-md">
                             <div class="form-floating">
-                              <select class="form-select" id="state">
-                                <option value="SelectState">Select State</option>
+                              <select class="form-select" name="state" id="state" required title="Please Select a State">
+                                <option value="">Select State</option>
                                 <option value="Andra Pradesh">Andra Pradesh</option>
                                 <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                                 <option value="Assam">Assam</option>
@@ -157,27 +154,20 @@
                                 <option value="Lakshadeep">Lakshadeep</option>
                                 <option value="Pondicherry">Pondicherry</option>
                               </select>
-                              <!-- <label for="floatingSelectGrid">Works with selects</label> -->
                             </div>
                           </div>
                           <div class="col-md">
                             <div class="form-floating">
-                              <select class="form-select" id="district">
-                                <option selected>Select District</option>
-                                <!-- <option value="">-- select one -- </option> -->
+                              <select class="form-select" name="district" id="district" required title="Please Select a District">
+                              <option value="">Select District</option>
                               </select>
-                              <!-- <label for="floatingSelectGrid">Works with selects</label> -->
                             </div>
                           </div>
                         </div>
   
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword2">Confirm Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword2">
+                          <label>Password</label>
+                          <input type="password" class="form-control" name="passwd" required>
                         </div>
                         <div class="mt-3">
                           <button type="submit" class="btn btn-primary">Submit Details</button>
@@ -189,7 +179,6 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Understood</button> -->
               </div>
             </div>
           </div>
@@ -292,14 +281,23 @@
 
 
 <script>
-  // //To Allow Numeric Input
-  // var input = document.getElementById("numeric-input");
-  // input.addEventListener("keypress", function (event) {
-  //   var key = event.charCode || event.keyCode;
-  //   if (key < 48 || key > 57) {
-  //     event.preventDefault();
-  //   }
-  // });
+function Validation()
+{
+  var phone=document.getElementById("mobileNumber").value;
+  var getNum=String(phone).charAt(0);
+  var firstNum=Number(getNum);
+
+  if(phone.length!=10 || firstNum<6 || isNaN(phone))
+  {
+    //alert('Invalid Phone Number');
+    $("#myspan").text("Invalid Mobile Number");
+    return false;
+  }
+  else{
+    return true;
+  }
+}
+
   //States , District and their Values
   var subjectObject = {
     "Andra Pradesh": {
@@ -340,7 +338,7 @@
     // var Tripura = ["Dhalai","Gomati","Khowai","North Tripura","Sepahijala","South Tripura","Unakoti","West Tripura"];
     // var UttarPradesh = ["Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi","Amroha","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur","Hardoi","Hathras","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kasganj","Kaushambi","Kheri","Kushinagar","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","Raebareli","Rampur","Saharanpur","Sambhal","Sant Kabir Nagar","Shahjahanpur","Shamli","Shravasti","Siddharthnagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"];
     // var Uttarakhand  = ["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pauri","Pithoragarh","Rudraprayag","Tehri","Udham Singh Nagar","Uttarkashi"];
-    // var WestBengal = ["Alipurduar","Bankura","Birbhum","Cooch Behar","Dakshin Dinajpur","Darjeeling","Hooghly","Howrah","Jalpaiguri","Jhargram","Kalimpong","Kolkata","Malda","Murshidabad","Nadia","North 24 Parganas","Paschim Bardhaman","Paschim Medinipur","Purba Bardhaman","Purba Medinipur","Purulia","South 24 Parganas","Uttar Dinajpur"];
+     "WestBengal":{"Alipurduar": [],"Bankura": [],"Birbhum": [],"Cooch Behar": [],"Dakshin Dinajpur": [],"Darjeeling": [],"Hooghly": [],"Howrah": [],"Jalpaiguri": [],"Jhargram": [],"Kalimpong": [],"Kolkata": [],"Malda": [],"Murshidabad": [],"Nadia": [],"North 24 Parganas": [],"Paschim Bardhaman": [],"Paschim Medinipur": [],"Purba Bardhaman": [],"Purba Medinipur": [],"Purulia": [],"South 24 Parganas": [],"Uttar Dinajpur": [] },
     "AndamanNicobar": { "Nicobar": [], "North Middle Andaman": [], "South Andaman": [] },
     "Chandigarh": { "Chandigarh": [] },
     "DadraHaveli": { "Dadra Nagar Haveli": [] },
@@ -367,14 +365,6 @@
         topicSel.options[topicSel.options.length] = new Option(y, y);
       }
     }
-    //   topicSel.onchange = function() {
-    //     //empty Chapters dropdown
-    //     chapterSel.length = 1;
-    //     //display correct values
-    //     var z = subjectObject[subjectSel.value][this.value];
-    //     for (var i = 0; i < z.length; i++) {
-    //       chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-    //     }
-    //   }
   }
+
 </script>
