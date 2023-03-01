@@ -13,15 +13,14 @@ $conn = mysqli_connect($host, $user, $password, $dbname);
 // }
 
 // Retrieve the form data
-$userName = strip_tags($_POST['userName']);
-$mobileNumber = $_POST['mobileNumber'];
-$emailId = $_POST['emailId'];
-$addr = $_POST['addr'];
+$emailId = strip_tags($_POST['emailId']);
+$mobileNumber = strip_tags($_POST['mobileNumber']);
+$addr = strip_tags($_POST['addr']);
 $state = $_POST['state'];
 $district = $_POST['district'];
-$passwd = $_POST['passwd'];
+$passwd = strip_tags(password_hash($_POST['passwd'],PASSWORD_DEFAULT));
 
-echo "$userName \r\n $mobileNumber.$emailId.$addr.$state.$district.$passwd ";
+echo "Email=$emailId<br>Mobile=$mobileNumber<br>Address =$addr<br>State=$state<br>District=$district<br>Password=$passwd ";
 // Insert the data into the MySQL database table
 // $sql = "INSERT INTO `tblregister`(`id`, `name`, `phone`, `email`, `address`, `state`, `district`, `password`, `tdate`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]')";
 

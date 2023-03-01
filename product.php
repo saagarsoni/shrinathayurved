@@ -1,23 +1,13 @@
 <?php
 
-include("header.php");
+//include("header.php");
 // session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
-        </script>
-
+   
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,6 +30,10 @@ include("header.php");
     <!-- To Read Text File -->
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
+
+<!-- Navigation Start -->
+<?php require('header.php')?>
+  <!-- Navigation End -->
 
 <body>
     <header class="header py-3">
@@ -1638,24 +1632,10 @@ include("header.php");
         <!-- Test End-->
     </div>
 
-    <marquee width="100%" behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();">  
-Our Products are also available at 
-<a href="https://www.flipkart.com/" target="_blank">Flipkart</a>&nbsp;&nbsp;
-<a href="https://www.amazon.com/" target="_blank">Amazon</a>&nbsp;&nbsp;
-<a href="https://www.bigbasket.com/" target="_blank">Big Basket</a>&nbsp;&nbsp;
-<a href="https://www.1mg.com/search/all?name=shrinath%20ayurved" target="_blank">Tata 1 Mg</a>
-</marquee>  
-
-    <!-- Footer Start-->
-    <footer class="text-center text-lg-start bg-light text-muted">
-        <!-- Copyright  Start-->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2023 Copyright:
-            <a class="text-reset fw-bold" href="#">Shrinath Ayurved</a>
-        </div>
-        <!-- Copyright End-->
-    </footer>
-    <!-- Footer End-->
+  <!-- Footer -->
+  <?php require('php/footer.php')?>
+  <!-- Footer -->    
+    
 </body>
 <!-- To Load Text In Product Description -->
 
