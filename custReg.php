@@ -6,7 +6,8 @@
 </header>
 <!-- Header End -->
 <?php
-$showAlert=false;
+$showAlert = false;
+$showError = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    include('php/dbcs.php');
    $userName = strip_tags($_POST['userName']);
@@ -16,15 +17,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $state = $_POST['state'];
    $district = $_POST['district'];
    $passwd = strip_tags(password_hash($_POST['passwd'], PASSWORD_DEFAULT));
-   echo "<br>User Name = $userName<br>Email=$emailId<br>Mobile=$mobileNumber<br>Address =$addr<br>State=$state<br>District=$district<br>Password=$passwd ";
 
-   $sqlQuery=" INSERT INTO `tblregister` (`name`, `phone`, `email`, `address`, `state`, `district`, `password`, `tdate`) 
+   echo "<br>User Name = $userName<br>Email=$emailId<br>Mobile=$mobileNumber<br>Address =$addr<br>State=$state<br>District=$district<br>Password=$passwd ";
+   //Check User Exist
+   $existQuery = "SELECT * FROM `tblregister` WHERE email='$emailId'";
+
+   $result = mysqli_query($conn, $existQuery);
+   $numExistRows = mysqli_num_rows($result);
+   if ($numExistRows > 0) {
+      $showError = "Email Already Exists";
+
+   } else {
+      $sqlQuery = " INSERT INTO `tblregister` (`name`, `phone`, `email`, `address`, `state`, `district`, `password`, `tdate`) 
    VALUES ('$userName', '$mobileNumber', '$emailId', '$addr', '$state', '$district', '$passwd', current_timestamp());";
 
-   $result=mysqli_query($conn,$sqlQuery);
-   if($result)
-   {
-      $showAlert=true;
+      $result = mysqli_query($conn, $sqlQuery);
+
+      if ($result) {
+         $showAlert = true;
+      }
    }
 }
 ?>
@@ -38,13 +49,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <link rel="stylesheet" href="css/loginRegister.css">
 <!-- Stylesheet End-->
 <?php
-if($showAlert)
-{
-  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+if ($showAlert) {
+   echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
    <strong>Success</strong> You Have Successfully Registered
    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>';
 }
+if ($showError) {
+   echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+   <strong>Error !</strong> ' . $showError . '
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+}
+
 ?>
 
 <div class="container">
@@ -153,7 +170,7 @@ if($showAlert)
 <!-- Footer -->
 <?php require('php/footer.php') ?>
 <!-- Footer -->
-<script>
+<script type="text/javascript">
    function Validation() {
       var phone = document.getElementById("mobileNumber").value;
       var getNum = String(phone).charAt(0);
@@ -237,5 +254,4 @@ if($showAlert)
          }
       }
    }
-
 </script>

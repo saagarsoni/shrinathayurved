@@ -1,7 +1,13 @@
 <?php
 
 // include("header.php");
-// session_start();
+ session_start();
+ if(!isset($_SESSION['loggdIn']) || $_SESSION['loggdIn']!=true)
+ {
+  header("location:login.php");
+  exit;
+
+ }
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,3 +1,41 @@
+<?php
+$login=false;
+$showError=false;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   include('php/dbcs.php');
+   $userName = strip_tags($_POST['userName']);
+   $emailId = strip_tags($_POST['emailId']);
+  //  $mobileNumber = strip_tags($_POST['mobileNumber']);
+  //  $addr = strip_tags($_POST['addr']);
+  //  $state = $_POST['state'];
+  //  $district = $_POST['district'];
+   $passwd = strip_tags(password_hash($_POST['passwd'], PASSWORD_DEFAULT));
+  //  echo "<br>User Name = $userName<br>Email=$emailId<br>Mobile=$mobileNumber<br>Address =$addr<br>State=$state<br>District=$district<br>Password=$passwd ";
+
+   $sqlQuery="SELECT * FROM `tblregister` 
+              WHERE email='$emailId' 
+              -- and password='$passwd'
+              ";
+
+   $result=mysqli_query($conn,$sqlQuery);
+   $num=mysqli_num_rows($result);
+   if($num==1)
+   {
+      $login=true;
+      session_start();
+      $_SESSION['loggedIn']=true;
+      $_SESSION['userName']=$userName;
+      //header("location:index.php");
+      
+   }
+   else
+   {
+    $showError="Invalid Credentials";
+
+   }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,27 +58,42 @@
   <!-- Stylesheet Start-->
 <link rel="stylesheet" href="css/loginRegister.css">
 <!-- Stylesheet End-->
+<?php
+if($login)
+{
+  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+   <strong>Welcome</strong> You are Logged In
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+}
+if($showError)
+{
+  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+   <strong>Error</strong> '.$showError.'
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+}
+?>
 <body>
   <!-- Login Start -->
   <div style="display: flex; align-items: center; height: 100vh;">
     <div class="container" style=" margin: auto;">
       <div class="row">
         <div class="col-lg-8 col-sm-12 col-md-12 mx-auto">
-          <form autocomplete="off">
+          <form autocomplete="off" action="login.php" method="post">
             <h2>Login</h2>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1">
+              <input type="email" class="form-control" name="emailId">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <input type="password" class="form-control" name="passwd" autoComplete="new-password">
             </div>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <!-- <label class="form-check-label" for="exampleCheck1">Remember me</label> -->
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Login</button>
             <div class="mt-3">
               <a class="form-check-label text-center" href="#" data-bs-toggle="modal"
                 data-bs-target="#optionModal">Register Now</a>

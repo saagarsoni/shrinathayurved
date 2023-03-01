@@ -5,6 +5,7 @@
     <a href="https://www.amazon.com/" target="_blank">Amazon</a>&nbsp;&nbsp;
     <a href="https://www.bigbasket.com/" target="_blank">Big Basket</a>&nbsp;&nbsp;
     <a href="https://www.1mg.com/search/all?name=shrinath%20ayurved" target="_blank">Tata 1 Mg</a>
+    <a href="https://www.jiomart.com/groceries/b/shrinath-ayurved/37034" target="_blank">Jio Mart</a>
   </marquee>
   <!-- Marque End -->
 <!-- Footer -->
