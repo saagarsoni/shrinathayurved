@@ -32,7 +32,7 @@
 </head>
 
 <!-- Navigation Start -->
-<?php require('header.php')?>
+<?php require('header.php') ?>
   <!-- Navigation End -->
 
 <body>
@@ -1633,7 +1633,7 @@
     </div>
 
   <!-- Footer -->
-  <?php require('php/footer.php')?>
+  <?php require('php/footer.php') ?>
   <!-- Footer -->    
     
 </body>

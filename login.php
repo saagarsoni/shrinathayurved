@@ -1,38 +1,35 @@
 <?php
-$login=false;
-$showError=false;
+$login = false;
+$showError = false;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   include('php/dbcs.php');
-   $userName = strip_tags($_POST['userName']);
-   $emailId = strip_tags($_POST['emailId']);
-  //  $mobileNumber = strip_tags($_POST['mobileNumber']);
-  //  $addr = strip_tags($_POST['addr']);
-  //  $state = $_POST['state'];
-  //  $district = $_POST['district'];
-   $passwd = strip_tags(password_hash($_POST['passwd'], PASSWORD_DEFAULT));
-  //  echo "<br>User Name = $userName<br>Email=$emailId<br>Mobile=$mobileNumber<br>Address =$addr<br>State=$state<br>District=$district<br>Password=$passwd ";
+  if (isset($_POST['loginButton'])) {
+    include('php/dbcs.php');
+    $emailId = strip_tags($_POST['emailId']);
+    $passwd = $_POST['passwd'];
 
-   $sqlQuery="SELECT * FROM `tblregister` 
-              WHERE email='$emailId' 
-              -- and password='$passwd'
-              ";
+    $sqlQuery = "SELECT * FROM tblregister WHERE email='$emailId'";
+    $result = mysqli_query($conn, $sqlQuery);
+    $num = mysqli_num_rows($result);
+    if ($num == 1) {
+      while ($row = mysqli_fetch_assoc($result)) {
+        $userName = $row['name'];
+        if (password_verify($passwd, $row['password'])) {
+          $login = true;
+          session_start();
+          $_SESSION['loggedIn'] = true;
+          $_SESSION['uName'] = $userName;
+          header("location:index.php");
+        } else {
+          $showError = "Invalid Credentials";
+        }
+      }
+    } else {
+      $showError = "Invalid Credentials";
 
-   $result=mysqli_query($conn,$sqlQuery);
-   $num=mysqli_num_rows($result);
-   if($num==1)
-   {
-      $login=true;
-      session_start();
-      $_SESSION['loggedIn']=true;
-      $_SESSION['userName']=$userName;
-      //header("location:index.php");
-      
-   }
-   else
-   {
-    $showError="Invalid Credentials";
+    }
+  }
 
-   }
 }
 ?>
 
@@ -43,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -53,27 +50,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <!-- Navigation Start -->
-<?php require('header.php')?>
-  <!-- Navigation End -->
-  <!-- Stylesheet Start-->
+<?php require('header.php') ?>
+<!-- Navigation End -->
+<!-- Stylesheet Start-->
 <link rel="stylesheet" href="css/loginRegister.css">
 <!-- Stylesheet End-->
 <?php
-if($login)
-{
+if ($login) {
   echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-   <strong>Welcome</strong> You are Logged In
+   <strong>Welcome</strong>&nbsp' . $_SESSION['uName'] . ' You are Logged In
    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>';
 }
-if($showError)
-{
+if ($showError) {
   echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-   <strong>Error</strong> '.$showError.'
+   <strong>Error</strong> ' . $showError . '
    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>';
 }
 ?>
+
 <body>
   <!-- Login Start -->
   <div style="display: flex; align-items: center; height: 100vh;">
@@ -90,10 +86,7 @@ if($showError)
               <label for="exampleInputPassword1">Password</label>
               <input type="password" class="form-control" name="passwd" autoComplete="new-password">
             </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" name="loginButton" class="btn btn-primary">Login</button>
             <div class="mt-3">
               <a class="form-check-label text-center" href="#" data-bs-toggle="modal"
                 data-bs-target="#optionModal">Register Now</a>
@@ -116,9 +109,9 @@ if($showError)
         </div>
         <div class="modal-body">
           <a href="custReg.php"> <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#customerRegistration">Customer Registration</button></a>
+              data-bs-target="#customerRegistration">Customer Registration</button></a>
           <a href="businessReg.php"><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#businessRegistration1">Bussiness Registration</button></a>
+              data-bs-target="#businessRegistration1">Bussiness Registration</button></a>
         </div>
       </div>
     </div>
@@ -126,6 +119,7 @@ if($showError)
   <!-- Choose Modal End-->
 </body>
 <!-- Footer -->
-<?php require('php/footer.php')?>
-  <!-- Footer -->
+<?php require('php/footer.php') ?>
+<!-- Footer -->
+
 </html>

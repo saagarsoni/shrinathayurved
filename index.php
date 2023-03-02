@@ -69,7 +69,7 @@
   <!-- Header End -->
 
   <!-- Navigation Start -->
-  <?php require('header.php')?>
+  <?php require('header.php') ?>
   <!-- Navigation End -->
 
   <!-- Image Carousel Start-->
@@ -212,9 +212,9 @@
     </div>
   </div>
   <!-- Contact Us End-->
-  
+
   <!-- Footer -->
-  <?php require('php/footer.php')?>
+  <?php require('php/footer.php') ?>
   <!-- Footer -->
 
   <!-- Script Start -->
