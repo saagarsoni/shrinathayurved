@@ -84,12 +84,12 @@ session_start();
       if (isset($_SESSION['uName']) && !empty($_SESSION['uName'])) {
 
         ?>
-        <form action="logout.php">
+        <!-- <form action="logout.php"> -->
 
           <div class="m-2">
             <a href="logout.php" name="logoutButton" class="btn btn-outline-success">Logout</a>
           </div>
-        </form>
+        <!-- </form> -->
         <?php
       }
       ?>

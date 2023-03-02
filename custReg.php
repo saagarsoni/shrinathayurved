@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $district = $_POST['district'];
    $passwd = strip_tags(password_hash($_POST['passwd'], PASSWORD_DEFAULT));
 
-   echo "<br>User Name = $userName<br>Email=$emailId<br>Mobile=$mobileNumber<br>Address =$addr<br>State=$state<br>District=$district<br>Password=$passwd ";
+   //echo "<br>User Name = $userName<br>Email=$emailId<br>Mobile=$mobileNumber<br>Address =$addr<br>State=$state<br>District=$district<br>Password=$passwd ";
    //Check User Exist
    $existQuery = "SELECT * FROM `tblregister` WHERE email='$emailId'";
 
