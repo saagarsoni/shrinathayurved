@@ -49,6 +49,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script src="./js/script.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
+<!-- Header Start -->
+<header class="header py-3">
+    <div class="container">
+      <h3 class="text-center">Header</h3>
+    </div>
+  </header>
+  <!-- Header End -->
 <!-- Navigation Start -->
 <?php require('header.php') ?>
 <!-- Navigation End -->
