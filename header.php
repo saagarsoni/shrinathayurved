@@ -37,8 +37,6 @@ session_start();
         <li class="nav-item">
           <a class="nav-link" href="./#contactUsPage">Contact Us</a>
         </li>
-
-
       </ul>
       <div>
         <?php

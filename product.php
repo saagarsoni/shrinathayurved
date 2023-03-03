@@ -7,7 +7,6 @@
 <html lang="en">
 
 <head>
-   
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,9 +44,9 @@
         <h2>Our Products</h2>
     </div>
 
-    <div class="input-group mb-5">
+    <div class="input-group my-2">
         <input type="text" class="form-control" placeholder="Type to Search Any Product"
-            aria-label="Recipient's username" aria-describedby="button-addon2" id="searchTextbox">
+             id="searchTextbox" autofocus>
         <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clearText()">Clear</button>
     </div>
 
@@ -63,10 +62,10 @@
                         <h5 class="card-title product-name">Chyawanprash Regular(500 gm)</h5>
                         <p class="card-text" id="chawanprashCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 180 for 500 gm</b> </p>
-                        <button type="button" class="btn btn-info" data-toggle="modal"
-                            data-target="#chawanprashRegularBuy">Buy Now</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal"
-                            data-target="#chawanprashRegular">Know More</button>
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#chawanprashRegularBuy">Buy Now</button>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#chawanprashRegular">Know More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Chyawanprash Regular(500 gm)">
@@ -196,10 +195,10 @@
                         <h5 class="card-title product-name">Chyawanprash Regular (1 Kg)</h5>
                         <p class="card-text" id="chawanprashCard1kg"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 340 for 1 kg</b> </p>
-                        <button type="button" class="btn btn-info" data-toggle="modal"
-                            data-target="#chawanprashRegularBuy1Kg">Buy Now</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal"
-                            data-target="#chawanprashGudWala">Know More</button>
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#chawanprashRegularBuy1Kg">Buy Now</button>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#chawanprashGudWala">Know More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Chyawanprash Regular(1Kg)">
@@ -330,9 +329,9 @@
                         <p class="card-text" id="gulkandCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 190 for 500 gm</b> </p>
                         <!-- <a href="#" class="btn btn-info align-content-center">Buy Now</a> -->
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#gulkandBuy">Buy
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#gulkandBuy">Buy
                             Now</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#gulkand">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#gulkand">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -460,10 +459,10 @@
                         <h5 class="card-title product-name">Rose Sharbat</h5>
                         <p class="card-text" id="roseSharbatCard">details for rose sharbat.</p>
                         <p class="card-text"><b> <span>&#8377;</span> 205 for 900 ml</b> </p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#roseSharbatBuy">Buy
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#roseSharbatBuy">Buy
                             Now</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal"
-                            data-target="#roseSharbat">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#roseSharbat">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -605,10 +604,10 @@
                         <h5 class="card-title product-name">Khass Sharbat</h5>
                         <p class="card-text" id="khasCard">Khus Card</p>
                         <p class="card-text"><b> <span>&#8377;</span> 205 for 900 ml</b> </p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#khusBuy">Buy
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#khusBuy">Buy
                             Now</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal"
-                            data-target="#khasSharbat">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#khasSharbat">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -738,9 +737,9 @@
                         <h5 class="card-title product-name">DISHWASH - LEMON & SALT</h5>
                         <p class="card-text" id="dwLemonCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 240 (Pack Of 2)</b> </p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dwLemonBuy">Buy
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#dwLemonBuy">Buy
                             Now</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dwLemon">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#dwLemon">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -871,9 +870,9 @@
                         <p class="card-text">
                         <b> <span>&#8377;</span> 240 (Pack Of 2)</b> 
                         </p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dwNeemBuy">Buy
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#dwNeemBuy">Buy
                             Now</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dwNeem">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#dwNeem">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -1035,9 +1034,9 @@
                         <h5 class="card-title product-name">Honey</h5>
                         <p class="card-text" id="honeyCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 225 For 500 gm</b></p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#honeyBuy">Buy
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#honeyBuy">Buy
                             Now</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#honeyModal">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#honeyModal">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -1210,9 +1209,9 @@
                         <p class="card-text" id="honeyCard1"></p>
                         
                         <p class="card-text"><b> <span>&#8377;</span> 240 (Pack Of 2 [125 gm each])</b> </p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#honeyBuy">Buy
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#honeyBuy">Buy
                             Now</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#honeyModal1">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#honeyModal1">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -1373,7 +1372,7 @@
                         <p class="card-text" id="roseWaterCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 150 for 100 ml</b></p>
                         <a href="#" class="btn btn-info align-content-center">Buy Now</a>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#roseWater">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#roseWater">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -1502,7 +1501,7 @@
                         <p class="card-text" id="pottaliCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 350 for 250 gm</b> </p>
                         <a href="#" class="btn btn-info align-content-center">Buy Now</a>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#potli">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#potli">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -1624,8 +1623,8 @@
                         
                     </p>
                     <a href="#" class="btn btn-info align-content-center">Buy Now</a>
-                    <button type="button" class="btn btn-success" data-toggle="modal"
-                        data-target="#chawanprashRegular">Know More</button>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#chawanprashRegular">Know More</button>
                 </div>
             </div>
         </div> -->

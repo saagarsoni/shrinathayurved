@@ -106,18 +106,21 @@
   <!-- Image Carousel End-->
   <hr>
   <!-- Product List -->
-  <a href="product.php">
-    <h4 class="lead text-center">
-      There are wide range of products at Shrinath Ayurved, click to know more
-    </h4>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active p-1">
+
+  <h4 class="lead text-center p-2 bg-warning">
+    <!-- There are wide range of products at Shrinath Ayurved, click to know more -->
+    <a href="product.php"> Click Here</a>&nbsp;to know about more products
+  </h4>
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active p-1">
+        <a href="product.php">
           <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675261473/shrinathAyurved/Final_eoulcc.jpg"
-            class=" img-fluid" alt="...">
-  </a>
-  </div>
-  </div>
+            class=" img-fluid">
+        </a>
+      </div>
+    </div>
   </div>
   <div class="container-fluid py-5" id="xxyy">
     <div>
