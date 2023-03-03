@@ -38,7 +38,7 @@
 <body>
     <header class="header py-3">
         <div class="container">
-            <h3 class="text-center">Header</h3>
+            <h3 class="text-center text-white">Header</h3>
         </div>
     </header>
     <div class="row center py-20">

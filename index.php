@@ -63,7 +63,7 @@
   <!-- Header Start -->
   <header class="header py-3">
     <div class="container">
-      <h3 class="text-center">Header</h3>
+      <h3 class="text-center text-white">Header</h3>
     </div>
   </header>
   <!-- Header End -->
@@ -119,125 +119,127 @@
   </div>
   </div>
   </div>
-  <!-- About Us Start -->
-  <div class="container mt-5" id="aboutus1">
-    <div class="row h-20 align-items-center">
-      <div class="col-lg-12 col-sm-3">
-        <h1 class="display-5 fs-1">About Us</h1>
-        <p class="text-success fw-light mt-3" id="aboutus"></p>
+  <div class="container-fluid py-5" id="xxyy">
+    <div>
+      <!-- About Us Start -->
+      <div class="container mt-5" id="aboutus1">
+        <div class="row h-20 align-items-center">
+          <div class="col-lg-12 col-sm-3">
+            <h1 class="display-5 fs-1">About Us</h1>
+            <p class="text-success fw-light mt-3" id="aboutus"></p>
+          </div>
+        </div>
+        <hr>
       </div>
-    </div>
-    <hr>
-  </div>
-  <!-- About Us End -->
+      <!-- About Us End -->
 
-  <!-- Contact Us Start-->
-  <div class="container" id="contactUsPage">
-    <div class="row">
-      <div class="col-sm-6">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.604734717705!2d75.77983820819972!3d21.024658362630888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd9a60eaaaaaaab%3A0xe4d535534119dcfc!2sAYURVED%20INDIA%20-%20MANUFACTURER%20OF%20CHYWANPRASH!5e0!3m2!1sen!2sin!4v1675595778160!5m2!1sen!2sin"
-          width="100%" height="520" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <!-- Contact Us Start-->
+      <div class="container" id="contactUsPage">
+        <div class="row">
+          <div class="col-sm-6">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.604734717705!2d75.77983820819972!3d21.024658362630888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd9a60eaaaaaaab%3A0xe4d535534119dcfc!2sAYURVED%20INDIA%20-%20MANUFACTURER%20OF%20CHYWANPRASH!5e0!3m2!1sen!2sin!4v1675595778160!5m2!1sen!2sin"
+              width="100%" height="520" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
 
-      <div class="col-sm-6">
-        <form onsubmit="" action="./php/sendEmail.php" method="post">
-          <h1 class="font-weight-light mt-2">Quick Contact</h1>
-          <div class="mb-3">
-            <input type="text" name="name" id="name" class="form-control" id="formGroupExampleInput" placeholder="Name"
-              required>
-          </div>
-          <div class="mb-3">
-            <input type="text" id="email" name="email" class="form-control" id="formGroupExampleInput2"
-              placeholder="Email" required>
-          </div>
-          <div class="mb-3">
-            <input type="text" id="phone" name="phone" class="form-control" id="numeric-input"
-              placeholder="Phone Number" maxlength="10"
-              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-              onkeypress="validateInput(event)" required>
-          </div>
-          <div class="mb-3">
-            <textarea name="message" cols="20" class="form-control" rows="9" placeholder="Enter Message"
-              required></textarea>
-          </div>
-          <button class="btn btn-primary" type="submit">Submit</button>
-      </div>
-      </form>
-      <div class="col-sm-12">
-        <div class="card mt-4 border-0 mb-4">
-          <div class="row">
-            <div class="col-lg-4 col-md-4">
-              <div class="card-body d-flex align-items-center c-detail pl-0">
-                <div class="mr-3 align-self-center p-4">
-                  <i class="fa-solid fa-map-location-dot fa-3x"></i>
-                </div>
-                <div class="">
-                  <h6 class="font-weight-medium">Address</h6>
-                  <p class="">C 67,Khadke MIDC.
-                    <br> Bhusawal-425201,<br> District - Jalgaon,<br> State - Maharashtra
-                  </p>
-                </div>
+          <div class="col-sm-6">
+            <form onsubmit="" action="./php/sendEmail.php" method="post">
+              <h1 class="font-weight-light mt-2">Quick Contact</h1>
+              <div class="mb-3">
+                <input type="text" name="name" id="name" class="form-control" id="formGroupExampleInput"
+                  placeholder="Name" required>
               </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4">
-              <div class="card-body d-flex align-items-center c-detail pl-0">
-                <div class="mr-3 align-self-center p-4">
-                  <i class="fa-solid fa-phone fa-3x"></i>
-                </div>
-                <div class="">
-
-                  <h6 class="font-weight-medium">Phone</h6>
-                  <p class=""><a href="tel:919960236066">+91-9960236066</a></p>
-                </div>
+              <div class="mb-3">
+                <input type="text" id="email" name="email" class="form-control" id="formGroupExampleInput2"
+                  placeholder="Email" required>
               </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4">
-              <div class="card-body d-flex align-items-center c-detail pl-0">
-                <div class="mr-3 align-self-center p-4">
-                  <i class="fa-solid fa-envelope fa-4x"></i>
+              <div class="mb-3">
+                <input type="text" id="phone" name="phone" class="form-control" id="numeric-input"
+                  placeholder="Phone Number" maxlength="10"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                  onkeypress="validateInput(event)" required>
+              </div>
+              <div class="mb-3">
+                <textarea name="message" cols="20" class="form-control" rows="9" placeholder="Enter Message"
+                  required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+          </form>
+          <div class="col-sm-12">
+            <div class="card mt-4 border-0 mb-4">
+              <div class="row">
+                <div class="col-lg-4 col-md-4">
+                  <div class="card-body d-flex align-items-center c-detail pl-0">
+                    <div class="mr-3 align-self-center p-4">
+                      <i class="fa-solid fa-map-location-dot fa-3x"></i>
+                    </div>
+                    <div class="">
+                      <h6 class="font-weight-medium">Address</h6>
+                      <p class="">C 67,Khadke MIDC.
+                        <br> Bhusawal-425201,<br> District - Jalgaon,<br> State - Maharashtra
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="">
-                  <h6 class="font-weight-medium">Email</h6>
-                  <p class=""><a href="mailto:ayurvedindiapune@gmail.com">ayurvedindiapune@gmail.com</a></p>
+
+                <div class="col-lg-4 col-md-4">
+                  <div class="card-body d-flex align-items-center c-detail pl-0">
+                    <div class="mr-3 align-self-center p-4">
+                      <i class="fa-solid fa-phone fa-3x"></i>
+                    </div>
+                    <div class="">
+
+                      <h6 class="font-weight-medium">Phone</h6>
+                      <p class=""><a href="tel:919960236066">+91-9960236066</a></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                  <div class="card-body d-flex align-items-center c-detail pl-0">
+                    <div class="mr-3 align-self-center p-4">
+                      <i class="fa-solid fa-envelope fa-4x"></i>
+                    </div>
+                    <div class="">
+                      <h6 class="font-weight-medium">Email</h6>
+                      <p class=""><a href="mailto:ayurvedindiapune@gmail.com">ayurvedindiapune@gmail.com</a></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Contact Us End-->
+      <!-- Contact Us End-->
 
-  <!-- Footer -->
-  <?php require('php/footer.php') ?>
-  <!-- Footer -->
+      <!-- Footer -->
+      <?php require('php/footer.php') ?>
+      <!-- Footer -->
 
-  <!-- Script Start -->
-  <script src="https://smtpjs.com/v3/smtp.js">
-  </script>
-  <script>
-    $("#aboutus").load("./text/aboutus");
+      <!-- Script Start -->
+      <script src="https://smtpjs.com/v3/smtp.js">
+      </script>
+      <script>
+        $("#aboutus").load("./text/aboutus");
 
-    function sendEmail11() {
-      Email.send({
-        Host: "smtp.gmail.com",
-        Username: "saagarsoni3@gmail.com",
-        Password: "xkvlxpbprueqxmbt",
-        To: "saagarsoniworkgmail.com",
-        From: document.getElementById("email").value,
-        Subject: "New Contact Form Enquiry",
-        Body: document.getElementById("message").value,
-      }).then(
-        message => alert(message)
-      );
-    }
-  </script>
-  <!-- Script End -->
+        function sendEmail11() {
+          Email.send({
+            Host: "smtp.gmail.com",
+            Username: "saagarsoni3@gmail.com",
+            Password: "xkvlxpbprueqxmbt",
+            To: "saagarsoniworkgmail.com",
+            From: document.getElementById("email").value,
+            Subject: "New Contact Form Enquiry",
+            Body: document.getElementById("message").value,
+          }).then(
+            message => alert(message)
+          );
+        }
+      </script>
+      <!-- Script End -->
 </body>
 
 </html>

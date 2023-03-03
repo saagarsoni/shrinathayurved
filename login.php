@@ -87,7 +87,7 @@ if ($showError) {
             <h2>Login</h2>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" name="emailId">
+              <input type="email" class="form-control" name="emailId" autofocus>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
@@ -117,7 +117,7 @@ if ($showError) {
         <div class="modal-body">
           <a href="custReg.php"> <button type="button" class="btn btn-primary" data-bs-toggle="modal"
               data-bs-target="#customerRegistration">Customer Registration</button></a>
-          <a href="businessReg.php"><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+          <a href=""><button type="button" class="btn btn-primary" data-bs-toggle="modal"
               data-bs-target="#businessRegistration1">Bussiness Registration</button></a>
         </div>
       </div>

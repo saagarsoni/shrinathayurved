@@ -12,8 +12,8 @@ session_start();
   </div>
 </header>
 
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> -->
-<nav class="navbar navbar-expand-lg bg-light fixed-top">
+
+<nav class="navbar navbar-expand-lg bg-white fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">
       <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1671950229/shrinathAyurved/logo_lcqcwu.jpg"
@@ -29,7 +29,7 @@ session_start();
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./#aboutus1">About Us</a>
+          <a class="nav-link" href="./#xxyy">About Us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="product.php">Products</a>

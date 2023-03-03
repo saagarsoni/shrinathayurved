@@ -50,8 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Stylesheet End-->
 <?php
 if ($showAlert) {
-   echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-   <strong>Success</strong> You Have Successfully Registered
+   echo '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+   <strong>Congratulations !</strong> You Have Successfully Registered.
    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>';
 }
@@ -72,7 +72,7 @@ if ($showError) {
             <div class="form-group text-start mt-3">
                <label>Full Name</label>
                <input type="text" class="form-control" name="userName" required title="Please Enter Name"
-                  autocomplete="off">
+                  autocomplete="off" autofocus>
             </div>
             <div class="form-group text-start mt-3">
                <label>Email address</label>

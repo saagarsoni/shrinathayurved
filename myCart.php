@@ -50,7 +50,7 @@ session_start();
                   <tr>
                   <td>$sr</td>
                   <td>$value[item_name]</td>
-                  <td>$value[price]<input type='hidden' class='iprice' value='$value[price]'></td>
+                  <td><span>&#8377; </span>$value[price]<input type='hidden' class='iprice' value='$value[price]'></td>
                   
                   <td>
                      <form action='manage_cart.php' method='post'>
@@ -133,10 +133,10 @@ session_start();
       function subTotal() {
          gt = 0;
          for (i = 0; i < iprice.length; i++) {
-            itotal[i].innerText = (iprice[i].value) * (iquantity[i].value);
+            itotal[i].innerText = '\u20B9 ' + (iprice[i].value) * (iquantity[i].value);
             gt = gt + (iprice[i].value) * (iquantity[i].value);
          }
-         gtotal.innerText = gt;
+         gtotal.innerText = '\u20B9 '+gt;
       }
       subTotal();
    </script>
