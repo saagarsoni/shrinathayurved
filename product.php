@@ -14,12 +14,8 @@
     <title>Shrinath Ayurved</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
-    <style>
-        .center {
-            text-align: center;
-            border: 3px solid green;
-        }
-    </style>
+    <!--  CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -32,38 +28,35 @@
 
 <!-- Navigation Start -->
 <?php require('header.php') ?>
-  <!-- Navigation End -->
+<!-- Navigation End -->
 
 <body>
-    <header class="header py-3">
+    <header class="header py-3 p-2">
         <div class="container">
             <h3 class="text-center text-white">Header</h3>
         </div>
     </header>
-    <div class="row center py-20">
+    <div class="container-fluid row center py-20 p-2">
         <h2>Our Products</h2>
     </div>
 
-    <div class="input-group my-2">
-        <input type="text" class="form-control" placeholder="Type to Search Any Product"
-             id="searchTextbox" autofocus>
+    <div class="input-group my-2 p-2">
+        <input type="text" class="form-control" placeholder="Type to Search Any Product" id="searchTextbox" autofocus>
         <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clearText()">Clear</button>
     </div>
 
-    <div class="row row-cols-md-5">
+    <div class="row row-cols-md-5 p-2">
         <!-- Chyawanprash Regular(500 gm) Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg"
-                    height="500" class="card-img-top img-responsive" alt="Chawanprash Regular" />
+                        class="imageResize" alt="Chawanprash Regular" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash Regular(500 gm)</h5>
                         <p class="card-text" id="chawanprashCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 180 for 500 gm</b> </p>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#chawanprashRegularBuy">Buy Now</button>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#chawanprashRegular">Know More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
@@ -82,7 +75,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Chawanprash Regular(500 gm)</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -149,54 +142,25 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now Start -->
-        <div class="modal" id="chawanprashRegularBuy" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="list-group">
-                            <a href="https://www.amazon.in/Generic-AYURVED-INDIA-CHYAWANPRASH/dp/B08RJZ4GWQ"
-                                target="_blank" class="list-group-item list-group-item-action"
-                                aria-current="true">Amazon</a>
-                            <a href="https://www.flipkart.com/search?q=AYURVED+INDIA+CHYAWANPRASH&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=off&as=off "
-                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
-                            <a href="https://www.bigbasket.com/pd/40221740/ayurved-india-chyawanprash-awleh-immunity-booster-improves-stamina-strength-500-g-bottle/?nc=as"
-                                target="_blank" class="list-group-item list-group-item-action">Big Basket</a>
-                            <a href="https://www.jiomart.com/p/groceries/ayurved-india-chyawanprash/596838245"
-                                target="_blank" class="list-group-item list-group-item-action">Jio Mart</a>
-                            <a href="https://www.1mg.com/otc/ayurved-india-chyawanprash-awleh-otc824271 
-                    https://www.1mg.com/otc/ayurved-india-chyawanprash-awleh-otc824270?qv=NaN&iv=undefined"
-                                target="_blank" class="list-group-item list-group-item-action">Tata 1Mg</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now End -->
         <!-- Chyawanprash Regular (500 gm ) End-->
 
         <!-- Chyawanprash Regular(1 Kg) Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg"
-                    height="500" class="card-img-top img-responsive" alt="Chawanprash Regular" />
+                        class="imageResize" alt="Chawanprash Regular" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash Regular (1 Kg)</h5>
                         <p class="card-text" id="chawanprashCard1kg"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 340 for 1 kg</b> </p>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#chawanprashRegularBuy1Kg">Buy Now</button>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#chawanprashGudWala">Know More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
@@ -215,7 +179,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Chawanprash Regular(1 Kg)</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -282,56 +246,27 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now Start -->
-        <div class="modal" id="chawanprashRegularBuy1Kg" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="list-group">
-                            <a href="https://www.amazon.in/Generic-AYURVED-INDIA-CHYAWANPRASH/dp/B08RJZ4GWQ"
-                                target="_blank" class="list-group-item list-group-item-action"
-                                aria-current="true">Amazon</a>
-                            <a href="https://www.flipkart.com/search?q=AYURVED+INDIA+CHYAWANPRASH&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=off&as=off "
-                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
-                            <a href="https://www.bigbasket.com/pd/40221740/ayurved-india-chyawanprash-awleh-immunity-booster-improves-stamina-strength-500-g-bottle/?nc=as"
-                                target="_blank" class="list-group-item list-group-item-action">Big Basket</a>
-                            <a href="https://www.jiomart.com/p/groceries/ayurved-india-chyawanprash/596838245"
-                                target="_blank" class="list-group-item list-group-item-action">Jio Mart</a>
-                            <a href="https://www.1mg.com/otc/ayurved-india-chyawanprash-awleh-otc824271 
-                    https://www.1mg.com/otc/ayurved-india-chyawanprash-awleh-otc824270?qv=NaN&iv=undefined"
-                                target="_blank" class="list-group-item list-group-item-action">Tata 1Mg</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now End -->
         <!-- Chyawanprash Regular(1 Kg) End-->
 
         <!-- GULKAND Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675841213/shrinathAyurved/Gulkand_1_300x500_apehke.jpg"
-                    height="500" class="card-img-top img-responsive" alt="Gulkand" />
+                        class="imageResize" />
                     <div class="card-body">
                         <h6 class="card-title product-name">Gulkand</h6>
                         <p class="card-text" id="gulkandCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 190 for 500 gm</b> </p>
-                        <!-- <a href="#" class="btn btn-info align-content-center">Buy Now</a> -->
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#gulkandBuy">Buy
-                            Now</button>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#gulkand">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#gulkand">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -420,47 +355,23 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now Start -->
-        <div class="modal" id="gulkandBuy" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="list-group">
-                            <a href="https://www.1mg.com/otc/ayurved-india-chyawanprash-awleh-otc824270?qv=NaN&iv=undefined"
-                                target="_blank" class="list-group-item list-group-item-action">Big Basket</a>
-
-                            <a href="https://www.1mg.com/otc/ayurved-india-gulkand-otc824279" target="_blank"
-                                class="list-group-item list-group-item-action">Tata 1Mg</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now End -->
         <!-- GULKAND End -->
 
         <!--ROSE SHARBAT Start -->
         <!-- Card Start-->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Rose_Front_yicmbv.jpg"
-                    height="500" class="card-img-top img-responsive"/>
+                    <img src="./images/roseSharbat.png" class="imageResize" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Rose Sharbat</h5>
                         <p class="card-text" id="roseSharbatCard">details for rose sharbat.</p>
                         <p class="card-text"><b> <span>&#8377;</span> 205 for 900 ml</b> </p>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#roseSharbatBuy">Buy
-                            Now</button>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#roseSharbat">Know
                             More</button>
@@ -548,64 +459,24 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now Start -->
-        <div class="modal" id="roseSharbatBuy" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Buy Rose Sharbat</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="list-group">
-
-                            <a href="https://www.amazon.in/Rose-Sharbat-Delicious-Shrinath-Ayurved/dp/B09ZJ8R9XW"
-                                target="_blank" class="list-group-item list-group-item-action" aria-current="true"><img
-                                    src="./images/amazon.svg" width="60px" height="20px" alt="Amazon"> </a>
-                            <a href="https://www.flipkart.com/shrinath-ayurved-rose-sharbat-e-khass/p/itmdbc313d9df46d?pid=CNCGHHHRGM9VFZKD"
-                                target="_blank" class="list-group-item list-group-item-action"><img
-                                    src="./images/flipkart.svg" width="60px" height="20px" alt="Flipkart"> </a>
-                            <a href="https://www.bigbasket.com/pd/40222459/sharbat-e-khass-rose-sharbat-750-ml/?nc=as"
-                                target="_blank" class="list-group-item list-group-item-action"><img
-                                    src="./images/Screenshot 2023-02-07 131018.jpg" width="70px" height="30px"
-                                    alt="Big Basket"> </a>
-                            <a href="https://www.jiomart.com/p/groceries/rose-sharbat/596815235" target="_blank"
-                                class="list-group-item list-group-item-action">Jio Mart</a>
-                            <a href="https://www.1mg.com/otc/shrinath-ayurved-sharbat-e-khass-otc824293" target="_blank"
-                                class="list-group-item list-group-item-action"><img src="./images/TATA_1mg.svg"
-                                    width="60px" height="27px" alt="Tata 1 Mg"></a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now End -->
         <!-- ROSE SHARBAT End -->
 
         <!--KHUS SHARBAT Start -->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://dummyimage.com/430x300/000/d11e68&text=Khus+Sharbat" width="300" height="400"
-                        class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" />
+                    <img src="https://dummyimage.com/300x500/fff/d11e68&text=Khus+Sharbat" class="imageResize" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Khass Sharbat</h5>
                         <p class="card-text" id="khasCard">Khus Card</p>
                         <p class="card-text"><b> <span>&#8377;</span> 205 for 900 ml</b> </p>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#khusBuy">Buy
-                            Now</button>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#khasSharbat">Know
                             More</button>
@@ -685,61 +556,34 @@
                                 <div id="collapseFour" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                    <b> <span>&#8377;</span>205 For 900 ml</b>
+                                        <b> <span>&#8377;</span>205 For 900 ml</b>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now Start -->
-        <div class="modal" id="khusBuy" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="list-group">
-                            <a href="https://www.amazon.in/Rose-Sharbat-Delicious-Shrinath-Ayurved/dp/B09ZJ8R9XW"
-                                target="_blank" class="list-group-item list-group-item-action"
-                                aria-current="true">Amazon</a>
-                            <a href="https://www.flipkart.com/shrinath-ayurved-rose-sharbat-e-khass/p/itmdbc313d9df46d?pid=CNCGHHHRGM9VFZKD"
-                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
-                            <a href="https://www.bigbasket.com/pd/40222459/sharbat-e-khass-rose-sharbat-750-ml/?nc=as"
-                                target="_blank" class="list-group-item list-group-item-action">Big Basket</a>
-                            <a href="https://www.jiomart.com/p/groceries/rose-sharbat/596815235" target="_blank"
-                                class="list-group-item list-group-item-action">Jio Mart</a>
-                            <a href="https://www.1mg.com/otc/shrinath-ayurved-sharbat-e-khass-otc824293" target="_blank"
-                                class="list-group-item list-group-item-action">Tata 1Mg</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now End -->
+
         <!--KHUS SHARBAT End -->
 
         <!-- DISHWASH - LEMON & SALT Start -->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370603/shrinathAyurved/Dishwash_Gel_gsgwmc.jpg"
-                         height="500" class="card-img-top img-responsive" alt="Hollywood Sign on The Hill" />
+                    <img src="./images/Dishwash_Gel_gsgwmc.png" class="imageResize" />
                     <div class="card-body">
                         <h5 class="card-title product-name">DISHWASH - LEMON & SALT</h5>
                         <p class="card-text" id="dwLemonCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 240 (Pack Of 2)</b> </p>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#dwLemonBuy">Buy
-                            Now</button>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#dwLemon">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#dwLemon">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -821,58 +665,29 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now Start -->
-        <div class="modal" id="dwLemonBuy" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="list-group">
-                            <a href="https://www.amazon.in/Shrinath-Ayurved-Dishwash-Superior-Cleaning/dp/B09B2PV7ZK"
-                                target="_blank" class="list-group-item list-group-item-action"
-                                aria-current="true">Amazon</a>
-                            <a href="https://www.flipkart.com/shrinath-ayurved-dishwash-gel-dish-cleaning/p/itmb99a234a131ae?pid=DCGG4H9APQBZWEQX"
-                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
-                            <a href="https://www.bigbasket.com/pd/40220238/shrinath-ayurved-dish-washing-gel-liquid-500-ml/?nc=as"
-                                target="_blank" class="list-group-item list-group-item-action">Big Basket</a>
-                            <a href="https://www.jiomart.com/p/groceries/dishwash-liquid/596848313" target="_blank"
-                                class="list-group-item list-group-item-action">Jio Mart</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now End -->
         <!-- DISHWASH - LEMON & SALT End-->
 
         <!-- DISHWASH - NEEM & ALOEVERA Start -->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675694120/shrinathAyurved/DISHWASH_GREEN_FRONT_dcfsct.jpg"
-                         height="500" class="card-img-top img-responsive" alt="Hollywood Sign on The Hill" />
+                    <img src="./images/Dishwash LemonNeem.png" class="imageResize" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Neem and Aloevera Dishwash Liquid</h5>
                         <p class="card-text" id="dwNeemCard"></p>
-                        <p class="card-text">
-                        <b> <span>&#8377;</span> 240 (Pack Of 2)</b> 
-                        </p>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#dwNeemBuy">Buy
-                            Now</button>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#dwNeem">Know
+                        <p class="card-text"><b><span>&#8377;</span> 240 (Pack Of 2)</b></p>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#dwNeem">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -941,57 +756,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Usage
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="dwLemonFacts"></p>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now Start -->
-        <div class="modal" id="dwNeemBuy" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="list-group">
-                            <a href="https://www.amazon.in/Shrinath-Dishwash-Superior-Cleaning-AloeveraI/dp/B0BCZ6PMHP"
-                                target="_blank" class="list-group-item list-group-item-action"
-                                aria-current="true">Amazon</a>
-                            <a href="https://www.flipkart.com/shrinath-ayurved-neem-aloevera-based-dish-cleaning-gel/p/itm82521107a2fe7?pid=DCGGH47H4KVQVFKZ"
-                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
-                            <a href="https://www.jiomart.com/p/groceries/dishwash-liquid-antibacterial/596907289"
-                                target="_blank" class="list-group-item list-group-item-action">Jio Mart</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now End -->
         <!-- DISHWASH - NEEM & ALOEVERA End -->
 
         <!-- HONEY Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -1000,23 +778,19 @@
                                 class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
                                 aria-label="Slide 2"></button>
-
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
-                                height="500" class="card-img-top img-responsive">
+                                <img src="./images/Honey_Front_yxdfxu.png" class="imageResize" />
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Regular</h5>
-                                    <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
                             </div>
                             <div class="carousel-item">
-                            <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
-                                <img src="https://dummyimage.com/600x400/000/e01979&text=Youtube" height="500" class="card-img-top img-responsive">
-                            </a>
+                                <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
+                                <img src="./images/youtube-logo.png" class="imageResize">
+                                </a>
                             </div>
-
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                             data-bs-slide="prev">
@@ -1029,14 +803,12 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    
                     <div class="card-body">
                         <h5 class="card-title product-name">Honey</h5>
                         <p class="card-text" id="honeyCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 225 For 500 gm</b></p>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#honeyBuy">Buy
-                            Now</button>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#honeyModal">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#honeyModal">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -1059,7 +831,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- Example Code -->
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -1120,51 +891,19 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End Example Code -->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now Start-->
-        <div class="modal" id="honeyBuy" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div> -->
-                    <div class="modal-body">
-                        <!-- <p>Modal body text goes here.</p> -->
-                        <div class="list-group">
-                            <a href="https://www.amazon.in/HONEY-SHRINATH-AYURVED-REAL-HONEY/dp/B0BQN4JN9R"
-                                target="_blank" class="list-group-item list-group-item-action"
-                                aria-current="true">Amazon</a>
-                            <a href="https://www.flipkart.com/shrinath-ayurved-honey-pure-sure/p/itm91e5eea9c21e7?pid=HNYGHGB2DHU3NVB5"
-                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
-                            <a href="https://www.jiomart.com/p/groceries/honey-pure-sure/596769953" target="_blank"
-                                class="list-group-item list-group-item-action">Jio Mart</a>
-                            <a href="https://youtu.be/8nGSf5yrn4Q" target="_blank"
-                                class="list-group-item list-group-item-action">Watch On Youtube</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now Ends -->
         <!-- HONEY End-->
-
 
         <!-- HONEY Squeezy Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <div id="carouselExampleCaptions1" class="carousel slide" data-bs-ride="carousel">
@@ -1173,23 +912,20 @@
                                 class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1"
                                 aria-label="Slide 2"></button>
-
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675692677/shrinathAyurved/SQUEEZY_FRONT_hzqoku.jpg"
-                                height="500" class="card-img-top img-responsive">
+                                <img src="./images/SQUEEZY_FRONT_hzqoku.png" class="imageResize" />
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Squeezy</h5>
                                 </div>
                             </div>
-
                             <div class="carousel-item">
-                            <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
-                                <img src="https://dummyimage.com/600x400/000/e01979&text=Youtube" height="500" class="card-img-top img-responsive">
-                            </a>
+                                <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
+                                    <img src="./images/youtube-logo.png"
+                                        class="imageResize">
+                                </a>
                             </div>
-
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions1"
                             data-bs-slide="prev">
@@ -1202,16 +938,14 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <!-- <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382714/shrinathAyurved/Honey_Front_yxdfxu.jpg"
-                    width="300" height="400" class="card-img-top img-fluid" alt="Hollywood Sign on The Hill" /> -->
                     <div class="card-body">
                         <h5 class="card-title product-name">Honey</h5>
                         <p class="card-text" id="honeyCard1"></p>
-                        
-                        <p class="card-text"><b> <span>&#8377;</span> 240 (Pack Of 2 [125 gm each])</b> </p>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#honeyBuy">Buy
-                            Now</button>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#honeyModal1">Know
+
+                        <p class="card-text"><b> <span>&#8377;</span> 240 (Pack Of 2 [250 gm each])</b> </p>
+
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#honeyModal1">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -1223,27 +957,28 @@
         </form>
         <!-- Card End -->
 
-                    <!-- Youtube Modal Start-->
-                    <div class="modal fade" id="honeyYoutubeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Youtube Modal Start-->
+        <div class="modal fade" id="honeyYoutubeModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Shrinath Ayurved Honey</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed/8nGSf5yrn4Q" title="SHRINATH AYURVED HONEY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Shrinath Ayurved Honey</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="100%" height="500" src="https://www.youtube.com/embed/8nGSf5yrn4Q"
+                            title="SHRINATH AYURVED HONEY" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
-            </div>
-            <!-- Youtube Modal End-->
-
-
+        </div>
+        <!-- Youtube Modal End-->
 
         <!-- Modal Start -->
         <div class="modal fade" id="honeyModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -1257,7 +992,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- Example Code -->
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -1313,66 +1047,33 @@
                                 <div id="collapseFour" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                    <span>&#8377;</span> 240 (Pack Of 2)[125 gm each]
+                                        <span>&#8377;</span> 240 (Pack Of 2)[125 gm each]
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Example Code -->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now Start-->
-        <div class="modal" id="honeyBuy" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div> -->
-                    <div class="modal-body">
-                        <!-- <p>Modal body text goes here.</p> -->
-                        <div class="list-group">
-                            <a href="https://www.amazon.in/HONEY-SHRINATH-AYURVED-REAL-HONEY/dp/B0BQN4JN9R"
-                                target="_blank" class="list-group-item list-group-item-action"
-                                aria-current="true">Amazon</a>
-                            <a href="https://www.flipkart.com/shrinath-ayurved-honey-pure-sure/p/itm91e5eea9c21e7?pid=HNYGHGB2DHU3NVB5"
-                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
-                            <a href="https://www.jiomart.com/p/groceries/honey-pure-sure/596769953" target="_blank"
-                                class="list-group-item list-group-item-action">Jio Mart</a>
-                            <a href="https://youtu.be/8nGSf5yrn4Q" target="_blank"
-                                class="list-group-item list-group-item-action">Watch On Youtube</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now Ends -->
         <!-- HONEY Squeezy End-->
-
 
         <!-- Rose Water Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://dummyimage.com/300x500/000/d11e68&text=Rose+Water" 
-                    height="500" class="card-img-top img-responsive" />
+                    <img src="https://dummyimage.com/300x500/fff/d11e68&text=Rose+Water" class="imageResize" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Rose Water</h5>
                         <p class="card-text" id="roseWaterCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 150 for 100 ml</b></p>
-                        <a href="#" class="btn btn-info align-content-center">Buy Now</a>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#roseWater">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#roseWater">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -1395,7 +1096,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">
@@ -1409,12 +1109,9 @@
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         <p id="roseWaterDetail"></p>
-
                                     </div>
-
                                 </div>
                             </div>
-
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1430,7 +1127,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1442,66 +1138,33 @@
                                 <div id="flush-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-                                         <span>&#8377;</span>150 for 100 ml
+                                        <span>&#8377;</span>150 for 100 ml
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now -->
-        <div class="modal" id="honeyBuy" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div> -->
-                    <div class="modal-body">
-                        <!-- <p>Modal body text goes here.</p> -->
-                        <div class="list-group">
-                            <a href="https://www.amazon.in/HONEY-SHRINATH-AYURVED-REAL-HONEY/dp/B0BQN4JN9R"
-                                target="_blank" class="list-group-item list-group-item-action"
-                                aria-current="true">Amazon</a>
-                            <a href="https://www.flipkart.com/shrinath-ayurved-honey-pure-sure/p/itm91e5eea9c21e7?pid=HNYGHGB2DHU3NVB5"
-                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
-                            <a href="https://www.jiomart.com/p/groceries/honey-pure-sure/596769953" target="_blank"
-                                class="list-group-item list-group-item-action">Jio Mart</a>
-                            <a href="https://youtu.be/8nGSf5yrn4Q" target="_blank"
-                                class="list-group-item list-group-item-action">Watch On Youtube</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now Ends -->
         <!-- Rose Water End-->
 
         <!-- Pottali Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product">
+        <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Potli_qevtok.jpg" width="300" height="400px"
-                    height="500" class="card-img-top img-responsive" />
+                    <img src="./images/potli.png" class="imageResize" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Painkiller Potli</h5>
                         <p class="card-text" id="pottaliCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 350 for 250 gm</b> </p>
-                        <a href="#" class="btn btn-info align-content-center">Buy Now</a>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#potli">Know
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#potli">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -1575,97 +1238,30 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal End -->
-        <!-- Buy Now -->
-        <div class="modal" id="honeyBuy" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div> -->
-                    <div class="modal-body">
-                        <!-- <p>Modal body text goes here.</p> -->
-                        <div class="list-group">
-                            <a href="https://www.amazon.in/HONEY-SHRINATH-AYURVED-REAL-HONEY/dp/B0BQN4JN9R"
-                                target="_blank" class="list-group-item list-group-item-action"
-                                aria-current="true">Amazon</a>
-                            <a href="https://www.flipkart.com/shrinath-ayurved-honey-pure-sure/p/itm91e5eea9c21e7?pid=HNYGHGB2DHU3NVB5"
-                                target="_blank" class="list-group-item list-group-item-action">Flipkart</a>
-                            <a href="https://www.jiomart.com/p/groceries/honey-pure-sure/596769953" target="_blank"
-                                class="list-group-item list-group-item-action">Jio Mart</a>
-                            <a href="https://youtu.be/8nGSf5yrn4Q" target="_blank"
-                                class="list-group-item list-group-item-action">Watch On Youtube</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Buy Now Ends -->
         <!-- Pottali End-->
-
-        <!-- Test Start-->
-        <!-- <div class="col">
-            <div class="card h-100">
-                <img src="https://picsum.photos/450/300?random=42" class="card-img-top"
-                    alt="Hollywood Sign on The Hill" />
-                <div class="card-body">
-                    <h5 class="card-title">Test Data</h5>
-                    <p class="card-text" id="testText">
-                        
-                    </p>
-                    <a href="#" class="btn btn-info align-content-center">Buy Now</a>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                        data-bs-target="#chawanprashRegular">Know More</button>
-                </div>
-            </div>
-        </div> -->
-        <!-- Test End-->
     </div>
 
-  <!-- Footer -->
-  <?php require('php/footer.php') ?>
-  <!-- Footer -->    
-    
+    <!-- Footer -->
+    <?php require('php/footer.php') ?>
+    <!-- Footer -->
 </body>
-<!-- To Load Text In Product Description -->
 
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
 <script>
-
-    // $(document).ready(function()
-    // {
-    //     $(".btn-close").click(function()
-    //     {
-    //         $("#honeyYoutubeModal").empty();
-    //     });
-    // });
-
-
-            $("#honeyYoutubeModal").on("hidden.bs.modal", function() {
-
+    $("#honeyYoutubeModal").on("hidden.bs.modal", function () {
         var _this = this,
             youtubeSrc = $(_this).find("iframe").attr("src");
 
-        if($(_this).find("iframe").length > 0){                     // checking if there is iframe only then it will go to next level
+        if ($(_this).find("iframe").length > 0) {                     // checking if there is iframe only then it will go to next level
             $(_this).find("iframe").attr("src", "");                // removing src on runtime to stop video
             $(_this).find("iframe").attr("src", youtubeSrc);        // again passing youtube src value to iframe
         }
-        });
-
-
-    // $(".xzoom, .xzoom-gallery").xzoom({tint: '#333', Xoffset: 5});
-
-    $("#testText").load("./text/chawanprashIntro.txt");
-    $("#gulkand").load("./text/gulkand.txt");
+    });
 
     //Dishwash Neem and Aloevera
     $("#dwNeemCard").load("./text/dwNeemCard.txt");
@@ -1755,7 +1351,7 @@
         document.getElementById("searchTextbox").value = "";
         location.reload();
         document.getElementById("searchTextbox").focus();
-
     }
 </script>
+
 </html>
