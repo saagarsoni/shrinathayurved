@@ -1,6 +1,25 @@
 <?php
 include("header.php");
 session_start();
+if($_SERVER["REQUEST_METHOD"]=="POST")
+{
+   if(isset($_POST['purchase']))
+   {
+      
+      if(!isset($_SESSION['loggedIn'])&&empty($_SESSION["uName"]))
+      {
+         echo "User Name Is " . $_SESSION["uName"] . ".<br>";
+         // print_r($_SESSION['uName']);
+         
+         echo '<div class="alert alert-warning text-center py-5 mt-5" role="alert">
+         Please <a href="login.php" class="alert-link">Login</a>&nbsp;to Purchase.
+       </div>';
+      }
+      else{
+         echo "User Name is " . $_SESSION["uName"] . ".<br>";
+      }
+   }
+}
 
 ?>
 
@@ -11,6 +30,8 @@ session_start();
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
    <title>Cart</title>
 </head>
 <header class="header py-3">
@@ -75,7 +96,6 @@ session_start();
             </table>
          </div>
 
-
          <div class="col-lg-3">
             <div class="border bg-light rounded p-4">
                <h4>Grand Total</h4>
@@ -84,7 +104,7 @@ session_start();
                <?php
                if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                   ?>
-                  <form action="purchase.php" method="post">
+                  <form action="myCart.php" method="post">
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <input type="text" class="form-control" name="fullname" placeholder="Please Enter Full Name"
