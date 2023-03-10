@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
       
       if(!isset($_SESSION['loggedIn'])&&empty($_SESSION["uName"]))
       {
-         echo "User Name Is " . $_SESSION["uName"] . ".<br>";
+         //echo "User Name Is " . $_SESSION["uName"] . ".<br>";
          // print_r($_SESSION['uName']);
          
          echo '<div class="alert alert-warning text-center py-5 mt-5" role="alert">
@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
        </div>';
       }
       else{
-         echo "User Name is " . $_SESSION["uName"] . ".<br>";
+         echo "Welcome " . $_SESSION["uName"] . ".<br>";
       }
    }
 }
