@@ -1,7 +1,7 @@
 <!-- Header Start -->
 <header class="header py-3">
    <div class="container">
-      <h3 class="text-center">Header</h3>
+      <h3 class="text-center">Shrinath Ayurved Header</h3>
    </div>
 </header>
 <!-- Header End -->
