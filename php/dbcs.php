@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $password = '';
-$dbname = 'shrinathAyurved';
+$dbname = 'shrinathayurved';
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
 if($conn)

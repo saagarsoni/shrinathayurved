@@ -93,7 +93,7 @@ if ($showError) {
               <label for="exampleInputPassword1">Password</label>
               <input type="password" class="form-control" name="passwd" autoComplete="new-password">
             </div>
-            <button type="submit" name="loginButton" class="btn btn-primary">Login</button>
+            <button type="submit" name="loginButton" class="btn btn-primary mt-3 py-2">Login</button>
             <div class="mt-3">
               <a class="form-check-label text-center" href="#" data-bs-toggle="modal"
                 data-bs-target="#optionModal">Register Now</a>

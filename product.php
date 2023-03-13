@@ -259,8 +259,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1675841213/shrinathAyurved/Gulkand_1_300x500_apehke.jpg"
-                        class="imageResize" />
+                    <img src="./images/gulkand.png" class="imageResize" alt="Gulkand"/>
                     <div class="card-body">
                         <h6 class="card-title product-name">Gulkand</h6>
                         <p class="card-text" id="gulkandCard"></p>
@@ -472,7 +471,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://dummyimage.com/300x500/fff/d11e68&text=Khus+Sharbat" class="imageResize" />
+                    <img src="./images/_79A7997.jpg" class="imageResize" alt="Khash Sharbat" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Khass Sharbat</h5>
                         <p class="card-text" id="khasCard">Khus Card</p>
