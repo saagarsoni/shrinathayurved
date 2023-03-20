@@ -261,7 +261,7 @@
                 <div class="card h-100 product">
                     <img src="./images/gulkand.png" class="imageResize" alt="Gulkand"/>
                     <div class="card-body">
-                        <h6 class="card-title product-name">Gulkand</h6>
+                        <h5 class="card-title product-name">Gulkand</h5>
                         <p class="card-text" id="gulkandCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 190 for 500 gm</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"

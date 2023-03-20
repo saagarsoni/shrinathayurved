@@ -53,13 +53,6 @@
 </head>
 
 <body>
-  <!-- <header class="header bg-info py-1">
-    <div class="container">
-      <h4 class="text-center"></h4>
-    </div>
-  </header>
-   -->
-
   <!-- Header Start -->
   <header class="header py-3">
     <div class="container">
