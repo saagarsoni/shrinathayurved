@@ -1,6 +1,6 @@
 <!-- Header Start -->
 <header class="header py-3">
-   <div class="container">
+   <div class="container" style="text-decoration: none;">
       <h3 class="text-center">Shrinath Ayurved Header</h3>
    </div>
 </header>
