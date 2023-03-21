@@ -16,6 +16,7 @@
 
     <!--  CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/imageZoom.css" />
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -52,7 +53,7 @@
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg"
-                        class="imageResize" alt="Chawanprash Regular" />
+                        class="imageResize thumbnail zoom" alt="Chawanprash Regular" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash Regular(500 gm)</h5>
                         <p class="card-text" id="chawanprashCard"></p>
@@ -156,7 +157,7 @@
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg"
-                        class="imageResize" alt="Chawanprash Regular" />
+                        class="imageResize thumbnail zoom" alt="Chawanprash Regular" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash Regular (1 Kg)</h5>
                         <p class="card-text" id="chawanprashCard1kg"></p>
@@ -259,7 +260,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/gulkand.png" class="imageResize" alt="Gulkand"/>
+                    <img src="./images/gulkand.png" class="imageResize thumbnail zoom" alt="Gulkand"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Gulkand</h5>
                         <p class="card-text" id="gulkandCard"></p>
@@ -366,7 +367,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/roseSharbat.png" class="imageResize" />
+                    <img src="./images/roseSharbat.png" class="imageResize thumbnail zoom" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Rose Sharbat</h5>
                         <p class="card-text" id="roseSharbatCard">details for rose sharbat.</p>
@@ -471,7 +472,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/_79A7997.jpg" class="imageResize" alt="Khash Sharbat" />
+                    <img src="./images/_79A7997.jpg" class="imageResize thumbnail zoom" alt="Khash Sharbat" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Khass Sharbat</h5>
                         <p class="card-text" id="khasCard">Khus Card</p>
@@ -576,7 +577,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/Dishwash_Gel_gsgwmc.png" class="imageResize" />
+                    <img src="./images/Dishwash_Gel_gsgwmc.png" class="imageResize thumbnail zoom" />
                     <div class="card-body">
                         <h5 class="card-title product-name">DISHWASH - LEMON & SALT</h5>
                         <p class="card-text" id="dwLemonCard"></p>
@@ -680,7 +681,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/Dishwash LemonNeem.png" class="imageResize" />
+                    <img src="./images/Dishwash LemonNeem.png" class="imageResize thumbnail zoom" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Neem and Aloevera Dishwash Liquid</h5>
                         <p class="card-text" id="dwNeemCard"></p>
@@ -780,7 +781,7 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="./images/Honey_Front_yxdfxu.png" class="imageResize" />
+                                <img src="./images/Honey_Front_yxdfxu.png" class="imageResize thumbnail zoom" />
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Regular</h5>
                                 </div>
@@ -914,7 +915,7 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="./images/SQUEEZY_FRONT_hzqoku.png" class="imageResize" />
+                                <img src="./images/SQUEEZY_FRONT_hzqoku.png" class="imageResize thumbnail zoom" />
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Squeezy</h5>
                                 </div>
@@ -1066,7 +1067,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://dummyimage.com/300x500/fff/d11e68&text=Rose+Water" class="imageResize" />
+                    <img src="https://dummyimage.com/300x500/fff/d11e68&text=Rose+Water" class="imageResize thumbnail zoom" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Rose Water</h5>
                         <p class="card-text" id="roseWaterCard"></p>
@@ -1157,7 +1158,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/potli.png" class="imageResize" />
+                    <img src="./images/potli.png" class="imageResize thumbnail zoom" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Painkiller Potli</h5>
                         <p class="card-text" id="pottaliCard"></p>
