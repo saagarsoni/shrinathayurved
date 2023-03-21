@@ -81,6 +81,10 @@
           class="d-block w-100 img-fluid">
       </div>
       <div class="carousel-item">
+        <img src="./images/sharbatMix.jpg"
+          class="d-block w-100 img-fluid">
+      </div>
+      <div class="carousel-item">
         <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1677238765/shrinathAyurved/Web2_t0zhbl.jpg"
           class="d-block w-100 img-fluid">
       </div>
