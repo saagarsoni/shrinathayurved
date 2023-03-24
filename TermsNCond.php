@@ -62,8 +62,8 @@ div.WordSection1
 			<h3 class="text-center text-white" style="display: none;">Header</h3>
 		</div>
 	</header>
-	<h1 class="text-center sticky">Terms and Concition
-		Policy</h1>
+	<h1 class="text-center sticky">Terms and Condition
+		Policy(B2B)</h1>
 
 <div class=WordSection1>
 

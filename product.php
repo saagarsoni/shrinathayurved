@@ -1067,7 +1067,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://dummyimage.com/300x500/fff/d11e68&text=Rose+Water" class="imageResize thumbnail zoom" />
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679674399/shrinathAyurved/RoseWaterPhotoRoom_qgjqnp.png" class="imageResize thumbnail zoom" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Rose Water</h5>
                         <p class="card-text" id="roseWaterCard"></p>

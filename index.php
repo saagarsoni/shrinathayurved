@@ -204,7 +204,7 @@
                     </div>
                     <div class="">
                       <h6 class="font-weight-medium">Email</h6>
-                      <p class=""><a href="mailto:ayurvedindiapune@gmail.com">ayurvedindiapune@gmail.com</a></p>
+                      <p class=""><a href="mailto:ayurvedindiapune@gmail.com">contact@shrinathayurved.com</a></p>
                     </div>
                   </div>
                 </div>

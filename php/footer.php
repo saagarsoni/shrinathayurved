@@ -10,8 +10,8 @@
     <a href="https://www.bigbasket.com/" target="_blank"><img src="images/Big-Basket.svg" height="30"
         width="70" /></a>&nbsp;&nbsp;
     <a href="https://www.1mg.com/search/all?name=shrinath%20ayurved" target="_blank"><img src="images/TATA_1mg.svg"
-        height="30" width="70" /></a>
-    <a href="https://www.jiomart.com/groceries/b/shrinath-ayurved/37034" target="_blank"><img src="images/jiomart.svg"
+        height="30" width="70" /></a>&nbsp;&nbsp;
+    <a href="https://www.jiomart.com/groceries/b/shrinath-ayurved/37034" target="_blank"><img class="mt-2" src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679673946/shrinathAyurved/jioMart_dtzvcs.jpg"
         height="30" width="70" /></a>
   </marquee>
 </div>

@@ -117,8 +117,8 @@ if ($showError) {
         <div class="modal-body">
           <a href="custReg.php"> <button type="button" class="btn btn-primary" data-bs-toggle="modal"
               data-bs-target="#customerRegistration">Customer Registration</button></a>
-          <a href=""><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-              data-bs-target="#businessRegistration1">Bussiness Registration</button></a>
+          <a href="businessReg.php"><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+              data-bs-target="#businessRegistration">Bussiness Registration</button></a>
         </div>
       </div>
     </div>
