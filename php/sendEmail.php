@@ -19,7 +19,6 @@ $message = "From: $name \r\n".
 // echo $_POST["message"];
 
  mail($to, $subject, $message);
- header('Location: index.php');
+ header("Location: http://www.shrinathayurved.com/");
   exit;
-
 ?>
