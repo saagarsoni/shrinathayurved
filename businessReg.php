@@ -68,7 +68,7 @@ if ($showError) {
    <div class="row">
       <div class="col-lg-6 col-sm-6 mx-auto">
          <form action="custReg.php" method="post" autocomplete="off" name="custReg">
-            <h2>Business Registration</h2>
+            <h2>Channel Partner Registration</h2>
             <div class="form-group text-start mt-3">
                <label>Company Name</label>
                <input type="text" class="form-control" name="companyName" required title="Please Enter Company Name"
@@ -104,17 +104,18 @@ if ($showError) {
 
             <div class="form-group text-start mt-3">
                <label>Company Address</label>
-               <textarea class="form-control" placeholder="Enter Company Address" name="addr" style="height: 100px" required
-                  title="Please Enter Company Address"></textarea>
+               <textarea class="form-control" placeholder="Enter Company Address" name="addr" style="height: 100px"
+                  required title="Please Enter Company Address"></textarea>
             </div>
 
 
 
             <div class="row g-2 mt-3 text-startmt-3">
-            <div class="col-md-6">
+               <div class="col-md-6">
                   <label>Constitution</label>
                   <div class="form-floating">
-                     <select class="form-select" name="Constitution" id="Constitution" required title="Please Select Constitution">
+                     <select class="form-select" name="Constitution" id="Constitution" required
+                        title="Please Select Constitution">
                         <option value="">Select Constitution</option>
                         <option value="Proprietorship">Proprietorship</option>
                         <option value="LLP">LLP</option>
@@ -127,7 +128,8 @@ if ($showError) {
                <div class="col-md-6">
                   <label>Investment Capability in Company</label>
                   <div class="form-floating">
-                     <select class="form-select" name="Constitution" id="Constitution" required title="Please Select Investement Capibility">
+                     <select class="form-select" name="Constitution" id="Constitution" required
+                        title="Please Select Investement Capibility">
                         <option value="">Select Investement Capibility</option>
                         <option value="Proprietorship">2 Lacs</option>
                         <option value="LLP">Above 5 Lacs</option>
@@ -135,7 +137,7 @@ if ($showError) {
                      </select>
                   </div>
                </div>
-               </div>
+            </div>
 
             <div class="row g-2 mt-3 text-startmt-3">
 
@@ -194,7 +196,25 @@ if ($showError) {
                      </select>
                   </div>
                </div>
-            </div>
+            
+
+            <div class="col-md-6">
+            <label>Town / Tehsil</label>
+               <input type="text" class="form-control" name="townTehsil" required title="Please Enter Town / Tehsil Name"
+                  autocomplete="off" autofocus>
+               </div>
+
+               <div class="col-md-6">
+               <label>Pin Code</label>
+               <input type="text" class="form-control" name="pinCode" id="pinCode" maxlength="6"
+                  placeholder="Enter 6 Digit Pin Code " pattern="[6-9]\d{9}"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required
+                  title="Please Enter a Valid Pin Code">
+               <div style="text-align: left;"><span id="myspan" style="text-align: left; color:red"></span>
+               </div>
+               </div>
+
+               </div>
 
             <div class="form-group text-start mt-3">
                <label>Password</label>
@@ -247,8 +267,15 @@ if ($showError) {
 
       "Haryana": { "Ambala": [], "Bhiwani": [], "Charkhi Dadri": [], "Faridabad": [], "Fatehabad": [], "Gurugram": [], "Hisar": [], "Jhajjar": [], "Jind": [], "Kaithal": [], "Karnal": [], "Kurukshetra": [], "Mahendragarh": [], "Mewat": [], "Palwal": [], "Panchkula": [], "Panipat": [], "Rewari": [], "Rohtak": [], "Sirsa": [], "Sonipat": [], "Yamunanagar": [] },
       "HimachalPradesh": { "Bilaspur": [], "Chamba": [], "Hamirpur": [], "Kangra": [], "Kinnaur": [], "Kullu": [], "Lahaul Spiti": [], "Mandi": [], "Shimla": [], "Sirmaur": [], "Solan": [], "Una": [] },
-      // var JammuKashmir = ["Anantnag","Bandipora","Baramulla","Budgam","Doda","Ganderbal","Jammu","Kargil","Kathua","Kishtwar","Kulgam","Kupwara","Leh","Poonch","Pulwama","Rajouri","Ramban","Reasi","Samba","Shopian","Srinagar","Udhampur"];
-      // var Jharkhand = ["Bokaro","Chatra","Deoghar","Dhanbad","Dumka","East Singhbhum","Garhwa","Giridih","Godda","Gumla","Hazaribagh","Jamtara","Khunti","Koderma","Latehar","Lohardaga","Pakur","Palamu","Ramgarh","Ranchi","Sahebganj","Seraikela Kharsawan","Simdega","West Singhbhum"];
+
+      "Jammu and Kashmir": 
+      {
+         "Anantnag": [],"Bandipora": [],"Baramulla": [],"Budgam": [],"Doda": [],"Ganderbal": [],"Jammu": [],"Kargil": [],"Kathua": [],"Kishtwar": [],"Kulgam": [],"Kupwara": [],"Leh": [],"Poonch": [],"Pulwama": [],"Rajouri": [],"Ramban": [],"Reasi": [],"Samba": [],"Shopian": [],"Srinagar": [],"Udhampur": []
+      },
+      "Jharkhand": 
+      {
+         "Bokaro": [],"Chatra": [],"Deoghar": [],"Dhanbad": [],"Dumka": [],"East Singhbhum": [],"Garhwa": [],"Giridih": [],"Godda": [],"Gumla": [],"Hazaribagh": [],"Jamtara": [],"Khunti": [],"Koderma": [],"Latehar": [],"Lohardaga": [],"Pakur": [],"Palamu": [],"Ramgarh": [],"Ranchi": [],"Sahebganj": [],"Seraikela Kharsawan": [],"Simdega": [],"West Singhbhum": []
+      },
       // var Karnataka = ["Bagalkot","Bangalore Rural","Bangalore Urban","Belgaum","Bellary","Bidar","Vijayapura","Chamarajanagar","Chikkaballapur","Chikkamagaluru","Chitradurga","Dakshina Kannada","Davanagere","Dharwad","Gadag","Gulbarga","Hassan","Haveri","Kodagu","Kolar","Koppal","Mandya","Mysore","Raichur","Ramanagara","Shimoga","Tumkur","Udupi","Uttara Kannada","Yadgir"];
       // var Kerala = ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"];
       // var MadhyaPradesh = ["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna",
