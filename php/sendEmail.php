@@ -1,7 +1,7 @@
 <?php
-$to = "saagarsoniwork@gmail.com";
+$to = "contact@shrinathayurved.com";
 $subject = "New Contact Enquiry";
-$headers = "From: Saagar Soni" ;
+$headers = "From: User" ;
 
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -19,7 +19,7 @@ $message = "From: $name \r\n".
 // echo $_POST["message"];
 
  mail($to, $subject, $message);
- header('Location: index.html');
+ header('Location: index.php');
   exit;
 
 ?>

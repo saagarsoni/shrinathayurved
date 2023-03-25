@@ -13,7 +13,7 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" type="image/x-icon" href="images/favico.ico" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   <script type="text/javascript" src="./js/index.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -204,7 +204,7 @@
                     </div>
                     <div class="">
                       <h6 class="font-weight-medium">Email</h6>
-                      <p class=""><a href="mailto:ayurvedindiapune@gmail.com">contact@shrinathayurved.com</a></p>
+                      <p class=""><a href="mailto:contact@shrinathayurved.com">contact@shrinathayurved.com</a></p>
                     </div>
                   </div>
                 </div>

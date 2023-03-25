@@ -260,7 +260,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/gulkand.png" class="imageResize thumbnail zoom" alt="Gulkand"/>
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679740679/shrinathAyurved/Gulkand_n8wjpy.png" class="imageResize thumbnail zoom" alt="Gulkand"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Gulkand</h5>
                         <p class="card-text" id="gulkandCard"></p>
@@ -367,7 +367,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/roseSharbat.png" class="imageResize thumbnail zoom" />
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679740883/shrinathAyurved/roseSharbat_ajgmmx.png" class="imageResize thumbnail zoom" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Rose Sharbat</h5>
                         <p class="card-text" id="roseSharbatCard">details for rose sharbat.</p>
@@ -472,7 +472,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/_79A7997.jpg" class="imageResize thumbnail zoom" alt="Khash Sharbat" />
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679740081/shrinathAyurved/khash_ee4oem.png" class="imageResize thumbnail zoom" alt="Khash Sharbat" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Khass Sharbat</h5>
                         <p class="card-text" id="khasCard">Khus Card</p>
@@ -577,7 +577,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/Dishwash_Gel_gsgwmc.png" class="imageResize thumbnail zoom" />
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741033/shrinathAyurved/Dishwash_Gel_gsgwmc_xhqbw5.png" class="imageResize thumbnail zoom" />
                     <div class="card-body">
                         <h5 class="card-title product-name">DISHWASH - LEMON & SALT</h5>
                         <p class="card-text" id="dwLemonCard"></p>
@@ -681,7 +681,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/Dishwash LemonNeem.png" class="imageResize thumbnail zoom" />
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741331/Dishwash_LemonandNeem_wqjgu4.png" class="imageResize thumbnail zoom" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Neem and Aloevera Dishwash Liquid</h5>
                         <p class="card-text" id="dwNeemCard"></p>
@@ -781,7 +781,7 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="./images/Honey_Front_yxdfxu.png" class="imageResize thumbnail zoom" />
+                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741477/Honey_Front_yxdfxu_rlkwak.png" class="imageResize thumbnail zoom" />
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Regular</h5>
                                 </div>
@@ -915,7 +915,7 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="./images/SQUEEZY_FRONT_hzqoku.png" class="imageResize thumbnail zoom" />
+                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741475/SQUEEZY_FRONT_hzqoku_jpws7q.png" class="imageResize thumbnail zoom" />
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Squeezy</h5>
                                 </div>
@@ -1158,7 +1158,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="./images/potli.png" class="imageResize thumbnail zoom" />
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741645/shrinathAyurved/potli_vi7uyx.png" class="imageResize thumbnail zoom" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Painkiller Potli</h5>
                         <p class="card-text" id="pottaliCard"></p>
