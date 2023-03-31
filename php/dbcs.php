@@ -1,17 +1,14 @@
 <?php
+ declare(strict_types=1);
 // Connect to the MySQL database
 $host = 'localhost';
-$user = 'root';
-$password = '';
-$dbname = 'shrinathayurved';
+$user = 'upkvwkyf_shrinathAyurved';
+$password = '5nj*VW9*7';
+$dbname = 'upkvwkyf_shrinathAyurved';
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
-if($conn)
+if(!$conn)
 {
-   echo "Success";
-}
-else
-{  
-   die("Error".mysqli_connect_error());
+  die("Error".mysqli_connect_error());
 }
 ?>

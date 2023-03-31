@@ -37,7 +37,7 @@
             <h3 class="text-center text-white">Header</h3>
         </div>
     </header>
-    <div class="container-fluid row center py-20 p-2">
+    <div class="container-fluid row center py-20 p-2" style="background-color :#03C04A;color:#fff">
         <h2>Our Products</h2>
     </div>
 
@@ -260,7 +260,7 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679740679/shrinathAyurved/Gulkand_n8wjpy.png" class="imageResize thumbnail zoom" alt="Gulkand"/>
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1680282010/shrinathAyurved/gulkand_t0mssv.png" class="imageResize thumbnail zoom" alt="Gulkand"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Gulkand</h5>
                         <p class="card-text" id="gulkandCard"></p>
