@@ -1,5 +1,4 @@
 <?php
- declare(strict_types=1);
 // Connect to the MySQL database
 $host = 'localhost';
 $user = 'upkvwkyf_shrinathAyurved';
