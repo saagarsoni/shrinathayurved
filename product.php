@@ -50,8 +50,8 @@
         <!-- Chyawanprash Regular(500 gm) Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
-            <div class="col product d-flex align-items-stretch">
-                <div class="card h-100 product">
+            <div class="col product d-flex align-items-stretch" >
+                <div class="card h-100 product" style="display: flex;">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg"
                         class="imageResize thumbnail zoom" alt="Chawanprash Regular" />
                     <div class="card-body">
@@ -155,7 +155,7 @@
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
-                <div class="card h-100 product">
+                <div class="card h-100 product" style="display: flex;">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg"
                         class="imageResize thumbnail zoom" alt="Chawanprash Regular" />
                     <div class="card-body">
@@ -258,8 +258,8 @@
         <!-- GULKAND Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
-            <div class="col product d-flex align-items-stretch">
-                <div class="card h-100 product">
+            <div class="col product d-flex align-items-stretch" >
+                <div class="card h-100 product" style="display: flex;">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1680282010/shrinathAyurved/gulkand_t0mssv.png" class="imageResize thumbnail zoom" alt="Gulkand"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Gulkand</h5>

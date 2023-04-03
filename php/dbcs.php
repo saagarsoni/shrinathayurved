@@ -1,13 +1,21 @@
 <?php
 // Connect to the MySQL database
 $host = 'localhost';
-$user = 'upkvwkyf_shrinathAyurved';
-$password = '5nj*VW9*7';
-$dbname = 'upkvwkyf_shrinathAyurved';
+$user = 'root';
+$password = '';
+$dbname = 'shrinathayurved';
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
-if(!$conn)
-{
-  die("Error".mysqli_connect_error());
-}
+// if(!$conn)
+// {
+// //   die("Error".mysqli_connect_error());
+//   echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+//   exit();
+// }
+// Check connection
+if (mysqli_connect_errno()) {
+   echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   exit();
+ }
+ 
 ?>
