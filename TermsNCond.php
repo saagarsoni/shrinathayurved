@@ -41,7 +41,7 @@
 	{font-family:"Calibri",sans-serif;}
 @page WordSection1
 	{size:595.3pt 841.9pt;
-	margin:1.0in 1.0in 1.0in 1.0in;}
+	margin:1.0in 10.0in 1.0in 10.0in;}
 div.WordSection1
 	{page:WordSection1;}
 	h1.sticky {
@@ -65,7 +65,7 @@ div.WordSection1
 	<h1 class="text-center sticky">Terms and Condition
 		Policy(B2B)</h1>
 
-<div class=WordSection1>
+<div class="container WordSection1" >
 
 <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
 normal;background:white'><b><span lang=EN-IN style='font-size:14.0pt;

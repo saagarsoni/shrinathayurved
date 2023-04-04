@@ -66,7 +66,7 @@ div.WordSection1
 		</div>
 	</header>
 	<h1 class="text-center sticky">Disclaimer</h1>
-<div class=WordSection1>
+<div class="container WordSection1">
 
 <p class=MsoNormal style='margin-bottom:0in;text-align:justify;line-height:
 normal;background:white'><b><span lang=EN-IN style='font-size:14.0pt;

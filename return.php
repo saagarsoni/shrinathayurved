@@ -35,7 +35,7 @@
   </header>
   <h6 class="text-start fst-italic">Updated March 14th, 2023</h6>
   <h1 class="text-center sticky">Return and Refund Policy</h1>
-  <p id="privacyPolicyCard"></p>
+  <p id="privacyPolicyCard" class="container"></p>
   <!-- Footer -->
   <?php require('php/footer.php') ?>
   <!-- Footer -->

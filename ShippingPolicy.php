@@ -78,7 +78,7 @@
 	<h1 class="text-center sticky">Shipping &amp; Delivery
 		Policy</h1>
 
-	<div class=WordSection1>
+	<div class="container WordSection1">
 
 		<p style='margin:0in;line-height:18.0pt'><span lang=EN-IN style='font-family:
 "Arial",sans-serif;color:#545454'>At Shrinathayurved.com, every order is a

@@ -61,7 +61,7 @@ div.WordSection1
 		</div>
 	 </header>
 	<h1 class="text-center sticky">TERMS OF SERVICE</h1>
-	<div class=WordSection1>
+	<div class="container WordSection1">
 
 
 
