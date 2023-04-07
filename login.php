@@ -14,11 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($num == 1) {
       while ($row = mysqli_fetch_assoc($result)) {
         $userName = $row['name'];
+        $userId=$row['id'];
         if (password_verify($passwd, $row['password'])) {
           $login = true;
           session_start();
           $_SESSION['loggedIn'] = true;
           $_SESSION['uName'] = $userName;
+          $_SESSION['uId'] = $userId;
+
           header("location:index.php");
         } else {
           $showError = "Invalid Credentials";

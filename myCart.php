@@ -1,25 +1,41 @@
 <?php
 include("header.php");
 session_start();
-if($_SERVER["REQUEST_METHOD"]=="POST")
-{
-   if(isset($_POST['purchase']))
-   {
+include('php/dbcs.php');
+// session_destroy();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   if (isset($_POST['purchase'])) {
       
-      if(!isset($_SESSION['loggedIn'])&&empty($_SESSION["uName"]))
-      {
+      if (!isset($_SESSION['loggedIn']) && empty($_SESSION["uName"])) {
          //echo "User Name Is " . $_SESSION["uName"] . ".<br>";
-         // print_r($_SESSION['uName']);
-         
+          print_r($_SESSION['uName']);
+
          echo '<div class="alert alert-warning text-center py-5 mt-5" role="alert">
          Please <a href="login.php" class="alert-link">Login</a>&nbsp;to Purchase.
        </div>';
-      }
-      else{
-         echo "Welcome " . $_SESSION["uName"] . ".<br>";
+      } else {
+         //echo "Welcome " . $_SESSION["uName"] . ".<br>";
       }
    }
 }
+
+$sql = "SELECT * FROM tblregister where id='{$_SESSION['uId']}'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+   // output data of each row
+   while ($row = $result->fetch_assoc()) {
+      // echo "id: " . $row["id"] ."<br>". "Name: " . $row["name"] . " <br>" ."Phone Number: ". $row["phone"] ."<br>"."Email: " . $row["email"]." " ."<br>"."Address: ". $row["address"]. "<br>";
+      //echo var_dump($row);
+      $GLOBALS['userName']=$row["name"];
+      $GLOBALS['cellPhone']=$row["phone"];
+      $GLOBALS['userAddress']=$row["address"];
+   }
+} else {
+   echo "0 results";
+}
+
 
 ?>
 
@@ -27,12 +43,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 <html lang="en">
 
 <head>
+
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
    <title>Cart</title>
+   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 <header class="header py-3">
    <div class="container">
@@ -108,18 +130,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <input type="text" class="form-control" name="fullname" placeholder="Please Enter Full Name"
-                           Required>
+                           value="<?php echo $userName ?>" readonly>
                      </div>
 
                      <div class="mb-3">
                         <label class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" name="phone_no" placeholder="Enter Phone Number" Required>
+                        <input type="text" class="form-control" name="phone_no" placeholder="Enter Phone Number"
+                           value="<?php echo $cellPhone ?>" readonly>
                      </div>
 
                      <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <textarea name="address" class="form-control" placeholder="Enter Full Address" cols="30" rows="10"
-                           Required></textarea>
+                        <textarea name="address" class="form-control"
+                           placeholder="Enter Full Address" cols="30" rows="10" readonly><?php echo $userAddress ?></textarea>
                      </div>
 
                      <!-- <div class="form-check">
@@ -156,7 +179,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             itotal[i].innerText = '\u20B9 ' + (iprice[i].value) * (iquantity[i].value);
             gt = gt + (iprice[i].value) * (iquantity[i].value);
          }
-         gtotal.innerText = '\u20B9 '+gt;
+         gtotal.innerText = '\u20B9 ' + gt;
       }
       subTotal();
    </script>

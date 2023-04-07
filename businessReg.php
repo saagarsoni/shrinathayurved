@@ -257,8 +257,7 @@ if ($showError) {
                <div class="col-md-6">
                   <label>Pin Code</label>
                   <input type="text" class="form-control" name="pinCode" id="pinCode" maxlength="6"
-                     placeholder="Enter 6 Digit Pin Code " pattern="[6-9]\d{9}"
-                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required
+                     placeholder="Enter 6 Digit Pin Code "  pattern="[1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{3}\\s[0-9]{3}" required
                      title="Please Enter a Valid Pin Code">
                   <div style="text-align: left;"><span id="myspan" style="text-align: left; color:red"></span>
                   </div>
@@ -295,6 +294,16 @@ if ($showError) {
       else {
          return true;
       }
+
+
+//       $filename = 'example.txt';
+// $searchfor = 'hello';
+// $file = file_get_contents($filename);
+// if(strpos($file, $searchfor)) 
+// {
+//    echo "String found";
+// }
+
    }
 
    //States , District and their Values
