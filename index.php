@@ -109,7 +109,29 @@
     <a href="product.php"> Click Here</a>&nbsp;to know about more products
   </h4>
 
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="style_infoFooterContainer__9j9gF">
+            <ul class="style_infoFooter__Js_sP">
+                <li><svg><use xlink:href="/sprite.svg#delivery"></use></svg>
+                    <h6>Worldwide Delivery</h6>
+                    <p>We deliver gifts to over 70 countries</p>
+                </li>
+                <li><svg><use xlink:href="/sprite.svg#securePay"></use></svg>
+                    <h6>100% Safe &amp; Secure Payments</h6>
+                    <p>Pay using secure payment methods</p>
+                </li>
+                <li><svg><use xlink:href="/sprite.svg#support"></use></svg>
+                    <h6>Dedicated Help Center</h6>
+                    <p>Call us +91 9212422000 | 8:00AM-10:30PM</p>
+                </li>
+                <li><svg><use xlink:href="/sprite.svg#app"></use></svg>
+                    <h6>Shop on the go</h6>
+                    <p>Download mobile app</p>
+                </li>
+            </ul>
+        </div>
+
+
+  <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active p-1">
         <a href="product.php">
@@ -118,7 +140,25 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> -->
+  <!-- Marquee Start -->
+<div style="background-color :#03C04A">
+  <marquee width="100%" behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();"
+    style="color:white; font-weight:bold">
+    Free Delivery &nbsp;
+    <a href="https://www.flipkart.com/" target="_blank"><img src="images/flipkart.svg" height="30"
+        width="70" /></a>&nbsp;&nbsp;
+    <a href="https://www.amazon.com/" target="_blank"><img src="images/amazon.svg" height="18" width="70"
+        class="mt-2" /></a>&nbsp;
+    <a href="https://www.bigbasket.com/" target="_blank"><img src="images/Big-Basket.svg" height="30"
+        width="70" /></a>&nbsp;&nbsp;
+    <a href="https://www.1mg.com/search/all?name=shrinath%20ayurved" target="_blank"><img src="images/TATA_1mg.svg"
+        height="30" width="70" /></a>&nbsp;
+    <a href="https://www.jiomart.com/groceries/b/shrinath-ayurved/37034" target="_blank"><img class="mt-1" src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679675663/shrinathAyurved/jioMart-Photo_z5sjro.png"
+        height="50" width="90" /></a>
+  </marquee>
+</div>
+<!-- Marque End -->
   <div class="container-fluid py-5" id="xxyy">
     <div>
       <!-- About Us Start -->

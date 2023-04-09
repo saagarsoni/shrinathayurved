@@ -8,8 +8,50 @@
 <?php
 $showAlert = false;
 $showError = false;
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    include('php/dbcs.php');
+
+   function sendMail($emailId,$vCode)
+   {
+      require ("PHPMailer/PHPMailer.php");
+      require ("PHPMailer/SMTP.php");
+      require ("PHPMailer/Exception.php");
+
+      $mail = new PHPMailer(true);
+
+      try {
+         //Server settings
+         $mail->isSMTP();                                            //Send using SMTP
+         $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+         $mail->Username   = 'saagarsoniwork@gmail.com';                     //SMTP username
+         $mail->Password   = 'mnxcnmfxepmgpkmh';                               //SMTP password
+         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+     
+         //Recipients
+         $mail->setFrom('saagarsoniwork@gmail.com', 'Shrinath Ayurved');
+         $mail->addAddress($emailId);     //Add a recipient
+     
+         //Content
+         $mail->isHTML(true);                                  //Set email format to HTML
+         $mail->Subject = 'Email Verification From Shrinath Ayurved';
+         $mail->Body    = "Thanks For Registration !
+         Click The Link To Verify Email Address<a href='http://localhost/shrinathAyurved/verify.php?email=$emailId&vCode=$vCode'>Verify</a>";
+     
+         $mail->send();
+         return true;
+     } catch (Exception $e) {
+         // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+         return false;
+     }
+   }
+
    $userName = strip_tags($_POST['userName']);
    $emailId = strip_tags($_POST['emailId']);
    $mobileNumber = strip_tags($_POST['mobileNumber']);
@@ -28,14 +70,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $showError = "Email Already Exists";
 
    } else {
-      $sqlQuery = " INSERT INTO `tblregister` (`name`, `phone`, `email`, `address`, `state`, `district`, `password`, `tdate`) 
-   VALUES ('$userName', '$mobileNumber', '$emailId', '$addr', '$state', '$district', '$passwd', current_timestamp());";
+      $vCode=bin2hex((random_bytes(16)));
+      $sqlQuery = " INSERT INTO `tblregister` (`name`, `phone`, `email`, `address`, `state`, `district`, `password`, `verificationCode`, `isVerified` ,`tdate`) 
+   VALUES ('$userName', '$mobileNumber', '$emailId', '$addr', '$state', '$district', '$passwd','$vCode','0',current_timestamp());";
 
-      $result = mysqli_query($conn, $sqlQuery);
+      // $result = mysqli_query($conn, $sqlQuery && sendMail($_POST['emailId'],$vCode));
 
-      if ($result) {
+      if(mysqli_query($conn, $sqlQuery) && sendMail($_POST['emailId'],$vCode))
+      {
          $showAlert = true;
       }
+
+      // if ($result) {
+      //    $showAlert = true;
+      // }
    }
 }
 ?>
