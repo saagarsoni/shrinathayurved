@@ -141,7 +141,7 @@ if ($showError) {
             </div>
 
             <div class="form-group text-start mt-3">
-               <label>Official Email (This Will Be Your User Id))</label>
+               <label>Official Email (This Will Be Your User Id)</label>
                <input type="email" class="form-control" name="emailId" required title="Please Enter a Valid Email"
                   autocomplete="off">
             </div>
