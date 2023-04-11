@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    //echo "<br>User Name = $userName<br>Email=$emailId<br>Mobile=$mobileNumber<br>Address =$addr<br>State=$state<br>District=$district<br>Password=$passwd ";
    //Check User Exist
+   /*
    $existQuery = "SELECT * FROM `tblregister` WHERE email='$emailId'";
 
    $result = mysqli_query($conn, $existQuery);
@@ -37,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $showAlert = true;
       }
    }
+   */
 }
 ?>
 <!-- Navigation Start -->
@@ -294,16 +296,6 @@ if ($showError) {
       else {
          return true;
       }
-
-
-//       $filename = 'example.txt';
-// $searchfor = 'hello';
-// $file = file_get_contents($filename);
-// if(strpos($file, $searchfor)) 
-// {
-//    echo "String found";
-// }
-
    }
 
    //States , District and their Values

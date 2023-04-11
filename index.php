@@ -50,6 +50,64 @@
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/5ac440c930.js" crossorigin="anonymous"></script>
   <script src="./js/script.js"></script>
+
+  <!-- BootStrap Icon  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+  <style>
+.warranty-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center align horizontally */
+}
+
+.warranty-icon,
+.shipping-icon,
+.secure-icon,
+.gst-icon {
+  margin-right: 5px;
+  font-size: 75px; /* Increase icon size */
+  padding: 10px;
+  margin-right: 2px;
+
+}
+
+.warranty-text {
+  font-size: 14px;
+  color: #333;
+  display: flex; */
+   flex-direction: column;
+  align-items: center; /* Center align text vertically */
+  justify-content: center;
+}
+.text-line {
+  margin-bottom: 5px; /* Add some vertical spacing between lines */
+  text-align: center;
+  margin-right: 100px;
+  font-size: 20px;
+}
+
+.warranty-container .warranty-text span:not(:last-child)::after {
+  content: "\00a0\00a0\00a0"; /* Add space between icons */
+}
+
+
+
+/* CSS */
+.my-icon {
+  
+  animation: pop-up 0.3s ease-in-out; /* specify the animation property */
+}
+
+.my-icon:hover {
+  transform: scale(1.2); /* set the desired size or scale factor for the icon on hover */
+}
+
+/* Add this CSS rule to reset the transform property after hover ends */
+.my-icon:hover:after {
+  transform: scale(1);
+}
+
+  </style>
 </head>
 
 <body>
@@ -108,6 +166,24 @@
     <!-- There are wide range of products at Shrinath Ayurved, click to know more -->
     <a href="product.php"> Click Here</a>&nbsp;to know about more products
   </h4>
+
+  <div class="warranty-container">
+  <!-- <i class="fas fa-shield-alt warranty-icon" style="color:green;"></i> -->
+  <span class="warranty-text">
+    <!-- <span class="text-line">1 Year Warranty, 7 Days Replacement,</span> -->
+    <i class="bi bi-truck shipping-icon my-icon" style="color:green;"></i>
+    <!-- <i class="fas fa-sharp fa-regular fa-truck-fast shipping-icon" style="color:green;"></i> -->
+    <span class="text-line">Free Shipping above, Rs 599</span>
+
+    <i class="bi bi-shield-lock secure-icon my-icon" style="color:green;"></i>
+    <!-- <i class="fas fa-regular fa-lock secure-icon" style="color:green;"></i> -->
+    <span class="text-line">Secure Checkout</span>
+    <i class="bi bi-receipt gst-icon my-icon" style="color:green;"></i>
+    <!-- <i class="fas fa-receipt gst-icon" style="color:green;"></i> -->
+    <span class="text-line">GST Billing</span>
+  </span>
+</div>
+
 
   <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">

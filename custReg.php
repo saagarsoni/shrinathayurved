@@ -16,40 +16,40 @@ use PHPMailer\PHPMailer\Exception;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    include('php/dbcs.php');
 
-   function sendMail($emailId,$vCode)
+   function sendMail($emailId, $vCode)
    {
-      require ("PHPMailer/PHPMailer.php");
-      require ("PHPMailer/SMTP.php");
-      require ("PHPMailer/Exception.php");
+      require("PHPMailer/PHPMailer.php");
+      require("PHPMailer/SMTP.php");
+      require("PHPMailer/Exception.php");
 
       $mail = new PHPMailer(true);
 
       try {
          //Server settings
-         $mail->isSMTP();                                            //Send using SMTP
-         $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-         $mail->Username   = 'saagarsoniwork@gmail.com';                     //SMTP username
-         $mail->Password   = 'mnxcnmfxepmgpkmh';                               //SMTP password
-         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-     
+         $mail->isSMTP(); //Send using SMTP
+         $mail->Host = 'smtp.gmail.com'; //Set the SMTP server to send through
+         $mail->SMTPAuth = true; //Enable SMTP authentication
+         $mail->Username = 'saagarsoniwork@gmail.com'; //SMTP username
+         $mail->Password = 'mnxcnmfxepmgpkmh'; //SMTP password
+         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
+         $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
          //Recipients
          $mail->setFrom('saagarsoniwork@gmail.com', 'Shrinath Ayurved');
-         $mail->addAddress($emailId);     //Add a recipient
-     
+         $mail->addAddress($emailId); //Add a recipient
+
          //Content
-         $mail->isHTML(true);                                  //Set email format to HTML
+         $mail->isHTML(true); //Set email format to HTML
          $mail->Subject = 'Email Verification From Shrinath Ayurved';
-         $mail->Body    = "Thanks For Registration !
+         $mail->Body = "Thanks For Registration !
          Click The Link To Verify Email Address<a href='http://localhost/shrinathAyurved/verify.php?email=$emailId&vCode=$vCode'>Verify</a>";
-     
+
          $mail->send();
          return true;
-     } catch (Exception $e) {
+      } catch (Exception $e) {
          // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
          return false;
-     }
+      }
    }
 
    $userName = strip_tags($_POST['userName']);
@@ -70,14 +70,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $showError = "Email Already Exists";
 
    } else {
-      $vCode=bin2hex((random_bytes(16)));
+      $vCode = bin2hex((random_bytes(16)));
       $sqlQuery = " INSERT INTO `tblregister` (`name`, `phone`, `email`, `address`, `state`, `district`, `password`, `verificationCode`, `isVerified` ,`tdate`) 
    VALUES ('$userName', '$mobileNumber', '$emailId', '$addr', '$state', '$district', '$passwd','$vCode','0',current_timestamp());";
 
       // $result = mysqli_query($conn, $sqlQuery && sendMail($_POST['emailId'],$vCode));
 
-      if(mysqli_query($conn, $sqlQuery) && sendMail($_POST['emailId'],$vCode))
-      {
+      if (mysqli_query($conn, $sqlQuery) && sendMail($_POST['emailId'], $vCode)) {
          $showAlert = true;
       }
 
@@ -164,7 +163,7 @@ if ($showError) {
                         <option value="Jharkhand">Jharkhand</option>
                         <option value="Karnataka">Karnataka</option>
                         <option value="Kerala">Kerala</option>
-                        <option value="Madya Pradesh">Madya Pradesh</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
                         <option value="Maharashtra">Maharashtra</option>
                         <option value="Manipur">Manipur</option>
                         <option value="Meghalaya">Meghalaya</option>
@@ -253,16 +252,26 @@ if ($showError) {
       Gujarat: { "Ahmedabad": [], "Amreli": [], "Anand": [], "Aravalli": [], "Banaskantha": [], "Bharuch": [], "Bhavnagar": [], "Botad": [], "Chhota Udaipur": [], "Dahod": [], "Dang": [], "Devbhoomi Dwarka": [], "Gandhinagar": [], "Gir Somnath": [], "Jamnagar": [], "Junagadh": [], "Kheda": [], "Kutch": [], "Mahisagar": [], "Mehsana": [], "Morbi": [], "Narmada": [], "Navsari": [], "Panchmahal": [], "Patan": [], "Porbandar": [], "Rajkot": [], "Sabarkantha": [], "Surat": [], "Surendranagar": [], "Tapi": [], "Vadodara": [], "Valsad": [] },
 
       "Haryana": { "Ambala": [], "Bhiwani": [], "Charkhi Dadri": [], "Faridabad": [], "Fatehabad": [], "Gurugram": [], "Hisar": [], "Jhajjar": [], "Jind": [], "Kaithal": [], "Karnal": [], "Kurukshetra": [], "Mahendragarh": [], "Mewat": [], "Palwal": [], "Panchkula": [], "Panipat": [], "Rewari": [], "Rohtak": [], "Sirsa": [], "Sonipat": [], "Yamunanagar": [] },
-      "HimachalPradesh": { "Bilaspur": [], "Chamba": [], "Hamirpur": [], "Kangra": [], "Kinnaur": [], "Kullu": [], "Lahaul Spiti": [], "Mandi": [], "Shimla": [], "Sirmaur": [], "Solan": [], "Una": [] },
-      "Jammu and Kashmir" : {"Anantnag": [],"Bandipora": [],"Baramulla": [],"Budgam": [],"Doda": [],"Ganderbal": [],"Jammu": [],"Kargil": [],"Kathua": [],"Kishtwar": [],"Kulgam": [],"Kupwara": [],"Leh": [],"Poonch": [],"Pulwama": [],"Rajouri": [],"Ramban": [],"Reasi": [],"Samba": [],"Shopian": [],"Srinagar": [],"Udhampur": []},
-      "Jharkhand": {"Bokaro": [],"Chatra": [],"Deoghar": [],"Dhanbad": [],"Dumka": [],"East Singhbhum": [],"Garhwa": [],"Giridih": [],"Godda": [],"Gumla": [],"Hazaribagh": [],"Jamtara": [],"Khunti": [],"Koderma": [],"Latehar": [],"Lohardaga": [],"Pakur": [],"Palamu": [],"Ramgarh": [],"Ranchi": [],"Sahebganj": [],"Seraikela Kharsawan": [],"Simdega": [],"West Singhbhum": []},
-      "Karnataka" : 
-      {
-         "Bagalkot": [],"Bangalore Rural": [],"Bangalore Urban": [],"Belgaum": [],"Bellary": [],"Bidar": [],"Vijayapura": [],"Chamarajanagar": [],"Chikkaballapur": [],"Chikkamagaluru": [],"Chitradurga": [],"Dakshina Kannada": [],"Davanagere": [],"Dharwad": [],"Gadag": [],"Gulbarga": [],"Hassan": [],"Haveri": [],"Kodagu": [],"Kolar": [],"Koppal": [],"Mandya": [],"Mysore": [],"Raichur": [],"Ramanagara": [],"Shimoga": [],"Tumkur": [],"Udupi": [],"Uttara Kannada": [],"Yadgir": []
+      
+      "HimachalPradesh": 
+      { "Bilaspur": [], "Chamba": [], "Hamirpur": [], "Kangra": [], "Kinnaur": [], "Kullu": [], "Lahaul Spiti": [], "Mandi": [], "Shimla": [], "Sirmaur": [], "Solan": [], "Una": [] 
       },
-      // var Kerala = ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"];
-      // var MadhyaPradesh = ["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna",
-      // "Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"];
+
+      "Jammu and Kashmir": { "Anantnag": [], "Bandipora": [], "Baramulla": [], "Budgam": [], "Doda": [], "Ganderbal": [], "Jammu": [], "Kargil": [], "Kathua": [], "Kishtwar": [], "Kulgam": [], "Kupwara": [], "Leh": [], "Poonch": [], "Pulwama": [], "Rajouri": [], "Ramban": [], "Reasi": [], "Samba": [], "Shopian": [], "Srinagar": [], "Udhampur": [] },
+      "Jharkhand": { "Bokaro": [], "Chatra": [], "Deoghar": [], "Dhanbad": [], "Dumka": [], "East Singhbhum": [], "Garhwa": [], "Giridih": [], "Godda": [], "Gumla": [], "Hazaribagh": [], "Jamtara": [], "Khunti": [], "Koderma": [], "Latehar": [], "Lohardaga": [], "Pakur": [], "Palamu": [], "Ramgarh": [], "Ranchi": [], "Sahebganj": [], "Seraikela Kharsawan": [], "Simdega": [], "West Singhbhum": [] },
+      "Karnataka":
+      {
+         "Bagalkot": [], "Bangalore Rural": [], "Bangalore Urban": [], "Belgaum": [], "Bellary": [], "Bidar": [], "Vijayapura": [], "Chamarajanagar": [], "Chikkaballapur": [], "Chikkamagaluru": [], "Chitradurga": [], "Dakshina Kannada": [], "Davanagere": [], "Dharwad": [], "Gadag": [], "Gulbarga": [], "Hassan": [], "Haveri": [], "Kodagu": [], "Kolar": [], "Koppal": [], "Mandya": [], "Mysore": [], "Raichur": [], "Ramanagara": [], "Shimoga": [], "Tumkur": [], "Udupi": [], "Uttara Kannada": [], "Yadgir": []
+      },
+      "Kerala":
+      {
+         "Alappuzha": [], "Ernakulam": [], "Idukki": [], "Kannur": [], "Kasaragod": [], "Kollam": [], "Kottayam": [], "Kozhikode": [], "Malappuram": [], "Palakkad": [], "Pathanamthitta": [], "Thiruvananthapuram": [], "Thrissur": [], "Wayanad": []
+      },
+      "Madhya Pradesh":
+      {
+         "Agar Malwa": [], "Alirajpur": [], "Anuppur": [], "Ashoknagar": [], "Balaghat": [], "Barwani": [], "Betul": [], "Bhind": [], "Bhopal": [], "Burhanpur": [], "Chhatarpur": [], "Chhindwara": [], "Damoh": [], "Datia": [], "Dewas": [], "Dhar": [], "Dindori": [], "Guna": [], "Gwalior": [], "Harda": [], "Hoshangabad": [], "Indore": [], "Jabalpur": [], "Jhabua": [], "Katni": [], "Khandwa": [], "Khargone": [], "Mandla": [], "Mandsaur": [], "Morena": [], "Narsinghpur": [], "Neemuch": [], "Panna": [], "Raisen": [], "Rajgarh": [], "Ratlam": [], "Rewa": [], "Sagar": [], "Satna": [],
+         "Sehore": [], "Seoni": [], "Shahdol": [], "Shajapur": [], "Sheopur": [], "Shivpuri": [], "Sidhi": [], "Singrauli": [], "Tikamgarh": [], "Ujjain": [], "Umaria": [], "Vidisha": []
+      },
       "Maharashtra": { "Ahmednagar": [], "Akola": [], "Amravati": [], "Aurangabad": [], "Beed": [], "Bhandara": [], "Buldhana": [], "Chandrapur": [], "Dhule": [], "Gadchiroli": [], "Gondia": [], "Hingoli": [], "Jalgaon": [], "Jalna": [], "Kolhapur": [], "Latur": [], "Mumbai City": [], "Mumbai Suburban": [], "Nagpur": [], "Nanded": [], "Nandurbar": [], "Nashik": [], "Osmanabad": [], "Palghar": [], "Parbhani": [], "Pune": [], "Raigad": [], "Ratnagiri": [], "Sangli": [], "Satara": [], "Sindhudurg": [], "Solapur": [], "Thane": [], "Wardha": [], "Washim": [], "Yavatmal": [] },
       // var Manipur = ["Bishnupur","Chandel","Churachandpur","Imphal East","Imphal West","Jiribam","Kakching","Kamjong","Kangpokpi","Noney","Pherzawl","Senapati","Tamenglong","Tengnoupal","Thoubal","Ukhrul"];
       // var Meghalaya = ["East Garo Hills","East Jaintia Hills","East Khasi Hills","North Garo Hills","Ri Bhoi","South Garo Hills","South West Garo Hills","South West Khasi Hills","West Garo Hills","West Jaintia Hills","West Khasi Hills"];
