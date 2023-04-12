@@ -91,7 +91,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Navigation End -->
 <!-- Customer Modal Start-->
 
-
 <!-- Stylesheet Start-->
 <link rel="stylesheet" href="css/loginRegister.css">
 <!-- Stylesheet End-->

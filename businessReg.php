@@ -10,33 +10,43 @@ $showAlert = false;
 $showError = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    include('php/dbcs.php');
-   $userName = strip_tags($_POST['userName']);
-   $emailId = strip_tags($_POST['emailId']);
-   $mobileNumber = strip_tags($_POST['mobileNumber']);
-   $addr = strip_tags($_POST['addr']);
-   $state = $_POST['state'];
-   $district = $_POST['district'];
-   $passwd = strip_tags(password_hash($_POST['passwd'], PASSWORD_DEFAULT));
+
+   
+
+   // $to = "sales@shrinathayurved.com";
+   // $subject = "New Sales Bussiness Enquiry";
+   // $headers = 'From: '.$companyName."\r\n".
+
+
+
+
+   // echo "<br>Company Name = $companyName<br>Reg Type=$registrationType<br>Auth Person=$authPersonName
+   //          <br>Present Buss Name =$presentBussinessName<br>Year Os Starting Buss=$yearOfStartingBussiness
+   //          <br>No of Sales Person=$noOfSalesPerson<br>Applicant Name=$applicantFullName
+   //          <br>GST No =$gstNumber<br>Town Population=$populationOfTown<br>No Of Retailers=$numberOfRetailers
+   //          <br>Official Email=$officialEmail<br>Mobile No =$mobileNumber<br>Company Address=$companyAddress
+   //          <br>Constitution=$constitution<br>Investement Capibility=$investmentCapibility
+   //          <br>State =$state<br>District=$district<br>Tehsil=$tehsil<br>Pincode=$pinCode ";
+
+   // mail($to, $subject, $message,$headers);
+   // //header("Location: http://www.shrinathayurved.com/");
+   // exit;
 
    //echo "<br>User Name = $userName<br>Email=$emailId<br>Mobile=$mobileNumber<br>Address =$addr<br>State=$state<br>District=$district<br>Password=$passwd ";
    //Check User Exist
    /*
    $existQuery = "SELECT * FROM `tblregister` WHERE email='$emailId'";
-
    $result = mysqli_query($conn, $existQuery);
    $numExistRows = mysqli_num_rows($result);
    if ($numExistRows > 0) {
-      $showError = "Email Already Exists";
-
+   $showError = "Email Already Exists";
    } else {
-      $sqlQuery = " INSERT INTO `tblregister` (`name`, `phone`, `email`, `address`, `state`, `district`, `password`, `tdate`) 
+   $sqlQuery = " INSERT INTO `tblregister` (`name`, `phone`, `email`, `address`, `state`, `district`, `password`, `tdate`) 
    VALUES ('$userName', '$mobileNumber', '$emailId', '$addr', '$state', '$district', '$passwd', current_timestamp());";
-
-      $result = mysqli_query($conn, $sqlQuery);
-
-      if ($result) {
-         $showAlert = true;
-      }
+   $result = mysqli_query($conn, $sqlQuery);
+   if ($result) {
+   $showAlert = true;
+   }
    }
    */
 }
@@ -45,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php require('header.php') ?>
 <!-- Navigation End -->
 <!-- Customer Modal Start-->
-
 
 <!-- Stylesheet Start-->
 <link rel="stylesheet" href="css/loginRegister.css">
@@ -69,7 +78,7 @@ if ($showError) {
 <div class="container">
    <div class="row">
       <div class="col-lg-6 col-sm-6 mx-auto">
-         <form action="custReg.php" method="post" autocomplete="off" name="custReg">
+         <form action="sendBussEmail.php" method="post" autocomplete="off" name="businessReg">
             <h2>Channel Partner Registration</h2>
             <div class="form-group text-start mt-3">
                <label>Company Name</label>
@@ -92,12 +101,12 @@ if ($showError) {
             <div class="modal-body row mt-4">
                <div class="col-md-6">
                   <label>Authorised Person Name</label>
-                  <input type="text" class="form-control" name="userName" required title="Please Enter Name"
+                  <input type="text" class="form-control" name="authPersonName" required title="Please Enter Name"
                      autocomplete="off" autofocus>
                </div>
                <div class="col-md-6">
                   <label>Present Bussiness Name</label>
-                  <input type="text" class="form-control" name="userName" required title="Please Enter Name"
+                  <input type="text" class="form-control" name="presentBussinessName" required title="Please Enter Name"
                      autocomplete="off" autofocus>
                </div>
             </div>
@@ -105,19 +114,19 @@ if ($showError) {
             <div class="modal-body row mt-4">
                <div class="col-md-6">
                   <label>Year Of Starting Bussiness</label>
-                  <input type="text" class="form-control" name="userName" required title="Please Enter Name"
-                     autocomplete="off" autofocus>
+                  <input type="text" class="form-control" name="yearOfStartingBussiness" required
+                     title="Please Enter Name" autocomplete="off" autofocus>
                </div>
                <div class="col-md-6">
                   <label>Number Of Sales Person</label>
-                  <input type="text" class="form-control" name="userName" required title="Please Enter Name"
+                  <input type="text" class="form-control" name="noOfSalesPerson" required title="Please Enter Name"
                      autocomplete="off" autofocus>
                </div>
             </div>
 
             <div class="form-group text-start mt-3">
                <label>Applicant Full Name</label>
-               <input type="text" class="form-control" name="userName" required title="Please Enter Name"
+               <input type="text" class="form-control" name="applicantFullName" required title="Please Enter Name"
                   autocomplete="off" autofocus>
             </div>
 
@@ -130,19 +139,19 @@ if ($showError) {
             <div class="modal-body row mt-4">
                <div class="col-md-6">
                   <label>Population Of Town / Area (in Lacs)</label>
-                  <input type="text" class="form-control" name="userName" required title="Please Enter Name"
+                  <input type="text" class="form-control" name="populationOfTown" required title="Please Enter Name"
                      autocomplete="off" autofocus>
                </div>
                <div class="col-md-6">
                   <label>Approx Number of Retailers</label>
-                  <input type="text" class="form-control" name="userName" required title="Please Enter Name"
+                  <input type="text" class="form-control" name="numberOfRetailers" required title="Please Enter Name"
                      autocomplete="off" autofocus>
                </div>
             </div>
 
             <div class="form-group text-start mt-3">
                <label>Official Email (This Will Be Your User Id)</label>
-               <input type="email" class="form-control" name="emailId" required title="Please Enter a Valid Email"
+               <input type="email" class="form-control" name="officialEmail" required title="Please Enter a Valid Email"
                   autocomplete="off">
             </div>
 
@@ -158,15 +167,15 @@ if ($showError) {
 
             <div class="form-group text-start mt-3">
                <label>Company Address</label>
-               <textarea class="form-control" placeholder="Enter Company Address" name="addr" style="height: 100px"
-                  required title="Please Enter Company Address"></textarea>
+               <textarea class="form-control" placeholder="Enter Company Address" name="companyAddress"
+                  style="height: 100px" required title="Please Enter Company Address"></textarea>
             </div>
 
             <div class="row g-2 mt-3 text-startmt-3">
                <div class="col-md-6">
                   <label>Constitution</label>
                   <div class="form-floating">
-                     <select class="form-select" name="Constitution" id="Constitution" required
+                     <select class="form-select" name="constitution" id="constitution" required
                         title="Please Select Constitution">
                         <option value="">Select Constitution</option>
                         <option value="Proprietorship">Proprietorship</option>
@@ -180,7 +189,7 @@ if ($showError) {
                <div class="col-md-6">
                   <label>Investment Capability in Company</label>
                   <div class="form-floating">
-                     <select class="form-select" name="Constitution" id="Constitution" required
+                     <select class="form-select" name="investmentCapibility" id="investmentCapibility" required
                         title="Please Select Investement Capibility">
                         <option value="">Select Investement Capibility</option>
                         <option value="Proprietorship">2 Lacs</option>
@@ -250,17 +259,28 @@ if ($showError) {
                </div>
 
 
+               <!-- <div class="col-md-6">
+                  <label>chapter</label>
+                  <div class="form-floating">
+                     <select class="form-select" name="chapter" id="chapter" required
+                        title="Please Select a chapter">
+                        <option value="">Select chapter</option>
+                     </select>
+                  </div>
+               </div> -->
+
+
                <div class="col-md-6">
                   <label>Town / Tehsil</label>
-                  <input type="text" class="form-control" name="townTehsil" required
+                  <input type="text" class="form-control" name="tehsil" id="tehsil" required
                      title="Please Enter Town / Tehsil Name" autocomplete="off" autofocus>
                </div>
 
                <div class="col-md-6">
                   <label>Pin Code</label>
                   <input type="text" class="form-control" name="pinCode" id="pinCode" maxlength="6"
-                     placeholder="Enter 6 Digit Pin Code "  pattern="[1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{3}\\s[0-9]{3}" required
-                     title="Please Enter a Valid Pin Code">
+                     placeholder="Enter 6 Digit Pin Code " pattern="[1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{3}\\s[0-9]{3}"
+                     required title="Please Enter a Valid Pin Code">
                   <div style="text-align: left;"><span id="myspan" style="text-align: left; color:red"></span>
                   </div>
                </div>
@@ -269,7 +289,8 @@ if ($showError) {
 
             <div class="form-group text-start mt-3">
                <label>Password</label>
-               <input type="password" class="form-control" name="passwd" required autoComplete="new-password">
+               <input type="password" class="form-control" name="password" id="password" required
+                  autoComplete="new-password">
             </div>
             <div class="mt-3">
                <button type="submit" class="btn btn-primary">Submit Details</button>
@@ -331,7 +352,7 @@ if ($showError) {
       // var Kerala = ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"];
       // var MadhyaPradesh = ["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna",
       // "Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"];
-      "Maharashtra": { "Ahmednagar": [], "Akola": [], "Amravati": [], "Aurangabad": [], "Beed": [], "Bhandara": [], "Buldhana": [], "Chandrapur": [], "Dhule": [], "Gadchiroli": [], "Gondia": [], "Hingoli": [], "Jalgaon": [], "Jalna": [], "Kolhapur": [], "Latur": [], "Mumbai City": [], "Mumbai Suburban": [], "Nagpur": [], "Nanded": [], "Nandurbar": [], "Nashik": [], "Osmanabad": [], "Palghar": [], "Parbhani": [], "Pune": [], "Raigad": [], "Ratnagiri": [], "Sangli": [], "Satara": [], "Sindhudurg": [], "Solapur": [], "Thane": [], "Wardha": [], "Washim": [], "Yavatmal": [] },
+      "Maharashtra": { "Ahmednagar": [], "Akola": [], "Amravati": [], "Aurangabad": [], "Beed": [], "Bhandara": [], "Buldhana": [], "Chandrapur": [], "Dhule": [], "Gadchiroli": [], "Gondia": [], "Hingoli": [], "Jalgaon": [], "Jalna": [], "Kolhapur": [], "Latur": [], "Mumbai City": [], "Mumbai Suburban": [], "Nagpur": [], "Nanded": [], "Nandurbar": [], "Nashik": [], "Osmanabad": [], "Palghar": [], "Parbhani": [], "Pune": [], "Raigad": [], "Ratnagiri": [], "Sangli": [], "Satara": [], "Sindhudurg": [], "Solapur": [], "Thane": [], "Wardha": [], "Washim": [], "Yavatmal": []},
       // var Manipur = ["Bishnupur","Chandel","Churachandpur","Imphal East","Imphal West","Jiribam","Kakching","Kamjong","Kangpokpi","Noney","Pherzawl","Senapati","Tamenglong","Tengnoupal","Thoubal","Ukhrul"];
       // var Meghalaya = ["East Garo Hills","East Jaintia Hills","East Khasi Hills","North Garo Hills","Ri Bhoi","South Garo Hills","South West Garo Hills","South West Khasi Hills","West Garo Hills","West Jaintia Hills","West Khasi Hills"];
       // var Mizoram = ["Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip","Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip"];
@@ -372,5 +393,16 @@ if ($showError) {
             topicSel.options[topicSel.options.length] = new Option(y, y);
          }
       }
+
+         topicSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
    }
+      }
+   
 </script>
