@@ -204,7 +204,7 @@
   </marquee>
 </div>
 <!-- Marque End -->
-  <div class="container-fluid py-5" id="xxyy">
+  <div class="container-fluid py-5">
     <div>
       <!-- About Us Start -->
       <div class="container mt-5" id="aboutus1">
@@ -221,7 +221,7 @@
       <!-- Contact Us Start-->
       <div class="container" id="contactUsPage">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-6 mt-5">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.604734717705!2d75.77983820819972!3d21.024658362630888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd9a60eaaaaaaab%3A0xe4d535534119dcfc!2sAYURVED%20INDIA%20-%20MANUFACTURER%20OF%20CHYWANPRASH!5e0!3m2!1sen!2sin!4v1675595778160!5m2!1sen!2sin"
               width="100%" height="520" style="border:0;" allowfullscreen="" loading="lazy"
@@ -309,22 +309,9 @@
       </script>
       <script>
         $("#aboutus").load("./text/aboutus");
-
-        function sendEmail11() {
-          Email.send({
-            Host: "smtp.gmail.com",
-            Username: "saagarsoni3@gmail.com",
-            Password: "xkvlxpbprueqxmbt",
-            To: "saagarsoniworkgmail.com",
-            From: document.getElementById("email").value,
-            Subject: "New Contact Form Enquiry",
-            Body: document.getElementById("message").value,
-          }).then(
-            message => alert(message)
-          );
-        }
       </script>
       <!-- Script End -->
+      <li><a href="product.php" data-bs-target="#chawanprashRegular" data-bs-toggle="modal">Lab 6</a></li>
 </body>
 
 </html>

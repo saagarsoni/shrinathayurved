@@ -45,7 +45,7 @@
         <input type="text" class="form-control" placeholder="Type to Search Any Product" id="searchTextbox" autofocus>
         <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clearText()">Clear</button>
     </div>
-
+    
     <div class="row row-cols-md-5 p-2">
         <!-- Chyawanprash Regular(500 gm) Start-->
         <!-- Card Start -->
