@@ -11,15 +11,6 @@ $showError = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    include('php/dbcs.php');
 
-   
-
-   // $to = "sales@shrinathayurved.com";
-   // $subject = "New Sales Bussiness Enquiry";
-   // $headers = 'From: '.$companyName."\r\n".
-
-
-
-
    // echo "<br>Company Name = $companyName<br>Reg Type=$registrationType<br>Auth Person=$authPersonName
    //          <br>Present Buss Name =$presentBussinessName<br>Year Os Starting Buss=$yearOfStartingBussiness
    //          <br>No of Sales Person=$noOfSalesPerson<br>Applicant Name=$applicantFullName
@@ -32,23 +23,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    // //header("Location: http://www.shrinathayurved.com/");
    // exit;
 
-   //echo "<br>User Name = $userName<br>Email=$emailId<br>Mobile=$mobileNumber<br>Address =$addr<br>State=$state<br>District=$district<br>Password=$passwd ";
-   //Check User Exist
-   /*
-   $existQuery = "SELECT * FROM `tblregister` WHERE email='$emailId'";
+   //Getting Form Values into Variables
+   $companyName = $_POST['companyName'];
+   $registrationType = $_POST['registrationType'];
+   $authPersonName = $_POST['authPersonName'];
+   $presentBussinessName = $_POST['presentBussinessName'];
+   $yearOfStartingBussiness = $_POST['yearOfStartingBussiness'];
+   $noOfSalesPerson = $_POST['noOfSalesPerson'];
+   $applicantFullName = $_POST['applicantFullName'];
+   $gstNumber = $_POST['gstNumber'];
+   $populationOfTown = $_POST['populationOfTown'];
+   $numberOfRetailers = $_POST['numberOfRetailers'];
+   $officialEmail = $_POST['officialEmail'];
+   $mobileNumber = $_POST['mobileNumber'];
+   $companyAddress = $_POST['companyAddress'];
+   $constitution = $_POST['constitution'];
+   $investmentCapibility = $_POST['investmentCapibility'];
+   $state = $_POST['state'];
+   $district = $_POST['district'];
+   $tehsil = $_POST['tehsil'];
+   $pinCode = $_POST['pinCode'];
+   $password = strip_tags(password_hash($_POST['password'], PASSWORD_DEFAULT));
+
+   //Check id User already Exist
+   $existQuery = "SELECT * FROM `tblbusinessregister` WHERE officialEmail='$officialEmail'";
    $result = mysqli_query($conn, $existQuery);
    $numExistRows = mysqli_num_rows($result);
    if ($numExistRows > 0) {
-   $showError = "Email Already Exists";
-   } else {
-   $sqlQuery = " INSERT INTO `tblregister` (`name`, `phone`, `email`, `address`, `state`, `district`, `password`, `tdate`) 
-   VALUES ('$userName', '$mobileNumber', '$emailId', '$addr', '$state', '$district', '$passwd', current_timestamp());";
-   $result = mysqli_query($conn, $sqlQuery);
-   if ($result) {
-   $showAlert = true;
+      $showError = "Email Already Exists";
+   } else //insert the data
+   {
+      $sqlQuery = "INSERT INTO `tblbusinessregister`(`companyName`, `registrationType`, `authPersonName`, `presentBussinessName`, `yearOfStartingBussiness`, `noOfSalesPerson`, `applicantFullName`, `gstNumber`, `populationOfTown`, `numberOfRetailers`, `officialEmail`, `mobileNumber`, `companyAddress`, `constitution`, `investmentCapibility`, `state`, `district`, `tehsil`, `pinCode`,`password`,`tdate`)
+      VALUES ('$companyName','$registrationType','$authPersonName','$presentBussinessName','$yearOfStartingBussiness','$noOfSalesPerson','$applicantFullName','$gstNumber','$populationOfTown','$numberOfRetailers','$officialEmail','$mobileNumber','$companyAddress','$constitution','$investmentCapibility','$state','$district','$tehsil','$pinCode','$password',current_timestamp())";
+
+      //Fire the Insert Query
+      $result = mysqli_query($conn, $sqlQuery);
+      if ($result) {
+         $showAlert = true;
+      } else {
+         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>OOPS!</strong><br>Server Error Occured...!
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>';
+      }
    }
-   }
-   */
 }
 ?>
 <!-- Navigation Start -->
@@ -62,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 if ($showAlert) {
    echo '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-   <strong>Congratulations !</strong> You Have Successfully Registered.
+   <strong>Congratulations !</strong> Thank Yor For Registering.<br>We will connect with you in 48 Hrs.
    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>';
 }
@@ -78,7 +96,7 @@ if ($showError) {
 <div class="container">
    <div class="row">
       <div class="col-lg-6 col-sm-6 mx-auto">
-         <form action="sendBussEmail.php" method="post" autocomplete="off" name="businessReg">
+         <form action="businessReg.php" method="post" autocomplete="off" name="businessReg">
             <h2>Channel Partner Registration</h2>
             <div class="form-group text-start mt-3">
                <label>Company Name</label>
@@ -352,7 +370,7 @@ if ($showError) {
       // var Kerala = ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"];
       // var MadhyaPradesh = ["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna",
       // "Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"];
-      "Maharashtra": { "Ahmednagar": [], "Akola": [], "Amravati": [], "Aurangabad": [], "Beed": [], "Bhandara": [], "Buldhana": [], "Chandrapur": [], "Dhule": [], "Gadchiroli": [], "Gondia": [], "Hingoli": [], "Jalgaon": [], "Jalna": [], "Kolhapur": [], "Latur": [], "Mumbai City": [], "Mumbai Suburban": [], "Nagpur": [], "Nanded": [], "Nandurbar": [], "Nashik": [], "Osmanabad": [], "Palghar": [], "Parbhani": [], "Pune": [], "Raigad": [], "Ratnagiri": [], "Sangli": [], "Satara": [], "Sindhudurg": [], "Solapur": [], "Thane": [], "Wardha": [], "Washim": [], "Yavatmal": []},
+      "Maharashtra": { "Ahmednagar": [], "Akola": [], "Amravati": [], "Aurangabad": [], "Beed": [], "Bhandara": [], "Buldhana": [], "Chandrapur": [], "Dhule": [], "Gadchiroli": [], "Gondia": [], "Hingoli": [], "Jalgaon": [], "Jalna": [], "Kolhapur": [], "Latur": [], "Mumbai City": [], "Mumbai Suburban": [], "Nagpur": [], "Nanded": [], "Nandurbar": [], "Nashik": [], "Osmanabad": [], "Palghar": [], "Parbhani": [], "Pune": [], "Raigad": [], "Ratnagiri": [], "Sangli": [], "Satara": [], "Sindhudurg": [], "Solapur": [], "Thane": [], "Wardha": [], "Washim": [], "Yavatmal": [] },
       // var Manipur = ["Bishnupur","Chandel","Churachandpur","Imphal East","Imphal West","Jiribam","Kakching","Kamjong","Kangpokpi","Noney","Pherzawl","Senapati","Tamenglong","Tengnoupal","Thoubal","Ukhrul"];
       // var Meghalaya = ["East Garo Hills","East Jaintia Hills","East Khasi Hills","North Garo Hills","Ri Bhoi","South Garo Hills","South West Garo Hills","South West Khasi Hills","West Garo Hills","West Jaintia Hills","West Khasi Hills"];
       // var Mizoram = ["Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip","Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip"];
@@ -394,15 +412,15 @@ if ($showError) {
          }
       }
 
-         topicSel.onchange = function() {
-    //empty Chapters dropdown
-    chapterSel.length = 1;
-    //display correct values
-    var z = subjectObject[subjectSel.value][this.value];
-    for (var i = 0; i < z.length; i++) {
-      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-    }
+      // topicSel.onchange = function () {
+      //    //empty Chapters dropdown
+      //    chapterSel.length = 1;
+      //    //display correct values
+      //    var z = subjectObject[subjectSel.value][this.value];
+      //    for (var i = 0; i < z.length; i++) {
+      //       chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+      //    }
+      // }
    }
-      }
-   
+
 </script>
