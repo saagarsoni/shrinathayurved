@@ -258,7 +258,7 @@
         <!-- GULKAND Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
-            <div class="col product d-flex align-items-stretch" >
+            <div class="col product d-flex align-items-stretch" id=gc>
                 <div class="card h-100 product" style="display: flex;">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1680282010/shrinathAyurved/gulkand_t0mssv.png" class="imageResize thumbnail zoom" alt="Gulkand"/>
                     <div class="card-body">
@@ -1155,7 +1155,7 @@
 
         <!-- Pottali Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product p-2">
+        <form action="manage_cart.php" method="post" class="product p-2" id=pp>
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741645/shrinathAyurved/potli_vi7uyx.png" class="imageResize thumbnail zoom" />
@@ -1176,6 +1176,7 @@
         </form>
         <!-- Card End -->
         <!-- Modal Start -->
+        
         <div class="modal fade" id="potli" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
             aria-hidden="true">
             <div class="modal-dialog" role="document">

@@ -22,7 +22,6 @@ $companyName = $_POST['companyName'];
    $district = $_POST['district'];
    $tehsil = $_POST['tehsil'];
    $pinCode = $_POST['pinCode'];
-   // $password = $_POST['password'];
 
    $message = "From Company: $companyName \r\n" .
       "registrationType : $registrationType \r\n" .

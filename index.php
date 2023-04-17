@@ -311,7 +311,6 @@
         $("#aboutus").load("./text/aboutus");
       </script>
       <!-- Script End -->
-      <li><a href="product.php" data-bs-target="#chawanprashRegular" data-bs-toggle="modal">Lab 6</a></li>
+      
 </body>
-
 </html>
