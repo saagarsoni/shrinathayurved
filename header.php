@@ -17,6 +17,7 @@ session_start();
 </header>
 <head>
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 <nav class="navbar navbar-expand-lg bg-white fixed-top">
   <div class="container-fluid">

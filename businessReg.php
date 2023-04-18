@@ -1,7 +1,7 @@
 <!-- Header Start -->
 <header class="header py-3">
    <div class="container" style="text-decoration: none;">
-      <h3 class="text-center">Shrinath Ayurved Header</h3>
+      <h3 class="text-center">Shrinath Ayurved</h3>
    </div>
 </header>
 <!-- Header End -->
@@ -60,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $result = mysqli_query($conn, $sqlQuery);
       if ($result) {
          $showAlert = true;
+         include("php/sendBussEmail.php");
       } else {
          echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
       <strong>OOPS!</strong><br>Server Error Occured...!

@@ -48,7 +48,7 @@ $companyName = $_POST['companyName'];
 //  header("Location: http://www.shrinathayurved.com/");
 
 
-if (mail($to, $subject, $message, $headers)) {
+if (mail($to, $subject, $message)) {
 
    echo '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
    <strong>Congratulations !</strong> You Request is  Successfully Submitted.<br>We will Connect with you in next 24 hrs
