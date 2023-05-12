@@ -1,7 +1,4 @@
 <?php
-// require "encryptDecrypt.php";
-include("encryptDecrypt.php");
-
 // Database connection details
 $db_host = "localhost";
 $db_user = "root";
