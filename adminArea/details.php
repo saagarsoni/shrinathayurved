@@ -56,10 +56,6 @@ echo "<p>Tehsil: " . $row['tehsil'] . "</p>";
 echo "<p>Pin Code: " . $row['pinCode'] . "</p>";
 echo "<p>Enquiry Date: " . date("d M Y", strtotime($row['tdate'])) . "</p>";
 
-// echo "<form method='GET' style='margin: 20px auto; text-align: left;'>";
-// echo "<input type='submit' value='Go Back' style='margin-left:5'>";
-// echo "</form>";
-
 // Close the database connection
 mysqli_close($conn);
 ?>
