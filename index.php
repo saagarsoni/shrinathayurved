@@ -203,6 +203,18 @@
     
   </marquee>
 </div>
+
+
+
+<div id="container-fluid"  data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1686916680/shrinathAyurved/FamilyPic_gnhtye.jpg"
+          class="d-inline-block w-100 h-25">
+      </div>
+    </div>
+  </div>
+
 <!-- Marque End -->
   <div class="container-fluid py-5">
     <div>
@@ -255,13 +267,27 @@
           <div class="col-sm-12">
             <div class="card mt-4 border-0 mb-4">
               <div class="row">
-                <div class="col-lg-4 col-md-4">
+              <div class="col-lg-4 col-md-4">
                   <div class="card-body d-flex align-items-center c-detail pl-0">
                     <div class="mr-3 align-self-center p-4">
                       <i class="fa-solid fa-map-location-dot fa-3x"></i>
                     </div>
                     <div class="">
-                      <h6 class="font-weight-medium">Address</h6>
+                      <h6 class="font-weight-medium">Office Address</h6>
+                      <p class="">52 Ramayan Nagar,Varangaon Road.
+                        <br> Bhusawal-425201,<br> District - Jalgaon,<br> State - Maharashtra
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="col-lg-4 col-md-4">
+                  <div class="card-body d-flex align-items-center c-detail pl-0">
+                    <div class="mr-3 align-self-center p-4">
+                      <i class="fa-solid fa-map-location-dot fa-3x"></i>
+                    </div>
+                    <div class="">
+                      <h6 class="font-weight-medium">Factory Address</h6>
                       <p class="">C 67,Khadke MIDC.
                         <br> Bhusawal-425201,<br> District - Jalgaon,<br> State - Maharashtra
                       </p>

@@ -2,7 +2,14 @@
 include("header.php");
 session_start();
 include('php/dbcs.php');
+// include('Payment/Authentication.php');
+// include('Payment/SabPaisaPostPgRequest.php');
+include('Payment/SabPaisaPostPgResponse.php');
+
 // session_destroy();
+// error_reporting(0);
+ini_set('error_reporting', 0);
+ini_set('display_errors', 0);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if (isset($_POST['purchase'])) {
@@ -62,6 +69,12 @@ if ($result->num_rows > 0) {
 </header>
 
 <body>
+<form th:action="@{ https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1}" th:method="post">
+<input type="hidden" name="encData" th:value="${encData}" id="frm1">
+<input type="hidden" name="clientCode" th:value="${clientCode}" id="frm2">
+<input type="submit" id="submitButton" name="submit">
+<form>
+
    <div class="container">
       <div class="row">
          <div class="col-lg-12 text-center border rounded bg-info my-3">

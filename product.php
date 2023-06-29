@@ -1,8 +1,3 @@
-<?php
-
-//include("header.php");
-// session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +47,7 @@
         <!-- GULKAND Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
-            <div class="col product d-flex align-items-stretch" id=gc>
+            <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1680282010/shrinathAyurved/gulkand_t0mssv.png" class="imageResize thumbnail zoom" alt="Gulkand"/>
                     <div class="card-body">
