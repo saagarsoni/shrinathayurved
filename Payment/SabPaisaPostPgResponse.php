@@ -3,8 +3,8 @@ session_start();
 include('Authentication.php');
 $query = $_REQUEST['encResponse'];
 
-$authKey = 'P8c3WQ7ei';
-$authIV = 'oLA38cwT6IYNGqb3';
+$authKey = 'zvMzY0UZLxkiE6ad';
+$authIV = 'iFwrtsCSw3j7HG15';
 
 $decText = null;
 $AesCipher = new AesCipher();
