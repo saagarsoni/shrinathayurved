@@ -43,6 +43,40 @@ if ($result->num_rows > 0) {
    echo "0 results";
 }
 
+//Payment Code
+include 'Authentication.php';
+
+$encData=null;
+
+$clientCode='NITE5';
+$username='Ish988@sp';
+$password='wF2F0io7gdNj';
+$authKey='zvMzY0UZLxkiE6ad';
+$authIV='iFwrtsCSw3j7HG15';
+
+$payerName='Test YUVRAJ';
+$payerEmail='Testyuvraj@sabpaisa.in';
+$payerMobile='9988776655';
+$payerAddress='BSL, Maharashtra';
+
+$clientTxnId=rand(1000,9999);
+$amount=3;
+$amountType='INR';
+$mcc=5137;
+$channelId='W';
+$callbackUrl='http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
+              
+// Extra Parameter you can use 20 extra parameters(udf1 to udf20)
+//$Class='VIII';
+//$Roll='1008';
+
+$encData="?clientCode=".$clientCode."&transUserName=".$username."&transUserPassword=".$password."&payerName=".$payerName.
+"&payerMobile=".$payerMobile."&payerEmail=".$payerEmail."&payerAddress=".$payerAddress."&clientTxnId=".$clientTxnId.
+"&amount=".$amount."&amountType=".$amountType."&mcc=".$mcc."&channelId=".$channelId."&callbackUrl=".$callbackUrl;
+//."&udf1=".$Class."&udf2=".$Roll;
+				
+$AesCipher = new AesCipher(); 
+$data = $AesCipher->encrypt($authKey, $authIV, $encData);
 
 ?>
 
@@ -69,7 +103,8 @@ if ($result->num_rows > 0) {
 </header>
 
 <body>
-<form th:action="@{ https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1}" th:method="post">
+<form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1"method="post">
+<!-- <form th:action="@{ https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1}" th:method="post"> -->
 <input type="hidden" name="encData" th:value="${encData}" id="frm1">
 <input type="hidden" name="clientCode" th:value="${clientCode}" id="frm2">
 <input type="submit" id="submitButton" name="submit">
