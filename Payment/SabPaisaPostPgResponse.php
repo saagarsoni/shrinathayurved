@@ -91,9 +91,8 @@ while ($token !== false)
 ?>
 
 <?php
-//include('header.php');
+include('php/header.php');
 ?>
-
 <div class="page-content-wrapper">
     <div class="page-content">
         <!-- <div class="page-bar">
@@ -101,7 +100,6 @@ while ($token !== false)
                 <div class=" pull-left">
                     <div class="page-title">Payment Success Page</div>
                 </div>
-               
             </div>
         </div> -->
         <div class="row">
@@ -112,7 +110,6 @@ while ($token !== false)
                         <h4>Thank You, Your payment for Rs. xxx  is <?= $status; ?></h4>  
                         <!-- <h1>Thank You, Your payment for Rs. <?php echo $amount;?> is <?= $status; ?>. You can have your reciept by clicking on print button given below. </h1> -->
                             <!-- <div class="col-md-6 col-sm-6">
-                                
                                     <a href="pdf/fpdf/add_receipt.php?user_id=<?php echo $userid?>&pay_type=Pros_Fee" class="btn btn-success" target="_blank">Print Receipt</a>
                                     <a href="download_prospectus.php?user_id=<?php echo $userid?>" class="btn btn-primary">Download Prospectus</a>
                                     <br>
@@ -127,7 +124,7 @@ while ($token !== false)
             </div>
         </div>
     </div>
-
     <?php
-    // include('footer.php');
+    //  include('footer.php');
+    include('php/footer.php') ;
      ?>

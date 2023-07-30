@@ -1,18 +1,16 @@
 <! DOCTYPE html>  
 <html>  
 <head>  
-<title> JavaScript alert Box by PHP </title>  
+<title> Confirm Purchase </title>  
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta charset ="utf-8">  
 <style>  
 body {  
-    background-color: white;  
+    background-color: bisque;  
 }  
 </style> 
 <?php   
 include ('payment/Authentication.php');
-
-// $myVariable = $_POST['myVariable'];
 
 $encData=null;
 $clientCode='NITE5';
@@ -27,13 +25,12 @@ $payerName=$_POST['fullname'];
  $payerAddress=$_POST['address'];
 
  $clientTxnId=rand(1000,9999);
-$amount=20;
+$amount=$_COOKIE['tAmount'];
 
 $amountType='INR';
 $mcc=5137;
  $channelId='W';
-// $callbackUrl='http://localhost/shrinathAyurved/myCart.php';
-// $callbackUrl='http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
+$callbackUrl='http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
 
 $encData="?clientCode=".$clientCode."&transUserName=".$username."&transUserPassword=".$password."&payerName=".$payerName.
 "&payerMobile=".$payerMobile."&payerEmail=".$payerEmail."&payerAddress=".$payerAddress."&clientTxnId=".$clientTxnId.
@@ -46,7 +43,6 @@ $data = $AesCipher->encrypt($authKey, $authIV, $encData);
 </head>  
 <body>  
 <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post">
-                     <!-- <form action="confirm.php" method="post"> -->
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <input type="text" class="form-control" name="fullname" placeholder="Please Enter Full Name"
@@ -64,7 +60,7 @@ $data = $AesCipher->encrypt($authKey, $authIV, $encData);
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <textarea name="address" class="form-control"
+                        <textarea name="addre" class="form-control"
                            placeholder="Enter Full Address" cols="30" rows="7"><?php echo $_POST['address'] ?></textarea>
                      </div>
                      <button class="btn btn-warning btn-block form-control" name="purchase">Make Purchase</button>

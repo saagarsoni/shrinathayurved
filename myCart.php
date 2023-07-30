@@ -141,7 +141,7 @@ if ($result->num_rows > 0) {
                       $payerAddress='Bhusawal, Maharashtra';
 
                       $clientTxnId=rand(1000,9999);
-                     $amount=20;
+                     $amount=210;
                      print_r($myVariable);
                      $amountType='INR';
                      $mcc=5137;
@@ -176,8 +176,8 @@ if ($result->num_rows > 0) {
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <textarea name="address" class="form-control"
-                           placeholder="Enter Full Address" cols="30" rows="7"><?php echo $userAddress ?></textarea>
+                        <textarea name="address"  class="form-control"
+                           placeholder="Enter Full Address" cols="30" rows="6"><?php echo $userAddress ?></textarea>
                      </div>
                      <button class="btn btn-warning btn-block form-control" name="purchase">Make Purchase</button>
                      <!-- <input type="text" class="form-control" value="<?php echo $clientCode?>" readonly>
@@ -228,4 +228,8 @@ xhr.onreadystatechange = function() {
 xhr.send("myVariable=" + encodeURIComponent(gtotal.innerText.slice(2)));
          </script>
 </body>
+<?php
+    //  include('footer.php');
+    include('php/footer.php') ;
+     ?>
 </html>
