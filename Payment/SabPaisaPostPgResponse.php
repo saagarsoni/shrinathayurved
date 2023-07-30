@@ -96,28 +96,29 @@ while ($token !== false)
 
 <div class="page-content-wrapper">
     <div class="page-content">
-        <div class="page-bar">
+        <!-- <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
                     <div class="page-title">Payment Success Page</div>
                 </div>
                
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-body " id="bar-parent2">
                         <div class="row">
-                          <h1>Thank You, Your payment for Rs. <?php echo $amount;?> is <?= $status; ?>. You can have your reciept by clicking on print button given below. </h1>
-                            <div class="col-md-6 col-sm-6">
+                        <h4>Thank You, Your payment for Rs. xxx  is <?= $status; ?></h4>  
+                        <!-- <h1>Thank You, Your payment for Rs. <?php echo $amount;?> is <?= $status; ?>. You can have your reciept by clicking on print button given below. </h1> -->
+                            <!-- <div class="col-md-6 col-sm-6">
                                 
                                     <a href="pdf/fpdf/add_receipt.php?user_id=<?php echo $userid?>&pay_type=Pros_Fee" class="btn btn-success" target="_blank">Print Receipt</a>
                                     <a href="download_prospectus.php?user_id=<?php echo $userid?>" class="btn btn-primary">Download Prospectus</a>
                                     <br>
                                      <br>
                                     <p> <span class="badge badge-sucess">Note:</span> You can print recipt any time if required.</p>
-                                </div>
+                                </div> -->
                             </div>
                             </form>
                         </div>

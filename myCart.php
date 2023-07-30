@@ -1,19 +1,17 @@
 <?php
 include("header.php");
+include 'Authentication.php';
+include 'Payment/SabPaisaPostPgResponse.php';
 session_start();
 include('php/dbcs.php');
-// include('Payment/Authentication.php');
-// include('Payment/SabPaisaPostPgRequest.php');
-include('Payment/SabPaisaPostPgResponse.php');
+//session_destroy();
+ error_reporting(0);
+// ini_set('error_reporting', 0);
+// ini_set('display_errors', 0);
 
-// session_destroy();
-// error_reporting(0);
-ini_set('error_reporting', 0);
-ini_set('display_errors', 0);
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   if (isset($_POST['purchase'])) {
-      
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     if (isset($_POST['purchase'])) 
+//     {
       if (!isset($_SESSION['loggedIn']) && empty($_SESSION["uName"])) {
          //echo "User Name Is " . $_SESSION["uName"] . ".<br>";
           print_r($_SESSION['uName']);
@@ -24,67 +22,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       } else {
          //echo "Welcome " . $_SESSION["uName"] . ".<br>";
       }
-   }
-}
+//     }
+// }
 
 $sql = "SELECT * FROM tblregister where id='{$_SESSION['uId']}'";
 $result = $conn->query($sql);
-
 if ($result->num_rows > 0) {
    // output data of each row
    while ($row = $result->fetch_assoc()) {
-      // echo "id: " . $row["id"] ."<br>". "Name: " . $row["name"] . " <br>" ."Phone Number: ". $row["phone"] ."<br>"."Email: " . $row["email"]." " ."<br>"."Address: ". $row["address"]. "<br>";
-      //echo var_dump($row);
+       echo "id: " . $row["id"] ."<br>". "Name: " . $row["name"] . " <br>" ."Phone Number: ". $row["phone"] ."<br>"."Email: " . $row["email"]." " ."<br>"."Address: ". $row["address"]. "<br>";
+      echo var_dump($row);
       $GLOBALS['userName']=$row["name"];
       $GLOBALS['cellPhone']=$row["phone"];
       $GLOBALS['userAddress']=$row["address"];
+      $GLOBALS['email']=$row["email"];
    }
 } else {
-   echo "0 results";
+   //echo "0 results";
 }
-
-//Payment Code
-include 'Authentication.php';
-
-$encData=null;
-
-$clientCode='NITE5';
-$username='Ish988@sp';
-$password='wF2F0io7gdNj';
-$authKey='zvMzY0UZLxkiE6ad';
-$authIV='iFwrtsCSw3j7HG15';
-
-$payerName='Test YUVRAJ';
-$payerEmail='Testyuvraj@sabpaisa.in';
-$payerMobile='9988776655';
-$payerAddress='BSL, Maharashtra';
-
-$clientTxnId=rand(1000,9999);
-$amount=3;
-$amountType='INR';
-$mcc=5137;
-$channelId='W';
-$callbackUrl='http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
-              
-// Extra Parameter you can use 20 extra parameters(udf1 to udf20)
-//$Class='VIII';
-//$Roll='1008';
-
-$encData="?clientCode=".$clientCode."&transUserName=".$username."&transUserPassword=".$password."&payerName=".$payerName.
-"&payerMobile=".$payerMobile."&payerEmail=".$payerEmail."&payerAddress=".$payerAddress."&clientTxnId=".$clientTxnId.
-"&amount=".$amount."&amountType=".$amountType."&mcc=".$mcc."&channelId=".$channelId."&callbackUrl=".$callbackUrl;
-//."&udf1=".$Class."&udf2=".$Roll;
-				
-$AesCipher = new AesCipher(); 
-$data = $AesCipher->encrypt($authKey, $authIV, $encData);
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,19 +62,11 @@ $data = $AesCipher->encrypt($authKey, $authIV, $encData);
 </header>
 
 <body>
-<form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1"method="post">
-<!-- <form th:action="@{ https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1}" th:method="post"> -->
-<input type="hidden" name="encData" th:value="${encData}" id="frm1">
-<input type="hidden" name="clientCode" th:value="${clientCode}" id="frm2">
-<input type="submit" id="submitButton" name="submit">
-<form>
-
    <div class="container">
       <div class="row">
          <div class="col-lg-12 text-center border rounded bg-info my-3">
             <h1>My Cart</h1>
          </div>
-
          <div class="col-lg-9">
             <table class="table">
                <thead class="text-left">
@@ -165,72 +116,116 @@ $data = $AesCipher->encrypt($authKey, $authIV, $encData);
                </tbody>
             </table>
          </div>
-
          <div class="col-lg-3">
             <div class="border bg-light rounded p-4">
                <h4>Grand Total</h4>
-               <h5 class="text-right" id="gtotal"> </h5>
+               <h5 class="text-right" id="gtotal" name="gtotal"> </h5>
                <br>
                <?php
+
+               // Retrieve the JavaScript variable value sent via AJAX
+                   $myVariable = $_POST['myVariable'];
+
                if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+                     //Payment Code
+                     $encData=null;
+                     $clientCode='NITE5';
+                     $username='Ish988@sp';
+                     $password='wF2F0io7gdNj';
+                     $authKey='zvMzY0UZLxkiE6ad';
+                     $authIV='iFwrtsCSw3j7HG15';
+
+                     $payerName=$post['fullname'];
+                      $payerEmail=$GLOBALS['email'] ;
+                      $payerMobile=$GLOBALS['cellPhone'];
+                      $payerAddress='Bhusawal, Maharashtra';
+
+                      $clientTxnId=rand(1000,9999);
+                     $amount=20;
+                     print_r($myVariable);
+                     $amountType='INR';
+                     $mcc=5137;
+                      $channelId='W';
+                     $callbackUrl='http://localhost/shrinathAyurved/myCart.php';
+                     // $callbackUrl='http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
+
+                     $encData="?clientCode=".$clientCode."&transUserName=".$username."&transUserPassword=".$password."&payerName=".$payerName.
+                     "&payerMobile=".$payerMobile."&payerEmail=".$payerEmail."&payerAddress=".$payerAddress."&clientTxnId=".$clientTxnId.
+                     "&amount=".$amount."&amountType=".$amountType."&mcc=".$mcc."&channelId=".$channelId."&callbackUrl=".$callbackUrl;
+                     //."&udf1=".$Class."&udf2=".$Roll;
+                                 
+                     $AesCipher = new AesCipher(); 
+                     $data = $AesCipher->encrypt($authKey, $authIV, $encData);
                   ?>
-                  <form action="myCart.php" method="post">
+                  <!-- <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post"> -->
+                     <form action="confirm.php" method="post">
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <input type="text" class="form-control" name="fullname" placeholder="Please Enter Full Name"
-                           value="<?php echo $userName ?>" readonly>
+                           value="" >
                      </div>
-
+                     <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" name="email" placeholder="Please Enter Email"
+                           value="<?php echo $GLOBALS['email'] ?>">
+                     </div>
                      <div class="mb-3">
                         <label class="form-label">Phone Number</label>
                         <input type="text" class="form-control" name="phone_no" placeholder="Enter Phone Number"
-                           value="<?php echo $cellPhone ?>" readonly>
+                           value="<?php echo $GLOBALS['cellPhone'] ?>" >
                      </div>
-
                      <div class="mb-3">
                         <label class="form-label">Address</label>
                         <textarea name="address" class="form-control"
-                           placeholder="Enter Full Address" cols="30" rows="10" readonly><?php echo $userAddress ?></textarea>
+                           placeholder="Enter Full Address" cols="30" rows="7"><?php echo $userAddress ?></textarea>
                      </div>
-
-                     <!-- <div class="form-check">
-                        <input class="form-check-input" name="pay_mode" value="COD" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                           Cash On Delivery
-                        </label>
-                     </div> -->
-                     <br>
-                     <button class="btn btn-primary btn-block" name="purchase">Make Purchase</button>
+                     <button class="btn btn-warning btn-block form-control" name="purchase">Make Purchase</button>
+                     <!-- <input type="text" class="form-control" value="<?php echo $clientCode?>" readonly>
+                     <input type="text" class="form-control" value="<?php echo $data?>" readonly> -->
+                     <!-- Hidden Field -->
+                     <input type="hidden" name="encData" value="<?php echo $data?>" id="frm1">
+                     <input type="hidden" name="clientCode" value ="<?php echo $clientCode?>" id="frm2">
                   </form>
                   <?php
                }
                ?>
             </div>
-
-
          </div>
-
-
       </div>
    </div>
-
-   <script>
-      var gt = 0;
-      var iprice = document.getElementsByClassName('iprice');
-      var iquantity = document.getElementsByClassName('iquantity');
-      var itotal = document.getElementsByClassName('itotal');
-      var gtotal = document.getElementById('gtotal');
-
-      function subTotal() {
-         gt = 0;
-         for (i = 0; i < iprice.length; i++) {
-            itotal[i].innerText = '\u20B9 ' + (iprice[i].value) * (iquantity[i].value);
-            gt = gt + (iprice[i].value) * (iquantity[i].value);
-         }
-         gtotal.innerText = '\u20B9 ' + gt;
-      }
-      subTotal();
-   </script>
+  
+         <script>
+            var gt = 0;
+            var iprice = document.getElementsByClassName('iprice');
+            var iquantity = document.getElementsByClassName('iquantity');
+            var itotal = document.getElementsByClassName('itotal');
+            var gtotal = document.getElementById('gtotal');
+            var tAmsount = document.getElementById('tAmount');
+            
+            function subTotal() {
+               gt = 0;
+               for (i = 0; i < iprice.length; i++) {
+                  itotal[i].innerText = '\u20B9 ' + (iprice[i].value) * (iquantity[i].value);
+                  gt = gt + (iprice[i].value) * (iquantity[i].value);
+               }
+               gtotal.innerText = '\u20B9 ' + gt;
+               
+               //document.cookie ="tAmount="+gtotal.innerText.slice(2);
+            }
+            // document.cookie ="tAmount="+gtotal.innerText.slice(2)+gt;
+            subTotal();
+             document.cookie ="tAmount="+gtotal.innerText.slice(2);
+            // alert(gtotal.innerText.slice(2));
+            // Send the variable value to the server using AJAX
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "http://localhost/shrinathAyurved/confirm.php", true);
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+    console.log("Variable stored successfully");
+  }
+};
+xhr.send("myVariable=" + encodeURIComponent(gtotal.innerText.slice(2)));
+         </script>
 </body>
-
 </html>
