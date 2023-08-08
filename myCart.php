@@ -17,7 +17,7 @@ include('php/dbcs.php');
           print_r($_SESSION['uName']);
 
          echo '<div class="alert alert-warning text-center py-5 mt-5" role="alert">
-         Please <a href="login.php" class="alert-link">Login</a>&nbsp;to Purchase.
+         Please <a href="login.php" class="alert-link">Login </a>&nbsp;/ Fill Below Details to Purchase.
        </div>';
       } else {
          //echo "Welcome " . $_SESSION["uName"] . ".<br>";
@@ -141,13 +141,12 @@ if ($result->num_rows > 0) {
                       $payerAddress='Bhusawal, Maharashtra';
 
                       $clientTxnId=rand(1000,9999);
-                     $amount=210;
+                     // $amount=210;
                      print_r($myVariable);
                      $amountType='INR';
                      $mcc=5137;
                       $channelId='W';
                      $callbackUrl='http://localhost/shrinathAyurved/myCart.php';
-                     // $callbackUrl='http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
 
                      $encData="?clientCode=".$clientCode."&transUserName=".$username."&transUserPassword=".$password."&payerName=".$payerName.
                      "&payerMobile=".$payerMobile."&payerEmail=".$payerEmail."&payerAddress=".$payerAddress."&clientTxnId=".$clientTxnId.
@@ -157,29 +156,29 @@ if ($result->num_rows > 0) {
                      $AesCipher = new AesCipher(); 
                      $data = $AesCipher->encrypt($authKey, $authIV, $encData);
                   ?>
-                  <!-- <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post"> -->
+
                      <form action="confirm.php" method="post">
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
-                        <input type="text" class="form-control" name="fullname" placeholder="Please Enter Full Name"
+                        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Please Enter Full Name" required
                            value="" >
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Please Enter Email"
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Please Enter Email" required
                            value="<?php echo $GLOBALS['email'] ?>">
                      </div>
                      <div class="mb-3">
-                        <label class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" name="phone_no" placeholder="Enter Phone Number"
+                        <label class="form-label">Phone Number(+91)</label>
+                        <input type="text" pattern="[789][0-9]{9}" maxlength="10" class="form-control" name="phone_no" id="phone_no" placeholder="Enter Phone Number" required
                            value="<?php echo $GLOBALS['cellPhone'] ?>" >
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <textarea name="address"  class="form-control"
-                           placeholder="Enter Full Address" cols="30" rows="6"><?php echo $userAddress ?></textarea>
+                        <textarea name="address" id="address"  class="form-control"
+                           placeholder="Enter Full Address" cols="30" rows="6" required><?php echo $userAddress ?></textarea>
                      </div>
-                     <button class="btn btn-warning btn-block form-control" name="purchase">Make Purchase</button>
+                     <button class="btn btn-warning btn-block form-control" name="purchase" onclick="validation()">Make Purchase</button>
                      <!-- <input type="text" class="form-control" value="<?php echo $clientCode?>" readonly>
                      <input type="text" class="form-control" value="<?php echo $data?>" readonly> -->
                      <!-- Hidden Field -->
@@ -195,6 +194,7 @@ if ($result->num_rows > 0) {
    </div>
   
          <script>
+            var myvar='<?php echo $$_SESSION['loggedIn'];?>';
             var gt = 0;
             var iprice = document.getElementsByClassName('iprice');
             var iquantity = document.getElementsByClassName('iquantity');
@@ -226,6 +226,24 @@ xhr.onreadystatechange = function() {
   }
 };
 xhr.send("myVariable=" + encodeURIComponent(gtotal.innerText.slice(2)));
+
+// Validations
+function validation() {
+   // if (document.getElementById("fullname").value == "" && $_SESSION['loggedIn']!=true) {
+   // alert("Must enter a Valid Name");
+   // }
+   alert('hi'+myvar)
+   if(myvar.length!=0)
+   {
+      document.getElementById("fullname").readonly =true;
+      document.getElementById("email").readonly =true;
+      document.getElementById("phone_no").readonly =true;
+      document.getElementById("address").readonly =true;
+   }
+//   else if (document.getElementById("password").value == "") {
+//    alert("Must enter the password");
+//    }
+}
          </script>
 </body>
 <?php

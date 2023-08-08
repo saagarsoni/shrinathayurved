@@ -42,7 +42,9 @@ $data = $AesCipher->encrypt($authKey, $authIV, $encData);
   ?>  
 </head>  
 <body>  
-<form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post">
+   
+<!-- <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post"> -->
+   <form action="https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post">
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <input type="text" class="form-control" name="fullname" placeholder="Please Enter Full Name"
