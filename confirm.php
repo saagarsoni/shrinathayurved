@@ -13,11 +13,17 @@ body {
 include ('payment/Authentication.php');
 
 $encData=null;
-$clientCode='NITE5';
-$username='Ish988@sp';
-$password='wF2F0io7gdNj';
-$authKey='zvMzY0UZLxkiE6ad';
-$authIV='iFwrtsCSw3j7HG15';
+// $clientCode='NITE5';
+// $username='Ish988@sp';
+// $password='wF2F0io7gdNj';
+// $authKey='zvMzY0UZLxkiE6ad';
+// $authIV='iFwrtsCSw3j7HG15';
+
+$clientCode='TUSH99';
+$username='contact_8349';
+$password='TUSH99_SP8349';
+$authKey='010odVxdUGZNTjFd';
+$authIV='Sr6Uh4RSLAItInMY';
 
 $payerName=$_POST['fullname'];
  $payerEmail=$_POST['email'] ;

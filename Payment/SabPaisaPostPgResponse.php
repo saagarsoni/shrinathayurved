@@ -1,15 +1,25 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <?php
 session_start();
 include('Authentication.php');
 $query = $_REQUEST['encResponse'];
-
-$authKey = 'zvMzY0UZLxkiE6ad';
-$authIV = 'iFwrtsCSw3j7HG15';
+$authKey = '010odVxdUGZNTjFd';
+$authIV = 'Sr6Uh4RSLAItInMY';
 
 $decText = null;
 $AesCipher = new AesCipher();
 $decText = $AesCipher -> decrypt($authKey, $authIV, $query); 
 echo $decText;
+
+// $amount= $_COOKIE['tAmount'];
 
 $token = strtok($decText,"&");
 //echo $token;
@@ -25,6 +35,16 @@ payerName=YUVRAJ MISHRA&payerEmail=yuvraj.mishra@sabpaisa.in&payerMobile=7004069
 &udf19=null&udf20=nulli- */
 
 //echo $token;
+
+
+//test data
+$split_to_var = explode('&', $decText);
+$tAmount = $split_to_var[6] ; // first one
+//echo $tAmount; // Returns 1920
+
+$extension = strrchr( $tAmount, '='); //returns "jpg"
+echo $extension;
+//test data
 
 while ($token !== false)
 {
@@ -90,24 +110,27 @@ while ($token !== false)
 }
 ?>
 
-<?php
-include('php/header.php');
+<?php 
+//include('header.php')
 ?>
+
+
 <div class="page-content-wrapper">
     <div class="page-content">
-        <!-- <div class="page-bar">
+        <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
                     <div class="page-title">Payment Success Page</div>
                 </div>
             </div>
-        </div> -->
+        </div>
+        <br>
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-body " id="bar-parent2">
                         <div class="row">
-                        <h4>Thank You, Your payment for Rs. xxx  is <?= $status; ?></h4>  
+                        <h4>Thank You, Your paymednt for Rs. <?php  echo $extension?>  </h4>  
                         <!-- <h1>Thank You, Your payment for Rs. <?php echo $amount;?> is <?= $status; ?>. You can have your reciept by clicking on print button given below. </h1> -->
                             <!-- <div class="col-md-6 col-sm-6">
                                     <a href="pdf/fpdf/add_receipt.php?user_id=<?php echo $userid?>&pay_type=Pros_Fee" class="btn btn-success" target="_blank">Print Receipt</a>
@@ -126,5 +149,5 @@ include('php/header.php');
     </div>
     <?php
     //  include('footer.php');
-    include('php/footer.php') ;
+    // include('php/footer.php') ;
      ?>

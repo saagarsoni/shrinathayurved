@@ -43,7 +43,6 @@
     
     <div class="row row-cols-md-5 p-2">
         
-
         <!-- GULKAND Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
@@ -53,14 +52,14 @@
                     <div class="card-body">
                         <h5 class="card-title product-name">Gulkand</h5>
                         <p class="card-text" id="gulkandCard"></p>
-                        <p class="card-text"><b> <span>&#8377;</span> 190 for 500 gm</b> </p>
+                        <p class="card-text"><b> <span>&#8377;</span> 1 for 500 gm</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#gulkand">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Gulkand">
-                        <input type="hidden" name="price" value="190">
+                        <input type="hidden" name="price" value="1">
                     </div>
                 </div>
             </div>
