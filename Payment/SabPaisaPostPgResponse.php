@@ -42,8 +42,12 @@ $split_to_var = explode('&', $decText);
 $tAmount = $split_to_var[6] ; // first one
 //echo $tAmount; // Returns 1920
 
-$extension = strrchr( $tAmount, '='); //returns "jpg"
-echo $extension;
+// $extension = strrchr( $tAmount, '='); //returns "jpg"
+// echo $extension;
+
+$data = $tAmount ;    
+$whatIWant = substr($data, strpos($data, "=") + 1);    
+echo $whatIWant;
 //test data
 
 while ($token !== false)
@@ -106,12 +110,7 @@ while ($token !== false)
 	  //  mysqli_query($conn,$up);
 	    
 	}
-
 }
-?>
-
-<?php 
-//include('header.php')
 ?>
 
 
@@ -130,7 +129,7 @@ while ($token !== false)
                 <div class="card card-box">
                     <div class="card-body " id="bar-parent2">
                         <div class="row">
-                        <h4>Thank You, Your paymednt for Rs. <?php  echo $extension?>  </h4>  
+                        <h4>Thank You, Your paymednt for Rs. <?php  echo round($whatIWant,2)?>  </h4>  
                         <!-- <h1>Thank You, Your payment for Rs. <?php echo $amount;?> is <?= $status; ?>. You can have your reciept by clicking on print button given below. </h1> -->
                             <!-- <div class="col-md-6 col-sm-6">
                                     <a href="pdf/fpdf/add_receipt.php?user_id=<?php echo $userid?>&pay_type=Pros_Fee" class="btn btn-success" target="_blank">Print Receipt</a>
