@@ -1,5 +1,5 @@
 <!-- Marquee Start -->
-<div style="background-color :#03C04A">
+<div style="background-color :#03C04A" class="m-0 p-0">
   <marquee width="100%" behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();"
     style="color:white; font-weight:bold">
     Our Products also available at&nbsp;
@@ -16,12 +16,12 @@
         <!-- Jio = https://www.jiomart.com/groceries/b/shrinath-ayurved/37034
        1mg = https://www.1mg.com/search/all?name=shrinath%20ayurved 
       Amazon = https://www.amazon.com/
-    Flipkart = https://www.flipkart.com/-->
+    Flipkart = https://www.flipkart.com/ -->
   </marquee>
-</div>
+
 <!-- Marque End -->
 <!-- Footer -->
-<div class="container-fluid p-2 bg-light text-muted" style="background-color: rgba(0, 0, 0, 0.05);">
+<div class="container-fluid p-0 bg-light text-muted" style="background-color: rgba(0, 0, 0, 0.05);">
   <div class="row">
     <div class="col-md-6 text-start">
       © 2023 Copyright:
@@ -37,3 +37,7 @@
     </div>
   </div>
   <!-- Footer -->
+
+
+
+</div>
