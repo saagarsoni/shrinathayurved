@@ -146,7 +146,3 @@ while ($token !== false)
             </div>
         </div>
     </div>
-    <?php
-    //  include('footer.php');
-    // include('php/footer.php') ;
-     ?>
