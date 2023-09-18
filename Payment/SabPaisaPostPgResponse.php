@@ -1,4 +1,4 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
@@ -122,14 +122,14 @@ while ($token !== false)
                     <div class="page-title">Payment Success Page</div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <br>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="card card-box">
                     <div class="card-body " id="bar-parent2">
                         <div class="row">
-                        <h4>Thank You, Your paymednt for Rs. <?php  echo round($whatIWant,2)?>  </h4>  
+                        <h4>Thank You, Your paymednt for Rs. <?php  echo round($whatIWant,2)?>  </h4>   -->
                         <!-- <h1>Thank You, Your payment for Rs. <?php echo $amount;?> is <?= $status; ?>. You can have your reciept by clicking on print button given below. </h1> -->
                             <!-- <div class="col-md-6 col-sm-6">
                                     <a href="pdf/fpdf/add_receipt.php?user_id=<?php echo $userid?>&pay_type=Pros_Fee" class="btn btn-success" target="_blank">Print Receipt</a>
@@ -138,11 +138,11 @@ while ($token !== false)
                                      <br>
                                     <p> <span class="badge badge-sucess">Note:</span> You can print recipt any time if required.</p>
                                 </div> -->
-                            </div>
+                            <!-- </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div> -->
+        <!-- </div>
+    </div>  -->

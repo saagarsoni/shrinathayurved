@@ -1,13 +1,10 @@
 <?php
 include("header.php");
-include 'Authentication.php';
+//include 'Authentication.php';
 include 'Payment/SabPaisaPostPgResponse.php';
 session_start();
 include('php/dbcs.php');
-//session_destroy();
  error_reporting(0);
-// ini_set('error_reporting', 0);
-// ini_set('display_errors', 0);
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //     if (isset($_POST['purchase'])) 
@@ -232,7 +229,7 @@ function validation() {
    // if (document.getElementById("fullname").value == "" && $_SESSION['loggedIn']!=true) {
    // alert("Must enter a Valid Name");
    // }
-   alert('hi'+myvar)
+   // alert('hi'+myvar)
    if(myvar.length!=0)
    {
       document.getElementById("fullname").readonly =true;

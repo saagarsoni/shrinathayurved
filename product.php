@@ -49,7 +49,7 @@
                 <div class="card h-100 product" style="display: flex;">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(500 gm)"/>
                     <div class="card-body">
-                        <h5 class="card-title product-name">Chyawanprash Regular(500 gm)</h5>
+                        <h5 class="card-title product-name">Chyawanprash (500 gm)</h5>
                         <p class="card-text" id="chawanprashCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 180 for 500 gm</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
@@ -156,7 +156,7 @@
                 <div class="card h-100 product" style="display: flex;">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(1 Kg)"/>
                     <div class="card-body">
-                        <h5 class="card-title product-name">Chyawanprash Regular (1 Kg)</h5>
+                        <h5 class="card-title product-name">Chyawanprash (1 Kg)</h5>
                         <p class="card-text" id="chawanprashCard1kg"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 340 for 1 kg</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
