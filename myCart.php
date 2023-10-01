@@ -135,7 +135,7 @@ if ($result->num_rows > 0) {
                      $payerName=$post['fullname'];
                       $payerEmail=$GLOBALS['email'] ;
                       $payerMobile=$GLOBALS['cellPhone'];
-                      $payerAddress='Bhusawal, Maharashtra';
+                      $payerAddress='Maharashtra';
 
                       $clientTxnId=rand(1000,9999);
                      // $amount=210;
@@ -158,7 +158,7 @@ if ($result->num_rows > 0) {
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Please Enter Full Name" required
-                           value="" >
+                           value="<?php echo $GLOBALS['userName'] ?>" >
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Email</label>
@@ -168,7 +168,7 @@ if ($result->num_rows > 0) {
                      <div class="mb-3">
                         <label class="form-label">Phone Number(+91)</label>
                         <input type="text" pattern="[789][0-9]{9}" maxlength="10" class="form-control" name="phone_no" id="phone_no" placeholder="Enter Phone Number" required
-                           value="<?php echo $GLOBALS['cellPhone'] ?>" >
+                           value="" >
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Address</label>

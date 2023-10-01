@@ -28,8 +28,8 @@
 
 <body>
     <header class="header py-3 p-2">
-        <div class="container">
-            <h3 class="text-center text-white">Header</h3>
+        <div class="container ">
+            <h3 class="text-center text-white d-none h-25" style="background-color: transparent;">HEADER</h3>
         </div>
     </header>
     <div class="container-fluid row center py-20 p-2" style="background-color :#03C04A;color:#fff">

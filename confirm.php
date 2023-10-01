@@ -1,6 +1,5 @@
 <! DOCTYPE html>
    <html>
-
    <head>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -19,7 +18,6 @@
    </style>
    <?php
    include('payment/Authentication.php');
-
    $encData = null;
    // $clientCode='NITE5';
 // $username='Ish988@sp';
@@ -32,7 +30,6 @@
    $password = 'TUSH99_SP8349';
    $authKey = '010odVxdUGZNTjFd';
    $authIV = 'Sr6Uh4RSLAItInMY';
-
 
    // $id = isset($_GET['id']) ? $_GET['id'] : '';
    $payerName = isset($_POST['fullname']);
@@ -65,27 +62,27 @@
       </div>
          <!-- Full Name -->
          <div class="input-group mb-3  ">
-            <span class="input-group-text" id="basic-addon2">Full Name</span>
-            <input type="text" class="form-control" value="<?php echo $payerName ?>" readonly>
+            <span class="input-group-text">Full Name</span>
+            <input type="text" class="form-control" value="<?php echo $_POST["fullname"] ?>" readonly>
          </div>
          <!-- Email -->
          <div class="input-group mb-3">
             <span class="input-group-text">Email</span>
-            <input type="text" class="form-control" value="<?php echo $payerEmail ?>" readonly>
+            <input type="text" class="form-control" value="<?php echo $_POST['email'] ?>" readonly>
          </div>
          <!-- Phone Number -->
          <div class="input-group mb-3 ">
             <span class="input-group-text">Phone Number</span>
-            <input type="text" class="form-control" value="<?php echo $payerMobile ?>" readonly>
+            <input type="text" class="form-control" value="<?php echo $_POST['phone_no'] ?>" readonly>
          </div>
          <!-- Address -->
          <div class="input-group mb-3 ">
-            <span class="input-group-text" id="basic-addon2">Address</span>
-            <input type="text" class="form-control" value="<?php echo $payerAddress ?>" readonly>
+            <span class="input-group-text" >Address</span>
+            <input type="text" class="form-control" value="<?php echo $_POST['address'] ?>" readonly>
          </div>
 
          <button class="btn btn-warning btn-block form-control text-center" name="purchase">Make Purchase</button>
-         <div class="d-none">
+         <div>
          <input type="text" class="form-control" value="<?php echo $clientCode ?>" readonly>
          <input type="text" class="form-control" value="<?php echo $data ?>" readonly>
          <input type="text" class="form-control" name="tAmount" id="tAmount" value="<?php echo $_COOKIE['tAmount'] ?>"

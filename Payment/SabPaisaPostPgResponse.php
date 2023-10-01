@@ -1,12 +1,3 @@
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    id="bootstrap-css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <?php
 session_start();
 include('Authentication.php');
@@ -26,7 +17,6 @@ $token = strtok($decText,"&");
 $i=0;
 
 /* response value After Decryption
-
 payerName=YUVRAJ MISHRA&payerEmail=yuvraj.mishra@sabpaisa.in&payerMobile=7004069540&clientTxnId=1907&payerAddress=NA&amount=10.0
 &clientCode=NITE5&paidAmount=10.1&paymentMode=Debit Card&bankName=BOB&amountType=INR&status=FAILED&statusCode=0300&challanNumber=null
 &sabpaisaTxnId=883602112220421050&sabpaisaMessage=Sorry, Your Transaction has Failed.&bankMessage=DebitCard&bankErrorCode=null
@@ -35,7 +25,6 @@ payerName=YUVRAJ MISHRA&payerEmail=yuvraj.mishra@sabpaisa.in&payerMobile=7004069
 &udf19=null&udf20=nulli- */
 
 //echo $token;
-
 
 //test data
 $split_to_var = explode('&', $decText);
@@ -110,9 +99,17 @@ while ($token !== false)
 	  //  mysqli_query($conn,$up);
 	    
 	}
+    if($statusCode==0000)
+    {
+        //success
+
+    }
+    else{
+        //error occured
+    }
+    
 }
 ?>
-
 
 <div class="page-content-wrapper">
     <div class="page-content">
@@ -122,7 +119,7 @@ while ($token !== false)
                     <div class="page-title">Payment Success Page</div>
                 </div>
             </div>
-        </div> -->
+        </div> 
         <br>
         <!-- <div class="row">
             <div class="col-md-12 col-sm-12">
