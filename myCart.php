@@ -4,21 +4,21 @@ include("header.php");
 include 'Payment/SabPaisaPostPgResponse.php';
 session_start();
 include('php/dbcs.php');
- error_reporting(0);
+error_reporting(0);
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //     if (isset($_POST['purchase'])) 
 //     {
-      if (!isset($_SESSION['loggedIn']) && empty($_SESSION["uName"])) {
-         //echo "User Name Is " . $_SESSION["uName"] . ".<br>";
-          print_r($_SESSION['uName']);
+if (!isset($_SESSION['loggedIn']) && empty($_SESSION["uName"])) {
+   //echo "User Name Is " . $_SESSION["uName"] . ".<br>";
+   print_r($_SESSION['uName']);
 
-         echo '<div class="alert alert-warning text-center py-5 mt-5" role="alert">
+   echo '<div class="alert alert-warning text-center py-5 mt-5" role="alert">
          Please <a href="login.php" class="alert-link">Login </a>&nbsp;/ Fill Below Details to Purchase.
        </div>';
-      } else {
-         //echo "Welcome " . $_SESSION["uName"] . ".<br>";
-      }
+} else {
+   //echo "Welcome " . $_SESSION["uName"] . ".<br>";
+}
 //     }
 // }
 
@@ -27,12 +27,21 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
    // output data of each row
    while ($row = $result->fetch_assoc()) {
-       echo "id: " . $row["id"] ."<br>". "Name: " . $row["name"] . " <br>" ."Phone Number: ". $row["phone"] ."<br>"."Email: " . $row["email"]." " ."<br>"."Address: ". $row["address"]. "<br>";
-      echo var_dump($row);
-      $GLOBALS['userName']=$row["name"];
-      $GLOBALS['cellPhone']=$row["phone"];
-      $GLOBALS['userAddress']=$row["address"];
-      $GLOBALS['email']=$row["email"];
+      //echo "id: " . $row["id"] . "<br>" . "Name: " . $row["name"] . " <br>" . "Phone Number: " . $row["phone"] . "<br>" . "Email: " . $row["email"] . " " . "<br>" . "Address: " . $row["address"] . "<br>";
+      
+      //echo var_dump($row);
+      
+      // $session['user_Name'] = $row["name"];
+      // $session['cell_Phone'] = $row["phone"];
+      // $session['e_mail'] = $row["email"];
+      // $session['user_Address'] = $row["address"];
+
+
+
+      // $GLOBALS['userName']=$row["name"];
+      // $GLOBALS['cellPhone']=$row["phone"];
+      // $GLOBALS['userAddress']=$row["address"];
+      // $GLOBALS['email']=$row["email"];
    }
 } else {
    //echo "0 results";
@@ -40,6 +49,7 @@ if ($result->num_rows > 0) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -121,66 +131,87 @@ if ($result->num_rows > 0) {
                <?php
 
                // Retrieve the JavaScript variable value sent via AJAX
-                   $myVariable = $_POST['myVariable'];
+              // $myVariable = $_POST['myVariable'];
 
                if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
-                     //Payment Code
-                     $encData=null;
-                     $clientCode='NITE5';
-                     $username='Ish988@sp';
-                     $password='wF2F0io7gdNj';
-                     $authKey='zvMzY0UZLxkiE6ad';
-                     $authIV='iFwrtsCSw3j7HG15';
+                  // //Payment Code
+                  // $encData = null;
+                  // $clientCode = 'NITE5';
+                  // $username = 'Ish988@sp';
+                  // $password = 'wF2F0io7gdNj';
+                  // $authKey = 'zvMzY0UZLxkiE6ad';
+                  // $authIV = 'iFwrtsCSw3j7HG15';
 
-                     $payerName=$post['fullname'];
-                      $payerEmail=$GLOBALS['email'] ;
-                      $payerMobile=$GLOBALS['cellPhone'];
-                      $payerAddress='Maharashtra';
+                  // // $payerName=$session['user_Name'];
+                  // //  $payerEmail= $session['e_mail'] ;
+                  // //  $payerMobile=$session['e_mail'];
+                  // //  $payerAddress=$session['user_Address'];
+               
+                  // //Storing Form Values to 
+                  // // $payerName = $_['fullname'];
+                  // // $payerEmail = $_POST['email'];
+                  // // $payerMobile = $_POST['phone_no'];
+                  // // $payerAddress = $_POST['address'];
 
-                      $clientTxnId=rand(1000,9999);
-                     // $amount=210;
-                     print_r($myVariable);
-                     $amountType='INR';
-                     $mcc=5137;
-                      $channelId='W';
-                     $callbackUrl='http://localhost/shrinathAyurved/myCart.php';
+                  // $payerName = $_SESSION['user_Name'];
+                  // $payerEmail = $_SESSION['e_mail'];
+                  // $payerMobile = $_SESSION['e_mail'];
+                  // $payerAddress = $_SESSION['user_Address'];
 
-                     $encData="?clientCode=".$clientCode."&transUserName=".$username."&transUserPassword=".$password."&payerName=".$payerName.
-                     "&payerMobile=".$payerMobile."&payerEmail=".$payerEmail."&payerAddress=".$payerAddress."&clientTxnId=".$clientTxnId.
-                     "&amount=".$amount."&amountType=".$amountType."&mcc=".$mcc."&channelId=".$channelId."&callbackUrl=".$callbackUrl;
-                     //."&udf1=".$Class."&udf2=".$Roll;
-                                 
-                     $AesCipher = new AesCipher(); 
-                     $data = $AesCipher->encrypt($authKey, $authIV, $encData);
+                  // // $clientTxnId = rand(1000, 9999);
+                  // // // $amount=210;
+                  // // print_r($myVariable);
+                  // // $amountType = 'INR';
+
+                  // $clientTxnId = rand(1000, 9999);
+                  // $amount = $_COOKIE['tAmount'];
+                  // $amountType = 'INR';
+                  // $mcc = 5137;
+                  // $channelId = 'W';
+                  // // $callbackUrl='http://localhost/shrinathAyurved/myCart.php';
+                  // $callbackUrl = 'http://localhost/shrinathAyurved/SabPaisaPostPgResponsephp';
+
+                  // $encData = "?clientCode=" . $clientCode . "&transUserName=" . $username . "&transUserPassword=" . $password . "&payerName=" . $payerName .
+                  //    "&payerMobile=" . $payerMobile . "&payerEmail=" . $payerEmail . "&payerAddress=" . $payerAddress . "&clientTxnId=" . $clientTxnId .
+                  //    "&amount=" . $amount . "&amountType=" . $amountType . "&mcc=" . $mcc . "&channelId=" . $channelId . "&callbackUrl=" . $callbackUrl;
+                  // //."&udf1=".$Class."&udf2=".$Roll;
+               
+                  // $AesCipher = new AesCipher();
+                  // $data = $AesCipher->encrypt($authKey, $authIV, $encData);
                   ?>
 
-                     <form action="confirm.php" method="post">
+                  <form action="confirm.php" method="post">
+                  <!-- <form action="Payment\SabPaisaPostPgRequest.php" method="post"> -->
+                  <!-- <form action="mycart.php" method="post"> -->
+                  <!-- <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1"method="post"> -->
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Please Enter Full Name" required
-                           value="<?php echo $GLOBALS['userName'] ?>" >
+                        <input type="text" class="form-control" id="fullname" name="fullname"
+                           placeholder="Please Enter Full Name" required value="<?php echo $session['user_Name'] ?>">
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Please Enter Email" required
-                           value="<?php echo $GLOBALS['email'] ?>">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Please Enter Email"
+                           required value="<?php echo $session['e_mail'] ?>">
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Phone Number(+91)</label>
-                        <input type="text" pattern="[789][0-9]{9}" maxlength="10" class="form-control" name="phone_no" id="phone_no" placeholder="Enter Phone Number" required
-                           value="" >
+                        <input type="text" pattern="[789][0-9]{9}" maxlength="10" class="form-control" name="phone_no"
+                           id="phone_no" placeholder="Enter Phone Number" required
+                           value="<?php echo $session['cell_Phone'] ?>">
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <textarea name="address" id="address"  class="form-control"
-                           placeholder="Enter Full Address" cols="30" rows="6" required><?php echo $userAddress ?></textarea>
+                        <textarea name="address" id="address" class="form-control" placeholder="Enter Full Address"
+                           cols="30" rows="6" required><?php echo $session['user_Address'] ?></textarea>
                      </div>
-                     <button class="btn btn-warning btn-block form-control" name="purchase" onclick="validation()">Make Purchase</button>
-                     <!-- <input type="text" class="form-control" value="<?php echo $clientCode?>" readonly>
-                     <input type="text" class="form-control" value="<?php echo $data?>" readonly> -->
+                     <button class="btn btn-warning btn-block form-control" name="purchase" onclick="validation()">Make
+                        Purchase</button>
+                     <!-- <input type="text" class="form-control" value="<?php echo $clientCode ?>" readonly>
+                     <input type="text" class="form-control" value="<?php echo $data ?>" readonly> -->
                      <!-- Hidden Field -->
-                     <input type="hidden" name="encData" value="<?php echo $data?>" id="frm1">
-                     <input type="hidden" name="clientCode" value ="<?php echo $clientCode?>" id="frm2">
+                     <input type="hidden" name="encData" value="<?php echo $data ?>" id="frm1">
+                     <input type="hidden" name="clientCode" value="<?php echo $clientCode ?>" id="frm2">
                   </form>
                   <?php
                }
@@ -189,62 +220,62 @@ if ($result->num_rows > 0) {
          </div>
       </div>
    </div>
-  
-         <script>
-            var myvar='<?php echo $$_SESSION['loggedIn'];?>';
-            var gt = 0;
-            var iprice = document.getElementsByClassName('iprice');
-            var iquantity = document.getElementsByClassName('iquantity');
-            var itotal = document.getElementsByClassName('itotal');
-            var gtotal = document.getElementById('gtotal');
-            var tAmsount = document.getElementById('tAmount');
-            
-            function subTotal() {
-               gt = 0;
-               for (i = 0; i < iprice.length; i++) {
-                  itotal[i].innerText = '\u20B9 ' + (iprice[i].value) * (iquantity[i].value);
-                  gt = gt + (iprice[i].value) * (iquantity[i].value);
-               }
-               gtotal.innerText = '\u20B9 ' + gt;
-               
-               //document.cookie ="tAmount="+gtotal.innerText.slice(2);
-            }
-            // document.cookie ="tAmount="+gtotal.innerText.slice(2)+gt;
-            subTotal();
-             document.cookie ="tAmount="+gtotal.innerText.slice(2);
-            // alert(gtotal.innerText.slice(2));
-            // Send the variable value to the server using AJAX
-var xhr = new XMLHttpRequest();
-xhr.open("POST", "http://localhost/shrinathAyurved/confirm.php", true);
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-    console.log("Variable stored successfully");
-  }
-};
-xhr.send("myVariable=" + encodeURIComponent(gtotal.innerText.slice(2)));
 
-// Validations
-function validation() {
-   // if (document.getElementById("fullname").value == "" && $_SESSION['loggedIn']!=true) {
-   // alert("Must enter a Valid Name");
-   // }
-   // alert('hi'+myvar)
-   if(myvar.length!=0)
-   {
-      document.getElementById("fullname").readonly =true;
-      document.getElementById("email").readonly =true;
-      document.getElementById("phone_no").readonly =true;
-      document.getElementById("address").readonly =true;
-   }
-//   else if (document.getElementById("password").value == "") {
-//    alert("Must enter the password");
-//    }
-}
-         </script>
+   <script>
+      var myvar = '<?php echo $$_SESSION['loggedIn']; ?>';
+      var gt = 0;
+      var iprice = document.getElementsByClassName('iprice');
+      var iquantity = document.getElementsByClassName('iquantity');
+      var itotal = document.getElementsByClassName('itotal');
+      var gtotal = document.getElementById('gtotal');
+      var tAmsount = document.getElementById('tAmount');
+
+      function subTotal() {
+         gt = 0;
+         for (i = 0; i < iprice.length; i++) {
+            itotal[i].innerText = '\u20B9 ' + (iprice[i].value) * (iquantity[i].value);
+            gt = gt + (iprice[i].value) * (iquantity[i].value);
+         }
+         gtotal.innerText = '\u20B9 ' + gt;
+
+         //document.cookie ="tAmount="+gtotal.innerText.slice(2);
+      }
+      // document.cookie ="tAmount="+gtotal.innerText.slice(2)+gt;
+      subTotal();
+      document.cookie = "tAmount=" + gtotal.innerText.slice(2);
+      // alert(gtotal.innerText.slice(2));
+      // Send the variable value to the server using AJAX
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://localhost/shrinathAyurved/confirm.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            console.log("Variable stored successfully");
+         }
+      };
+      xhr.send("myVariable=" + encodeURIComponent(gtotal.innerText.slice(2)));
+
+      // Validations
+      function validation() {
+         // if (document.getElementById("fullname").value == "" && $_SESSION['loggedIn']!=true) {
+         // alert("Must enter a Valid Name");
+         // }
+         // alert('hi'+myvar)
+         if (myvar.length != 0) {
+            document.getElementById("fullname").readonly = true;
+            document.getElementById("email").readonly = true;
+            document.getElementById("phone_no").readonly = true;
+            document.getElementById("address").readonly = true;
+         }
+         //   else if (document.getElementById("password").value == "") {
+         //    alert("Must enter the password");
+         //    }
+      }
+   </script>
 </body>
 <?php
-    //  include('footer.php');
-    include('php/footer.php') ;
-     ?>
+//  include('footer.php');
+include('php/footer.php');
+?>
+
 </html>

@@ -18,24 +18,18 @@
    </style>
    <?php
    include('payment/Authentication.php');
-   $encData = null;
-   // $clientCode='NITE5';
-// $username='Ish988@sp';
-// $password='wF2F0io7gdNj';
-// $authKey='zvMzY0UZLxkiE6ad';
-// $authIV='iFwrtsCSw3j7HG15';
+$encData = null;
+$clientCode='NITE5';
+$username='Ish988@sp';
+$password='wF2F0io7gdNj';
+$authKey='zvMzY0UZLxkiE6ad';
+$authIV='iFwrtsCSw3j7HG15';
    
-   $clientCode = 'TUSH99';
-   $username = 'contact_8349';
-   $password = 'TUSH99_SP8349';
-   $authKey = '010odVxdUGZNTjFd';
-   $authIV = 'Sr6Uh4RSLAItInMY';
 
-   // $id = isset($_GET['id']) ? $_GET['id'] : '';
-   $payerName = isset($_POST['fullname']);
-   $payerEmail = isset($_POST['email']);
-   $payerMobile = isset($_POST['phone_no']);
-   $payerAddress = isset($_POST['address']);
+   $payerName = $_POST['fullname'];
+   $payerEmail = $_POST['email'];
+   $payerMobile = $_POST['phone_no'];
+   $payerAddress = $_POST['address'];
 
    $clientTxnId = rand(1000, 9999);
    $amount = $_COOKIE['tAmount'];
@@ -43,7 +37,8 @@
    $amountType = 'INR';
    $mcc = 5137;
    $channelId = 'W';
-   $callbackUrl = 'http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
+    $callbackUrl = 'http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
+   //$callbackUrl = 'http://localhost/shrinathAyurved/confirm.php';
 
    $encData = "?clientCode=" . $clientCode . "&transUserName=" . $username . "&transUserPassword=" . $password . "&payerName=" . $payerName .
       "&payerMobile=" . $payerMobile . "&payerEmail=" . $payerEmail . "&payerAddress=" . $payerAddress . "&clientTxnId=" . $clientTxnId .
@@ -86,11 +81,15 @@
          <input type="text" class="form-control" value="<?php echo $clientCode ?>" readonly>
          <input type="text" class="form-control" value="<?php echo $data ?>" readonly>
          <input type="text" class="form-control" name="tAmount" id="tAmount" value="<?php echo $_COOKIE['tAmount'] ?>"
-            readonly>     </div>
+            readonly>  
+            <!-- <input type="text" class="form-control" value="<?php echo $username ?>" readonly>
+            <input type="text" class="form-control" value="<?php echo $authKey ?>" readonly>
+            <input type="text" class="form-control" value="<?php echo $authIV ?>" readonly>  -->
+           </div>
          <!-- Hidden Field -->
          <div class="d-none">
-            <input type="hidden" name="encData" value="<?php echo $data ?>" id="frm1" >
-            <input type="hidden" name="clientCode" value="<?php echo $clientCode ?>" id="frm2">
+            <input type="hidden" name="encData" class="d-none" value="<?php echo $data ?>" id="frm1" >
+            <input type="hidden" name="clientCode" class="d-none" value="<?php echo $clientCode ?>" id="frm2">
          </div>
       </form>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

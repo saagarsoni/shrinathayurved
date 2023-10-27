@@ -1,9 +1,11 @@
 <?php
 session_start();
-include('Authentication.php');
+ include('Authentication.php');
 $query = $_REQUEST['encResponse'];
-$authKey = '010odVxdUGZNTjFd';
-$authIV = 'Sr6Uh4RSLAItInMY';
+// $authKey = '010odVxdUGZNTjFd';
+$authKey = 'zvMzY0UZLxkiE6ad';
+// $authIV = 'Sr6Uh4RSLAItInMY';
+$authIV = 'iFwrtsCSw3j7HG15';
 
 $decText = null;
 $AesCipher = new AesCipher();
