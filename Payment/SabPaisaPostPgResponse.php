@@ -2,10 +2,13 @@
 session_start();
  include('Authentication.php');
 $query = $_REQUEST['encResponse'];
-// $authKey = '010odVxdUGZNTjFd';
-$authKey = 'zvMzY0UZLxkiE6ad';
-// $authIV = 'Sr6Uh4RSLAItInMY';
-$authIV = 'iFwrtsCSw3j7HG15';
+//Live
+$authKey = '010odVxdUGZNTjFd';
+$authIV = 'Sr6Uh4RSLAItInMY';
+
+//test
+// $authKey = 'zvMzY0UZLxkiE6ad';
+// $authIV = 'iFwrtsCSw3j7HG15';
 
 $decText = null;
 $AesCipher = new AesCipher();
@@ -33,13 +36,8 @@ $split_to_var = explode('&', $decText);
 $tAmount = $split_to_var[6] ; // first one
 //echo $tAmount; // Returns 1920
 
-// $extension = strrchr( $tAmount, '='); //returns "jpg"
-// echo $extension;
-
-$data = $tAmount ;    
-$whatIWant = substr($data, strpos($data, "=") + 1);    
-echo $whatIWant;
-//test data
+echo'Below are the details';
+print_r($query);
 
 while ($token !== false)
 {
@@ -95,33 +93,34 @@ while ($token !== false)
 
 	if($token == true)
 	{
+
 	   // $up = "UPDATE  buy_now SET txid='$pgTxnId', tx_dt='$transDate', status='1' WHERE student_id='$userid'";
 	      //$up = "UPDATE  buy_now SET txid='$pgTxnId', tx_dt='$transDate', status=1 WHERE student_id=$ufd20";
 	     // echo $up;
 	  //  mysqli_query($conn,$up);
 	    
 	}
-    if($statusCode==0000)
-    {
-        //success
+    // if($statusCode==0000)
+    // {
+    //     //success
 
-    }
-    else{
-        //error occured
-    }
+    // }
+    // else{
+    //     //error occured
+    // }
     
 }
 ?>
 
 <div class="page-content-wrapper">
     <div class="page-content">
-        <div class="page-bar">
+        <!-- <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
                     <div class="page-title">Payment Success Page</div>
                 </div>
             </div>
-        </div> 
+        </div>  -->
         <br>
         <!-- <div class="row">
             <div class="col-md-12 col-sm-12">

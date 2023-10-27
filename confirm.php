@@ -19,11 +19,19 @@
    <?php
    include('payment/Authentication.php');
 $encData = null;
-$clientCode='NITE5';
-$username='Ish988@sp';
-$password='wF2F0io7gdNj';
-$authKey='zvMzY0UZLxkiE6ad';
-$authIV='iFwrtsCSw3j7HG15';
+//Test Credentials
+// $clientCode='NITE5';
+// $username='Ish988@sp';
+// $password='wF2F0io7gdNj';
+// $authKey='zvMzY0UZLxkiE6ad';
+// $authIV='iFwrtsCSw3j7HG15';
+
+//Live Credentials
+ $clientCode = 'TUSH99';
+   $username = 'contact_8349';
+   $password = 'TUSH99_SP8349';
+   $authKey = '010odVxdUGZNTjFd';
+   $authIV = 'Sr6Uh4RSLAItInMY';
    
 
    $payerName = $_POST['fullname'];
@@ -37,7 +45,7 @@ $authIV='iFwrtsCSw3j7HG15';
    $amountType = 'INR';
    $mcc = 5137;
    $channelId = 'W';
-    $callbackUrl = 'http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
+    $callbackUrl = 'http://localhost:8082/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
    //$callbackUrl = 'http://localhost/shrinathAyurved/confirm.php';
 
    $encData = "?clientCode=" . $clientCode . "&transUserName=" . $username . "&transUserPassword=" . $password . "&payerName=" . $payerName .
