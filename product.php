@@ -11,7 +11,7 @@
 
     <!--  CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/imageZoom.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="./css/imageZoom.css" /> -->
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -264,14 +264,14 @@
                     <div class="card-body">
                         <h5 class="card-title product-name">Gulkand</h5>
                         <p class="card-text" id="gulkandCard"></p>
-                        <p class="card-text"><b> <span>&#8377;</span> 20 for 500 gm</b> </p>
+                        <p class="card-text"><b> <span>&#8377;</span> 190 for 500 gm</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#gulkand">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Gulkand">
-                        <input type="hidden" name="price" value="20">
+                        <input type="hidden" name="price" value="190">
                     </div>
                 </div>
             </div>
@@ -350,7 +350,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- End Example Code -->
                     </div>
                     <div class="modal-footer">
