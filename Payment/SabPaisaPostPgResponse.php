@@ -13,7 +13,7 @@ $authIV = 'Sr6Uh4RSLAItInMY';
 $decText = null;
 $AesCipher = new AesCipher();
 $decText = $AesCipher -> decrypt($authKey, $authIV, $query); 
-echo $decText;
+//echo $decText;
 
 // $amount= $_COOKIE['tAmount'];
 
@@ -35,9 +35,24 @@ payerName=YUVRAJ MISHRA&payerEmail=yuvraj.mishra@sabpaisa.in&payerMobile=7004069
 $split_to_var = explode('&', $decText);
 $tAmount = $split_to_var[6] ; // first one
 //echo $tAmount; // Returns 1920
+// echo "<br>";
+// echo 'Value1 '. $split_to_var[11];echo "<br>";
+// echo 'Value2 '. $split_to_var[12];
+// echo "<br>";
 
-echo'Below are the details';
-print_r($query);
+// $status = $split_to_var[11];
+// $extension = strrchr( $status, '='); //returns ".jpg"
+// echo $status;
+// echo "<br>";
+
+// $code= $split_to_var[12];
+// $extension = strrchr( $code, '='); //returns ".jpg"
+// echo $code;
+// echo "<br>";
+// $full_String=$status . $code;
+
+//echo'Below are the details';
+//print_r($query);
 
 while ($token !== false)
 {
@@ -111,6 +126,33 @@ while ($token !== false)
     // }
     
 }
+
+
+if(strpos($full_String, 'SUCCESS') &&  strpos($full_String, '0000') !== false) 
+{ 
+    echo '<br>';
+    echo "true"; 
+}
+else{
+    echo '<br>';
+    echo "False";
+}
+
+// if (strpos($full_String, '0000') !== false) 
+// { 
+//     echo "True"; 
+// } 
+// else
+// { 
+//     echo "False"; 
+// } 
+
+// if (str_contains($status, 'SUCCESS') ) {
+//     echo 'Thank You For Purchasing';
+// } else {
+//     echo 'Somthing Wrong Went...';
+// }
+
 ?>
 
 <div class="page-content-wrapper">
