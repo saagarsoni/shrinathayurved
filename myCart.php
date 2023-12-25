@@ -16,9 +16,10 @@ if (!isset($_SESSION['loggedIn']) && empty($_SESSION["uName"])) {
    echo '<div class="alert alert-warning text-center py-5 mt-5" role="alert">
          Please <a href="login.php" class="alert-link">Login </a>&nbsp;/ Fill Below Details to Purchase.
        </div>';
-} else {
-   //echo "Welcome " . $_SESSION["uName"] . ".<br>";
-}
+} 
+// else {
+//    //echo "Welcome " . $_SESSION["uName"] . ".<br>";
+// }
 //     }
 // }
 
@@ -35,13 +36,6 @@ if ($result->num_rows > 0) {
       // $session['cell_Phone'] = $row["phone"];
       // $session['e_mail'] = $row["email"];
       // $session['user_Address'] = $row["address"];
-
-
-
-      // $GLOBALS['userName']=$row["name"];
-      // $GLOBALS['cellPhone']=$row["phone"];
-      // $GLOBALS['userAddress']=$row["address"];
-      // $GLOBALS['email']=$row["email"];
    }
 } else {
    //echo "0 results";
@@ -129,61 +123,11 @@ if ($result->num_rows > 0) {
                <h5 class="text-right" id="gtotal" name="gtotal"> </h5>
                <br>
                <?php
-
-               // Retrieve the JavaScript variable value sent via AJAX
-              // $myVariable = $_POST['myVariable'];
-
-               if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
-                  // //Payment Code
-                  // $encData = null;
-                  // $clientCode = 'NITE5';
-                  // $username = 'Ish988@sp';
-                  // $password = 'wF2F0io7gdNj';
-                  // $authKey = 'zvMzY0UZLxkiE6ad';
-                  // $authIV = 'iFwrtsCSw3j7HG15';
-
-                  // // $payerName=$session['user_Name'];
-                  // //  $payerEmail= $session['e_mail'] ;
-                  // //  $payerMobile=$session['e_mail'];
-                  // //  $payerAddress=$session['user_Address'];
-               
-                  // //Storing Form Values to 
-                  // // $payerName = $_['fullname'];
-                  // // $payerEmail = $_POST['email'];
-                  // // $payerMobile = $_POST['phone_no'];
-                  // // $payerAddress = $_POST['address'];
-
-                  // $payerName = $_SESSION['user_Name'];
-                  // $payerEmail = $_SESSION['e_mail'];
-                  // $payerMobile = $_SESSION['e_mail'];
-                  // $payerAddress = $_SESSION['user_Address'];
-
-                  // // $clientTxnId = rand(1000, 9999);
-                  // // // $amount=210;
-                  // // print_r($myVariable);
-                  // // $amountType = 'INR';
-
-                  // $clientTxnId = rand(1000, 9999);
-                  // $amount = $_COOKIE['tAmount'];
-                  // $amountType = 'INR';
-                  // $mcc = 5137;
-                  // $channelId = 'W';
-                  // // $callbackUrl='http://localhost/shrinathAyurved/myCart.php';
-                  // $callbackUrl = 'http://localhost/shrinathAyurved/SabPaisaPostPgResponsephp';
-
-                  // $encData = "?clientCode=" . $clientCode . "&transUserName=" . $username . "&transUserPassword=" . $password . "&payerName=" . $payerName .
-                  //    "&payerMobile=" . $payerMobile . "&payerEmail=" . $payerEmail . "&payerAddress=" . $payerAddress . "&clientTxnId=" . $clientTxnId .
-                  //    "&amount=" . $amount . "&amountType=" . $amountType . "&mcc=" . $mcc . "&channelId=" . $channelId . "&callbackUrl=" . $callbackUrl;
-                  // //."&udf1=".$Class."&udf2=".$Roll;
-               
-                  // $AesCipher = new AesCipher();
-                  // $data = $AesCipher->encrypt($authKey, $authIV, $encData);
+               if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0)
+                {
                   ?>
 
                   <form action="confirm.php" method="post">
-                  <!-- <form action="Payment\SabPaisaPostPgRequest.php" method="post"> -->
-                  <!-- <form action="mycart.php" method="post"> -->
-                  <!-- <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1"method="post"> -->
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <input type="text" class="form-control" id="fullname" name="fullname"
@@ -207,8 +151,6 @@ if ($result->num_rows > 0) {
                      </div>
                      <button class="btn btn-warning btn-block form-control" name="purchase" onclick="validation()">Make
                         Purchase</button>
-                     <!-- <input type="text" class="form-control" value="<?php echo $clientCode ?>" readonly>
-                     <input type="text" class="form-control" value="<?php echo $data ?>" readonly> -->
                      <!-- Hidden Field -->
                      <input type="hidden" name="encData" value="<?php echo $data ?>" id="frm1">
                      <input type="hidden" name="clientCode" value="<?php echo $clientCode ?>" id="frm2">
@@ -237,14 +179,9 @@ if ($result->num_rows > 0) {
             gt = gt + (iprice[i].value) * (iquantity[i].value);
          }
          gtotal.innerText = '\u20B9 ' + gt;
-
-         //document.cookie ="tAmount="+gtotal.innerText.slice(2);
       }
-      // document.cookie ="tAmount="+gtotal.innerText.slice(2)+gt;
       subTotal();
       document.cookie = "tAmount=" + gtotal.innerText.slice(2);
-      // alert(gtotal.innerText.slice(2));
-      // Send the variable value to the server using AJAX
       var xhr = new XMLHttpRequest();
       xhr.open("POST", "http://localhost/shrinathAyurved/confirm.php", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -254,22 +191,14 @@ if ($result->num_rows > 0) {
          }
       };
       xhr.send("myVariable=" + encodeURIComponent(gtotal.innerText.slice(2)));
-
       // Validations
       function validation() {
-         // if (document.getElementById("fullname").value == "" && $_SESSION['loggedIn']!=true) {
-         // alert("Must enter a Valid Name");
-         // }
-         // alert('hi'+myvar)
          if (myvar.length != 0) {
             document.getElementById("fullname").readonly = true;
             document.getElementById("email").readonly = true;
             document.getElementById("phone_no").readonly = true;
             document.getElementById("address").readonly = true;
          }
-         //   else if (document.getElementById("password").value == "") {
-         //    alert("Must enter the password");
-         //    }
       }
    </script>
 </body>

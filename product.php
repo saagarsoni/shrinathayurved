@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -27,7 +26,7 @@
 <!-- Navigation End -->
 
 <body>
-    <header class="header py-3 p-2">
+    <header class="header py-5 p-2">
         <div class="container ">
             <h3 class="text-center text-white d-none h-25" style="background-color: transparent;">HEADER</h3>
         </div>
@@ -47,7 +46,8 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(500 gm)"/>
+                <!-- https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg -->
+                <img src="./images/Chyawanprash500.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(500 gm)"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash (500 gm)</h5>
                         <p class="card-text" id="chawanprashCard"></p>
@@ -61,7 +61,7 @@
                         <input type="hidden" name="price" value="180">
                     </div>
                 </div>
-            </div>
+            </div> 
         </form>
         <!-- Card End -->
         <!-- Modal Start -->
@@ -154,7 +154,8 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(1 Kg)"/>
+                <!-- https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg -->
+                    <img src="./images/Chavanprash1kg.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(1 Kg)"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash (1 Kg)</h5>
                         <p class="card-text" id="chawanprashCard1kg"></p>

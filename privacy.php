@@ -33,7 +33,7 @@
       <h3 class="text-center text-white">Header</h3>
     </div>
   </header>
-  <h6 class="text-start fst-italic">Updated March 6th, 2023</h6>
+  <h6 class="text-start fst-italic">Updated December 6th, 2023</h6>
   <h1 class="text-center sticky">Privacy Policy</h1>
   <p id="privacyPolicyCard" class="container"></p>
   <!-- Footer -->

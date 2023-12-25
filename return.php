@@ -33,7 +33,7 @@
       <h3 class="text-center text-white">Header</h3>
     </div>
   </header>
-  <h6 class="text-start fst-italic">Updated March 14th, 2023</h6>
+  <h6 class="text-start fst-italic">Updated November 14th, 2023</h6>
   <h1 class="text-center sticky">Return and Refund Policy</h1>
   <p id="privacyPolicyCard" class="container"></p>
   <!-- Footer -->
