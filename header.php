@@ -70,9 +70,9 @@ session_start();
       if (empty($_SESSION['loggedIn'])) {
 
         ?>
-        <div class="m-2">
+        <!-- <div class="m-2">
           <a href="login.php" class="btn btn-outline-success">Login</a>
-        </div>
+        </div> -->
         <?php
       }
       ?>
