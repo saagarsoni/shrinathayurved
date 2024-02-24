@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
             <h1>My Cart</h1>
          </div>
          <div class="col-lg-9">
-            <table class="table">
+            <table class="table" id ="tblmain">
                <thead class="text-left">
                   <tr>
                      <th scope="col">S.No</th>
