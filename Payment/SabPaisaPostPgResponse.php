@@ -120,6 +120,7 @@ while ($token !== false)
 
 	if($token == true)
 	{
+        
 	   // $up = "UPDATE  buy_now SET txid='$pgTxnId', tx_dt='$transDate', status='1' WHERE student_id='$userid'";
 	      //$up = "UPDATE  buy_now SET txid='$pgTxnId', tx_dt='$transDate', status=1 WHERE student_id=$ufd20";
 	     // echo $up;

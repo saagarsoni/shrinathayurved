@@ -63,8 +63,13 @@
       session_start();
       $myArray = $_SESSION['cart'];
       foreach ($myArray as $record) {
-         echo "Item Name: " . $record['item_name'] . ", Price: " . $record['price'] . ", Price: " . $record['quantity'] . "<br>";
+         echo "Item Name: " . $record['item_name'] . ", Price: " . $record['price'] . ", Quantity: " . $record['quantity'] .", Total Qty: " .( $record['price'] )* ($record['quantity']) ."<br>";
       }
+      $orderId = rand(10000, 99999);
+         echo "Order Id = ". $orderId;
+         $grandTotal=$_COOKIE['tAmount'];
+         echo '<br>';
+         echo "Grand Total = ".$grandTotal;
       ?>
 
       <!-- <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post"> -->

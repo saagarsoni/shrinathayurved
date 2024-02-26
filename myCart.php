@@ -85,8 +85,6 @@ if ($result->num_rows > 0) {
                         
                   <tr>
                   <td><input type='text' value='$sr' readonly></td>
-                  
-
 
                   <td><input type='text'  value='$value[item_name]' readonly></td>
 
@@ -104,6 +102,7 @@ if ($result->num_rows > 0) {
                   </td>
                   
                   <td class='itotal'></td>
+                  <input type='text'  value='$value[itotal]' readonly>
                   <td>
                   <form action='manage_cart.php' method='post'>
                   <button name='remove_item' class='btn btn-sm btn-outline-danger'>Remove</button>
