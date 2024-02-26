@@ -1,41 +1,23 @@
 <?php
 include("header.php");
-//include 'Authentication.php';
 include 'Payment/SabPaisaPostPgResponse.php';
 session_start();
 include('php/dbcs.php');
 error_reporting(0);
 
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     if (isset($_POST['purchase'])) 
-//     {
 if (!isset($_SESSION['loggedIn']) && empty($_SESSION["uName"])) {
-   //echo "User Name Is " . $_SESSION["uName"] . ".<br>";
    print_r($_SESSION['uName']);
-
    echo '<div class="alert alert-warning text-center py-5 mt-5" role="alert">
          Please <a href="login.php" class="alert-link">Login </a>&nbsp;/ Fill Below Details to Purchase.
        </div>';
 } 
-// else {
-//    //echo "Welcome " . $_SESSION["uName"] . ".<br>";
-// }
-//     }
-// }
 
 $sql = "SELECT * FROM tblregister where id='{$_SESSION['uId']}'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
    // output data of each row
    while ($row = $result->fetch_assoc()) {
-      //echo "id: " . $row["id"] . "<br>" . "Name: " . $row["name"] . " <br>" . "Phone Number: " . $row["phone"] . "<br>" . "Email: " . $row["email"] . " " . "<br>" . "Address: " . $row["address"] . "<br>";
-      
       //echo var_dump($row);
-      
-      // $session['user_Name'] = $row["name"];
-      // $session['cell_Phone'] = $row["phone"];
-      // $session['e_mail'] = $row["email"];
-      // $session['user_Address'] = $row["address"];
    }
 } else {
    //echo "0 results";
@@ -84,14 +66,10 @@ if ($result->num_rows > 0) {
                   <?php
                   // $total=0; 
                   if (isset($_SESSION['cart'])) {
-
-
-
                      foreach ($_SESSION['cart'] as $key => $value) {
                         //print_r($value);
                         $sr = $key + 1;
                         // $total=$total+$value['price'];
-                        echo "Data=="+var_dump($key);
                         echo "
                   <tr>
                   <td>$sr</td>
@@ -151,56 +129,16 @@ if ($result->num_rows > 0) {
                         <textarea name="address" id="address" class="form-control" placeholder="Enter Full Address"
                            cols="30" rows="6" required><?php echo $session['user_Address'] ?></textarea>
                      </div>
+        
                      <button class="btn btn-warning btn-block form-control" name="purchase" onclick="validation()">Make Purchase</button>
                      <!-- Hidden Field -->
                      <input type="hidden" name="encData" value="<?php echo $data ?>" id="frm1">
                      <input type="hidden" name="clientCode" value="<?php echo $clientCode ?>" id="frm2">
-
-
-                     
                   </form>
                   <?php
                }
                ?>
             </div>
-            <?php
-// Define an empty array to store all rows
-$tableData = array();
-
-// Check if data is posted
-if (isset($_POST['data'])) {
-    // Loop through each row of the table
-    foreach ($_POST['data'] as $row) {
-        // Extract data from each cell of the row
-        $sno = $row['sno'];
-        $name = $row['name'];
-        $price = $row['price'];
-        $quantity = $row['quantity'];
-        $total = $row['total'];
-        
-        // Store the extracted data into an associative array representing each row
-        $rowData = array(
-            'S.No' => $sno,
-            'Name' => $name,
-            'Price' => $price,
-            'Quantity' => $quantity,
-            'Total' => $total
-        );
-        
-        // Push the row array into the main array containing all rows
-        $tableData[] = $rowData;
-        var_dump ($tableData);
-        
-    }
-}
-
-// Now $tableData contains all the details of each row in the table
-// You can further process this array as needed (e.g., insert into database)
-
-// Return a response (e.g., JSON-encoded) to the AJAX request
-echo json_encode($tableData);
-?>
-
          </div>
       </div>
    </div>
@@ -245,8 +183,6 @@ echo json_encode($tableData);
    </script>
 </body>
 <?php
-//  include('footer.php');
 include('php/footer.php');
 ?>
-
 </html>

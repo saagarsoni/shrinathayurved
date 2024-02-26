@@ -33,7 +33,6 @@ $encData = null;
    $authKey = '010odVxdUGZNTjFd';
    $authIV = 'Sr6Uh4RSLAItInMY';
    
-
    $payerName = $_POST['fullname'];
    $payerEmail = $_POST['email'];
    $payerMobile = $_POST['phone_no'];
@@ -84,15 +83,12 @@ $encData = null;
             <input type="text" class="form-control" value="<?php echo $_POST['address'] ?>" readonly>
          </div>
 
-         <button class="btn btn-warning btn-block form-control text-center" name="purchase">Make Purchase</button>
+         <button class="btn btn-warning btn-block form-control text-center" name="purchase">Continue Purchase</button>
          <div>
          <input type="text" class="form-control" value="<?php echo $clientCode ?>" readonly>
          <input type="text" class="form-control" value="<?php echo $data ?>" readonly>
          <input type="text" class="form-control" name="tAmount" id="tAmount" value="<?php echo $_COOKIE['tAmount'] ?>"
             readonly>  
-            <!-- <input type="text" class="form-control" value="<?php echo $username ?>" readonly>
-            <input type="text" class="form-control" value="<?php echo $authKey ?>" readonly>
-            <input type="text" class="form-control" value="<?php echo $authIV ?>" readonly>  -->
            </div>
          <!-- Hidden Field -->
          <div class="d-none">
@@ -104,5 +100,4 @@ $encData = null;
          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
          crossorigin="anonymous"></script>
    </body>
-
    </html>
