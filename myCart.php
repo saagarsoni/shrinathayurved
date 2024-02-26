@@ -85,10 +85,13 @@ if ($result->num_rows > 0) {
                   // $total=0; 
                   if (isset($_SESSION['cart'])) {
 
+
+
                      foreach ($_SESSION['cart'] as $key => $value) {
                         //print_r($value);
                         $sr = $key + 1;
                         // $total=$total+$value['price'];
+                        echo "Data=="+var_dump($key);
                         echo "
                   <tr>
                   <td>$sr</td>
@@ -126,7 +129,6 @@ if ($result->num_rows > 0) {
                if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0)
                 {
                   ?>
-
                   <form action="confirm.php" method="post">
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
@@ -149,16 +151,56 @@ if ($result->num_rows > 0) {
                         <textarea name="address" id="address" class="form-control" placeholder="Enter Full Address"
                            cols="30" rows="6" required><?php echo $session['user_Address'] ?></textarea>
                      </div>
-                     <button class="btn btn-warning btn-block form-control" name="purchase" onclick="validation()">Make
-                        Purchase</button>
+                     <button class="btn btn-warning btn-block form-control" name="purchase" onclick="validation()">Make Purchase</button>
                      <!-- Hidden Field -->
                      <input type="hidden" name="encData" value="<?php echo $data ?>" id="frm1">
                      <input type="hidden" name="clientCode" value="<?php echo $clientCode ?>" id="frm2">
+
+
+                     
                   </form>
                   <?php
                }
                ?>
             </div>
+            <?php
+// Define an empty array to store all rows
+$tableData = array();
+
+// Check if data is posted
+if (isset($_POST['data'])) {
+    // Loop through each row of the table
+    foreach ($_POST['data'] as $row) {
+        // Extract data from each cell of the row
+        $sno = $row['sno'];
+        $name = $row['name'];
+        $price = $row['price'];
+        $quantity = $row['quantity'];
+        $total = $row['total'];
+        
+        // Store the extracted data into an associative array representing each row
+        $rowData = array(
+            'S.No' => $sno,
+            'Name' => $name,
+            'Price' => $price,
+            'Quantity' => $quantity,
+            'Total' => $total
+        );
+        
+        // Push the row array into the main array containing all rows
+        $tableData[] = $rowData;
+        var_dump ($tableData);
+        
+    }
+}
+
+// Now $tableData contains all the details of each row in the table
+// You can further process this array as needed (e.g., insert into database)
+
+// Return a response (e.g., JSON-encoded) to the AJAX request
+echo json_encode($tableData);
+?>
+
          </div>
       </div>
    </div>
