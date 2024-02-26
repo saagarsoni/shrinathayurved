@@ -58,6 +58,33 @@ $encData = null;
    </head>
 
    <body>
+   <?php
+    // Check if the form has been submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Check if the "purchase" button was clicked
+        if (isset($_POST["purchase"])) {
+            // Check if any data was submitted
+            if (isset($_POST["id"]) && isset($_POST["name"]) && isset($_POST["price"])) 
+            {
+                // Process the submitted data
+                echo "<p>Form data received:</p>";
+                echo "<ul>";
+                // Loop through each submitted item
+                foreach ($_POST['id'] as $key => $id) {
+                    $name = $_POST['name'][$key];
+                    $price = $_POST['price'][$key];
+                    echo "<li>ID: $id, Name: $name, Price: $price</li>";
+                }
+                echo "</ul>";
+            } 
+            else
+            {
+                echo "<p>Error while retriving data.</p>";
+            }
+        }
+    }
+    ?>
+
       <!-- <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post"> -->
       <form action="https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="POST">
          <div class="p-2 fs-5 text-center fw-bold">Please Verify Below Details
@@ -90,6 +117,9 @@ $encData = null;
          <input type="text" class="form-control" name="tAmount" id="tAmount" value="<?php echo $_COOKIE['tAmount'] ?>"
             readonly>  
            </div>
+           <div>
+        
+      </div>
          <!-- Hidden Field -->
          <div class="d-none">
             <input type="hidden" name="encData" class="d-none" value="<?php echo $data ?>" id="frm1" >

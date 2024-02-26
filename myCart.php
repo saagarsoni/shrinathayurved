@@ -38,6 +38,12 @@ if ($result->num_rows > 0) {
       crossorigin="anonymous"></script>
    <title>Cart</title>
    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+   <style>
+        /* CSS to hide the border of input elements */
+        input[type="text"] {
+            border: none;
+        }
+    </style>
 </head>
 <header class="header py-3">
    <div class="container">
@@ -51,6 +57,7 @@ if ($result->num_rows > 0) {
             <h1>My Cart</h1>
          </div>
          <div class="col-lg-9">
+         
             <table class="table" id ="tblmain">
                <thead class="text-left">
                   <tr>
@@ -64,6 +71,7 @@ if ($result->num_rows > 0) {
                </thead>
                <tbody class="text-left">
                   <?php
+                
                   // $total=0; 
                   if (isset($_SESSION['cart'])) {
                      foreach ($_SESSION['cart'] as $key => $value) {
@@ -71,10 +79,19 @@ if ($result->num_rows > 0) {
                         $sr = $key + 1;
                         // $total=$total+$value['price'];
                         echo "
+                        
                   <tr>
-                  <td>$sr</td>
-                  <td>$value[item_name]</td>
-                  <td><span>&#8377; </span>$value[price]<input type='hidden' class='iprice' value='$value[price]'></td>
+                  <td><input type='text' value='$sr' readonly></td>
+                  
+
+
+                  <td><input type='text'  value='$value[item_name]' readonly></td>
+
+                  <!--<td>$value[item_name]</td>-->
+                  <td>
+                  <span>&#8377; </span>$value[price]<input type='hidden' class='iprice' value='$value[price]'>
+                  <input type='hidden' name='price[]' value='$value[price]' >
+                  </td>
                   
                   <td>
                      <form action='manage_cart.php' method='post'>
@@ -91,12 +108,15 @@ if ($result->num_rows > 0) {
                   </form>
                   </td>
                   </tr>
+               
                   ";
                      }
                   }
+               
                   ?>
                </tbody>
             </table>
+         
          </div>
          <div class="col-lg-3">
             <div class="border bg-light rounded p-4">
