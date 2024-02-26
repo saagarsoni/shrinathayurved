@@ -1,5 +1,6 @@
 <! DOCTYPE html>
    <html>
+
    <head>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -18,21 +19,21 @@
    </style>
    <?php
    include('payment/Authentication.php');
-$encData = null;
-//Test Credentials
+   $encData = null;
+   //Test Credentials
 // $clientCode='NITE5';
 // $username='Ish988@sp';
 // $password='wF2F0io7gdNj';
 // $authKey='zvMzY0UZLxkiE6ad';
 // $authIV='iFwrtsCSw3j7HG15';
-
-//Live Credentials
- $clientCode = 'TUSH99';
+   
+   //Live Credentials
+   $clientCode = 'TUSH99';
    $username = 'contact_8349';
    $password = 'TUSH99_SP8349';
    $authKey = '010odVxdUGZNTjFd';
    $authIV = 'Sr6Uh4RSLAItInMY';
-   
+
    $payerName = $_POST['fullname'];
    $payerEmail = $_POST['email'];
    $payerMobile = $_POST['phone_no'];
@@ -44,9 +45,9 @@ $encData = null;
    $amountType = 'INR';
    $mcc = 5137;
    $channelId = 'W';
-    $callbackUrl = 'http://localhost:8082/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
+   $callbackUrl = 'http://localhost:8082/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
    //$callbackUrl = 'http://localhost/shrinathAyurved/confirm.php';
-
+   
    $encData = "?clientCode=" . $clientCode . "&transUserName=" . $username . "&transUserPassword=" . $password . "&payerName=" . $payerName .
       "&payerMobile=" . $payerMobile . "&payerEmail=" . $payerEmail . "&payerAddress=" . $payerAddress . "&clientTxnId=" . $clientTxnId .
       "&amount=" . $amount . "&amountType=" . $amountType . "&mcc=" . $mcc . "&channelId=" . $channelId . "&callbackUrl=" . $callbackUrl;
@@ -58,37 +59,18 @@ $encData = null;
    </head>
 
    <body>
-   <?php
-    // Check if the form has been submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Check if the "purchase" button was clicked
-        if (isset($_POST["purchase"])) {
-            // Check if any data was submitted
-            if (isset($_POST["id"]) && isset($_POST["name"]) && isset($_POST["price"])) 
-            {
-                // Process the submitted data
-                echo "<p>Form data received:</p>";
-                echo "<ul>";
-                // Loop through each submitted item
-                foreach ($_POST['id'] as $key => $id) {
-                    $name = $_POST['name'][$key];
-                    $price = $_POST['price'][$key];
-                    echo "<li>ID: $id, Name: $name, Price: $price</li>";
-                }
-                echo "</ul>";
-            } 
-            else
-            {
-                echo "<p>Error while retriving data.</p>";
-            }
-        }
-    }
-    ?>
+      <?php
+      session_start();
+      $myArray = $_SESSION['cart'];
+      foreach ($myArray as $record) {
+         echo "Item Name: " . $record['item_name'] . ", Price: " . $record['price'] . ", Price: " . $record['quantity'] . "<br>";
+      }
+      ?>
 
       <!-- <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post"> -->
       <form action="https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="POST">
          <div class="p-2 fs-5 text-center fw-bold">Please Verify Below Details
-      </div>
+         </div>
          <!-- Full Name -->
          <div class="input-group mb-3  ">
             <span class="input-group-text">Full Name</span>
@@ -106,23 +88,23 @@ $encData = null;
          </div>
          <!-- Address -->
          <div class="input-group mb-3 ">
-            <span class="input-group-text" >Address</span>
+            <span class="input-group-text">Address</span>
             <input type="text" class="form-control" value="<?php echo $_POST['address'] ?>" readonly>
          </div>
 
          <button class="btn btn-warning btn-block form-control text-center" name="purchase">Continue Purchase</button>
          <div>
-         <input type="text" class="form-control" value="<?php echo $clientCode ?>" readonly>
-         <input type="text" class="form-control" value="<?php echo $data ?>" readonly>
-         <input type="text" class="form-control" name="tAmount" id="tAmount" value="<?php echo $_COOKIE['tAmount'] ?>"
-            readonly>  
-           </div>
-           <div>
-        
-      </div>
+            <input type="text" class="form-control" value="<?php echo $clientCode ?>" readonly>
+            <input type="text" class="form-control" value="<?php echo $data ?>" readonly>
+            <input type="text" class="form-control" name="tAmount" id="tAmount"
+               value="<?php echo $_COOKIE['tAmount'] ?>" readonly>
+         </div>
+         <div>
+
+         </div>
          <!-- Hidden Field -->
          <div class="d-none">
-            <input type="hidden" name="encData" class="d-none" value="<?php echo $data ?>" id="frm1" >
+            <input type="hidden" name="encData" class="d-none" value="<?php echo $data ?>" id="frm1">
             <input type="hidden" name="clientCode" class="d-none" value="<?php echo $clientCode ?>" id="frm2">
          </div>
       </form>
@@ -130,4 +112,5 @@ $encData = null;
          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
          crossorigin="anonymous"></script>
    </body>
+
    </html>
