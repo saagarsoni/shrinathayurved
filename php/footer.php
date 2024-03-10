@@ -3,19 +3,19 @@
   <marquee width="100%" behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();"
     style="color:white; font-weight:bold">
     Our Products also available at&nbsp;
-    <a href="#" target="_blank"><img src="images/flipkart.svg" height="30"
+    <a href="https://www.flipkart.com/" target="_blank"><img src="images/flipkart.svg" height="30"
         width="70" /></a>&nbsp;&nbsp;
-    <a href="#" target="_blank"><img src="images/amazon.svg" height="18" width="70"
+    <a href="https://www.amazon.in/stores/ShrinathAyurved/page/49E3459B-F064-4A48-831D-54456EBA619C" target="_blank"><img src="images/amazon.svg" height="18" width="70"
         class="mt-2" /></a>&nbsp;
     <a href="https://www.bigbasket.com/" target="_blank"><img src="images/Big-Basket.svg" height="30"
         width="70" /></a>&nbsp;&nbsp;
-    <a href="#" target="_blank"><img src="images/TATA_1mg.svg"
+    <a href="https://www.1mg.com/search/all?name=shrinath%20ayurved " target="_blank"><img src="images/TATA_1mg.svg"
         height="30" width="70" /></a>&nbsp;
-    <a href="#" target="_blank"><img class="mt-1" src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679675663/shrinathAyurved/jioMart-Photo_z5sjro.png"
+    <a href="https://www.jiomart.com/groceries/b/shrinath-ayurved/37034" target="_blank"><img class="mt-1" src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679675663/shrinathAyurved/jioMart-Photo_z5sjro.png"
         height="50" width="90" /></a>
         <!-- Jio = https://www.jiomart.com/groceries/b/shrinath-ayurved/37034
        1mg = https://www.1mg.com/search/all?name=shrinath%20ayurved 
-      Amazon = https://www.amazon.com/
+      Amazon = https://www.amazon.in/stores/ShrinathAyurved/page/49E3459B-F064-4A48-831D-54456EBA619C
     Flipkart = https://www.flipkart.com/ -->
   </marquee>
 

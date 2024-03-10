@@ -11,10 +11,11 @@
    <style>
       body {
          margin: auto;
+         margin-top: 25px;
          width: 50%;
          border: 2px solid green;
          padding: 5px;
-         height: 75%;
+         height: 84%;
       }
    </style>
    <?php

@@ -137,6 +137,7 @@ if($status==='SUCCESS' &&  $statusCode=== '0000')
 { 
     echo '<br>';
     // echo "true"; 
+    $insert_Query="INSERT INTO `tbltrans` (`id`, `productName`, `productPrice`, `productQty`, `productTotal`, `fullName`, `email`, `phoneNumber`, `address`, `tDate`) VALUES (NULL, '', '', '', '', '', '', '', '', current_timestamp());";
     echo '<div class="text-center fs-5 fw-bold alert alert-success" role="alert"> Thank You For Purchasing </div>';
 }
 else{
