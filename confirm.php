@@ -21,13 +21,20 @@
    <?php
    include('payment/Authentication.php');
    $encData = null;
-   //Test Credentials
+   //OldTest Credentials
 // $clientCode='NITE5';
 // $username='Ish988@sp';
 // $password='wF2F0io7gdNj';
 // $authKey='zvMzY0UZLxkiE6ad';
 // $authIV='iFwrtsCSw3j7HG15';
    
+//New Test Credentials
+// $clientCode = 'DCRBP';
+// $username = 'userph.jha_3036';
+// $password = 'DBOI1_SP3036';
+// $authKey = '0jeOYcu3UnfmWyLC';
+// $authIV = 'C28LAmGxXTqmK0QJ';
+
    //Live Credentials
    $clientCode = 'TUSH99';
    $username = 'contact_8349';
@@ -39,6 +46,7 @@
    $payerEmail = $_POST['email'];
    $payerMobile = $_POST['phone_no'];
    $payerAddress = $_POST['address'];
+   //$myArray = $_SESSION['cart'];
 
    $clientTxnId = rand(1000, 9999);
    $amount = $_COOKIE['tAmount'];
@@ -51,7 +59,7 @@
    
    $encData = "?clientCode=" . $clientCode . "&transUserName=" . $username . "&transUserPassword=" . $password . "&payerName=" . $payerName .
       "&payerMobile=" . $payerMobile . "&payerEmail=" . $payerEmail . "&payerAddress=" . $payerAddress . "&clientTxnId=" . $clientTxnId .
-      "&amount=" . $amount . "&amountType=" . $amountType . "&mcc=" . $mcc . "&channelId=" . $channelId . "&callbackUrl=" . $callbackUrl;
+      "&amount=" . $amount . "&amountType=" . $amountType . "&mcc=" . $mcc . "&channelId=" . $channelId . "&callbackUrl=" . $callbackUrl ;
    //."&udf1=".$Class."&udf2=".$Roll;
    
    $AesCipher = new AesCipher();
@@ -62,10 +70,27 @@
    <body>
       <?php
       session_start();
-      $myArray = $_SESSION['cart'];
-      foreach ($myArray as $record) {
-         echo "Item Name: " . $record['item_name'] . ", Price: " . $record['price'] . ", Quantity: " . $record['quantity'] .", Total Qty: " .( $record['price'] )* ($record['quantity']) ."<br>";
-      }
+
+
+      // Retrieve cart data from session
+if(isset($_SESSION['cart_data'])) {
+   $cartData = $_SESSION['cart_data'];
+// Display cart items for confirmation
+foreach($cartData as $item) {
+   echo "Item Name: " . $item['item_name'] . ", Price: " . $item['price'] . ", Quantity: " . $item['quantity'] ."Total Qty: " .( $item['price'] )* ($item['quantity']) . "<br>";
+}
+   
+} else {
+   // Handle case when cart data is not set
+   echo "Cart is empty.";
+   exit();
+}
+
+      // $_SESSION['cart_data'] = array();
+      // foreach ($myArray as $record) {
+      //    echo "Item Name: " . $record['item_name'] . ", Price: " . $record['price'] . ", Quantity: " . $record['quantity'] .", Total Qty: " .( $record['price'] )* ($record['quantity']) ."<br>";
+      //    $_SESSION['cart_data'][] = $item;
+      // }
       $orderId = rand(10000, 99999);
          echo "Order Id = ". $orderId;
          $grandTotal=$_COOKIE['tAmount'];

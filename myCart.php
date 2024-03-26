@@ -76,7 +76,7 @@ if ($result->num_rows > 0) {
                   if (isset($_SESSION['cart'])) {
                      foreach ($_SESSION['cart'] as $key => $value) {
                         //print_r($value);
-                        print_r($_SESSION['cart']);
+                      
                         session_start();
                         $_SESSION['myArray'] =$value;
                         $sr = $key + 1;
@@ -113,6 +113,8 @@ if ($result->num_rows > 0) {
                
                   ";
                      }
+                     print_r($_SESSION['cart']);
+                     $_SESSION['cart_data'] = $_SESSION['cart'];
                   }
                
                   ?>

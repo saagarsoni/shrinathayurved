@@ -41,4 +41,3 @@ foreach ($cart_items as $item) {
 
 // Close the database connection
 $conn->close();
-?>
