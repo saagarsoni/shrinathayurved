@@ -263,7 +263,7 @@
                 <div class="card h-100 product" style="display: flex;">
                     <img src="./images/orangeSquash.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Orange Squash"/>
                     <div class="card-body">
-                        <h5 class="card-title product-name">Orange Squash</h5>
+                        <h5 class="card-title product-name">Orange Squash.</h5>
                         <p class="card-text" id="orangeSquashCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 210 for 900 ml</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
@@ -469,13 +469,6 @@
         <!-- Modal End -->
         <!-- Lemon Squash End -->
 
-
-
-
-
-
-
-
         <!-- GULKAND Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
@@ -483,9 +476,9 @@
                 <div class="card h-100 product" style="display: flex;">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1680282010/shrinathAyurved/gulkand_t0mssv.png" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Gulkand"/>
                     <div class="card-body">
-                        <h5 class="card-title product-name">Gulkand</h5>
+                        <h5 class="card-title product-name">Gulkand.</h5>
                         <p class="card-text" id="gulkandCard"></p>
-                        <p class="card-text"><b> <span>&#8377;</span> 2 for 500 gm</b> </p>
+                        <p class="card-text"><b> <span>&#8377;</span> 190 for 500 gm</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#gulkand">Know
                             More</button>
