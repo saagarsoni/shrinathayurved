@@ -86,7 +86,7 @@ while ($token !== false) {
         $sabpaisaTxnId = $fstr;
     if ($i == 16)
         $sabpaisaMessage = $fstr;
-    if ($i == 17)
+    if ($i== 17)
         $bankMessage = $fstr;
     if ($i == 18)
         $bankErrorCode = $fstr;
@@ -113,7 +113,8 @@ while ($token !== false) {
 // echo 'Code=' . $statusCode;
 // echo 'FSTR='.$fstr;
 
-if ($status === 'SUCCESS' && $statusCode === '0000') {
+if ($status === 'SUCCESS' && $statusCode === '0000')
+ {
     // Connect to the MySQL database
     $host = 'localhost';
     $user = 'root';
@@ -137,7 +138,8 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
         $parsedData = [];
 
         // Loop through each part and split it into key and value
-        foreach ($parts as $part) {
+        foreach ($parts as $part)
+         {
             // Split each part into key and value
             list($key, $value) = explode("=", $part);
 
@@ -145,40 +147,60 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
             $parsedData[$key] = $value;
         }
 
-        // Now you can access specific values using their keys
-        $payerName = $parsedData['payerName'];
-        $payerMobile = $parsedData['payerMobile'];
-        $payerEmail = $parsedData['payerEmail'];
-        $payerAddress = $parsedData['payerAddress'];
+              // Now you can access specific values using their keys
+                $payerName = $parsedData['payerName'];
+                $payerMobile = $parsedData['payerMobile'];
+                $payerEmail = $parsedData['payerEmail'];
+                $payerAddress = $parsedData['payerAddress'];
 
-        // Print the values
-//echo "Payer Name: $payerName<br>";
-//echo "Payer Mobile: $payerMobile<br>";
-//echo "Payer Email: $payerEmail<br>";
-// Similarly, you can access other values like payerMobile, payerEmail, etc.
-
-        $fullname = $payerName;
-        $email = $payerEmail;
-        $phone_number = $payerMobile;
-        $address = $payerAddress;
-
-        $sqlQuery = "INSERT INTO `tbluser` (`id`, `full_name`, `email`, `phone_number`, `address`, `tdate`) VALUES (NULL, '$fullname', '$email', '$phone_number', '$address', current_timestamp())";
-
-        $result = mysqli_query($conn, $sqlQuery);
-
-        if ($result) {
-            $user_id = $conn->insert_id; // Get the ID of the inserted user
-            //echo "<br>";
-            //echo "User Id is  = " . $user_id;
-
-            // Generate a unique order ID
-            $orderId = uniqid();
-
-            if (isset ($_SESSION['cart_data'])) {
+                // Print the values
+                    //echo "Payer Name: $payerName<br>";
+                    //echo "Payer Mobile: $payerMobile<br>";
+                    //echo "Payer Email: $payerEmail<br>";
+                    // Similarly, you can access other values like payerMobile, payerEmail, etc.
+      
+            if (isset ($_SESSION['cart_data']))
+             {
                 $cartData = $_SESSION['cart_data'];
+                $fullname = $payerName;
+                $email = $payerEmail;
+                $phone_number = $payerMobile;
+                $address = $payerAddress;
+        
+                $sqlQuery = "INSERT INTO `tbluser` (`id`, `full_name`, `email`, `phone_number`, `address`, `tdate`) VALUES (NULL, '$fullname', '$email', '$phone_number', '$address', current_timestamp())";
+        
+                $result = mysqli_query($conn, $sqlQuery);
+        
+                if ($result) {
+                    $user_id = $conn->insert_id; // Get the ID of the inserted user
+                    //echo "<br>";
+                    //echo "User Id is  = " . $user_id;
+        
+                    // Generate a unique order ID
+                    $orderId = uniqid();
+
                 //echo "<br>";
                 //var_dump($_SESSION['cart_data']);
-            } else {
+                // Loop through each item in the cart
+                foreach ($cartData as $item)
+                // foreach ($_SESSION['cart'] as $record) 
+                {
+                    // Escape variables for security to prevent SQL injection
+                    $productName = mysqli_real_escape_string($conn, $item['item_name']);
+                    $productPrice = mysqli_real_escape_string($conn, $item['price']);
+                    $productQty = mysqli_real_escape_string($conn, $item['quantity']);
+                    $productTotal = $productPrice * $productQty;
+
+                    // Prepare INSERT statement for transaction details
+                    $sql_transaction = "INSERT INTO tbltrans (id,userId,orderId,productName,productPrice,productQty,productTotal,tDate) VALUES (NULL,'$user_id','$orderId','$productName','$productPrice','$productQty','$productTotal',current_timestamp())";
+
+                    //echo "<br>";
+                    //echo $sql_transaction;
+                    // Execute transaction query
+                    $result1 = mysqli_query($conn, $sql_transaction);
+                }
+            }
+             else {
                 // Handle case when cart data is not set
                 echo "<br>";
                 echo "Cart is empty.";
@@ -186,30 +208,13 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
                 //var_dump($_SESSION['cart_data']);
                 exit();
             }
-            // Loop through each item in the cart
-            foreach ($cartData as $item)
-            // foreach ($_SESSION['cart'] as $record) 
-            {
-                // Escape variables for security to prevent SQL injection
-                $productName = mysqli_real_escape_string($conn, $item['item_name']);
-                $productPrice = mysqli_real_escape_string($conn, $item['price']);
-                $productQty = mysqli_real_escape_string($conn, $item['quantity']);
-                $productTotal = $productPrice * $productQty;
 
-                // Prepare INSERT statement for transaction details
-                $sql_transaction = "INSERT INTO tbltrans (id,userId,orderId,productName,productPrice,productQty,productTotal,tDate) VALUES (NULL,'$user_id','$orderId','$productName','$productPrice','$productQty','$productTotal',current_timestamp())";
-
-                //echo "<br>";
-                //echo $sql_transaction;
-                // Execute transaction query
-                $result1 = mysqli_query($conn, $sql_transaction);
-            }
             if ($result1) {
                 echo '<br>';
                 //echo "New record created successfully";
-                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Success!</strong><br>Your Order is Successfully placed!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                echo '<div class="alert alert-success alert-dismissible fade show w-50" role="alert">
+                <strong>Success!</strong><br>Your Order with ID: ' . $orderId . '  is Successfully placed...!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  onclick="redirectToHomePage()"></button>
                 </div>';
             } else {
                 echo '<br>';
@@ -231,8 +236,14 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
     </div>';
 }
 // Close database connection
-$conn->close();
+//$conn->close();
 ?>
+<script>
+    function redirectToHomePage() {
+        // Redirect to the home page
+        window.location.href = "http://localhost:8082/shrinathAyurved/index.php"; //  home page
+    }
+</script>
 
 <div class="page-content-wrapper">
     <div class="page-content">
