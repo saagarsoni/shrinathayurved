@@ -1,6 +1,7 @@
 <?php
 session_start();
-//session_destroy();
+error_reporting(E_ALL);
+ini_set('display_errors', 1); 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if (isset($_POST['addToCart'])) {
       if (isset($_SESSION['cart'])) {
@@ -44,5 +45,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
    }
 }
-
-?>

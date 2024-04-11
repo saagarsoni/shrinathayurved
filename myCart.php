@@ -1,27 +1,11 @@
 <?php
 include("header.php");
-include 'Payment/SabPaisaPostPgResponse.php';
+//include 'Payment/SabPaisaPostPgResponse.php';
 session_start();
 include('php/dbcs.php');
-error_reporting(0);
-
-if (!isset($_SESSION['loggedIn']) && empty($_SESSION["uName"])) {
-   print_r($_SESSION['uName']);
-   echo '<div class="alert alert-warning text-center py-5 mt-5" role="alert">
-         Please <a href="login.php" class="alert-link">Login </a>&nbsp;/ Fill Below Details to Purchase.
-       </div>';
-} 
-
-$sql = "SELECT * FROM tblregister where id='{$_SESSION['uId']}'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-   // output data of each row
-   while ($row = $result->fetch_assoc()) {
-      //echo var_dump($row);
-   }
-} else {
-   //echo "0 results";
-}
+//error_reporting(0);
+error_reporting(E_ALL);
+ini_set('display_errors', 1); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,8 +60,8 @@ if ($result->num_rows > 0) {
                   if (isset($_SESSION['cart'])) {
                      foreach ($_SESSION['cart'] as $key => $value) {
                         //print_r($value);
-                      
-                        session_start();
+                        $value['itotal'] = $value['price'] * $value['quantity'];
+                        //session_start();
                         $_SESSION['myArray'] =$value;
                         $sr = $key + 1;
                         // $total=$total+$value['price'];
@@ -104,13 +88,13 @@ if ($result->num_rows > 0) {
                   <td class='itotal'></td>
                   <input type='text'  value='$value[itotal]' readonly>
                   <td>
+
                   <form action='manage_cart.php' method='post'>
                   <button name='remove_item' class='btn btn-sm btn-outline-danger'>Remove</button>
                   <input type='hidden' name='item_name' value='$value[item_name]'>
                   </form>
                   </td>
                   </tr>
-               
                   ";
                      }
                      print_r($_SESSION['cart']);
@@ -135,7 +119,7 @@ if ($result->num_rows > 0) {
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <input type="text" class="form-control" id="fullname" name="fullname"
-                           placeholder="Please Enter Full Name" required value="<?php echo $session['user_Name'] ?>">
+                           placeholder="Please Enter Full Name" required value="">
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Email</label>
@@ -168,8 +152,8 @@ if ($result->num_rows > 0) {
    </div>
 
    <script>
-      var myvar = '<?php echo $$_SESSION['loggedIn']; ?>';
-      var gt = 0;
+      var myvar = '<?php echo $_SESSION['loggedIn']; ?>';
+      //var gt = 0;
       var iprice = document.getElementsByClassName('iprice');
       var iquantity = document.getElementsByClassName('iquantity');
       var itotal = document.getElementsByClassName('itotal');
@@ -177,9 +161,14 @@ if ($result->num_rows > 0) {
       var tAmsount = document.getElementById('tAmount');
 
       function subTotal() {
-         gt = 0;
-         for (i = 0; i < iprice.length; i++) {
-            itotal[i].innerText = '\u20B9 ' + (iprice[i].value) * (iquantity[i].value);
+         var gt = 0;
+         for (var i = 0; i < iprice.length; i++) 
+         {
+            var subTotal=(iprice[i].value) * (iquantity[i].value);
+            itotal[i].value='\u20B9 '+subTotal;
+            gt+=subTotal;
+
+            //itotal[i].innerText = '\u20B9 ' + (iprice[i].value) * (iquantity[i].value);
             gt = gt + (iprice[i].value) * (iquantity[i].value);
          }
          gtotal.innerText = '\u20B9 ' + gt;
