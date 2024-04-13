@@ -89,16 +89,11 @@ $authIV = 'C28LAmGxXTqmK0QJ';
          echo "Cart is empty.";
          exit();
       }
-      //$orderId = rand(10000, 99999);
-      // echo "Order Id = ". $orderId;
-      //$grandTotal=$_COOKIE['tAmount'];
-      //echo '<br>';
       
 // Check if the form is submitted and the gtotal value is set
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gtotal"])) {
    // Retrieve the gtotal value from the POST data
    $gtotal = $_POST["gtotal"];
-
    // Now you can use $gtotal as needed, for example:
    echo "Grand Total: " . $gtotal;
 } else {
@@ -136,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gtotal"])) {
          <div>
             <input type="text" class="form-control" value="<?php echo $clientCode ?>" readonly>
             <input type="text" class="form-control" value="<?php echo $data ?>" readonly>
-            <input type="text" class="form-control" name="tAmount" id="tAmount" value="<?php echo $_POST['gtotal'] ?>"readonly>
+            <!-- <input type="text" class="form-control" name="tAmount" id="tAmount" value="<?php echo $_POST['gtotal'] ?>"readonly> -->
          </div>
          <div>
 

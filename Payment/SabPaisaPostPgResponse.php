@@ -43,7 +43,8 @@ payerName=YUVRAJ MISHRA&payerEmail=yuvraj.mishra@sabpaisa.in&payerMobile=7004069
 session_start();
 
 $cartData = $_SESSION['cart_data'];
-print_r($cartData); // or var_dump($cartData);
+//print_r($cartData); // or var_dump($cartData);
+//var_dump($cartData);
 
 while ($token !== false) {
     $i = $i + 1;
@@ -104,14 +105,14 @@ while ($token !== false) {
         //  mysqli_query($conn,$up);	    
     }
 }
-echo "<br>";
-echo 'Amount=' . $amount;
-echo "<br>";
-echo 'Status=' . $status;
-echo "<br>";
-echo 'Code=' . $statusCode;
-echo "<br>";
-echo 'FSTR=' . $fstr;
+// echo "<br>";
+// echo 'Amount=' . $amount;
+// echo "<br>";
+// echo 'Status=' . $status;
+// echo "<br>";
+// echo 'Code=' . $statusCode;
+// echo "<br>";
+// echo 'FSTR=' . $fstr;
 
 if ($status === 'SUCCESS' && $statusCode === '0000') {
     // Connect to the MySQL database
@@ -237,7 +238,7 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
 <script>
     function redirectToHomePage() {
         // Redirect to the home page
-        window.location.href = "http://localhost:8082/shrinathAyurved/index.php"; //  home page
+        window.location.href = "http://localhost/shrinathAyurved/index.php"; //  home page
     }
 </script>
 

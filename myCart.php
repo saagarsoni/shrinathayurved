@@ -1,6 +1,6 @@
 <?php
 include ("header.php");
-include 'Payment/SabPaisaPostPgResponse.php';
+//include 'Payment/SabPaisaPostPgResponse.php';
 session_start();
 include ('php/dbcs.php');
 //error_reporting(0);

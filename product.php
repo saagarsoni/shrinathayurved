@@ -157,7 +157,7 @@
                 <!-- https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg -->
                     <img src="./images/Chavanprash1kg.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(1 Kg)"/>
                     <div class="card-body">
-                        <h5 class="card-title product-name">Chyawanprash (1 Kg)</h5>
+                        <h5 class="card-title product-name">Chyawanprash (1 Kg).</h5>
                         <p class="card-text" id="chawanprashCard1kg"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 340 for 1 kg</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
@@ -166,7 +166,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Chyawanprash Regular(1Kg)">
-                        <input type="hidden" name="price" value="340">
+                        <input type="hidden" name="price" value="1">
                     </div>
                 </div>
             </div>
