@@ -54,7 +54,7 @@
    $amountType = 'INR';
    $mcc = 5137;
    $channelId = 'W';
-   $callbackUrl = 'http://localhost:8082/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
+   $callbackUrl = 'http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
    //$callbackUrl = 'http://localhost/shrinathAyurved/confirm.php';
    
    $encData = "?clientCode=" . $clientCode . "&transUserName=" . $username . "&transUserPassword=" . $password . "&payerName=" . $payerName .
@@ -71,13 +71,12 @@
       <?php
       session_start();
 
-
       // Retrieve cart data from session
 if(isset($_SESSION['cart_data'])) {
    $cartData = $_SESSION['cart_data'];
 // Display cart items for confirmation
 foreach($cartData as $item) {
-   echo "Item Name: " . $item['item_name'] . ", Price: " . $item['price'] . ", Quantity: " . $item['quantity'] ."Total Qty: " .( $item['price'] )* ($item['quantity']) . "<br>";
+   echo "Item Name: " . $item['item_name'] . ", Price: " . $item['price'] . ", Quantity: " . $item['quantity'] ." Total Qty: " .( $item['price'] )* ($item['quantity']) . "<br>";
 }
    
 } else {
@@ -85,7 +84,6 @@ foreach($cartData as $item) {
    echo "Cart is empty.";
    exit();
 }
-
       // $_SESSION['cart_data'] = array();
       // foreach ($myArray as $record) {
       //    echo "Item Name: " . $record['item_name'] . ", Price: " . $record['price'] . ", Quantity: " . $record['quantity'] .", Total Qty: " .( $record['price'] )* ($record['quantity']) ."<br>";
@@ -95,7 +93,22 @@ foreach($cartData as $item) {
          echo "Order Id = ". $orderId;
          $grandTotal=$_COOKIE['tAmount'];
          echo '<br>';
-         echo "Grand Total = ".$grandTotal;
+         
+         $grandTotal = 0; // Initialize grand total variable outside the loop
+
+foreach($cartData as $item) {
+   // $itemName = $item['item_name'];
+   // $price = $item['price'];
+   // $quantity = $item['quantity'];
+   $total = $price * $quantity; // Calculate total for current item
+
+   // Output item details
+   echo "Item Name: $itemName, Price: $price, Quantity: $quantity, Total Qty: $total <br>";
+
+   // Add current item's total to grand total
+   $grandTotal += $total;
+}
+echo "Grand Total=: $grandTotal"; // Output grand total after the loop
       ?>
 
       <!-- <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post"> -->

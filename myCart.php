@@ -85,10 +85,11 @@ ini_set('display_errors', 1);
                      </form>
                   </td>
                   
-                  <td class='itotal'></td>
-                  <input type='text'  value='$value[itotal]' readonly>
+                  <td class='itotal'>
+                  <input type='text'  name='itotal'  value='$value[itotal]'  readonly>
+                  </td>
+                  
                   <td>
-
                   <form action='manage_cart.php' method='post'>
                   <button name='remove_item' class='btn btn-sm btn-outline-danger'>Remove</button>
                   <input type='hidden' name='item_name' value='$value[item_name]'>
@@ -108,8 +109,8 @@ ini_set('display_errors', 1);
          </div>
          <div class="col-lg-3">
             <div class="border bg-light rounded p-4">
-               <h4>Grand Total</h4>
-               <h5 class="text-right" id="gtotal" name="gtotal"> </h5>
+            <h4>Grand Total</h4>
+<h5 class="text-right" id="gtotal"> </h5>
                <br>
                <?php
                if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0)
@@ -124,18 +125,18 @@ ini_set('display_errors', 1);
                      <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Please Enter Email"
-                           required value="<?php echo $session['e_mail'] ?>">
+                           required value="">
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Phone Number(+91)</label>
                         <input type="text" pattern="[789][0-9]{9}" maxlength="10" class="form-control" name="phone_no"
                            id="phone_no" placeholder="Enter Phone Number" required
-                           value="<?php echo $session['cell_Phone'] ?>">
+                           value="">
                      </div>
                      <div class="mb-3">
                         <label class="form-label">Address</label>
                         <textarea name="address" id="address" class="form-control" placeholder="Enter Full Address"
-                           cols="30" rows="6" required><?php echo $session['user_Address'] ?></textarea>
+                           cols="30" rows="6" required></textarea>
                      </div>
         
                      <button class="btn btn-warning btn-block form-control" name="purchase" onclick="validation()">Make Purchase</button>
@@ -153,37 +154,35 @@ ini_set('display_errors', 1);
 
    <script>
       var myvar = '<?php echo $_SESSION['loggedIn']; ?>';
-      //var gt = 0;
       var iprice = document.getElementsByClassName('iprice');
       var iquantity = document.getElementsByClassName('iquantity');
       var itotal = document.getElementsByClassName('itotal');
       var gtotal = document.getElementById('gtotal');
-      var tAmsount = document.getElementById('tAmount');
+      var tAmount = document.getElementById('tAmount');
+
+      // function subTotal() {
+      //    var gt = 0;
+      //    for (var i = 0; i < iprice.length; i++) 
+      //    {
+      //       var subTotal=(iprice[i].value) * (iquantity[i].value);
+      //       itotal[i].value='\u20B9 '+subTotal;
+      //       gt+=subTotal;
+      //    }
+      // }
+      // subTotal();
 
       function subTotal() {
-         var gt = 0;
-         for (var i = 0; i < iprice.length; i++) 
-         {
-            var subTotal=(iprice[i].value) * (iquantity[i].value);
-            itotal[i].value='\u20B9 '+subTotal;
-            gt+=subTotal;
+    var gt = 0;
+    for (var i = 0; i < iprice.length; i++) {
+        var subTotal = (iprice[i].value) * (iquantity[i].value);
+        itotal[i].value = '\u20B9 ' + subTotal;
+        gt += subTotal;
+    }
+    // Display grand total
+    gtotal.innerText = '\u20B9 ' + gt;
+}
+subTotal();
 
-            //itotal[i].innerText = '\u20B9 ' + (iprice[i].value) * (iquantity[i].value);
-            gt = gt + (iprice[i].value) * (iquantity[i].value);
-         }
-         gtotal.innerText = '\u20B9 ' + gt;
-      }
-      subTotal();
-      document.cookie = "tAmount=" + gtotal.innerText.slice(2);
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://localhost/shrinathAyurved/confirm.php", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function () {
-         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            console.log("Variable stored successfully");
-         }
-      };
-      xhr.send("myVariable=" + encodeURIComponent(gtotal.innerText.slice(2)));
       // Validations
       function validation() {
          if (myvar.length != 0) {
