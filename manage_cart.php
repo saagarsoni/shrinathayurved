@@ -17,12 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script>alert('Item Added');</script>";
             echo "<script>window.location.href ='product.php'; </script>";
          }
-      } else {
+      } else
+    {
          $_SESSION['cart'][0] = array('item_name' => $_POST['item_name'], 'price' => $_POST['price'], 'quantity' => 1);
          //print_r($_SESSION['cart']);
          echo "<script>alert('Item Added');</script>";
          echo "<script>window.location.href ='product.php'; </script>";
-
       }
    }
    if (isset($_POST['remove_item'])) {

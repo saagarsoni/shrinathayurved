@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -7,7 +6,6 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 </head>
-
 </html>
 
 <?php
@@ -16,12 +14,12 @@ error_reporting(E_ALL ^ E_NOTICE);
 include ('Authentication.php');
 $query = $_REQUEST['encResponse'];
 //LC
-$authKey = '010odVxdUGZNTjFd';
-$authIV = 'Sr6Uh4RSLAItInMY';
+//$authKey = '010odVxdUGZNTjFd';
+//$authIV = 'Sr6Uh4RSLAItInMY';
 
 //TC
-// $authKey = '0jeOYcu3UnfmWyLC';
-// $authIV = 'C28LAmGxXTqmK0QJ';
+ $authKey = '0jeOYcu3UnfmWyLC';
+ $authIV = 'C28LAmGxXTqmK0QJ';
 
 $decText = null;
 $AesCipher = new AesCipher();
@@ -45,6 +43,7 @@ payerName=YUVRAJ MISHRA&payerEmail=yuvraj.mishra@sabpaisa.in&payerMobile=7004069
 session_start();
 
 $cartData = $_SESSION['cart_data'];
+print_r($cartData); // or var_dump($cartData);
 
 while ($token !== false) {
     $i = $i + 1;
@@ -86,7 +85,7 @@ while ($token !== false) {
         $sabpaisaTxnId = $fstr;
     if ($i == 16)
         $sabpaisaMessage = $fstr;
-    if ($i== 17)
+    if ($i == 17)
         $bankMessage = $fstr;
     if ($i == 18)
         $bankErrorCode = $fstr;
@@ -105,16 +104,16 @@ while ($token !== false) {
         //  mysqli_query($conn,$up);	    
     }
 }
-// echo "<br>";
-// echo 'Amount=' . $amount;
-// echo "<br>";
-// echo 'Status=' . $status;
-// echo "<br>";
-// echo 'Code=' . $statusCode;
-// echo 'FSTR='.$fstr;
+echo "<br>";
+echo 'Amount=' . $amount;
+echo "<br>";
+echo 'Status=' . $status;
+echo "<br>";
+echo 'Code=' . $statusCode;
+echo "<br>";
+echo 'FSTR=' . $fstr;
 
-if ($status === 'SUCCESS' && $statusCode === '0000')
- {
+if ($status === 'SUCCESS' && $statusCode === '0000') {
     // Connect to the MySQL database
     $host = 'localhost';
     $user = 'root';
@@ -138,8 +137,7 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
         $parsedData = [];
 
         // Loop through each part and split it into key and value
-        foreach ($parts as $part)
-         {
+        foreach ($parts as $part) {
             // Split each part into key and value
             list($key, $value) = explode("=", $part);
 
@@ -147,37 +145,36 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
             $parsedData[$key] = $value;
         }
 
-              // Now you can access specific values using their keys
-                $payerName = $parsedData['payerName'];
-                $payerMobile = $parsedData['payerMobile'];
-                $payerEmail = $parsedData['payerEmail'];
-                $payerAddress = $parsedData['payerAddress'];
+        // Now you can access specific values using their keys
+        $payerName = $parsedData['payerName'];
+        $payerMobile = $parsedData['payerMobile'];
+        $payerEmail = $parsedData['payerEmail'];
+        $payerAddress = $parsedData['payerAddress'];
 
-                // Print the values
-                    //echo "Payer Name: $payerName<br>";
-                    //echo "Payer Mobile: $payerMobile<br>";
-                    //echo "Payer Email: $payerEmail<br>";
-                    // Similarly, you can access other values like payerMobile, payerEmail, etc.
-      
-            if (isset ($_SESSION['cart_data']))
-             {
-                $cartData = $_SESSION['cart_data'];
-                $fullname = $payerName;
-                $email = $payerEmail;
-                $phone_number = $payerMobile;
-                $address = $payerAddress;
-        
-                $sqlQuery = "INSERT INTO `tbluser` (`id`, `full_name`, `email`, `phone_number`, `address`, `tdate`) VALUES (NULL, '$fullname', '$email', '$phone_number', '$address', current_timestamp())";
-        
-                $result = mysqli_query($conn, $sqlQuery);
-        
-                if ($result) {
-                    $user_id = $conn->insert_id; // Get the ID of the inserted user
-                    //echo "<br>";
-                    //echo "User Id is  = " . $user_id;
-        
-                    // Generate a unique order ID
-                    $orderId = uniqid();
+        // Print the values
+        //echo "Payer Name: $payerName<br>";
+        //echo "Payer Mobile: $payerMobile<br>";
+        //echo "Payer Email: $payerEmail<br>";
+        // Similarly, you can access other values like payerMobile, payerEmail, etc.
+
+        if (isset($_SESSION['cart_data'])) {
+            $cartData = $_SESSION['cart_data'];
+            $fullname = $payerName;
+            $email = $payerEmail;
+            $phone_number = $payerMobile;
+            $address = $payerAddress;
+
+            $sqlQuery = "INSERT INTO `tbluser` (`id`, `full_name`, `email`, `phone_number`, `address`, `tdate`) VALUES (NULL, '$fullname', '$email', '$phone_number', '$address', current_timestamp())";
+
+            $result = mysqli_query($conn, $sqlQuery);
+
+            if ($result) {
+                $user_id = $conn->insert_id; // Get the ID of the inserted user
+                //echo "<br>";
+                //echo "User Id is  = " . $user_id;
+
+                // Generate a unique order ID
+                $orderId = uniqid();
 
                 //echo "<br>";
                 //var_dump($_SESSION['cart_data']);
@@ -199,8 +196,7 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
                     // Execute transaction query
                     $result1 = mysqli_query($conn, $sql_transaction);
                 }
-            }
-             else {
+            } else {
                 // Handle case when cart data is not set
                 echo "<br>";
                 echo "Cart is empty.";

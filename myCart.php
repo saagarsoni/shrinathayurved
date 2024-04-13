@@ -1,11 +1,11 @@
 <?php
-include("header.php");
-//include 'Payment/SabPaisaPostPgResponse.php';
+include ("header.php");
+include 'Payment/SabPaisaPostPgResponse.php';
 session_start();
-include('php/dbcs.php');
+include ('php/dbcs.php');
 //error_reporting(0);
 error_reporting(E_ALL);
-ini_set('display_errors', 1); 
+ini_set('display_errors', 1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,11 +23,11 @@ ini_set('display_errors', 1);
    <title>Cart</title>
    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
    <style>
-        /* CSS to hide the border of input elements */
-        input[type="text"] {
-            border: none;
-        }
-    </style>
+      /* CSS to hide the border of input elements */
+      input[type="text"] {
+         border: none;
+      }
+   </style>
 </head>
 <header class="header py-3">
    <div class="container">
@@ -41,8 +41,7 @@ ini_set('display_errors', 1);
             <h1>My Cart</h1>
          </div>
          <div class="col-lg-9">
-         
-            <table class="table" id ="tblmain">
+            <table class="table" id="tblmain">
                <thead class="text-left">
                   <tr>
                      <th scope="col">S.No</th>
@@ -55,24 +54,18 @@ ini_set('display_errors', 1);
                </thead>
                <tbody class="text-left">
                   <?php
-                
+
                   // $total=0; 
                   if (isset($_SESSION['cart'])) {
                      foreach ($_SESSION['cart'] as $key => $value) {
                         //print_r($value);
                         $value['itotal'] = $value['price'] * $value['quantity'];
-                        //session_start();
-                        $_SESSION['myArray'] =$value;
+                        $_SESSION['myArray'] = $value;
                         $sr = $key + 1;
-                        // $total=$total+$value['price'];
                         echo "
-                        
                   <tr>
                   <td><input type='text' value='$sr' readonly></td>
-
                   <td><input type='text'  value='$value[item_name]' readonly></td>
-
-                  <!--<td>$value[item_name]</td>-->
                   <td>
                   <span>&#8377; </span>$value[price]<input type='hidden' class='iprice' value='$value[price]'>
                   <input type='hidden' name='price[]' value='$value[price]' >
@@ -101,45 +94,49 @@ ini_set('display_errors', 1);
                      print_r($_SESSION['cart']);
                      $_SESSION['cart_data'] = $_SESSION['cart'];
                   }
-               
+
                   ?>
                </tbody>
             </table>
-         
+
          </div>
          <div class="col-lg-3">
-            <div class="border bg-light rounded p-4">
-            <h4>Grand Total</h4>
-<h5 class="text-right" id="gtotal"> </h5>
-               <br>
+            <div class="border bg-light rounded p-3">
                <?php
-               if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0)
-                {
+               if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                   ?>
                   <form action="confirm.php" method="post">
+                  <h4>Grand Total  :  <label class="text-right fs-4 fw-bold" id="gtotal" name="gtotal"></label></h4>
+                  <input type="hidden" id="gtotalInput" name="gtotal" value="">
+
+                  <br>
+                    <!-- Full Name -->
                      <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <input type="text" class="form-control" id="fullname" name="fullname"
                            placeholder="Please Enter Full Name" required value="">
                      </div>
+                     <!-- Email Box -->
                      <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Please Enter Email"
                            required value="">
                      </div>
+                     <!-- Phone Number -->
                      <div class="mb-3">
                         <label class="form-label">Phone Number(+91)</label>
                         <input type="text" pattern="[789][0-9]{9}" maxlength="10" class="form-control" name="phone_no"
-                           id="phone_no" placeholder="Enter Phone Number" required
-                           value="">
+                           id="phone_no" placeholder="Enter Phone Number" required value="">
                      </div>
+                     <!-- Address Box -->
                      <div class="mb-3">
                         <label class="form-label">Address</label>
                         <textarea name="address" id="address" class="form-control" placeholder="Enter Full Address"
                            cols="30" rows="6" required></textarea>
                      </div>
-        
-                     <button class="btn btn-warning btn-block form-control" name="purchase" onclick="validation()">Make Purchase</button>
+                     <!-- Purchase Button -->
+                     <button class="btn btn-warning btn-block form-control" name="purchase" onclick="validation()">Make
+                        Purchase</button>
                      <!-- Hidden Field -->
                      <input type="hidden" name="encData" value="<?php echo $data ?>" id="frm1">
                      <input type="hidden" name="clientCode" value="<?php echo $clientCode ?>" id="frm2">
@@ -151,38 +148,33 @@ ini_set('display_errors', 1);
          </div>
       </div>
    </div>
-
    <script>
-      var myvar = '<?php echo $_SESSION['loggedIn']; ?>';
       var iprice = document.getElementsByClassName('iprice');
       var iquantity = document.getElementsByClassName('iquantity');
       var itotal = document.getElementsByClassName('itotal');
       var gtotal = document.getElementById('gtotal');
-      var tAmount = document.getElementById('tAmount');
-
-      // function subTotal() {
-      //    var gt = 0;
-      //    for (var i = 0; i < iprice.length; i++) 
-      //    {
-      //       var subTotal=(iprice[i].value) * (iquantity[i].value);
-      //       itotal[i].value='\u20B9 '+subTotal;
-      //       gt+=subTotal;
-      //    }
-      // }
-      // subTotal();
 
       function subTotal() {
-    var gt = 0;
-    for (var i = 0; i < iprice.length; i++) {
-        var subTotal = (iprice[i].value) * (iquantity[i].value);
-        itotal[i].value = '\u20B9 ' + subTotal;
-        gt += subTotal;
-    }
-    // Display grand total
-    gtotal.innerText = '\u20B9 ' + gt;
-}
-subTotal();
+         var gt = 0;
+         for (var i = 0; i < iprice.length; i++) {
+            var subTotal = (iprice[i].value) * (iquantity[i].value);
+            itotal[i].value = '\u20B9 ' + subTotal;
+            gt += subTotal;
+         }
+         // Display grand total
+         //console.log(gt);
+         gtotal.innerHTML = '\u20B9 ' + gt;
+      }
+      subTotal();
 
+      // Get the grand total value
+var gtotalValue = document.getElementById('gtotal').innerText;
+
+// Set the value of the hidden input field
+document.getElementById('gtotalInput').value = gtotalValue;
+
+// Submit the form
+//document.querySelector('form').submit();
       // Validations
       function validation() {
          if (myvar.length != 0) {
@@ -195,6 +187,6 @@ subTotal();
    </script>
 </body>
 <?php
-include('php/footer.php');
+include ('php/footer.php');
 ?>
 </html>

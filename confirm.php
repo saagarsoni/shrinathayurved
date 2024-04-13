@@ -19,7 +19,7 @@
       }
    </style>
    <?php
-   include('payment/Authentication.php');
+   include ('payment/Authentication.php');
    $encData = null;
    //OldTest Credentials
 // $clientCode='NITE5';
@@ -28,29 +28,35 @@
 // $authKey='zvMzY0UZLxkiE6ad';
 // $authIV='iFwrtsCSw3j7HG15';
    
-//New Test Credentials
-// $clientCode = 'DCRBP';
-// $username = 'userph.jha_3036';
-// $password = 'DBOI1_SP3036';
-// $authKey = '0jeOYcu3UnfmWyLC';
-// $authIV = 'C28LAmGxXTqmK0QJ';
-
+   //New Test Credentials
+$clientCode = 'DCRBP';
+$username = 'userph.jha_3036';
+$password = 'DBOI1_SP3036';
+$authKey = '0jeOYcu3UnfmWyLC';
+$authIV = 'C28LAmGxXTqmK0QJ';
+   
    //Live Credentials
-   $clientCode = 'TUSH99';
-   $username = 'contact_8349';
-   $password = 'TUSH99_SP8349';
-   $authKey = '010odVxdUGZNTjFd';
-   $authIV = 'Sr6Uh4RSLAItInMY';
+   // $clientCode = 'TUSH99';
+   // $username = 'contact_8349';
+   // $password = 'TUSH99_SP8349';
+   // $authKey = '010odVxdUGZNTjFd';
+   // $authIV = 'Sr6Uh4RSLAItInMY';
 
    $payerName = $_POST['fullname'];
    $payerEmail = $_POST['email'];
    $payerMobile = $_POST['phone_no'];
    $payerAddress = $_POST['address'];
    //$myArray = $_SESSION['cart'];
-
+   
    $clientTxnId = rand(1000, 9999);
-   $amount = $_COOKIE['tAmount'];
 
+   //$amount = $_COOKIE['tAmount'];
+   //$amount = $_POST['gtotal'];
+   $amount1 = (float) preg_replace('/[^\d.]/', '', $_POST['gtotal']);
+   $amount = $amount1;
+   //echo "<br>";
+    //echo "Total Amount = " . $amount1;
+   // echo "<br>";
    $amountType = 'INR';
    $mcc = 5137;
    $channelId = 'W';
@@ -59,7 +65,7 @@
    
    $encData = "?clientCode=" . $clientCode . "&transUserName=" . $username . "&transUserPassword=" . $password . "&payerName=" . $payerName .
       "&payerMobile=" . $payerMobile . "&payerEmail=" . $payerEmail . "&payerAddress=" . $payerAddress . "&clientTxnId=" . $clientTxnId .
-      "&amount=" . $amount . "&amountType=" . $amountType . "&mcc=" . $mcc . "&channelId=" . $channelId . "&callbackUrl=" . $callbackUrl ;
+      "&amount=" . $amount . "&amountType=" . $amountType . "&mcc=" . $mcc . "&channelId=" . $channelId . "&callbackUrl=" . $callbackUrl;
    //."&udf1=".$Class."&udf2=".$Roll;
    
    $AesCipher = new AesCipher();
@@ -72,66 +78,56 @@
       session_start();
 
       // Retrieve cart data from session
-if(isset($_SESSION['cart_data'])) {
-   $cartData = $_SESSION['cart_data'];
-// Display cart items for confirmation
-foreach($cartData as $item) {
-   echo "Item Name: " . $item['item_name'] . ", Price: " . $item['price'] . ", Quantity: " . $item['quantity'] ." Total Qty: " .( $item['price'] )* ($item['quantity']) . "<br>";
-}
-   
+      if (isset($_SESSION['cart_data'])) {
+         $cartData = $_SESSION['cart_data'];
+         // Display cart items for confirmation
+         foreach ($cartData as $item) {
+            echo "Item Name: " . $item['item_name'] . ", Price: " . $item['price'] . ", Quantity: " . $item['quantity'] . " Total Qty: " . ($item['price']) * ($item['quantity']) . "<br>";
+         }
+      } else {
+         // Handle case when cart data is not set
+         echo "Cart is empty.";
+         exit();
+      }
+      //$orderId = rand(10000, 99999);
+      // echo "Order Id = ". $orderId;
+      //$grandTotal=$_COOKIE['tAmount'];
+      //echo '<br>';
+      
+// Check if the form is submitted and the gtotal value is set
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gtotal"])) {
+   // Retrieve the gtotal value from the POST data
+   $gtotal = $_POST["gtotal"];
+
+   // Now you can use $gtotal as needed, for example:
+   echo "Grand Total: " . $gtotal;
 } else {
-   // Handle case when cart data is not set
-   echo "Cart is empty.";
-   exit();
+   // If the form is not submitted or gtotal value is not set, handle the case accordingly
+   echo "No Grand Total value received.";
 }
-      // $_SESSION['cart_data'] = array();
-      // foreach ($myArray as $record) {
-      //    echo "Item Name: " . $record['item_name'] . ", Price: " . $record['price'] . ", Quantity: " . $record['quantity'] .", Total Qty: " .( $record['price'] )* ($record['quantity']) ."<br>";
-      //    $_SESSION['cart_data'][] = $item;
-      // }
-      $orderId = rand(10000, 99999);
-         echo "Order Id = ". $orderId;
-         $grandTotal=$_COOKIE['tAmount'];
-         echo '<br>';
-         
-         $grandTotal = 0; // Initialize grand total variable outside the loop
-
-foreach($cartData as $item) {
-   // $itemName = $item['item_name'];
-   // $price = $item['price'];
-   // $quantity = $item['quantity'];
-   $total = $price * $quantity; // Calculate total for current item
-
-   // Output item details
-   echo "Item Name: $itemName, Price: $price, Quantity: $quantity, Total Qty: $total <br>";
-
-   // Add current item's total to grand total
-   $grandTotal += $total;
-}
-echo "Grand Total=: $grandTotal"; // Output grand total after the loop
       ?>
 
-      <!-- <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post"> -->
-      <form action="https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="POST">
+      <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post">
+      <!-- <form action="https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="POST"> -->
          <div class="p-2 fs-5 text-center fw-bold">Please Verify Below Details
          </div>
          <!-- Full Name -->
-         <div class="input-group mb-3  ">
+         <div class="input-group mb-1  ">
             <span class="input-group-text">Full Name</span>
             <input type="text" class="form-control" value="<?php echo $_POST["fullname"] ?>" readonly>
          </div>
          <!-- Email -->
-         <div class="input-group mb-3">
+         <div class="input-group mb-1">
             <span class="input-group-text">Email</span>
             <input type="text" class="form-control" value="<?php echo $_POST['email'] ?>" readonly>
          </div>
          <!-- Phone Number -->
-         <div class="input-group mb-3 ">
+         <div class="input-group mb-1 ">
             <span class="input-group-text">Phone Number</span>
             <input type="text" class="form-control" value="<?php echo $_POST['phone_no'] ?>" readonly>
          </div>
          <!-- Address -->
-         <div class="input-group mb-3 ">
+         <div class="input-group mb-1 ">
             <span class="input-group-text">Address</span>
             <input type="text" class="form-control" value="<?php echo $_POST['address'] ?>" readonly>
          </div>
@@ -140,8 +136,7 @@ echo "Grand Total=: $grandTotal"; // Output grand total after the loop
          <div>
             <input type="text" class="form-control" value="<?php echo $clientCode ?>" readonly>
             <input type="text" class="form-control" value="<?php echo $data ?>" readonly>
-            <input type="text" class="form-control" name="tAmount" id="tAmount"
-               value="<?php echo $_COOKIE['tAmount'] ?>" readonly>
+            <input type="text" class="form-control" name="tAmount" id="tAmount" value="<?php echo $_POST['gtotal'] ?>"readonly>
          </div>
          <div>
 
