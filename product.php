@@ -583,7 +583,7 @@
                 <div class="card h-100 product">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679740883/shrinathAyurved/roseSharbat_ajgmmx.png" class="imageResize  img-fluid mx-auto d-block object-fit: fill;" />
                     <div class="card-body">
-                        <h5 class="card-title product-name">Rose Sharbat</h5>
+                        <h5 class="card-title product-name">Rose Sharbat.</h5>
                         <p class="card-text" id="roseSharbatCard">details for rose sharbat.</p>
                         <p class="card-text"><b> <span>&#8377;</span> 205 for 900 ml</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
@@ -592,7 +592,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Rose Sharbat">
-                        <input type="hidden" name="price" value="205">
+                        <input type="hidden" name="price" value="1">
                     </div>
                 </div>
             </div>
@@ -604,7 +604,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Rose Sharbat</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Rose Sharbat.</h5>
                         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

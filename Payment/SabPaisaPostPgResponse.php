@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -6,9 +7,11 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 </head>
+
 </html>
 
 <?php
+session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 
 include ('Authentication.php');
@@ -18,8 +21,8 @@ $query = $_REQUEST['encResponse'];
 //$authIV = 'Sr6Uh4RSLAItInMY';
 
 //TC
- $authKey = '0jeOYcu3UnfmWyLC';
- $authIV = 'C28LAmGxXTqmK0QJ';
+$authKey = '0jeOYcu3UnfmWyLC';
+$authIV = 'C28LAmGxXTqmK0QJ';
 
 $decText = null;
 $AesCipher = new AesCipher();
@@ -40,9 +43,9 @@ payerName=YUVRAJ MISHRA&payerEmail=yuvraj.mishra@sabpaisa.in&payerMobile=7004069
 &udf6=NA&udf7=NA&udf8=NA&udf9=null&udf10=null&udf11=null&udf12=null&udf13=null&udf14=null&udf15=null&udf16=null&udf17=null&udf18=null
 &udf19=null&udf20=nulli- */
 
-session_start();
 
-$cartData = $_SESSION['cart_data'];
+
+//$cartData = $_SESSION['cart_data'];
 //print_r($cartData); // or var_dump($cartData);
 //var_dump($cartData);
 
@@ -209,10 +212,27 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
             if ($result1) {
                 echo '<br>';
                 //echo "New record created successfully";
-                echo '<div class="alert alert-success alert-dismissible fade show w-50" role="alert">
+                echo '<div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" role="alert" style="position: fixed; top: 50; left: 0; width: 99%; height: 25%;">
                 <strong>Success!</strong><br>Your Order with ID: ' . $orderId . '  is Successfully placed...!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  onclick="redirectToHomePage()"></button>
                 </div>';
+                // Clear the cart_data session variable
+                unset($_SESSION['cart_data']);
+
+                // Clear all session variables
+                session_unset();
+
+                // Destroy the session
+                session_destroy();
+
+                // JavaScript for redirection
+                echo '<script>
+            // Redirect to home page after 10 seconds
+            setTimeout(function() {
+                window.location.href = "http://localhost/shrinathAyurved/index.php";
+            }, 10000);
+          </script>';
+
             } else {
                 echo '<br>';
                 //echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
@@ -222,8 +242,10 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
             }
-        } else {
-            echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
+        } 
+        else {
+            trigger_error('Cart data is not available', E_USER_ERROR);
+            //echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
         }
     }
 } else {
