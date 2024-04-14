@@ -43,8 +43,6 @@ payerName=YUVRAJ MISHRA&payerEmail=yuvraj.mishra@sabpaisa.in&payerMobile=7004069
 &udf6=NA&udf7=NA&udf8=NA&udf9=null&udf10=null&udf11=null&udf12=null&udf13=null&udf14=null&udf15=null&udf16=null&udf17=null&udf18=null
 &udf19=null&udf20=nulli- */
 
-
-
 //$cartData = $_SESSION['cart_data'];
 //print_r($cartData); // or var_dump($cartData);
 //var_dump($cartData);

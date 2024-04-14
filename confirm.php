@@ -21,13 +21,7 @@
    <?php
    include ('payment/Authentication.php');
    $encData = null;
-   //OldTest Credentials
-// $clientCode='NITE5';
-// $username='Ish988@sp';
-// $password='wF2F0io7gdNj';
-// $authKey='zvMzY0UZLxkiE6ad';
-// $authIV='iFwrtsCSw3j7HG15';
-   
+
    //New Test Credentials
 $clientCode = 'DCRBP';
 $username = 'userph.jha_3036';
@@ -72,6 +66,7 @@ $authIV = 'C28LAmGxXTqmK0QJ';
    $data = $AesCipher->encrypt($authKey, $authIV, $encData);
    ?>
    </head>
+   
 
    <body>
       <?php
