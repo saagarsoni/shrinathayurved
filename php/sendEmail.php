@@ -21,4 +21,3 @@ $message = "From: $name \r\n".
  mail($to, $subject, $message);
  header("Location: http://www.shrinathayurved.com/");
   exit;
-?>
