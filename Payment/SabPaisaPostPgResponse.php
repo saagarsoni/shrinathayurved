@@ -212,13 +212,14 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
             if ($result1) {
                 echo '<br>';
                 //echo "New record created successfully";
-                echo '<div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" role="alert" style="position: fixed; top: 50; left: 0; width: 99%; height: 25%;">
+                echo '<div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" role="alert" style="position: fixed; top: 50; left: 0; width: 99%; height: 5%;">
                 <strong>Success!</strong><br>Your Order with ID: ' . $orderId . '  is Successfully placed...!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  onclick="redirectToHomePage()"></button>
                 </div>';
                 // Clear the cart_data session variable
                 unset($_SESSION['cart_data']);
-
+                unset($_SESSION['cart']);
+                
                 // Clear all session variables
                 session_unset();
 
