@@ -159,7 +159,9 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
         //echo "Payer Email: $payerEmail<br>";
         // Similarly, you can access other values like payerMobile, payerEmail, etc.
 
-        if (isset($_SESSION['cart_data'])) {
+        if (isset($_SESSION['cart']))
+        //if (isset($_SESSION['cart_data']))
+         {
             $cartData = $_SESSION['cart_data'];
             $fullname = $payerName;
             $email = $payerEmail;
@@ -170,7 +172,8 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
 
             $result = mysqli_query($conn, $sqlQuery);
 
-            if ($result) {
+            if ($result) 
+            {
                 $user_id = $conn->insert_id; // Get the ID of the inserted user
                 //echo "<br>";
                 //echo "User Id is  = " . $user_id;
@@ -207,7 +210,8 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
                 exit();
             }
 
-            if ($result1) {
+            if ($result1)
+             {
                 echo '<br>';
                 //echo "New record created successfully";
                 echo '<div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" role="alert" style="position: fixed; top: 50; left: 0; width: 99%; height: 5%;">
@@ -215,8 +219,8 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  onclick="redirectToHomePage()"></button>
                 </div>';
                 // Clear the cart_data session variable
-                unset($_SESSION['cart_data']);
-                unset($_SESSION['cart']);
+                // unset($_SESSION['cart_data']);
+                // unset($_SESSION['cart']);
                 
                 // Clear all session variables
                 session_unset();
@@ -226,13 +230,15 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
 
                 // JavaScript for redirection
                 echo '<script>
-            // Redirect to home page after 10 seconds
-            setTimeout(function() {
-                window.location.href = "http://localhost/shrinathAyurved/index.php";
-            }, 10000);
-          </script>';
+                                        // Redirect to home page after 10 seconds
+                                        setTimeout(function() {
+                                        window.location.href = "http://localhost/shrinathAyurved/index.php";
+                                        }, 10000);
+                            </script>';
 
-            } else {
+            } 
+            else
+             {
                 echo '<br>';
                 //echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
                 echo "Error: " . $sql_transaction . "<br>" . $conn->error;
@@ -242,6 +248,7 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
                 </div>';
             }
         } 
+
         else {
             trigger_error('Cart data is not available', E_USER_ERROR);
             //echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
