@@ -115,7 +115,8 @@ while ($token !== false) {
 // echo "<br>";
 // echo 'FSTR=' . $fstr;
 
-if ($status === 'SUCCESS' && $statusCode === '0000') {
+if ($status === 'SUCCESS' && $statusCode === '0000')
+ {
     // Connect to the MySQL database
     $host = 'localhost';
     $user = 'root';
@@ -226,14 +227,14 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
                 session_unset();
 
                 // Destroy the session
-                session_destroy();
+                //session_destroy();
 
                 // JavaScript for redirection
                 echo '<script>
                                         // Redirect to home page after 10 seconds
                                         setTimeout(function() {
                                         window.location.href = "http://localhost/shrinathAyurved/index.php";
-                                        }, 10000);
+                                        }, 9000);
                             </script>';
 
             } 
@@ -254,7 +255,8 @@ if ($status === 'SUCCESS' && $statusCode === '0000') {
             //echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
         }
     }
-} else {
+}
+ else {
     echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
     <strong>OOPS!</strong><br>Some Error Occured...!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
