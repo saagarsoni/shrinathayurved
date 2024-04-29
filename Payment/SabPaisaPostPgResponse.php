@@ -115,8 +115,7 @@ while ($token !== false) {
 // echo "<br>";
 // echo 'FSTR=' . $fstr;
 
-if ($status === 'SUCCESS' && $statusCode === '0000')
- {
+if ($status === 'SUCCESS' && $statusCode === '0000') {
     // Connect to the MySQL database
     $host = 'localhost';
     $user = 'root';
@@ -162,8 +161,9 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
 
         if (isset($_SESSION['cart']))
         //if (isset($_SESSION['cart_data']))
-         {
-            $cartData = $_SESSION['cart_data'];
+        {
+            //$cartData = $_SESSION['cart_data'];
+            $cartData = $_SESSION['cart'];
             $fullname = $payerName;
             $email = $payerEmail;
             $phone_number = $payerMobile;
@@ -173,8 +173,7 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
 
             $result = mysqli_query($conn, $sqlQuery);
 
-            if ($result) 
-            {
+            if ($result) {
                 $user_id = $conn->insert_id; // Get the ID of the inserted user
                 //echo "<br>";
                 //echo "User Id is  = " . $user_id;
@@ -211,18 +210,17 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
                 exit();
             }
 
-            if ($result1)
-             {
+            if ($result1) {
                 echo '<br>';
                 //echo "New record created successfully";
                 echo '<div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" role="alert" style="position: fixed; top: 50; left: 0; width: 99%; height: 5%;">
-                <strong>Success!</strong><br>Your Order with ID: ' . $orderId . '  is Successfully placed...!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  onclick="redirectToHomePage()"></button>
-                </div>';
+                                <strong>Success!</strong><br>Your Order with ID: ' . $orderId . '  is Successfully placed...!
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  onclick="redirectToHomePage()"></button>
+                                </div>';
                 // Clear the cart_data session variable
                 // unset($_SESSION['cart_data']);
                 // unset($_SESSION['cart']);
-                
+
                 // Clear all session variables
                 session_unset();
 
@@ -231,32 +229,27 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
 
                 // JavaScript for redirection
                 echo '<script>
-                                        // Redirect to home page after 10 seconds
-                                        setTimeout(function() {
-                                        window.location.href = "http://localhost/shrinathAyurved/index.php";
-                                        }, 9000);
-                            </script>';
+                                                        // Redirect to home page after 10 seconds
+                                                        setTimeout(function() {
+                                                        window.location.href = "http://localhost/shrinathAyurved/index.php";
+                                                        }, 9000);
+                                            </script>';
 
-            } 
-            else
-             {
+            } else {
                 echo '<br>';
                 //echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
                 echo "Error: " . $sql_transaction . "<br>" . $conn->error;
                 echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>OOPS!</strong><br>Server Error Occured...!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>';
+                                        <strong>OOPS!</strong><br>Server Error Occured...!
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>';
             }
-        } 
-
-        else {
+        } else {
             trigger_error('Cart data is not available', E_USER_ERROR);
             //echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
         }
     }
-}
- else {
+} else {
     echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
     <strong>OOPS!</strong><br>Some Error Occured...!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

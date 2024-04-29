@@ -373,9 +373,15 @@
                         <h5 class="card-title product-name">Lemon Squash</h5>
                         <p class="card-text" id="lemonSquashCard"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 210 for 900 ml</b> </p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        <!-- <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#lemonSquash">Know
+                            More</button> -->
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            onclick="redirectToProductDescription('lemonSquash')">Know
                             More</button>
+
+                            
+
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="lemonSquash">
@@ -1467,6 +1473,15 @@
 </body>
 
 <script>
+
+function redirectToProductDescription(product) {
+    // Construct the URL for the product description page
+    var productPage = product + '.php';
+    
+    // Redirect to the product description page
+    window.location.href = productPage;
+}
+
     $("#honeyYoutubeModal").on("hidden.bs.modal", function () {
         var _this = this,
             youtubeSrc = $(_this).find("iframe").attr("src");
