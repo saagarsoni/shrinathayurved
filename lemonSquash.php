@@ -10,9 +10,9 @@
    <!-- Product Description Page -->
    <div class="container">
       <div class="row">
-         <div class="col-lg-12 text-center border rounded bg-info my-3">
+         <!-- <div class="col-lg-12 text-center border rounded bg-info my-3">
             <h3>Lemon Squash</h3>
-         </div>
+         </div> -->
          <div class="col-lg-6">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -55,7 +55,7 @@
          </div> -->
 
          <div class="col-lg-6">
-            <div class="w-100 fs-6 bg-warning p-1 fw-bold fs-4 rounded text-center">Description</div>
+            <div class="w-100 fs-6 bg-warning p-1 fw-bold fs-4 rounded text-center">Lemon Squash</div>
             <!-- <div> -->
             <!-- <div class="overflow-y-auto" style="height:18%"> -->
                <p id="lemonSquashDetail" class="text-sm-start lh-sm"></p>

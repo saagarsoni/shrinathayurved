@@ -50,10 +50,10 @@
                 <img src="./images/Chyawanprash500.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(500 gm)"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash (500 gm)</h5>
-                        <p class="card-text" id="chawanprashCard"></p>
+                        <!-- <p class="card-text" id="chawanprashCard"></p> -->
                         <p class="card-text"><b> <span>&#8377;</span> 180 for 500 gm</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#chawanprashRegular">Know
+                            onclick="redirectToProductDescription('Chyawanprash500')">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -64,89 +64,7 @@
             </div> 
         </form>
         <!-- Card End -->
-        <!-- Modal Start -->
-        <div class="modal fade" id="chawanprashRegular" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Chawanprash Regular(500 gm)</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Example Code -->
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="chawanprashDetail"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="chawanprashIngredients"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Nutritional Facts
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="chawanprashFacts"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <span>&#8377;</span> 180 for 500 gm
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- End Example Code -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
+        
         <!-- Chyawanprash_Regular(500 gm) End -->
 
  <!-- Chyawanprash_Regular(1 Kg)  Start-->
@@ -158,7 +76,6 @@
                     <img src="./images/Chavanprash1kg.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(1 Kg)"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash (1 Kg).</h5>
-                        <p class="card-text" id="chawanprashCard1kg"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 340 for 1 kg</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#chawanprashGudWala">Know
@@ -172,88 +89,6 @@
             </div>
         </form>
         <!-- Card End -->
-        <!-- Modal Start -->
-        <div class="modal fade" id="chawanprashGudWala" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Chawanprash Regular(1 Kg)</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Example Code -->
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="chawanprashDetail1kg"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="chawanprashIngredients1kg"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Nutritional Facts
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="chawanprashFacts1kg"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <span>&#8377;</span> 340 for 1 kg
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Example Code -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
         <!-- Chyawanprash_Regular(1Kg) End -->
 
         <!-- Orange Squash Start-->
@@ -264,10 +99,10 @@
                     <img src="./images/orangeSquash.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Orange Squash"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Orange Squash.</h5>
-                        <p class="card-text" id="orangeSquashCard"></p>
+                        <!-- <p class="card-text" id="orangeSquashCard"></p> -->
                         <p class="card-text"><b> <span>&#8377;</span> 210 for 900 ml</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#orangeSquash">Know
+                            onclick="redirectToProductDescription('orangeSquash')">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -368,10 +203,10 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
-                    <img src="./images/lemonSquash.jpg" class="imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Lemon Squash"/>
+                    <img src="./images/lemonSquash1.jpg" class="imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Lemon Squash"/>
                     <div class="card-body">
                         <h5 class="card-title product-name">Lemon Squash</h5>
-                        <p class="card-text" id="lemonSquashCard"></p>
+                        <!-- <p class="card-text" id="lemonSquashCard"></p> -->
                         <p class="card-text"><b> <span>&#8377;</span> 210 for 900 ml</b> </p>
                         <!-- <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#lemonSquash">Know
