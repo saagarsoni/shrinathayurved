@@ -141,6 +141,7 @@ ini_set('display_errors', 1);
                      <!-- Hidden Field -->
                      <input type="hidden" name="encData" value="<?php echo $data ?>" id="frm1">
                      <input type="hidden" name="clientCode" value="<?php echo $clientCode ?>" id="frm2">
+                     <input type="hidden" name="cart_data" value="<?php echo base64_encode(serialize($_SESSION['cart_data'])); ?>"> 
                   </form>
                   <?php
                }
@@ -154,7 +155,7 @@ ini_set('display_errors', 1);
       var iquantity = document.getElementsByClassName('iquantity');
       var itotal = document.getElementsByClassName('itotal');
       var gtotal = document.getElementById('gtotal');
-      var ShippingCharges = 45;
+      var ShippingCharges = 0;
       function subTotal() {
          var gt = 0;
          for (var i = 0; i < iprice.length; i++) {

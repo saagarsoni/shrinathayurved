@@ -58,7 +58,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Chyawanprash Regular(500 gm)">
-                        <input type="hidden" name="price" value="180">
+                        <input type="hidden" name="price" value="1">
                     </div>
                 </div>
             </div> 
@@ -220,7 +220,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="lemonSquash">
-                        <input type="hidden" name="price" value="210">
+                        <input type="hidden" name="price" value="2">
                         <!-- <input type="hidden" name="price" value="190"> -->
                     </div>
                 </div>
@@ -538,7 +538,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Khass Sharbat">
-                        <input type="hidden" name="price" value="205">
+                        <input type="hidden" name="price" value="2">
                     </div>
                 </div>
             </div>
@@ -642,7 +642,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Dishwash - Lemon and Salt">
-                        <input type="hidden" name="price" value="240">
+                        <input type="hidden" name="price" value="2">
                     </div>
                 </div>
             </div>
@@ -746,7 +746,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Neem and Aloevera Dishwash Liquid">
-                        <input type="hidden" name="price" value="240">
+                        <input type="hidden" name="price" value="2">
                     </div>
                 </div>
             </div>
@@ -867,7 +867,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Honey Regular">
-                        <input type="hidden" name="price" value="225">
+                        <input type="hidden" name="price" value="2">
                     </div>
                 </div>
             </div>
@@ -1004,7 +1004,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Honey Squeezy">
-                        <input type="hidden" name="price" value="240">
+                        <input type="hidden" name="price" value="2">
                     </div>
                 </div>
             </div>
@@ -1132,7 +1132,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Rose Water">
-                        <input type="hidden" name="price" value="150">
+                        <input type="hidden" name="price" value="1">
                     </div>
                 </div>
             </div>
@@ -1224,7 +1224,7 @@
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="pottali">
-                        <input type="hidden" name="price" value="350">
+                        <input type="hidden" name="price" value="3">
                     </div>
                 </div>
             </div>

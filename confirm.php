@@ -40,7 +40,11 @@ $authIV = 'C28LAmGxXTqmK0QJ';
    $payerEmail = $_POST['email'];
    $payerMobile = $_POST['phone_no'];
    $payerAddress = $_POST['address'];
-   //$myArray = $_SESSION['cart'];
+   // Retrieve and unserialize the cart data
+  $cartData = unserialize(base64_decode($_POST['cart_data']));
+
+// Serialize and encode cart data for passing to the next page
+$encodedCartData = base64_encode(serialize($cartData));
    
    $clientTxnId = rand(1000, 9999);
 
@@ -59,7 +63,7 @@ $authIV = 'C28LAmGxXTqmK0QJ';
    
    $encData = "?clientCode=" . $clientCode . "&transUserName=" . $username . "&transUserPassword=" . $password . "&payerName=" . $payerName .
       "&payerMobile=" . $payerMobile . "&payerEmail=" . $payerEmail . "&payerAddress=" . $payerAddress . "&clientTxnId=" . $clientTxnId .
-      "&amount=" . $amount . "&amountType=" . $amountType . "&mcc=" . $mcc . "&channelId=" . $channelId . "&callbackUrl=" . $callbackUrl;
+      "&amount=" . $amount . "&amountType=" . $amountType . "&mcc=" . $mcc . "&channelId=" . $channelId . "&callbackUrl=" . $callbackUrl."&udf1=$encodedCartData";
    //."&udf1=".$Class."&udf2=".$Roll;
    
    $AesCipher = new AesCipher();
@@ -127,7 +131,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gtotal"])) {
          <div>
             <input type="text" class="form-control" value="<?php echo $clientCode ?>" readonly>
             <input type="text" class="form-control" value="<?php echo $data ?>" readonly>
-            <!-- <input type="text" class="form-control" name="tAmount" id="tAmount" value="<?php echo $_POST['gtotal'] ?>"readonly> -->
          </div>
          <div>
 
@@ -136,6 +139,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gtotal"])) {
          <div class="d-none">
             <input type="hidden" name="encData" class="d-none" value="<?php echo $data ?>" id="frm1">
             <input type="hidden" name="clientCode" class="d-none" value="<?php echo $clientCode ?>" id="frm2">
+            <input type="hidden" name="cartData" class="d-none" value="<?php echo $cartData?>" id="frm3"> 
+            
          </div>
       </form>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

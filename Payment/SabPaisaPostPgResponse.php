@@ -7,7 +7,6 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 </head>
-
 </html>
 
 <?php
@@ -28,8 +27,6 @@ $decText = null;
 $AesCipher = new AesCipher();
 $decText = $AesCipher->decrypt($authKey, $authIV, $query);
 //echo $decText;
-
-// $amount= $_COOKIE['tAmount'];
 
 $token = strtok($decText, "&");
 //echo $token;
@@ -99,29 +96,24 @@ while ($token !== false) {
         $transDate = $fstr;
 
     if ($token == true) {
-
         // $up = "UPDATE  buy_now SET txid='$pgTxnId', tx_dt='$transDate', status='1' WHERE student_id='$userid'";
-        //$up = "UPDATE  buy_now SET txid='$pgTxnId', tx_dt='$transDate', status=1 WHERE student_id=$ufd20";
-        // echo $up;
-        //  mysqli_query($conn,$up);	    
     }
 }
-// echo "<br>";
-// echo 'Amount=' . $amount;
-// echo "<br>";
-// echo 'Status=' . $status;
-// echo "<br>";
-// echo 'Code=' . $statusCode;
-// echo "<br>";
-// echo 'FSTR=' . $fstr;
 
 if ($status === 'SUCCESS' && $statusCode === '0000')
  {
-    // Connect to the MySQL database
-    $host = 'localhost';
-    $user = 'root';
-    $password = '';
-    $dbname = 'shrinathayurved';
+    // Local Connect to the MySQL database
+    // $host = 'localhost';
+    // $user = 'root';
+    // $password = '';
+    // $dbname = 'shrinathayurved';
+
+     // Live Connect to the MySQL database
+     $host = 'triumph.herosite.pro';
+     $user = 'upkvwkyf_shrinathAyurved';
+     $password = 'h5!3DN@cS';
+     $dbname = 'upkvwkyf_shrinathAyurved';
+ 
 
     $conn = mysqli_connect($host, $user, $password, $dbname);
     // Check connection
@@ -153,14 +145,75 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
         $payerMobile = $parsedData['payerMobile'];
         $payerEmail = $parsedData['payerEmail'];
         $payerAddress = $parsedData['payerAddress'];
+        $myCartdata = $parsedData['udf1'];
 
+            // Decode and unserialize the cart data
+    $decodedCartData = unserialize(base64_decode($myCartdata));
+    
+    // Now $decodedCartData will contain the original cart data array
+    // You can loop through it and access each item like this:
+    foreach ($decodedCartData as $item) {
+       // echo "Item Name: " . $item['item_name'] . ", Price: " . $item['price'] . ", Quantity: " . $item['quantity'] . "<br>";
+
+        // Create an empty array to store cart data
+    $cartItems = array();
+    
+    // Loop through the decoded cart data and store it in the array
+    foreach ($decodedCartData as $item) {
+        // Add each item to the cartItems array
+        $cartItems[] = array(
+            'item_name' => $item['item_name'],
+            'price' => $item['price'],
+            'quantity' => $item['quantity']
+        );
+    }
+    // Store the cartItems array in a session variable
+    $_SESSION['cartItems'] = $cartItems;
+    //var_dump($_SESSION['cartItems']);
+    echo"<br>";
+    }
         // Print the values
-        //echo "Payer Name: $payerName<br>";
-        //echo "Payer Mobile: $payerMobile<br>";
-        //echo "Payer Email: $payerEmail<br>";
+        // echo "Payer Name: $payerName<br>";
+        // echo "Payer Mobile: $payerMobile<br>";
+        // echo "Payer Email: $payerEmail<br>";
+        // echo "Payer Address: $payerAddress<br>";
+        // echo "My Cart Data: $myCartdata<br>";
         // Similarly, you can access other values like payerMobile, payerEmail, etc.
 
-        if (isset($_SESSION['cart']))
+        // Check if $encodedCartData is set
+        if(isset($encodedCartData)) {
+            // Decode and unserialize the cart data
+            $decodedCartData = unserialize(base64_decode($encodedCartData));
+
+             // Create an empty array to store cart data
+            $cartItems = array();
+
+            // You can loop through it and access each item like this:
+            foreach ($decodedCartData as $item) {
+               // echo "Item Name-: " . $item['item_name'] . ", Price-: " . $item['price'] . ", Quantity-: " . $item['quantity'] . "<br>";
+                  // Add each item to the cartItems array
+             $cartItems[] = array(
+            'item_name' => $item['item_name'],
+            'price' => $item['price'],
+            'quantity' => $item['quantity']
+        );
+
+        // Store the cartItems array in a session variable
+    $_SESSION['cartItems'] = $cartItems;
+
+    echo "<pre>";
+    print_r($_SESSION['cartItems']);
+    echo "</pre>";
+
+    //print_r($_SESSION['cart']);
+            }
+        } else {
+            echo "Cart data not found.";
+        }
+        
+    
+        if(!empty($decodedCartData))
+        //if (isset($_SESSION['cart']))
         //if (isset($_SESSION['cart_data']))
         {
             //$cartData = $_SESSION['cart_data'];
@@ -245,8 +298,11 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>';
             }
-        } else {
-            trigger_error('Cart data is not available', E_USER_ERROR);
+        }
+         else {
+
+            echo "<br>Code : ".$statusCode;
+                       trigger_error('Cart data is not available', E_USER_ERROR);
             //echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
         }
     }
@@ -266,35 +322,3 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
     }
 </script>
 
-<div class="page-content-wrapper">
-    <div class="page-content">
-        <!-- <div class="page-bar">
-            <div class="page-title-breadcrumb">
-                <div class=" pull-left">
-                    <div class="page-title">Payment Success Page</div>
-                </div>
-            </div>
-        </div>  -->
-        <br>
-        <!-- <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="card card-box">
-                    <div class="card-body " id="bar-parent2">
-                        <div class="row">
-                        <h4>Thank You, Your paymednt for Rs. <?php echo round($whatIWant, 2) ?>  </h4>   -->
-        <!-- <h1>Thank You, Your payment for Rs. <?php echo $amount; ?> is <?= $status; ?>. You can have your reciept by clicking on print button given below. </h1> -->
-        <!-- <div class="col-md-6 col-sm-6">
-                                    <a href="pdf/fpdf/add_receipt.php?user_id=<?php echo $userid ?>&pay_type=Pros_Fee" class="btn btn-success" target="_blank">Print Receipt</a>
-                                    <a href="download_prospectus.php?user_id=<?php echo $userid ?>" class="btn btn-primary">Download Prospectus</a>
-                                    <br>
-                                     <br>
-                                    <p> <span class="badge badge-sucess">Note:</span> You can print recipt any time if required.</p>
-                                </div> -->
-        <!-- </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-    </div>
-</div>
