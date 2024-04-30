@@ -115,7 +115,8 @@ while ($token !== false) {
 // echo "<br>";
 // echo 'FSTR=' . $fstr;
 
-if ($status === 'SUCCESS' && $statusCode === '0000') {
+if ($status === 'SUCCESS' && $statusCode === '0000')
+ {
     // Connect to the MySQL database
     $host = 'localhost';
     $user = 'root';
