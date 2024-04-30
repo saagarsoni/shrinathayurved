@@ -103,16 +103,16 @@ while ($token !== false) {
 if ($status === 'SUCCESS' && $statusCode === '0000')
  {
     // Local Connect to the MySQL database
-    // $host = 'localhost';
-    // $user = 'root';
-    // $password = '';
-    // $dbname = 'shrinathayurved';
+    $host = 'localhost';
+    $user = 'root';
+    $password = '';
+    $dbname = 'shrinathayurved';
 
      // Live Connect to the MySQL database
-     $host = 'triumph.herosite.pro';
-     $user = 'upkvwkyf_shrinathAyurved';
-     $password = 'h5!3DN@cS';
-     $dbname = 'upkvwkyf_shrinathAyurved';
+    //  $host = 'triumph.herosite.pro';
+    //  $user = 'upkvwkyf_shrinathAyurved';
+    //  $password = 'h5!3DN@cS';
+    //  $dbname = 'upkvwkyf_shrinathAyurved';
  
 
     $conn = mysqli_connect($host, $user, $password, $dbname);
