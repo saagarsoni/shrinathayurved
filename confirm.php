@@ -91,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["gtotal"])) {
    $gtotal = $_POST["gtotal"];
    // Now you can use $gtotal as needed, for example:
    echo "Grand Total: " . $gtotal;
+   echo "<label> ( Rs. 45 Shipping Charges Included. )</label><br>";
 } else {
    // If the form is not submitted or gtotal value is not set, handle the case accordingly
    echo "No Grand Total value received.";

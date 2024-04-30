@@ -64,8 +64,8 @@ ini_set('display_errors', 1);
                         $sr = $key + 1;
                         echo "
                   <tr>
-                  <td><input type='text' value='$sr' readonly></td>
-                  <td><input type='text'  value='$value[item_name]' readonly></td>
+                  <td><input type='text' size='3' value='$sr' readonly></td>
+                  <td><input type='text' size='40'  value='$value[item_name]' readonly></td>
                   <td>
                   <span>&#8377; </span>$value[price]<input type='hidden' class='iprice' value='$value[price]'>
                   <input type='hidden' name='price[]' value='$value[price]' >
@@ -108,6 +108,7 @@ ini_set('display_errors', 1);
                   <form action="confirm.php" method="post">
                   <h4>Grand Total  :  <label class="text-right fs-4 fw-bold" id="gtotal" name="gtotal"></label></h4>
                   <input type="hidden" id="gtotalInput" name="gtotal" value="">
+                  <label> ( Rs. 45 Shipping Charges. )</label><br>
 
                   <br>
                     <!-- Full Name -->
@@ -130,7 +131,7 @@ ini_set('display_errors', 1);
                      </div>
                      <!-- Address Box -->
                      <div class="mb-3">
-                        <label class="form-label">Address</label>
+                        <label class="form-label">Address (with Pincode)</label>
                         <textarea name="address" id="address" class="form-control" placeholder="Enter Full Address"
                            cols="30" rows="6" required></textarea>
                      </div>
@@ -153,7 +154,7 @@ ini_set('display_errors', 1);
       var iquantity = document.getElementsByClassName('iquantity');
       var itotal = document.getElementsByClassName('itotal');
       var gtotal = document.getElementById('gtotal');
-
+      var ShippingCharges = 45;
       function subTotal() {
          var gt = 0;
          for (var i = 0; i < iprice.length; i++) {
@@ -163,14 +164,15 @@ ini_set('display_errors', 1);
          }
          // Display grand total
          //console.log(gt);
-         gtotal.innerHTML = '\u20B9 ' + gt;
+         gtotal.innerHTML = '\u20B9 ' +( gt+ShippingCharges);
       }
       subTotal();
 
       // Get the grand total value
-var gtotalValue = document.getElementById('gtotal').innerText;
+var gtotalValue = document.getElementById('gtotal').innerText ;
 
 // Set the value of the hidden input field
+
 document.getElementById('gtotalInput').value = gtotalValue;
 
 // Submit the form

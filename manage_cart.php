@@ -8,20 +8,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $myitems = array_column($_SESSION['cart'], 'item_name');
          if (in_array($_POST['item_name'], $myitems)) {
             //print_r($_SESSION['cart']);
-            echo "<script>alert('Item Already Added');</script>";
+            //echo "<script>alert('Item Already Added');</script>";
             echo "<script>window.location.href ='product.php'; </script>";
          } else {
             $count = count($_SESSION['cart']);
             $_SESSION['cart'][$count] = array('item_name' => $_POST['item_name'], 'price' => $_POST['price'], 'quantity' => 1);
             //print_r($_SESSION['cart']);
-            echo "<script>alert('Item Added');</script>";
+            //echo "<script>alert('Item Added');</script>";
             echo "<script>window.location.href ='product.php'; </script>";
          }
       } else
     {
          $_SESSION['cart'][0] = array('item_name' => $_POST['item_name'], 'price' => $_POST['price'], 'quantity' => 1);
          //print_r($_SESSION['cart']);
-         echo "<script>alert('Item Added');</script>";
+         //echo "<script>alert('Item Added');</script>";
          echo "<script>window.location.href ='product.php'; </script>";
       }
    }

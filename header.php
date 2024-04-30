@@ -44,10 +44,16 @@ session_start();
         if (isset($_SESSION['cart'])) {
           $count = count($_SESSION['cart']);
         }
+
+        if (basename($_SERVER['PHP_SELF']) == 'product.php') {
+          // Display the "My Cart" button
+          echo '<a href="myCart.php" class="btn btn-outline-success">My Cart (' . $count . ')</a>';
+      }
+      
         ?>
-        <a href="myCart.php" class="btn btn-outline-success">My Cart (
+        <!-- <a href="myCart.php" class="btn btn-outline-success">My Cart (
           <?php echo $count; ?>)
-        </a>
+        </a> -->
       </div>
 
       <?php
