@@ -214,6 +214,9 @@
                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             onclick="redirectToProductDescription('lemonSquash')">Know
                             More</button>
+
+                            
+
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="lemonSquash">

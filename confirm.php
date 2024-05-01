@@ -25,6 +25,7 @@
    //New Test Credentials
 $clientCode = 'DCRBP';
 $username = 'userph.jha_3036';
+//$username = 'nishant.jha_3036';
 $password = 'DBOI1_SP3036';
 $authKey = '0jeOYcu3UnfmWyLC';
 $authIV = 'C28LAmGxXTqmK0QJ';
@@ -59,6 +60,7 @@ $encodedCartData = base64_encode(serialize($cartData));
    $mcc = 5137;
    $channelId = 'W';
    $callbackUrl = 'http://localhost/shrinathAyurved/Payment/SabPaisaPostPgResponse.php';
+   //$callbackUrl = 'http://localhost/shrinathAyurved/testpage.php';
    //$callbackUrl = 'http://localhost/shrinathAyurved/confirm.php';
    
    $encData = "?clientCode=" . $clientCode . "&transUserName=" . $username . "&transUserPassword=" . $password . "&payerName=" . $payerName .

@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -16,17 +15,19 @@ error_reporting(E_ALL ^ E_NOTICE);
 include ('Authentication.php');
 $query = $_REQUEST['encResponse'];
 //LC
-//$authKey = '010odVxdUGZNTjFd';
-//$authIV = 'Sr6Uh4RSLAItInMY';
+$authKey = '010odVxdUGZNTjFd';
+$authIV = 'Sr6Uh4RSLAItInMY';
 
 //TC
-$authKey = '0jeOYcu3UnfmWyLC';
-$authIV = 'C28LAmGxXTqmK0QJ';
+//$authKey = '0jeOYcu3UnfmWyLC';
+//$authIV = 'C28LAmGxXTqmK0QJ';
 
 $decText = null;
 $AesCipher = new AesCipher();
 $decText = $AesCipher->decrypt($authKey, $authIV, $query);
 //echo $decText;
+
+// $amount= $_COOKIE['tAmount'];
 
 $token = strtok($decText, "&");
 //echo $token;
@@ -40,11 +41,12 @@ payerName=YUVRAJ MISHRA&payerEmail=yuvraj.mishra@sabpaisa.in&payerMobile=7004069
 &udf6=NA&udf7=NA&udf8=NA&udf9=null&udf10=null&udf11=null&udf12=null&udf13=null&udf14=null&udf15=null&udf16=null&udf17=null&udf18=null
 &udf19=null&udf20=nulli- */
 
-//$cartData = $_SESSION['cart_data'];
+$cartData = $_SESSION['cart_data'];
 //print_r($cartData); // or var_dump($cartData);
 //var_dump($cartData);
 
-while ($token !== false) {
+while ($token !== false)
+ {
     $i = $i + 1;
     $token1 = strchr($token, "=");
     $token = strtok("&");
@@ -96,31 +98,38 @@ while ($token !== false) {
         $transDate = $fstr;
 
     if ($token == true) {
+
         // $up = "UPDATE  buy_now SET txid='$pgTxnId', tx_dt='$transDate', status='1' WHERE student_id='$userid'";
+        //$up = "UPDATE  buy_now SET txid='$pgTxnId', tx_dt='$transDate', status=1 WHERE student_id=$ufd20";
+        // echo $up;
+        //  mysqli_query($conn,$up);	    
     }
 }
+//End While
 
 if ($status === 'SUCCESS' && $statusCode === '0000')
  {
     // Local Connect to the MySQL database
-    $host = 'localhost';
-    $user = 'root';
-    $password = '';
-    $dbname = 'shrinathayurved';
-
-     // Live Connect to the MySQL database
-    //  $host = 'triumph.herosite.pro';
-    //  $user = 'upkvwkyf_shrinathAyurved';
-    //  $password = 'h5!3DN@cS';
-    //  $dbname = 'upkvwkyf_shrinathAyurved';
+    //$host = 'localhost';
+    //$user = 'root';
+    //$password = '';
+    //$dbname = 'shrinathayurved';
+  
+   // Live Connect to the MySQL database
+    $host = 'triumph.herosite.pro';
+    $user = 'upkvwkyf_shrinathAyurved';
+    $password = 'h5!3DN@cS';
+    $dbname = 'upkvwkyf_shrinathAyurved';
 
     $conn = mysqli_connect($host, $user, $password, $dbname);
     // Check connection
-    if (mysqli_connect_errno()) {
+    if (mysqli_connect_errno()) 
+    {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit();
-    } else {
-
+    } 
+    else
+     {
         // Decode the URL-encoded string
         $decodedText = urldecode($decText);
 
@@ -131,7 +140,8 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
         $parsedData = [];
 
         // Loop through each part and split it into key and value
-        foreach ($parts as $part) {
+        foreach ($parts as $part)
+         {
             // Split each part into key and value
             list($key, $value) = explode("=", $part);
 
@@ -147,30 +157,30 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
         $myCartdata = $parsedData['udf1'];
 
             // Decode and unserialize the cart data
-            $decodedCartData = unserialize(base64_decode($myCartdata));
+        $decodedCartData = unserialize(base64_decode($myCartdata));
     
-            // Now $decodedCartData will contain the original cart data array
-            // You can loop through it and access each item like this:
-            foreach ($decodedCartData as $item) {
-            // echo "Item Name: " . $item['item_name'] . ", Price: " . $item['price'] . ", Quantity: " . $item['quantity'] . "<br>";
-    
-            // Create an empty array to store cart data
-            $cartItems = array();
-    
-    // Loop through the decoded cart data and store it in the array
-    foreach ($decodedCartData as $item) {
-        // Add each item to the cartItems array
-        $cartItems[] = array(
-            'item_name' => $item['item_name'],
-            'price' => $item['price'],
-            'quantity' => $item['quantity']
-        );
-    }
-    // Store the cartItems array in a session variable
-    $_SESSION['cartItems'] = $cartItems;
-    echo "cartItems Data are = ".var_dump($_SESSION['cartItems']);
-    echo"<br>";
-    }
+         // Now $decodedCartData will contain the original cart data array
+         // You can loop through it and access each item like this:
+         foreach ($decodedCartData as $item)
+          {
+                     // echo "Item Name: " . $item['item_name'] . ", Price: " . $item['price'] . ", Quantity: " . $item['quantity'] . "<br>";
+                  // Create an empty array to store cart data
+                     $cartItems = array();
+                  
+                     // Loop through the decoded cart data and store it in the array
+                     foreach ($decodedCartData as $item) {
+                     // Add each item to the cartItems array
+                     $cartItems[] = array(
+                     'item_name' => $item['item_name'],
+                     'price' => $item['price'],
+                     'quantity' => $item['quantity']
+                    );
+                 }
+                  // Store the cartItems array in a session variable
+                  $_SESSION['cartItems'] = $cartItems;
+                  //var_dump($_SESSION['cartItems']);
+                  echo"<br>";
+          }
         // Print the values
         // echo "Payer Name: $payerName<br>";
         // echo "Payer Mobile: $payerMobile<br>";
@@ -179,37 +189,37 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
         // echo "My Cart Data: $myCartdata<br>";
         // Similarly, you can access other values like payerMobile, payerEmail, etc.
 
-        // // Check if $encodedCartData is set
-        // if(isset($encodedCartData)) 
-        // {
-        //     // Decode and unserialize the cart data
-        //     $decodedCartData = unserialize(base64_decode($encodedCartData));
+        // Check if $encodedCartData is set
+      //   if(isset($encodedCartData))
+      //    {
+      //       // Decode and unserialize the cart data
+      //       $decodedCartData = unserialize(base64_decode($encodedCartData));
 
-        //      // Create an empty array to store cart data
-        //     $cartItems = array();
+      //        // Create an empty array to store cart data
+      //       $cartItems = array();
 
-        //     // You can loop through it and access each item like this:
-        //     foreach ($decodedCartData as $item) {
-        //        // echo "Item Name-: " . $item['item_name'] . ", Price-: " . $item['price'] . ", Quantity-: " . $item['quantity'] . "<br>";
-        //           // Add each item to the cartItems array
-        //      $cartItems[] = array(
-        //     'item_name' => $item['item_name'],
-        //     'price' => $item['price'],
-        //     'quantity' => $item['quantity']
-        //     );
+      //       // You can loop through it and access each item like this:
+      //       foreach ($decodedCartData as $item) {
+      //          // echo "Item Name-: " . $item['item_name'] . ", Price-: " . $item['price'] . ", Quantity-: " . $item['quantity'] . "<br>";
+      //             // Add each item to the cartItems array
+      //        $cartItems[] = array(
+      //       'item_name' => $item['item_name'],
+      //       'price' => $item['price'],
+      //       'quantity' => $item['quantity']
+      //   );
 
-        //       // Store the cartItems array in a session variable
-        //      $_SESSION['cartItems'] = $cartItems;
+                  // Store the cartItems array in a session variable
+               //$_SESSION['cartItems'] = $cartItems;
 
-        //         echo "<pre>";
-        //         print_r($_SESSION['cartItems']);
-        //         echo "</pre>";
+            // echo "<pre>";
+            // print_r($_SESSION['cartItems']);
+            // echo "</pre>";
 
-        //         //print_r($_SESSION['cart']);
-        //                 }
-        //             } else {
-        //                 echo "Cart data not found.";
-        //             }
+          //print_r($_SESSION['cart']);
+         //   }
+       // } else {
+          //  echo "Cart data not found.";
+       // }
         
     
         if(!empty($decodedCartData))
@@ -217,7 +227,7 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
         //if (isset($_SESSION['cart_data']))
         {
             //$cartData = $_SESSION['cart_data'];
-            $cartData = $_SESSION['cartItems'];
+            $cartData = $_SESSION['cart'];
             $fullname = $payerName;
             $email = $payerEmail;
             $phone_number = $payerMobile;
@@ -227,7 +237,8 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
 
             $result = mysqli_query($conn, $sqlQuery);
 
-            if ($result) {
+            if ($result)
+             {
                 $user_id = $conn->insert_id; // Get the ID of the inserted user
                 //echo "<br>";
                 //echo "User Id is  = " . $user_id;
@@ -264,10 +275,11 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
                 exit();
             }
 
-            if ($result1) {
+            if ($result1)
+             {
                 echo '<br>';
                 //echo "New record created successfully";
-                echo '<div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" role="alert" style="position: fixed; top: 50; left: 0; width: 99%; height: 5%;">
+                echo '<div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" role="alert" style="position: fixed; top: 50; left: 0; width: 99%; height: 10%;">
                                 <strong>Success!</strong><br>Your Order with ID: ' . $orderId . '  is Successfully placed...!
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  onclick="redirectToHomePage()"></button>
                                 </div>';
@@ -300,19 +312,24 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
             }
         }
          else {
-
             echo "<br>Code : ".$statusCode;
-                       trigger_error('Cart data is not available', E_USER_ERROR);
+                       trigger_error('Error Caught', E_USER_ERROR);
             //echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
         }
     }
- } 
-else {
+} 
+else 
+{
+   trigger_error('Error', E_USER_ERROR);
     echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
     <strong>OOPS!</strong><br>Some Error Occured...!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';
 }
+     
+     //End Checking Connection
+ 
+ //End Checking Status Code
 ?>
 <script>
     function redirectToHomePage() {
@@ -320,4 +337,3 @@ else {
         window.location.href = "http://localhost/shrinathAyurved/index.php"; //  home page
     }
 </script>
-
