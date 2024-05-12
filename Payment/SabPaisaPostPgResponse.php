@@ -238,7 +238,8 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
                 //echo "<br>";
                 //var_dump($_SESSION['cart_data']);
                 // Loop through each item in the cart
-                foreach ($cartData as $item)
+                //foreach ($cartData as $item)
+                foreach ($_SESSION['cartItems']as $item)
                 // foreach ($_SESSION['cart'] as $record) 
                 {
                     // Escape variables for security to prevent SQL injection

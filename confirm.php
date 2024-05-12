@@ -19,6 +19,7 @@
       }
    </style>
    <?php
+   session_start();
    include ('payment/Authentication.php');
    $encData = null;
 
@@ -76,7 +77,7 @@ $encodedCartData = base64_encode(serialize($cartData));
 
    <body>
       <?php
-      session_start();
+      
 
       // Retrieve cart data from session
       if (isset($_SESSION['cart_data'])) {
