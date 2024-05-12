@@ -315,9 +315,9 @@
                             <div class="carousel-item active">
                                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741477/Honey_Front_yxdfxu_rlkwak.png"
                                     class="imageResize thumbnail zoom" />
-                                <div class="carousel-caption d-none d-md-block">
+                                <!-- <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Regular</h5>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="carousel-item">
                                 <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
@@ -337,11 +337,11 @@
                         </button>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title product-name">Honey</h5>
-                        <p class="card-text" id="honeyCard"></p>
+                        <h6 class="card-title product-name">Honey Regular</h6>
+                        <!-- <p class="card-text" id="honeyCard"></p> -->
                         <p class="card-text"><b> <span>&#8377;</span> 225 For 500 gm</b></p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#honeyModal">Know
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                        onclick="redirectToProductDescription('honeyRegular')">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
@@ -599,94 +599,25 @@
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
-                <div class="card h-100 product" style="display: flex;">
+                <div class="card h-100 w-100 product" style="display: flex;">
                     <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741645/shrinathAyurved/potli_vi7uyx.png"
                         class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail"
                         alt="Painkiller Potli" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Painkiller Potli</h5>
-                        <p class="card-text" id="chawanprashCard1kg"></p>
                         <p class="card-text"><b> <span>&#8377;</span> 350 for 250 gm</b> </p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#potli">Know
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                        onclick="redirectToProductDescription('painkillerPottali')">Know
                             More</button>
                         <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="pottali">
-                        <input type="hidden" name="price" value="3">
+                        <input type="hidden" name="price" value="1">
                     </div>
                 </div>
             </div>
         </form>
         <!-- Card End -->
-        <!-- Modal Start -->
-        <div class="modal fade" id="potli" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Painkiller Potli</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Example Code -->
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="pottaliDetail"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Nutritional Facts
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="pottaliFacts"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <span>&#8377;</span> 350 for 250 gm
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Example Code -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
         <!-- Pottali End -->
 
     </div>
