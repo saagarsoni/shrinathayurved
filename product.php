@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -22,7 +23,7 @@
 </head>
 
 <!-- Navigation Start -->
-<?php require('header.php') ?>
+<?php require ('header.php') ?>
 <!-- Navigation End -->
 
 <body>
@@ -39,48 +40,50 @@
         <input type="text" class="form-control" placeholder="Type to Search Any Product" id="searchTextbox" autofocus>
         <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clearText()">Clear</button>
     </div>
-    
+
     <div class="row row-cols-md-5 p-2">
-         <!-- Chyawanprash_Regular(500 gm)  Start-->
+        <!-- Chyawanprash_Regular(500 gm)  Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
-                <!-- https://res.cloudinary.com/dvthtodtk/image/upload/v1674370361/shrinathAyurved/Chyawanprash_Front_e0k3fy.jpg -->
-                <img src="./images/Chyawanprash500.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(500 gm)"/>
+                    <img src="./images/Chyawanprash500.jpg"
+                        class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail"
+                        alt="Chyawanprash Regular(500 gm)" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash (500 gm)</h5>
-                        <!-- <p class="card-text" id="chawanprashCard"></p> -->
                         <p class="card-text"><b> <span>&#8377;</span> 180 for 500 gm</b> </p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                             onclick="redirectToProductDescription('Chyawanprash500')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Chyawanprash Regular(500 gm)">
                         <input type="hidden" name="price" value="1">
                     </div>
                 </div>
-            </div> 
+            </div>
         </form>
         <!-- Card End -->
-        
+
         <!-- Chyawanprash_Regular(500 gm) End -->
 
- <!-- Chyawanprash_Regular(1 Kg)  Start-->
+        <!-- Chyawanprash_Regular(1 Kg)  Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
-                <!-- https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg -->
-                    <img src="./images/Chavanprash1kg.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Chyawanprash Regular(1 Kg)"/>
+                    <!-- https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg -->
+                    <img src="./images/Chavanprash1kg.jpg"
+                        class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail"
+                        alt="Chyawanprash Regular(1 Kg)" />
                     <div class="card-body">
-                        <h5 class="card-title product-name">Chyawanprash (1 Kg).</h5>
-                        <p class="card-text"><b> <span>&#8377;</span> 340 for 1 kg</b> </p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#chawanprashGudWala">Know
+                        <h5 class="card-title product-name">Chyawanprash (1 Kg)</h5>
+                        <p class="card-text"><b> <span>&#8377;</span>340 for 1 kg</b> </p>
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                            onclick="redirectToProductDescription('Chyawanprash1000')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning  btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Chyawanprash Regular(1Kg)">
                         <input type="hidden" name="price" value="1">
@@ -96,114 +99,36 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
-                    <img src="./images/orangeSquash.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Orange Squash"/>
+                    <img src="./images/orangeSquash.jpg"
+                        class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail"
+                        alt="Orange Squash" />
                     <div class="card-body">
-                        <h5 class="card-title product-name">Orange Squash.</h5>
+                        <h5 class="card-title product-name">Orange Squash</h5>
                         <!-- <p class="card-text" id="orangeSquashCard"></p> -->
                         <p class="card-text"><b> <span>&#8377;</span> 210 for 900 ml</b> </p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                             onclick="redirectToProductDescription('orangeSquash')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="orangeSquash">
-                        <input type="hidden" name="price" value="2">
+                        <input type="hidden" name="price" value="1">
                         <!-- <input type="hidden" name="price" value="190"> -->
                     </div>
                 </div>
             </div>
         </form>
         <!-- Card End -->
-        <!-- Modal Start -->
-        <div class="modal fade" id="orangeSquash" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Orange Squash</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Example Code -->
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="orangeSquashDetail"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="orangeSquashIngredients"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Nutritional Facts
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="orangeSquashFacts"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <span>&#8377;</span> 210 for 900 ml
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Example Code -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
         <!-- Orange Squash End -->
 
-         <!-- Lemom Squash Start-->
+        <!-- Lemom Squash Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
-                    <img src="./images/lemonSquash1.jpg" class="imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Lemon Squash"/>
+                    <img src="./images/lemonSquash1.jpg"
+                        class="imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail"
+                        alt="Lemon Squash" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Lemon Squash</h5>
                         <!-- <p class="card-text" id="lemonSquashCard"></p> -->
@@ -211,10 +136,10 @@
                         <!-- <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#lemonSquash">Know
                             More</button> -->
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                             onclick="redirectToProductDescription('lemonSquash')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="lemonSquash">
                         <input type="hidden" name="price" value="2">
@@ -231,15 +156,17 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1680282010/shrinathAyurved/gulkand_t0mssv.png" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Gulkand"/>
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1680282010/shrinathAyurved/gulkand_t0mssv.png"
+                        class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail"
+                        alt="Gulkand" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Gulkand.</h5>
                         <!-- <p class="card-text" id="gulkandCard"></p> -->
                         <p class="card-text"><b> <span>&#8377;</span> 190 for 500 gm</b> </p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                             onclick="redirectToProductDescription('gulkand')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Gulkand">
                         <input type="hidden" name="price" value="2">
@@ -256,15 +183,15 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679740883/shrinathAyurved/roseSharbat_ajgmmx.png" class="imageResize  img-fluid mx-auto d-block object-fit: fill;" />
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679740883/shrinathAyurved/roseSharbat_ajgmmx.png"
+                        class="imageResize  img-fluid mx-auto d-block object-fit: fill;" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Rose Sharbat.</h5>
-                        <p class="card-text" id="roseSharbatCard">details for rose sharbat.</p>
                         <p class="card-text"><b> <span>&#8377;</span> 205 for 900 ml</b> </p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#roseSharbat">Know
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                            onclick="redirectToProductDescription('roseSharbat')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Rose Sharbat">
                         <input type="hidden" name="price" value="1">
@@ -273,87 +200,6 @@
             </div>
         </form>
         <!-- Card End -->
-        <!-- Modal Start -->
-        <div class="modal fade" id="roseSharbat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Rose Sharbat.</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="roseSharbatDetail"></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="roseSharbatIngredients"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Nutritional Facts
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="roseSharbatFacts"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <span>&#8377;</span> 205 For 900 ml
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
         <!-- ROSE SHARBAT End -->
 
         <!--KHUS SHARBAT Start -->
@@ -361,15 +207,16 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679740081/shrinathAyurved/khash_ee4oem.png" class="imageResize thumbnail zoom img-fluid mx-auto d-block object-fit: contain;" alt="Khash Sharbat" />
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679740081/shrinathAyurved/khash_ee4oem.png"
+                        class="imageResize thumbnail zoom img-fluid mx-auto d-block object-fit: contain;"
+                        alt="Khash Sharbat" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Khass Sharbat</h5>
-                        <p class="card-text" id="khasCard">Khus Card</p>
                         <p class="card-text"><b> <span>&#8377;</span> 205 for 900 ml</b> </p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#khasSharbat">Know
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                            onclick="redirectToProductDescription('khushSharbat')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Khass Sharbat">
                         <input type="hidden" name="price" value="2">
@@ -378,86 +225,6 @@
             </div>
         </form>
         <!-- Card End -->
-        <!-- Modal Start -->
-        <div class="modal fade" id="khasSharbat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Khas Sharbat</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="khasDetail"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="khasIngredients"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Nutritional Facts
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="khasFacts"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <b> <span>&#8377;</span>205 For 900 ml</b>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
         <!--KHUS SHARBAT End -->
 
         <!-- DISHWASH - LEMON & SALT Start -->
@@ -465,103 +232,22 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741033/shrinathAyurved/Dishwash_Gel_gsgwmc_xhqbw5.png" class="imageResize thumbnail zoom" />
+                    <img src="./images/lemonSaltDishwash.png" class="imageResize " />
                     <div class="card-body">
-                        <h5 class="card-title product-name">DISHWASH - LEMON & SALT</h5>
-                        <p class="card-text" id="dwLemonCard"></p>
+                        <h6 class="card-title product-name">DISHWASH - LEMON & SALT</h6>
                         <p class="card-text"><b> <span>&#8377;</span> 240 (Pack Of 2)</b> </p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#dwLemon">Know
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                            onclick="redirectToProductDescription('dwLemonSalt')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Dishwash - Lemon and Salt">
-                        <input type="hidden" name="price" value="2">
+                        <input type="hidden" name="price" value="1">
                     </div>
                 </div>
             </div>
         </form>
         <!-- Card End -->
-        <!-- Modal Start -->
-        <div class="modal fade" id="dwLemon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Dishwash Lemon and Salt</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="dwLemonDetail"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="dwLemonIngredients"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Usage
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="dwLemonFacts"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <span>&#8377;</span> 240 (Pack Of 2)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
         <!-- DISHWASH - LEMON & SALT End-->
 
         <!-- DISHWASH - NEEM & ALOEVERA Start -->
@@ -569,91 +255,49 @@
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741331/Dishwash_LemonandNeem_wqjgu4.png" class="imageResize thumbnail zoom img-fluid mx-auto d-block object-fit: contain;" />
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741331/Dishwash_LemonandNeem_wqjgu4.png"
+                        class="imageResize thumbnail zoom img-fluid mx-auto d-block object-fit: contain;" />
                     <div class="card-body">
-                        <h5 class="card-title product-name">Neem and Aloevera Dishwash Liquid</h5>
-                        <p class="card-text" id="dwNeemCard"></p>
+                        <h6 class="card-title product-name">Dishwash -Neem and Aloevera</h6>
                         <p class="card-text"><b><span>&#8377;</span> 240 (Pack Of 2)</b></p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#dwNeem">Know
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                            onclick="redirectToProductDescription('dwNeemAloevera')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Neem and Aloevera Dishwash Liquid">
-                        <input type="hidden" name="price" value="2">
+                        <input type="hidden" name="price" value="1">
                     </div>
                 </div>
             </div>
         </form>
         <!-- Card End -->
-        <!-- Modal Start -->
-        <div class="modal fade" id="dwNeem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Dishwash Lemon and Salt</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="dwNeemDetail"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="dwNeemIngredients"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p class="card-text">
-                                            <span>&#8377;</span> 240 (Pack Of 2)
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- DISHWASH - NEEM & ALOEVERA End -->
+
+        <!-- Rose Water Start-->
+        <!-- Card Start -->
+        <form action="manage_cart.php" method="post" class="product p-2">
+            <div class="col product d-flex align-items-stretch">
+                <div class="card h-100 product">
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679674399/shrinathAyurved/RoseWaterPhotoRoom_qgjqnp.png"
+                        class="imageResize thumbnail zoom img-fluid mx-auto d-block object-fit: contain;" />
+                    <div class="card-body">
+                        <h5 class="card-title product-name">Rose Water</h5>
+                        <p class="card-text"><b> <span>&#8377;</span> 150 for 100 ml</b></p>
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                        onclick="redirectToProductDescription('roseWater')">Know
+                            More</button>
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
+                                class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="item_name" value="Rose Water">
+                        <input type="hidden" name="price" value="1">
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Modal End -->
-        <!-- DISHWASH - NEEM & ALOEVERA End -->
+        </form>
+        <!-- Card End -->
+        <!-- Rose Water End-->
+
 
         <!-- HONEY Start-->
         <!-- Card Start -->
@@ -669,14 +313,15 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741477/Honey_Front_yxdfxu_rlkwak.png" class="imageResize thumbnail zoom" />
+                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741477/Honey_Front_yxdfxu_rlkwak.png"
+                                    class="imageResize thumbnail zoom" />
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Regular</h5>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
-                                <img src="./images/youtube-logo.png" class="imageResize">
+                                    <img src="./images/youtube-logo.png" class="imageResize">
                                 </a>
                             </div>
                         </div>
@@ -803,15 +448,15 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741475/SQUEEZY_FRONT_hzqoku_jpws7q.png" class="imageResize thumbnail zoom img-fluid mx-auto d-block object-fit: contain;" />
+                                <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741475/SQUEEZY_FRONT_hzqoku_jpws7q.png"
+                                    class="imageResize thumbnail zoom img-fluid mx-auto d-block object-fit: contain;" />
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Squeezy</h5>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
-                                    <img src="./images/youtube-logo.png"
-                                        class="imageResize">
+                                    <img src="./images/youtube-logo.png" class="imageResize">
                                 </a>
                             </div>
                         </div>
@@ -950,108 +595,18 @@
         <!-- Modal End -->
         <!-- HONEY Squeezy End-->
 
-        <!-- Rose Water Start-->
-        <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product p-2">
-            <div class="col product d-flex align-items-stretch">
-                <div class="card h-100 product">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679674399/shrinathAyurved/RoseWaterPhotoRoom_qgjqnp.png" class="imageResize thumbnail zoom img-fluid mx-auto d-block object-fit: contain;" />
-                    <div class="card-body">
-                        <h5 class="card-title product-name">Rose Water</h5>
-                        <p class="card-text" id="roseWaterCard"></p>
-                        <p class="card-text"><b> <span>&#8377;</span> 150 for 100 ml</b></p>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#roseWater">Know
-                            More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
-                                class="fas fa-shopping-cart"></i></button>
-                        <input type="hidden" name="item_name" value="Rose Water">
-                        <input type="hidden" name="price" value="1">
-                    </div>
-                </div>
-            </div>
-        </form>
-        <!-- Card End -->
-        <!-- Modal Start -->
-        <div class="modal fade" id="roseWater" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Rose Water</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                        aria-controls="flush-collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <p id="roseWaterDetail"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                        aria-controls="flush-collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <p id="roseWaterIngredients"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                        aria-controls="flush-collapseThree">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <span>&#8377;</span>150 for 100 ml
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
-        <!-- Rose Water End-->
-
-
-<!-- Pottali  Start-->
+        <!-- Pottali  Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
-                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741645/shrinathAyurved/potli_vi7uyx.png" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail" alt="Painkiller Potli"/>
+                    <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741645/shrinathAyurved/potli_vi7uyx.png"
+                        class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail"
+                        alt="Painkiller Potli" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Painkiller Potli</h5>
                         <p class="card-text" id="chawanprashCard1kg"></p>
-                        <p class="card-text"><b> <span>&#8377;</span>  350 for 250 gm</b> </p>
+                        <p class="card-text"><b> <span>&#8377;</span> 350 for 250 gm</b> </p>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#potli">Know
                             More</button>
@@ -1133,23 +688,23 @@
         </div>
         <!-- Modal End -->
         <!-- Pottali End -->
-        
+
     </div>
 
     <!-- Footer -->
-    <?php require('php/footer.php') ?>
+    <?php require ('php/footer.php') ?>
     <!-- Footer -->
 </body>
 
 <script>
 
-function redirectToProductDescription(product) {
-    // Construct the URL for the product description page
-    var productPage = product + '.php';
-    
-    // Redirect to the product description page
-    window.location.href = productPage;
-}
+    function redirectToProductDescription(product) {
+        // Construct the URL for the product description page
+        var productPage = product + '.php';
+
+        // Redirect to the product description page
+        window.location.href = productPage;
+    }
 
     $("#honeyYoutubeModal").on("hidden.bs.modal", function () {
         var _this = this,
@@ -1185,7 +740,7 @@ function redirectToProductDescription(product) {
     $("#khasIngredients").load("./text/khasIngredients");
     $("#khasFacts").load("./text/khasFacts");
 
-  //Orange Squash
+    //Orange Squash
     $("#orangeSquashCard").load("./text/orangeSquashCard.txt");
     $("#orangeSquashDetail").load("./text/orangeSquashDetail.txt");
     $("#orangeSquashIngredients").load("./text/orangeSquashIngredients.txt");
