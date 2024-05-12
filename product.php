@@ -74,8 +74,7 @@
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
                     <!-- https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg -->
-                    <img src="./images/Chavanprash1kg.jpg"
-                        class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail"
+                    <img src="./images/chawanprash2.jpg" class=" imageResize img-fluid mx-auto d-block object-fit: scale-down; thumbnail"
                         alt="Chyawanprash Regular(1 Kg)" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Chyawanprash (1 Kg)</h5>
@@ -298,32 +297,31 @@
         <!-- Card End -->
         <!-- Rose Water End-->
 
-
         <!-- HONEY Start-->
         <!-- Card Start -->
         <form action="manage_cart.php" method="post" class="product p-2">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
+                        <!-- <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
                                 class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
                                 aria-label="Slide 2"></button>
-                        </div>
+                        </div> -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741477/Honey_Front_yxdfxu_rlkwak.png"
-                                    class="imageResize thumbnail zoom" />
+                                    class="imageResize thumbnail " />
                                 <!-- <div class="carousel-caption d-none d-md-block">
                                     <h5>Honey Regular</h5>
                                 </div> -->
                             </div>
-                            <div class="carousel-item">
+                            <!-- <div class="carousel-item">
                                 <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
                                     <img src="./images/youtube-logo.png" class="imageResize">
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                             data-bs-slide="prev">
@@ -339,11 +337,11 @@
                     <div class="card-body">
                         <h6 class="card-title product-name">Honey Regular</h6>
                         <!-- <p class="card-text" id="honeyCard"></p> -->
-                        <p class="card-text"><b> <span>&#8377;</span> 225 For 500 gm</b></p>
+                        <b> <span>&#8377;</span> 225 For 500 gm</b><br>
                         <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                         onclick="redirectToProductDescription('honeyRegular')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Honey Regular">
                         <input type="hidden" name="price" value="2">
@@ -352,86 +350,6 @@
             </div>
         </form>
         <!-- Card End -->
-        <!-- Modal Start -->
-        <div class="modal fade" id="honeyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Honey</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="honeyDetail"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="honeyIngredients"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Nutritional Facts
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="honeyFacts"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <span>&#8377;</span> 225 For 500 gm
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
         <!-- HONEY End-->
 
         <!-- HONEY Squeezy Start-->
@@ -440,24 +358,10 @@
             <div class="col product d-flex align-items-stretch ">
                 <div class="card h-100 product">
                     <div id="carouselExampleCaptions1" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                        </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1679741475/SQUEEZY_FRONT_hzqoku_jpws7q.png"
                                     class="imageResize thumbnail zoom img-fluid mx-auto d-block object-fit: contain;" />
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Honey Squeezy</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <a data-bs-toggle="modal" data-bs-target="#honeyYoutubeModal">
-                                    <img src="./images/youtube-logo.png" class="imageResize">
-                                </a>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions1"
@@ -472,18 +376,15 @@
                         </button>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title product-name">Honey</h5>
-                        <p class="card-text" id="honeyCard1"></p>
-
-                        <p class="card-text"><b> <span>&#8377;</span> 240 (Pack Of 2 [250 gm each])</b> </p>
-
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#honeyModal1">Know
+                        <h6 class="card-title product-name">Honey Squeezy</h6>
+                        <b> <span>&#8377;</span> 240 (Pack Of 2 [250 gm each])</b>
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                        onclick="redirectToProductDescription('honeySqueezy')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="Honey Squeezy">
-                        <input type="hidden" name="price" value="2">
+                        <input type="hidden" name="price" value="1">
                     </div>
                 </div>
             </div>
@@ -512,87 +413,6 @@
             </div>
         </div>
         <!-- Youtube Modal End-->
-
-        <!-- Modal Start -->
-        <div class="modal fade" id="honeyModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Honey</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Details
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="honeyDetail1"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Ingredients
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="honeyIngredients1"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree">
-                                        Nutritional Facts
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p id="honeyFacts1"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Price
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <span>&#8377;</span> 240 (Pack Of 2)[125 gm each]
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
         <!-- HONEY Squeezy End-->
 
         <!-- Pottali  Start-->
@@ -605,11 +425,11 @@
                         alt="Painkiller Potli" />
                     <div class="card-body">
                         <h5 class="card-title product-name">Painkiller Potli</h5>
-                        <p class="card-text"><b> <span>&#8377;</span> 350 for 250 gm</b> </p>
+                        <b> <span>&#8377;</span> 350 for 250 gm</b><br>
                         <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                         onclick="redirectToProductDescription('painkillerPottali')">Know
                             More</button>
-                        <button type="submit" name="addToCart" class="btn bg-warning">Add To Cart <i
+                        <button type="submit" name="addToCart" class="btn bg-warning btn-sm">Add To Cart <i
                                 class="fas fa-shopping-cart"></i></button>
                         <input type="hidden" name="item_name" value="pottali">
                         <input type="hidden" name="price" value="1">
