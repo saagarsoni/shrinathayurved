@@ -14,7 +14,7 @@ session_start();
 <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 <nav class="navbar navbar-expand-lg bg-white fixed-top">
-  <div class="container-fluid">
+  <div class="container">
     <a class="navbar-brand" href="index.php">
       <img src="https://res.cloudinary.com/dvthtodtk/image/upload/v1671950229/shrinathAyurved/logo_lcqcwu.jpg"
         width="90" height="33">
@@ -23,8 +23,8 @@ session_start();
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse col-md-12" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>

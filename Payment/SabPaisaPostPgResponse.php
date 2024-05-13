@@ -7,6 +7,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 </head>
+
 </html>
 
 <?php
@@ -100,15 +101,14 @@ while ($token !== false) {
     }
 }
 
-if ($status === 'SUCCESS' && $statusCode === '0000')
- {
+if ($status === 'SUCCESS' && $statusCode === '0000') {
     // Local Connect to the MySQL database
     $host = 'localhost';
     $user = 'root';
     $password = '';
     $dbname = 'shrinathayurved';
 
-     // Live Connect to the MySQL database
+    // Live Connect to the MySQL database
     //  $host = 'triumph.herosite.pro';
     //  $user = 'upkvwkyf_shrinathAyurved';
     //  $password = 'h5!3DN@cS';
@@ -146,31 +146,31 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
         $payerAddress = $parsedData['payerAddress'];
         $myCartdata = $parsedData['udf1'];
 
-            // Decode and unserialize the cart data
-            $decodedCartData = unserialize(base64_decode($myCartdata));
-    
-            // Now $decodedCartData will contain the original cart data array
-            // You can loop through it and access each item like this:
-            foreach ($decodedCartData as $item) {
+        // Decode and unserialize the cart data
+        $decodedCartData = unserialize(base64_decode($myCartdata));
+
+        // Now $decodedCartData will contain the original cart data array
+        // You can loop through it and access each item like this:
+        foreach ($decodedCartData as $item) {
             // echo "Item Name: " . $item['item_name'] . ", Price: " . $item['price'] . ", Quantity: " . $item['quantity'] . "<br>";
-    
+
             // Create an empty array to store cart data
             $cartItems = array();
-    
-    // Loop through the decoded cart data and store it in the array
-    foreach ($decodedCartData as $item) {
-        // Add each item to the cartItems array
-        $cartItems[] = array(
-            'item_name' => $item['item_name'],
-            'price' => $item['price'],
-            'quantity' => $item['quantity']
-        );
-    }
-    // Store the cartItems array in a session variable
-    $_SESSION['cartItems'] = $cartItems;
-    echo "cartItems Data are = ".var_dump($_SESSION['cartItems']);
-    echo"<br>";
-    }
+
+            // Loop through the decoded cart data and store it in the array
+            foreach ($decodedCartData as $item) {
+                // Add each item to the cartItems array
+                $cartItems[] = array(
+                    'item_name' => $item['item_name'],
+                    'price' => $item['price'],
+                    'quantity' => $item['quantity']
+                );
+            }
+            // Store the cartItems array in a session variable
+            $_SESSION['cartItems'] = $cartItems;
+            echo "cartItems Data are = " . var_dump($_SESSION['cartItems']);
+            echo "<br>";
+        }
         // Print the values
         // echo "Payer Name: $payerName<br>";
         // echo "Payer Mobile: $payerMobile<br>";
@@ -210,9 +210,9 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
         //             } else {
         //                 echo "Cart data not found.";
         //             }
-        
-    
-        if(!empty($decodedCartData))
+
+
+        if (!empty($decodedCartData))
         //if (isset($_SESSION['cart']))
         //if (isset($_SESSION['cart_data']))
         {
@@ -239,7 +239,7 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
                 //var_dump($_SESSION['cart_data']);
                 // Loop through each item in the cart
                 //foreach ($cartData as $item)
-                foreach ($_SESSION['cartItems']as $item)
+                foreach ($_SESSION['cartItems'] as $item)
                 // foreach ($_SESSION['cart'] as $record) 
                 {
                     // Escape variables for security to prevent SQL injection
@@ -268,27 +268,34 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
             if ($result1) {
                 echo '<br>';
                 //echo "New record created successfully";
-                echo '<div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" role="alert" style="position: fixed; top: 50; left: 0; width: 99%; height: 5%;">
+                echo '<div class="alert alert-success alert-dismissible fade show d-flex justify-content-center align-items-center" role="alert" style="position: fixed; top: 50; left: 0; width: 99%; height: 10%;">
                                 <strong>Success!</strong><br>Your Order with ID: ' . $orderId . '  is Successfully placed...!
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  onclick="redirectToHomePage()"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  ></button>
                                 </div>';
                 // Clear the cart_data session variable
                 // unset($_SESSION['cart_data']);
                 // unset($_SESSION['cart']);
 
-                // Clear all session variables
-                session_unset();
-
-                // Destroy the session
-                //session_destroy();
-
-                // JavaScript for redirection
-                echo '<script>
-                                                        // Redirect to home page after 10 seconds
-                                                        setTimeout(function() {
-                                                        window.location.href = "http://localhost/shrinathAyurved/index.php";
-                                                        }, 9000);
-                                            </script>';
+                //Send Email To User
+               // Assuming the order is successfully processed and you have the necessary details
+$userEmail = $email; // User's email address
+$orderNumber = $orderId; // Order number
+// Construct the email message
+$to = $userEmail;
+$subject = 'Order Confirmation - Order #' . $orderNumber;
+$message = 'Dear Customer, 
+            Thank you for your order. Your order with number ' . $orderNumber . ' has been successfully placed. 
+            You will receive another email when your order is shipped.';
+$headers = 'From: your@example.com' . "\r\n" .
+           'Reply-To: your@example.com' . "\r\n" .
+           'X-Mailer: PHP/' . phpversion();
+// Send the email
+$mailSent = mail($to, $subject, $message, $headers);
+if ($mailSent) {
+    echo 'Email sent successfully.';
+} else {
+    echo 'Error sending email.';
+}
 
             } else {
                 echo '<br>';
@@ -299,16 +306,14 @@ if ($status === 'SUCCESS' && $statusCode === '0000')
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>';
             }
-        }
-         else {
+        } else {
 
-            echo "<br>Code : ".$statusCode;
-                       trigger_error('Cart data is not available', E_USER_ERROR);
+            echo "<br>Code : " . $statusCode;
+            trigger_error('Cart data is not available', E_USER_ERROR);
             //echo '<div class="text-center fs-5 fw-bold alert alert-danger" role="alert"> Something Went Wrong... </div>';
         }
     }
- } 
-else {
+} else {
     echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
     <strong>OOPS!</strong><br>Some Error Occured...!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -321,4 +326,3 @@ else {
         window.location.href = "http://localhost/shrinathAyurved/index.php"; //  home page
     }
 </script>
-
