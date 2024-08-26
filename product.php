@@ -20,6 +20,16 @@
 
     <!-- To Read Text File -->
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+
+    <style>
+        /* Custom CSS to center the input group */
+        .centered-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; Adjust height as needed */
+        }
+    </style>
 </head>
 
 <!-- Navigation Start -->
@@ -36,11 +46,12 @@
         <h2>Our Products</h2>
     </div>
 
-    <div class="input-group my-2 p-2">
-        <input type="text" class="form-control" placeholder="Type to Search Any Product" id="searchTextbox" autofocus>
+    <div class="centered-input">
+    <div class="input-group my-2 p-2 w-50">
+        <input type="text" class="form-control " placeholder="Type to Search Any Product" id="searchTextbox"  >
         <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clearText()">Clear</button>
     </div>
-
+</div>
     <div class="row row-cols-md-5 p-2">
         <!-- Chyawanprash_Regular(500 gm)  Start-->
         <!-- Card Start -->
@@ -67,6 +78,8 @@
         <!-- Card End -->
 
         <!-- Chyawanprash_Regular(500 gm) End -->
+
+        
 
         <!-- Chyawanprash_Regular(1 Kg)  Start-->
         <!-- Card Start -->
