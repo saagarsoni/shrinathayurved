@@ -6,11 +6,48 @@
 <!-- Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 <form action="manage_cart.php" method="post" class="product p-2">
-   
+   <style>
+
+.product-image {
+      height: 400px;
+      object-fit: cover;
+    }
+    .product-description {
+      line-height: 1.5;
+    }
+    .product-page {
+      margin-top: 100px; /* Adjust based on your header height */
+    }
+    @media (max-width: 575.98px) {
+      .product-description {
+        font-size: 2.2rem; /* Font size for small devices */
+      }
+      .product-price {
+        font-size: 1.2rem;
+      }
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      .product-description {
+        font-size: 1.1rem; /* Font size for medium devices */
+      }
+      .product-price {
+        font-size: 1.1rem;
+      }
+    }
+    @media (min-width: 768px) {
+      .product-description {
+        font-size: 1rem; /* Font size for large devices */
+      }
+      .product-price {
+        font-size: 1rem;
+      }
+    }
+   </style>
    <!-- Product Description Page -->
-   <div class="container">
+   <div class="container-fluid">
       <div class="row">
-         <div class="col-lg-6">
+      <div class="w-100 fs-6  p-1 fw-bold fs-4 rounded text-center" style="background:#ff4dc4;color:white">Gulkand</div>
+         <div class="col-lg-6  col-sm-12 mt-3">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -35,9 +72,9 @@
             <input type="hidden" name="item_name" value="Gulkand">
                         <input type="hidden" name="price" value="2">
 </div>
-         <div class="col-lg-6">
-            <div class="w-100 fs-6 bg-warning p-1 fw-bold fs-4 rounded text-center">Gulkand</div>
-               <p id="gulkandDetail" class="text-sm-start lh-sm"></p>
+         <div class="col-lg-6 col-sm-12 mt-3 product-description" id="gulkandDetail">
+           
+               <!-- <p id="gulkandDetail"></p> -->
          </div>
       </div>
    </div>
