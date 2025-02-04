@@ -55,7 +55,7 @@
     <div class="row row-cols-md-5 p-2">
         <!-- Chyawanprash_Regular(500 gm)  Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product p-2">
+        <form action="manage_cart.php" method="post" class="product p-0">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
                     <img src="./images/Chyawanprash500.jpg"
@@ -83,7 +83,7 @@
 
         <!-- Chyawanprash_Regular(1 Kg)  Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product p-2">
+        <form action="manage_cart.php" method="post" class="product p-0">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
                     <!-- https://res.cloudinary.com/dvthtodtk/image/upload/v1674382713/shrinathAyurved/Chavanprash_One_Kg_lsvwrs.jpg -->
@@ -108,7 +108,7 @@
 
         <!-- Orange Squash Start-->
         <!-- Card Start -->
-        <form action="manage_cart.php" method="post" class="product p-2">
+        <form action="manage_cart.php" method="post" class="product p-0">
             <div class="col product d-flex align-items-stretch">
                 <div class="card h-100 product" style="display: flex;">
                     <img src="./images/orangeSquash.jpg"

@@ -74,7 +74,7 @@
 .warranty-text {
   font-size: 14px;
   color: #333;
-  display: flex; */
+  display: flex; 
    flex-direction: column;
   align-items: center; /* Center align text vertically */
   justify-content: center;
